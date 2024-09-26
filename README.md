@@ -1,5 +1,7 @@
 # force-graph-visualizer-and-editor
 
+In very simple English, this project is for you to edit a graph in a 2D space, and you can also visualize the graph in a 3D space.
+There will be function to export the graph in a Json format. You can also import the graph in a Json format.
 
 ![image](https://github.com/user-attachments/assets/3461010f-0639-4f52-96f7-2ec6c781ad48)
 
