@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<script src="https://d3js.org/d3.v6.js"></script>
+<body>
+<h2>D3.js Scatter-Plot</h2>
+<button id="panRight">Pan Right</button>
+<div id="dataviz_basicZoom"></div>
+
+<script>
+    var svg = d3.select("#dataviz_basicZoom")
+        .append("svg")
+        .attr("width", 460)
+        .attr("height", 460);
+
+    var g = svg.append("g"); // This is the graphical container we will be transforming.
+
+    // Initialize a rectangle for demonstration
+    g.append("rect")
+        .attr("x", 50)
+        .attr("y", 50)
+        .attr("width", 100)
+        .attr("height", 100)
+        .style("fill", "red");
+
+    var zoom = d3.zoom()
+        .on("zoom", function (event) {
+            // This directly sets transform of 'g' on user interaction
+            // g.attr("transform", event.transform);
+        });
+
+    svg.call(zoom);
+
+
+
+    window.addEventListener('wheel', handleScroll);
+    function handleScroll(e) {
+        e.preventDefault();
+        var delta = e.deltaY;
+        var zoomLevel = 0.1;
+        if (delta > 0) {
+            zoomLevel = -0.1;
+        }
+        svg.transition().call(zoom.scaleBy, 1 + zoomLevel);
+    }
+
+    // Button to trigger panning to the right
+    document.getElementById('panRight').addEventListener('click', function() {
+        // We are moving the view right by 40 units.
+        svg.transition().duration(500).call(zoom.translateBy, 40, 0);
+    });
+
+
+
+
+</script>
+
+</body>
+</html>
