@@ -4,6 +4,7 @@ import * as d3 from 'd3';
 import dat from 'dat.gui';
 import {l} from "../firebase/firebase";
 import {useReadCypher} from "use-neo4j";
+import * as neo4j from "neo4j-driver";
 // import './App.css'; // Assuming you’ll have some CSS
 
 
@@ -11,16 +12,6 @@ import {useReadCypher} from "use-neo4j";
 function App() {
 
 
-    // const query = `MATCH (m:Movie {title: $title}) RETURN m`
-    const query = `MATCH (m) RETURN m`
-
-    const params = { title: 'The Matrix' }
-
-    const { loading, first } = useReadCypher(query, params)
-
-    const movie = first.get('m')
-
-    l(JSON.stringify(movie.properties))
 
     const handleZoom = (event) => {
         d3.select('#group').attr('transform', event.transform);
