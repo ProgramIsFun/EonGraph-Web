@@ -161,13 +161,15 @@ const FloatingControlPanel = (props) => {
 
                     {/* Checkbox to toggle the state */}
 
-                        <input
+                    <input
                             type="checkbox"
                             checked={usingNEO4J}
                             onChange={(event) => {
                                 setUsingNEO4J(event.target.checked);
                             }}
-                        />
+                    /><button onClick={
+                        () => {}
+                    }>get the graph from nE04J</button>
 
 
 
