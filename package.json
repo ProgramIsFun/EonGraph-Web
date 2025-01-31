@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "use-neo4j": "^0.3.13"
+  }
+}
