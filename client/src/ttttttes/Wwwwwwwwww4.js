@@ -18,8 +18,21 @@ function App() {
     )
     let session;
 
+    const fetchData = async () => {
+        try {
+            const response = await fetch('http://localhost:3062/api/v0/return_all_nodes111');
+            const jsonData = await response.json();
+            l("jsonData", jsonData)
+            // setData(jsonData);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 
+    fetchData();
     async function qqqq(session) {
+
+
         try {
             session = driver.session()
             const result = await session.run(
@@ -36,13 +49,9 @@ function App() {
     };
 
     useEffect( ()=>{
+        fetchData();
 
 
-        qqqq(session)
-        return () => {
-            session.close()
-            driver.close()
-        }
     }, [])
 
 
