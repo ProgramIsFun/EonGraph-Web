@@ -60,6 +60,9 @@ const FloatingControlPanel = (props) => {
     };
     const filterdd = props.filterdd;
 
+    const usingNEO4J = props.usingNEO4J;
+    const setUsingNEO4J = props.setUsingNEO4J;
+
 
     const [value, setValue] = React.useState(30);
 
@@ -139,8 +142,6 @@ const FloatingControlPanel = (props) => {
                     >
                         Logout
                     </button>
-
-
                     <button
                         onClick={
                             fixAllNodes
@@ -154,6 +155,21 @@ const FloatingControlPanel = (props) => {
                         }
                     > start
                     </button>
+
+
+                    <p>usingNEO4J: {usingNEO4J ? 'True' : 'False'}</p>
+
+                    {/* Checkbox to toggle the state */}
+
+                        <input
+                            type="checkbox"
+                            checked={usingNEO4J}
+                            onChange={(event) => {
+                                setUsingNEO4J(event.target.checked);
+                            }}
+                        />
+
+
 
                     <br/>
 
