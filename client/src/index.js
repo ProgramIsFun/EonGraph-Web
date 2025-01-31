@@ -14,6 +14,7 @@ import App from './App';
 import Wwwwwwwwww from "./ttttttes/Wwwwwwwwww";
 import Wwwwwwwwww2 from "./ttttttes/Wwwwwwwwww2";
 import Wwwwwwwwww3 from "./ttttttes/Wwwwwwwwww3";
+import Wwwwwwwwww4 from "./ttttttes/Wwwwwwwwww4";
 
 
 const driver = createDriver('neo4j',
@@ -24,21 +25,22 @@ const driver = createDriver('neo4j',
 
 
 let aaaaaaaappppppppp=<React.StrictMode>
-    { 0?
+    { 1?
 
 
         [
             <Wwwwwwwwww></Wwwwwwwwww>,
             <Wwwwwwwwww2></Wwwwwwwwww2>,
 
-            <Neo4jProvider driver={driver}>
 
-            <Wwwwwwwwww3></Wwwwwwwwww3>
 
-            </Neo4jProvider>
-            ,
+            <Wwwwwwwwww3></Wwwwwwwwww3>,
 
-        ][2]
+
+            <Wwwwwwwwww4></Wwwwwwwwww4>,
+
+
+        ][3]
 
         :
 

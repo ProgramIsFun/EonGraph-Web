@@ -29,7 +29,6 @@ function App() {
         d3.select('#workflow').call(zoom)
     }, [handleZoom])
 
-    if ( loading ) return (<div>Loading...</div>)
 
     return (
         <svg id="workflow">
