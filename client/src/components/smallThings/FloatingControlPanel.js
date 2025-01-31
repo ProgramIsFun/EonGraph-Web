@@ -48,7 +48,7 @@ const FloatingControlPanel = (props) => {
     const setistreemaxlevelrestricted = props.setistreemaxlevelrestricted;
     const treemaxlevel = props.treemaxlevel;
     const settreemaxlevel = props.settreemaxlevel;
-
+    const fetchData11 = props.fetchData11;
 
     const inputRef1 = useRef(null);
 
@@ -168,7 +168,7 @@ const FloatingControlPanel = (props) => {
                                 setUsingNEO4J(event.target.checked);
                             }}
                     /><button onClick={
-                        () => {}
+                        () => {fetchData11()}
                     }>get the graph from nE04J</button>
 
 

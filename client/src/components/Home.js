@@ -2,7 +2,7 @@ import React, {useEffect, useMemo, useRef, useState} from "react";
 import HighLight from "./MainGraphDir/HighLight";
 import ReactForceGraph from "./MainGraphDir/ReactForceGraph";
 import TextNodeVR from "./MainGraphDir/TextNodeVR";
-import {dbbbbb, repoooooo} from "../firebase/firebase";
+import {dbbbbb, l, repoooooo} from "../firebase/firebase";
 import {auth} from "firebase";
 
 import * as firebase from 'firebase/app'
@@ -432,6 +432,17 @@ function Home() {
         setdd({nodes: [], links: []})
 
     }
+    const fetchData11 = async () => {
+        try {
+            const response = await fetch('http://localhost:3062/api/v0/return_all_nodes111');
+            const jsonData = await response.json();
+            l("jsonData", jsonData)
+            setdd(jsonData);
+            // setData(jsonData);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
     return (
 
         <>
@@ -459,7 +470,7 @@ function Home() {
                 fileContent={fileContent}
                 setFileContent={setFileContent}
 
-
+                fetchData11={fetchData11}
                 usingNEO4J={usingNEO4J}
                 setUsingNEO4J={setUsingNEO4J}
 
