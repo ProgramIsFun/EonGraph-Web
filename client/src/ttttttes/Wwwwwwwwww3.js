@@ -3,11 +3,24 @@ import { ForceGraph2D } from 'react-force-graph';
 import * as d3 from 'd3';
 import dat from 'dat.gui';
 import {l} from "../firebase/firebase";
+import {useReadCypher} from "use-neo4j";
 // import './App.css'; // Assuming you’ll have some CSS
 
 
 
 function App() {
+
+
+    // const query = `MATCH (m:Movie {title: $title}) RETURN m`
+    const query = `MATCH (m) RETURN m`
+
+    const params = { title: 'The Matrix' }
+
+    const { loading, first } = useReadCypher(query, params)
+
+    const movie = first.get('m')
+
+    l(JSON.stringify(movie.properties))
 
     const handleZoom = (event) => {
         d3.select('#group').attr('transform', event.transform);
@@ -24,6 +37,8 @@ function App() {
             .on('zoom', handleZoom);
         d3.select('#workflow').call(zoom)
     }, [handleZoom])
+
+    if ( loading ) return (<div>Loading...</div>)
 
     return (
         <svg id="workflow">
