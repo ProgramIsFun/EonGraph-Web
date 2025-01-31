@@ -437,6 +437,13 @@ function Home() {
             const response = await fetch('http://localhost:3062/api/v0/return_all_nodes111');
             const jsonData = await response.json();
             l("jsonData", jsonData)
+
+            jsonData.nodes.forEach(node => {
+                node.id = node.user_generate_id_7577777777
+            }
+            )
+
+
             setdd(jsonData);
             // setData(jsonData);
         } catch (error) {
