@@ -30,7 +30,7 @@ This project originally want to make me organize all my projects and repositorie
 
    (make sure firestore is enabled)
    (make sure firebase github auth is enabled ( ref https://firebase.google.com/docs/auth/web/github-auth ), firebase will specify the callback url that YOU HAVE TO SET IN GITHUB OAUTH APP )
-
+   (for my ref https://github.com/ProgramIsFun/github-repos-visualizer/blob/347604b23cc839086caa4dda1d1c0386a5fc5461/client/src/firebase/firebase.js#L16)
 
 2a. if u dont use docker, you can run the app by running the following command in client directory:
 
