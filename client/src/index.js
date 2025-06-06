@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM1 from 'react-dom';
 import ReactDOM from 'react-dom/client';
 
-import { Neo4jProvider, createDriver } from 'use-neo4j'
+// import { Neo4jProvider, createDriver } from 'use-neo4j'
 
 
 
@@ -16,11 +16,11 @@ import Wwwwwwwwww2 from "./ttttttes/Wwwwwwwwww2";
 import Wwwwwwwwww3 from "./ttttttes/Wwwwwwwwww3";
 import Wwwwwwwwww4 from "./ttttttes/Wwwwwwwwww4";
 
-
-const driver = createDriver('neo4j',
-    'neo4j+ssc://7df0.databases.neo4j.io',
-    7687, 'neo4j',
-    'B0Qqy')
+//
+// const driver = createDriver('neo4j',
+//     'neo4j+ssc://7df0.databases.neo4j.io',
+//     7687, 'neo4j',
+//     'B0Qqy')
 
 
 
@@ -47,11 +47,11 @@ let aaaaaaaappppppppp=<React.StrictMode>
 
 
 
-        <Neo4jProvider driver={driver}>
+        // <Neo4jProvider driver={driver}>
 
 
             <App/>
-        </Neo4jProvider>
+        // </Neo4jProvider>
 
 
 
