@@ -13,7 +13,7 @@ export default function TextNodeVR({dd,...props}) {
     // console.log(dd)
     console.log("spriteTextttttttttttttttttttttttt", SpriteText)
     console.log("enteringVR, deepclone property,await mutation to original prop")
-    
+
     let c= props.c;
 
 
@@ -33,9 +33,9 @@ export default function TextNodeVR({dd,...props}) {
 
 
 
+        // backgroundColor="rgba(0,0,0,0)"
 
-
-        // nodeThreeObjectExtend={true}
+            // nodeThreeObjectExtend={true}
 
 
         linkWidth={c.linkWidth}
