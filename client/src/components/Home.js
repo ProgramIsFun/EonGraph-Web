@@ -276,7 +276,11 @@ function Home() {
                 component = <HighLight dd={dd}/>;
                 break;
             case 2:
-                component = <TextNodeVR dd={dd}/>;
+                component = <TextNodeVR dd={dd}
+                                        c={c}
+
+
+                />;
                 break;
             case 3:
                 component = <TextNode dd={dd}/>;
@@ -285,7 +289,8 @@ function Home() {
                 component = <BuildGraph dd={dd}
                                         setdd={setdd}
                                         collapseddd={collapseddd}
-                                        repo={repo} c={c}
+                                        repo={repo}
+                                        c={c}
                                         fgRef={fgRef}
 
                                         checkExistInGraph={checkExistInGraph}
