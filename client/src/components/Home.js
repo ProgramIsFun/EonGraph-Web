@@ -445,7 +445,10 @@ function Home() {
     }
     const fetchData11 = async () => {
         try {
-            const response = await fetch(backendurl + '/api/v0/return_all_nodes111');
+            let b=useremote? backendurl2 : backendurl
+
+            l("2222222fetching data from ", b + '/api/v0/return_all_nodes111')
+            const response = await fetch(b + '/api/v0/return_all_nodes111');
             const jsonData = await response.json();
             l("jsonData", jsonData)
 
