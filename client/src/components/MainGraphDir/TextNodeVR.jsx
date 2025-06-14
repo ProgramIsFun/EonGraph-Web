@@ -1,6 +1,6 @@
 import {ForceGraphVR} from 'react-force-graph';
 
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 
 import cloneDeep from 'lodash/cloneDeep';
