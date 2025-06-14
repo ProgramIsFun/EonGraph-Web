@@ -1,5 +1,8 @@
 # force-graph-visualizer-and-editor
 
+
+One major task right now is to upgrade to use VITE instead of CRA 
+
 ## What is this project?
 
 project aims to provide an editing and visualizations of a forced directed graph.
