@@ -16,7 +16,9 @@ export default function TextNodeVR({dd,...props}) {
     let c= props.c;
 
 
-    const newdd = cloneDeep(dd);
+    // const newdd = cloneDeep(dd);   If you do deep clone it seems the graph will render For state change  for some unknown reason
+    const newdd = (dd); 
+
     return <>
         <button onClick={() => {setText(d=> d+'1')}}>Change Text</button>
         <p>Use W-A-S-D to move,    drag mouse to change view angle</p>
