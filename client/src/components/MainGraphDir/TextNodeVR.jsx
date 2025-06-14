@@ -8,17 +8,17 @@ import cloneDeep from 'lodash/cloneDeep';
 // let SpriteText=window.SpriteText
 // import SpriteText from "//unpkg.com/three-spritetext/dist/three-spritetext.mjs";
 import SpriteText from 'three-spritetext';
+import {l} from "../../firebase/firebase";
 
 export default function TextNodeVR({dd,...props}) {
-    // console.log(dd)
-    console.log("spriteTextttttttttttttttttttttttt", SpriteText)
-    console.log("enteringVR, deepclone property,await mutation to original prop")
-
+    const [text, setText] = React.useState("hello world");
+    l("text333333333333333", text)
     let c= props.c;
 
 
     const newdd = cloneDeep(dd);
     return <>
+        <button onClick={() => {setText(d=> d+'1')}}>Change Text</button>
         <p>Use W-A-S-D to move,    drag mouse to change view angle</p>
         <ForceGraphVR
         graphData={newdd}
