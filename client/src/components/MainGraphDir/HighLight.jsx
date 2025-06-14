@@ -73,9 +73,7 @@ export default function HighLight({dd}) {
         ctx.fill();
     }, [hoverNode]);
 
-    return <ForceGraph2D
-        graphData={data}
-
+    return <ForceGraph2D graphData={data}
         nodeRelSize={NODE_R}
 
         autoPauseRedraw={false}

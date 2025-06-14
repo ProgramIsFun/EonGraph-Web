@@ -3,7 +3,7 @@ import HighLight from "./MainGraphDir/HighLight";
 import ReactForceGraph from "./MainGraphDir/ReactForceGraph";
 import TextNodeVR from "./MainGraphDir/TextNodeVR";
 import {dbbbbb, l, repoooooo} from "../firebase/firebase";
-import {auth} from "firebase";
+// import {auth} from "firebase";
 
 import * as firebase from 'firebase/app'
 import {calculateCollapseddd, datassss, keydownnnnnn} from "../util/helperfile";

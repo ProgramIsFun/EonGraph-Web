@@ -1,11 +1,13 @@
 import 'firebase/auth';
 // import 'firebase/database';
 import 'firebase/firestore';
-import * as firebase from "firebase";
+
+
+// import * as firebase from "firebase";
 import GitHub from "github-api";
 import {cgg} from "../util/helperfile";
 import {firebaseConfig} from "./config1";
-
+import firebase from "firebase/app";
 /**
  * Creates and initializes a Firebase app.
  */
