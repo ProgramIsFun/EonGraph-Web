@@ -240,17 +240,12 @@ export default function BuildGraph({ setdd, repo, ...props}) {
 
 
     const lll =(node, ctx, globalScale) => {
-        // return undefined
+
         if (1) {
-
             paintRing(node, ctx);
-
-
         }
         if (1) {
             const label2 = !node.name ? node.id : node.name;
-
-
 
             const replaceStringAinB = (strA, strB) => {
                 // Check if stringB starts with stringA
@@ -261,10 +256,8 @@ export default function BuildGraph({ setdd, repo, ...props}) {
                 return strB; // No change if stringB does not start with stringA
             };
 
-
             let label = replaceStringAinB("everythingallaccount", label2)
 
-            // l("globalScaleee", globalScale)
             const fontSize = c.node_font_size / (globalScale *c.global_scale_adjustment_coefficient) ;
             ctx.font = `${fontSize}px Sans-Serif`;
             const textWidth = ctx.measureText(label).width;
