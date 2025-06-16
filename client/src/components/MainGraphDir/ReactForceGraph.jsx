@@ -1,7 +1,8 @@
 import {ForceGraph3D} from 'react-force-graph';
 import React, {useEffect, useState} from 'react';
 import cloneDeep from "lodash/cloneDeep";
-
+import {l} from "../../firebase/firebase";
+import SpriteText from "https://esm.sh/three-spritetext";
 
 
 let THREE = window.THREE
@@ -200,17 +201,19 @@ THREE.CSS2DObject = CSS2DObject;
 THREE.CSS2DRenderer = CSS2DRenderer;
 
 
-export default function ReactForceGraph({dd,...props}) {
+export default function ReactForceGraph({dd, ...props}) {
     const fgRef = props.fgRef
     console.log("entering3D, deepclone property,await mutation to original prop")
 
-    const newdd = cloneDeep(dd);
+    // const newdd = cloneDeep(dd);
+    const newdd = (dd);
+
 
 
     const extraRenderers = [new THREE.CSS2DRenderer()];
 
 
-    let showiiiiii=false
+    let showiiiiii = true
 
 
     return <>
@@ -219,30 +222,25 @@ export default function ReactForceGraph({dd,...props}) {
 
 
             backgroundColor={"#000000"}
-            extraRenderers={0?extraRenderers:undefined}
+            extraRenderers={0 ? extraRenderers : undefined}
             graphData={newdd}
             nodeAutoColorBy="group"
 
-            nodeThreeObject={
+
+            onNodeClick={(node, event) => {
+                l("Node clicked22222:", node);
+                l("Event333333333:", event);
+            }}
+
+            nodeThreeObject={node => {
+                const sprite = new SpriteText(node.id);
+                sprite.color = node.color;
+                sprite.textHeight = 8;
+                return sprite;
+            }}
 
 
-                showiiiiii?
-                node => {
-                const nodeEl = document.createElement('div');
-                nodeEl.textContent = node.id;
-                nodeEl.style.color = node.color;
-                nodeEl.className = 'node-label';
-                return new THREE.CSS2DObject(nodeEl);
-                }: undefined
-
-
-
-            }
-
-
-
-
-            nodeThreeObjectExtend={true}
+            // nodeThreeObjectExtend={true}
         />
     </>
 }
