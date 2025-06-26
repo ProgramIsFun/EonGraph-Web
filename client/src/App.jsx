@@ -1,27 +1,22 @@
 import React from 'react';
-import {BrowserRouter as Router, Redirect, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Login from "./components/minorsss/Login";
 import "./App.css";
 import withAuthentication from './containers/withAuthentication';
 
 import Dashboard2 from "./components/minorsss/Dashboard2";
-import {AAAA1} from "./components/AAAA1";
-
-
+import { AAAA1 } from "./components/AAAA1";
 
 function App() {
-
     return (
-        <Router>
-            <Switch>
-                <Route exact path="/login" component={Login}/>
-                <Route path="/dashboard" component={withAuthentication(Dashboard2)}/>
-                <Redirect from="/" to="/login"/>
-
-                <Route exact path="/1" component={AAAA1}/>
-            </Switch>
-        </Router>
-
+        <BrowserRouter>
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/dashboard" element={withAuthentication(<Dashboard2 />)} />
+                <Route path="/1" element={<AAAA1 />} />
+                <Route path="/" element={<Navigate to="/login" replace />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
