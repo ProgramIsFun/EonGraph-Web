@@ -16,7 +16,7 @@ import Wwwwwwwwww3 from "./ttttttes/Wwwwwwwwww3";
 
 
 let aaaaaaaappppppppp=<React.StrictMode>
-    { 1 ?
+    { 0?
 
 
         [

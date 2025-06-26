@@ -12,7 +12,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/login" element={<Login />} />
-                <Route path="/dashboard" element={withAuthentication(<Dashboard2 />)} />
+                <Route path="/dashboard" element={<Dashboard2 />} />
                 <Route path="/1" element={<AAAA1 />} />
                 <Route path="/" element={<Navigate to="/login" replace />} />
             </Routes>

@@ -10,7 +10,8 @@ import Layout from "../../containers/Layout";
 import { cgg } from "../../util/helperfile";
 
 function Login({ login, ...state }) {
-    state = state.auth1;
+    console.log("login state passed is now ", state);
+    state = state.auth;
     console.log("login state passed is now ", state);
     console.log("login ", login);
     const navigate = useNavigate();
@@ -27,7 +28,7 @@ function Login({ login, ...state }) {
         });
     }, [navigate]);
 
-    if (state.isLoggedIn) {
+    if (state?.isLoggedIn) {
         return <Navigate to="/dashboard" replace />;
     }
 
