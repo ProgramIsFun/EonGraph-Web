@@ -1,10 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
-// import './FloatingControlPanel.css'; // Importing the stylesheet for styles
-import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
-import VolumeDown from '@mui/icons-material/VolumeDown';
-import VolumeUp from '@mui/icons-material/VolumeUp';
 import {InputLabel, TextField, Typography} from "@mui/material";
 import {auth} from "../../firebase";
 import FileDrop from "../../util/KKKKKKKKK";
