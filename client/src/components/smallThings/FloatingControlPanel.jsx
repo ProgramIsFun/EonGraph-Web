@@ -64,7 +64,7 @@ const FloatingControlPanel = (props) => {
     const usingNEO4J = props.usingNEO4J;
     const setUsingNEO4J = props.setUsingNEO4J;
 
-    const useremote= props.useremote;
+    const useremote = props.useremote;
     const setUseremote = props.setUseremote;
 
 
@@ -164,21 +164,27 @@ const FloatingControlPanel = (props) => {
 
                     <br/>
 
-                    <p>usingNEO4J: {usingNEO4J ? 'True' : 'False'}       if set to true, any change of the graph would be sent to database.</p>
+                    <p>usingNEO4J: {usingNEO4J ? 'True' : 'False'} if set to true, any change of the graph would be sent
+                        to database.</p>
                     <input
-                            type="checkbox"
-                            checked={usingNEO4J}
-                            onChange={(event) => {
-                                setUsingNEO4J(event.target.checked);
-                            }}
-                    /><button onClick={
-                        () => {fetchData11()}
-                    }>get the graph from nE04J</button>
+                        type="checkbox"
+                        checked={usingNEO4J}
+                        onChange={(event) => {
+                            setUsingNEO4J(event.target.checked);
+                        }}
+                    />
+                    <button onClick={
+                        () => {
+                            fetchData11()
+                        }
+                    }>get the graph from nE04J
+                    </button>
 
 
                     <br/>
 
-                    <p>useremote: {useremote ? 'True' : 'False'}       if set to true, the graph will be saved to remote storage.</p>
+                    <p>useremote: {useremote ? 'True' : 'False'} if set to true, the graph will be saved to remote
+                        storage.</p>
                     <input
                         type="checkbox"
                         checked={useremote}
@@ -186,7 +192,6 @@ const FloatingControlPanel = (props) => {
                             setUseremote(event.target.checked);
                         }}
                     />
-
 
 
                     <p>{notice}</p>
@@ -323,7 +328,10 @@ const FloatingControlPanel = (props) => {
                                     <Slider
                                         aria-label={key}
                                         value={typeof c[key] === 'number' ? c[key] : 0}
-                                        onChange={(event, newValue) => handleChange11(key, newValue)}
+                                        onChange={
+                                            (event, newValue) =>
+                                                handleChange11(key, newValue)
+                                        }
                                         min={min}
                                         max={max}
                                         step={step}
