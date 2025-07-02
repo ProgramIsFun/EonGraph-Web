@@ -677,14 +677,3 @@ export function calculateCollapseddd(dd) {
 
 
 
-export const cccccccccc = {
-    "repulsive_Force_Scale":
-        {"value": -100, "min": -1000, "max": 1, "step": 1},
-    "node_font_size": {"value": 6, "min": 1, "max": 20, "step": 1},
-    "global_scale_adjustment_coefficient": {"value": 0.5, "min": 0.1, "max": 1, "step": 0.1},
-    "link_opacity": {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
-    "linkWidth": {"value": 0.3, "min": 0, "max": 1, "step": 0.1},
-    "linkDirectionalParticles": {"value": 4, "min": 1, "max": 10, "step": 1},
-    "linkDirectionalParticleWidth": {"value": 2, "min": 1, "max": 10, "step": 1},
-    "linkDirectionalParticleSpeed": {"value": 0.002, "min": 0.001, "max": 0.01, "step": 0.001}
-}
