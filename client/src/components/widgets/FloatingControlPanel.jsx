@@ -64,7 +64,7 @@ const FloatingControlPanel = (props) => {
     const useremote = props.useremote;
     const setUseremote = props.setUseremote;
 
-
+    const changeSetting=props.changeSetting;
     const [value, setValue] = React.useState(30);
 
     const handleChange = (event, newValue) => {
@@ -330,7 +330,7 @@ const FloatingControlPanel = (props) => {
                                             {
                                                 l("Slider changed", key, newValue);
                                                 handleChange11(key, newValue);
-
+                                                changeSetting(key, newValue);
                                             }
                                         }
                                         min={min}

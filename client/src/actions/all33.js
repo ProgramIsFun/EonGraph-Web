@@ -9,7 +9,7 @@ import {
   CLEAR_PROFILE,
   ACCOUNT_DELETED,
   GET_REPOS,
-  NO_REPOS
+  NO_REPOS, CHANGE_SETTINGS
 } from './types';
 
 // Get current users profile
@@ -223,26 +223,14 @@ export const deleteAccount = () => async (dispatch) => {
   }
 };
 
-export const changeSetting = (setting, value) => async (dispatch) => {
+export const changeSetting = (key, value) => async (dispatch) => {
     try {
-        const res = await api.put('/profile/setting', { setting, value });
-
         dispatch({
-        type: UPDATE_PROFILE,
-        payload: res.data
+        type: CHANGE_SETTINGS,
+        payload: {"key": key, "value": value }
         });
-
         dispatch(setAlert('Settings Updated', 'success'));
     } catch (err) {
-        const errors = err.response.data.errors;
 
-        if (errors) {
-        errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
-        }
-
-        dispatch({
-        type: PROFILE_ERROR,
-        payload: { msg: err.response.statusText, status: err.response.status }
-        });
     }
 }

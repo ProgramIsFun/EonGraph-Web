@@ -5,7 +5,8 @@ import {
   UPDATE_PROFILE,
   GET_PROFILES,
   GET_REPOS,
-  NO_REPOS
+  NO_REPOS,
+  CHANGE_SETTINGS
 } from '../actions/types';
 
 const initialState = {
@@ -30,6 +31,18 @@ function all33Reducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
+    case CHANGE_SETTINGS:
+      let key=payload.key;
+      let value=payload.value;
+
+      return {
+        ...state,
+        settings:
+            {
+                ...state.settings,
+                [key]: value
+            }
+        };
     case GET_PROFILE:
     case UPDATE_PROFILE:
       return {
