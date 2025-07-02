@@ -6,7 +6,7 @@ import Alert from './layout/Alert';
 function App() {
     return (
         <>
-            <Alert />
+            {/*<Alert />*/}
             <BrowserRouter>
                 <Routes>
                     <Route path="/dashboard" element={<Dashboard2 />} />
