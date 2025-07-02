@@ -3,7 +3,6 @@
   color-scheme: dark;
 }
 
-
 html {
   height: 100%;
   box-sizing: border-box;
@@ -25,7 +24,6 @@ body {
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
-/*make the background color black and all the text to be white */
 .aaaaaaa{
   background-color: black;
   color: white;
