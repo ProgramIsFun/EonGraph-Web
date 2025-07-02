@@ -1,8 +1,6 @@
 import React, {Component, useEffect, useState} from 'react';
-
 import buttonList from './initialButtonList';
 import Layout from '../../containers/Layout';
-import SocialProfileList from './SocialProfileList';
 import {auth} from '../../firebase';
 import './Dashboard.css';
 import Home from "../Home";
