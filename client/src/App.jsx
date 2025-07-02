@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Dashboard2 from "./components/minorsss/Dashboard2";
-import { AAAA1 } from "./components/AAAA1";
 import Alert from './layout/Alert';
 
 function App() {
@@ -11,8 +10,7 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/dashboard" element={<Dashboard2 />} />
-                    <Route path="/1" element={<AAAA1 />} />
-                    <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                   <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 </Routes>
             </BrowserRouter>
         </>
