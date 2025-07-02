@@ -320,7 +320,6 @@ const FloatingControlPanel = (props) => {
                                 <Stack key={key} spacing={2} direction="row" sx={{mb: 1}} alignItems="center">
 
                                     <InputLabel>{key.split('_').join(' ')}</InputLabel>
-                                    {/*<VolumeDown/>*/}
                                     <Slider
                                         aria-label={key}
                                         value={typeof c[key] === 'number' ? c[key] : 0}
@@ -332,7 +331,8 @@ const FloatingControlPanel = (props) => {
                                     <Typography>{c[key]}</Typography>
                                 </Stack>
                             )
-                        })}
+                        })
+                    }
 
 
                     <div>
