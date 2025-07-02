@@ -2,7 +2,7 @@ import React, {useEffect, useMemo, useRef, useState} from "react";
 import HighLight from "./MainGraphDir/HighLight";
 import ReactForceGraph from "./MainGraphDir/ReactForceGraph";
 import TextNodeVR from "./MainGraphDir/TextNodeVR";
-import {dbbbbb, l, repoooooo} from "../firebase/firebase";
+import {dbbbbb, repoooooo} from "../firebase/firebase";
 
 import * as firebase from 'firebase/app'
 import {calculateCollapseddd, datassss, keydownnnnnn} from "../util/helperfile";
@@ -12,6 +12,7 @@ import FloatingControlPanel from "./smallThings/FloatingControlPanel";
 import {v4 as uuidv4} from "uuid";
 import {ObjectTable} from "./smallThings/smallTable";
 import _ from "lodash";
+import {l} from "../util/log11";
 
 
 function Home() {

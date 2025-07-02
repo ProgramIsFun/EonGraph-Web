@@ -10,7 +10,8 @@ import {auth} from "../../firebase";
 import FileDrop from "../../util/KKKKKKKKK";
 import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 import {cccccccccc, cgg} from "../../util/helperfile";
-import {l} from "../../firebase/firebase";
+
+import {l} from "../../util/log11";
 
 const FloatingControlPanel = (props) => {
 

@@ -2,8 +2,9 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {ForceGraph2D} from "react-force-graph";
 
 import {v4 as uuidv4} from 'uuid';
-import {ee, l} from "../../firebase/firebase";
+import {ee} from "../../firebase/firebase";
 import {draggggggg, removeNodeAndRelatedLinks} from "../../util/helperfile";
+import {l} from "../../util/log11";
 
 export default function BuildGraph({ setdd, repo, ...props}) {
 

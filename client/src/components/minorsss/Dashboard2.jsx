@@ -1,8 +1,10 @@
 import React, {Component, useEffect, useState} from 'react';
 import Home from "../Home";
+import { connect } from 'react-redux';
+import {l} from "../../util/log11";
 
-const Dashboard = ({ providerData }) => {
-
+const Dashboard = (pppp) => {
+    l("Dashboard render", pppp);
     return (
 
             <Home />
@@ -11,4 +13,4 @@ const Dashboard = ({ providerData }) => {
 
 
 
-export default Dashboard;
+export default connect( state => state )(Dashboard);
