@@ -7,7 +7,7 @@ import Home from "../Home";
 import {cgg} from "../../util/helperfile";
 
 const Dashboard = ({ providerData }) => {
-    
+
     return (
         <Layout>
             <Home />
