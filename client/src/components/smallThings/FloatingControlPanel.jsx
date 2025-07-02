@@ -326,7 +326,11 @@ const FloatingControlPanel = (props) => {
                                         value={typeof c[key] === 'number' ? c[key] : 0}
                                         onChange={
                                             (event, newValue) =>
-                                                handleChange11(key, newValue)
+                                            {
+                                                l("Slider changed", key, newValue);
+                                                handleChange11(key, newValue);
+
+                                            }
                                         }
                                         min={min}
                                         max={max}
