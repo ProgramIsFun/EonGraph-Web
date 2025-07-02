@@ -22,43 +22,10 @@ const Dashboard = ({ providerData }) => {
     const [providerDataState, setProviderDataState] = useState(providerData);
 
     useEffect(() => {
-        // cgg("qqq", buttonListState);
-        // cgg("eee", providerDataState);
-        // updateProviders(providerDataState);
-    }, [providerDataState]); // Only re-run the effect if providerDataState changes
+ }, [providerDataState]); // Only re-run the effect if providerDataState changes
 
-    const handleCurrentProviders = newProviderData => {
-        updateProviders(newProviderData);
-    };
+  
 
-    const updateProviders = providerData => {
-        let updatedButtonList = { ...buttonListState };
-
-        providerData.forEach(provider => {
-            const providerName = provider.providerId.split('.')[0];
-            cgg(providerName);
-            updatedButtonList = updateButtonList(updatedButtonList, providerName, false);
-        });
-
-        setButtonListState(updatedButtonList);
-        setProviderDataState(providerData);
-    };
-
-    const handleUnlinkedProvider = (providerName, providerData) => {
-        if (providerData.length < 1) {
-            auth
-                .getAuth()
-                .currentUser.delete()
-                .then(() => console.log('User Deleted'))
-                .catch(() => console.error('Error deleting user'));
-        }
-
-        let updatedButtonList = { ...buttonListState };
-        updatedButtonList = updateButtonList(updatedButtonList, providerName, true);
-
-        setButtonListState(updatedButtonList);
-        setProviderDataState(providerData);
-    };
 
     const updateButtonList = (buttonList, providerName, visible) => {
         // cgg(providerName, "visible -> false");
