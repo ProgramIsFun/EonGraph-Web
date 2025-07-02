@@ -8,6 +8,7 @@ import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass
 import {cccccccccc, cgg} from "../../util/helperfile";
 import {connect} from "react-redux";
 import {l} from "../../util/log11";
+import {changeSetting} from "../../actions/all33";
 
 const FloatingControlPanel = (props) => {
 
@@ -387,6 +388,6 @@ const FloatingControlPanel = (props) => {
     );
 };
 
-export default connect(state=> state
+export default connect(state=> state,{changeSetting}
 
 )(FloatingControlPanel);
