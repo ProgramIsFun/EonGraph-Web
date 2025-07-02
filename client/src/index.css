@@ -78,21 +78,28 @@ button:hover {
 
 
 .horizontal-bar {
+  /*flex-wrap: nowrap;*/
   display: flex;
   flex-direction: row;        /* Horizontal (default) */
   justify-content: space-between; /* Distribute items across the bar */
   align-items: center;        /* Center items vertically */
-  /*background: #4a90e2;*/
-  padding: 0.5em 1em;
+  padding: 0 0.5em;      /* Only horizontal (left/right) padding */
 }
 
 .bar-item {
   /*color: #fff;*/
-  padding: 0.5em 1em;
-  font-weight: bold;
-  cursor: pointer;
+  /*padding: 0.5em 1em;*/
+ cursor: pointer;
   /* Optional for hover effect */
   transition: background 0.2s;
+  white-space: nowrap;
+  /*font-weight: bold;*/
+  /*line-height: 1;*/
+  /*font-size: 1em;*/
+  /*white-space: nowrap; !* Prevents text from wrapping to multiple lines *!*/
+  /*overflow: hidden;    !* Optional: hide overflow if container shrinks *!*/
+  /*text-overflow: ellipsis; !* Optional: adds ... if text overflows *!*/
+
 }
 
 
