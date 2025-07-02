@@ -6,12 +6,12 @@ import {auth} from "../../firebase";
 import FileDrop from "../../util/KKKKKKKKK";
 import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 import {cccccccccc, cgg} from "../../util/helperfile";
-
+import {connect} from "react-redux";
 import {l} from "../../util/log11";
 
 const FloatingControlPanel = (props) => {
 
-
+    l("FloatingControlPanel render", props);
     const [tempNumber, setTempNumber] = useState(3);
     const emptyGraph = props.emptyGraph;
     const loadSample = props.loadSample;
@@ -383,4 +383,6 @@ const FloatingControlPanel = (props) => {
     );
 };
 
-export default FloatingControlPanel;
+export default connect(state=> state
+
+)(FloatingControlPanel);
