@@ -55,7 +55,8 @@ function TextNodeVR(props) {
             linkDirectionalParticleWidth={c.linkDirectionalParticleWidth}
             linkDirectionalParticleSpeed={c.linkDirectionalParticleSpeed}
 
-        /></>
+        />
+    </>
 }
 
 
