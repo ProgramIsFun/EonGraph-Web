@@ -6,13 +6,16 @@ import {draggggggg, removeNodeAndRelatedLinks} from "../../util/helperfile";
 import {ee, l} from "../../util/log11";
 import {connect} from "react-redux";
 import { useDispatch } from 'react-redux';
+import {CHANGE_LINKS} from "../../actions/types";
 
 
 function BuildGraph(props) {
 
     const dispatch = useDispatch();
     let c = props.all33.settings
-
+    const dd = props.all33.dd
+    // l("BuildGraph props",  dd)
+    // const dd = props.dd
     let setdd = props.setdd
     let repo = props.repo
     let rr = props.all33
@@ -22,7 +25,7 @@ function BuildGraph(props) {
     const fgRef = props.fgRef
 
 
-    const dd = props.dd
+
 
     const collapseddd = props.collapseddd
     const updateGraphData = props.updateGraphData
@@ -33,7 +36,11 @@ function BuildGraph(props) {
     const istreemaxlevelrestricted = props.istreemaxlevelrestricted
     const realdd = istreemaxlevelrestricted ?
         restrictdd :
-        1 ? collapseddd : dd
+        1
+            ?
+            collapseddd
+            :
+            dd
     const [hoverNode, setHoverNode] = useState(null);
 
     const paintRing = useCallback((node, ctx) => {
@@ -105,15 +112,13 @@ function BuildGraph(props) {
 
         const remaininglinks = dd.links.filter(l => l.id !== link.id);
 
-        // Update state with the new sets of links and nodes
         setdd(
             prev => {
                 return {...prev, links: remaininglinks}
             }
         );
-
         dispatch({ type: CHANGE_LINKS, payload: remaininglinks })
-        // lc.splice(lc.indexOf(link), 1);
+
     };
 
 
