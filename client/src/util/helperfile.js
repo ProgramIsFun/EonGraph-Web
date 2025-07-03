@@ -597,7 +597,9 @@ export function keydownnnnnn(setObjectToBeInspected,
 }
 
 export function calculateCollapseddd(dd) {
+
     return () => {
+        l("dddddddddddd2", dd)
         let removenodeidlist;
         removenodeidlist = []
         let removelinkidlist;

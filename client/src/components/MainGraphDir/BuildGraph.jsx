@@ -109,9 +109,9 @@ function BuildGraph(props) {
     };
 
     const removeLink = link => {
-
+        if (!link.id) { l("link has no id", link); return; }
         const remaininglinks = dd.links.filter(l => l.id !== link.id);
-
+        l("remaining links length", remaininglinks.length, "link id", link.id, "dd links length", dd.links.length)
         setdd(
             prev => {
                 return {...prev, links: remaininglinks}
