@@ -4,8 +4,12 @@ import {ForceGraph2D} from "react-force-graph";
 import {v4 as uuidv4} from 'uuid';
 import {draggggggg, removeNodeAndRelatedLinks} from "../../util/helperfile";
 import {ee, l} from "../../util/log11";
+import {connect} from "react-redux";
 
 function BuildGraph({ setdd, repo, ...props}) {
+
+    let rr=props.all33
+    l("BuildGraph props", props, "repo", repo, "all33", rr)
 
     // l("we're using a ref because we want to store something and some time not to rerender the whole thing.")
     const fgRef = props.fgRef
@@ -446,4 +450,4 @@ function BuildGraph({ setdd, repo, ...props}) {
 
 }
 
-export default BuildGraph;
+export default connect(state=> state)(BuildGraph);
