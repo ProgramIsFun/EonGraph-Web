@@ -5,7 +5,7 @@ import {v4 as uuidv4} from 'uuid';
 import {draggggggg, removeNodeAndRelatedLinks} from "../../util/helperfile";
 import {ee, l} from "../../util/log11";
 
-export default function BuildGraph({ setdd, repo, ...props}) {
+function BuildGraph({ setdd, repo, ...props}) {
 
     // l("we're using a ref because we want to store something and some time not to rerender the whole thing.")
     const fgRef = props.fgRef
@@ -30,8 +30,6 @@ export default function BuildGraph({ setdd, repo, ...props}) {
         if (!(node === objectToBeInspected || node.collapsed)) {
             return
         }
-
-
         const NODE_R = 8;
 
         ctx.beginPath();
@@ -447,3 +445,5 @@ export default function BuildGraph({ setdd, repo, ...props}) {
     </>
 
 }
+
+export default BuildGraph;
