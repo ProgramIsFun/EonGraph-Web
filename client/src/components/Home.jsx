@@ -411,7 +411,14 @@ function Home(props) {
     const getRepoData = repoooooo(setnotice, setrepo);
 
     const emptyGraph = async () => {
-        setdd({nodes: [], links: []})
+        dispatch({
+            type: "CHANGE_DATA",
+            payload: {
+                nodes: [],
+                links: []
+            }
+        } )
+        // setdd({nodes: [], links: []})
     }
     const fetchData11 = async () => {
         try {
