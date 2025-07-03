@@ -9,12 +9,12 @@ import {connect} from "react-redux";
 function BuildGraph(props) {
 
 
-    let c= props.all33.settings
+    let c = props.all33.settings
 
-    let setdd= props.setdd
-    let repo= props.repo
-    let rr=props.all33
-    l("BuildGraph props1",props)
+    let setdd = props.setdd
+    let repo = props.repo
+    let rr = props.all33
+    l("BuildGraph props1", props)
 
     // l("we're using a ref because we want to store something and some time not to rerender the whole thing.")
     const fgRef = props.fgRef
@@ -31,7 +31,7 @@ function BuildGraph(props) {
     const istreemaxlevelrestricted = props.istreemaxlevelrestricted
     const realdd = istreemaxlevelrestricted ?
         restrictdd :
-        1?collapseddd:dd
+        1 ? collapseddd : dd
     const [hoverNode, setHoverNode] = useState(null);
 
     const paintRing = useCallback((node, ctx) => {
@@ -58,14 +58,13 @@ function BuildGraph(props) {
 
         }
 
-        if(node.collapsed){
+        if (node.collapsed) {
             ctx.fillStyle = 'red';
             ctx.fill();
         }
 
 
     }, [objectToBeInspected]);
-
 
 
     const nodeIdCounter = useRef(0)
@@ -105,18 +104,20 @@ function BuildGraph(props) {
         const remaininglinks = dd.links.filter(l => l.id !== link.id);
 
         // Update state with the new sets of links and nodes
-        setdd(prev=>{return {...prev, links: remaininglinks}});
-
-
+        setdd(
+            prev => {
+                return {...prev, links: remaininglinks}
+            }
+        );
 
         // lc.splice(lc.indexOf(link), 1);
     };
 
 
     const removeNode = node => {
-        if (1){
-            removeNodeAndRelatedLinks(dd, node, setdd,setObjectToBeInspected);
-        }else {
+        if (1) {
+            removeNodeAndRelatedLinks(dd, node, setdd, setObjectToBeInspected);
+        } else {
             l("before remove node: lc length", lc.length, "nc length", nc.length)
             let lc2 = lc.filter(
                 link => {
@@ -237,15 +238,10 @@ function BuildGraph(props) {
     /////////////////////////////////////////////////
 
 
-
-
-
-
     let enableDragging = false
 
 
-
-    const lll =(node, ctx, globalScale) => {
+    const lll = (node, ctx, globalScale) => {
 
         if (1) {
             paintRing(node, ctx);
@@ -264,7 +260,7 @@ function BuildGraph(props) {
 
             let label = replaceStringAinB("everythingallaccount", label2)
 
-            const fontSize = c.node_font_size / (globalScale *c.global_scale_adjustment_coefficient) ;
+            const fontSize = c.node_font_size / (globalScale * c.global_scale_adjustment_coefficient);
             ctx.font = `${fontSize}px Sans-Serif`;
             const textWidth = ctx.measureText(label).width;
             const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
@@ -274,8 +270,7 @@ function BuildGraph(props) {
             ctx.textBaseline = 'middle';
 
 
-
-            let BackgroundColor=false
+            let BackgroundColor = false
             if (BackgroundColor) {
                 // This fill a white background to text
                 // ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
@@ -299,7 +294,6 @@ function BuildGraph(props) {
 
 
     }
-
 
 
     return <>
@@ -396,7 +390,7 @@ function BuildGraph(props) {
                             y: coords.y,
                             name: `node_${nodeId}`,
 
-                            ...(fixing && { fx: coords.x, fy: coords.y})
+                            ...(fixing && {fx: coords.x, fy: coords.y})
                         };
 
                         // Update state in an immutable way
@@ -454,4 +448,4 @@ function BuildGraph(props) {
 
 }
 
-export default connect(state=> state)(BuildGraph);
+export default connect(state => state)(BuildGraph);
