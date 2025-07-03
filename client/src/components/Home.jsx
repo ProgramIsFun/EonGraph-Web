@@ -434,7 +434,14 @@ function Home(props) {
                 }
             )
 
-            setdd(jsonData);
+            // setdd(jsonData);
+            dispatch({
+                type: "CHANGE_DATA",
+                payload: {
+                    nodes: jsonData.nodes,
+                    links: jsonData.links
+                }
+            })
 
         } catch (error) {
             console.error('Error fetching data:', error);
