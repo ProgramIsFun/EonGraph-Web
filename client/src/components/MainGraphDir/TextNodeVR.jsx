@@ -6,7 +6,8 @@ import SpriteText from 'three-spritetext';
 
 import {l} from "../../util/log11";
 
-function TextNodeVR({dd,...props}) {
+function TextNodeVR(props) {
+    let dd= props.dd;
     let c= props.c;
     const newdd = (dd);
 
