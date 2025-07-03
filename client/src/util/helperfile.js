@@ -484,15 +484,16 @@ export async function removegithubRepoNode(objectToBeInspected, dd, setdd, setOb
     }
 }
 
-export function keydownnnnnn(setObjectToBeInspected,
-                             saveGraph,
-                             objectToBeInspected,
-                             dd,
-                             setdd,
-                             link111,
-                             lc,
-                             graphtypeee,
-                             setc
+export function keydownnnnnn(
+    setObjectToBeInspected,
+    saveGraph,
+    objectToBeInspected,
+    dd,
+    setdd,
+    link111,
+    lc,
+    graphtypeee,
+    setc
 ) {
     return async (event) => {
 
@@ -524,7 +525,6 @@ export function keydownnnnnn(setObjectToBeInspected,
                 }
             )
         }
-
 
 
         if (event.key === 'Escape') {
