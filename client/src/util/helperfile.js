@@ -493,7 +493,8 @@ export function keydownnnnnn(
     link111,
     lc,
     graphtypeee,
-    setc
+    setc,
+    dispatch
 ) {
     return async (event) => {
 

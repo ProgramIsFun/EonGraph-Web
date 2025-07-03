@@ -140,7 +140,8 @@ function Home(props) {
             link111,
             lc,
             graphtypeee,
-            setc
+            setc,
+            dispatch
         );
         window.addEventListener('keydown', handleKeyDown);
         window.addEventListener('wheel', handleScroll);
@@ -168,7 +169,6 @@ function Home(props) {
     const loadSample = () => {
         const clonedObject = _.cloneDeep(datassss);
 
-        // setdd(clonedObject)
         dispatch({
             type: "CHANGE_DATA",
             payload: {
