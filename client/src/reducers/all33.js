@@ -1,6 +1,7 @@
 import {
   CHANGE_SETTINGS,
-  CHANGE_DATA
+  CHANGE_DATA,
+  CHANGE_LINKS
 } from '../actions/types';
 
 export const cccccccccc = {
@@ -50,8 +51,19 @@ function all33Reducer(state = initialState, action) {
     case CHANGE_DATA:
       return {
         ...state,
-        // fill
+        dd: {
+          nodes: payload.nodes,
+          links: payload.links
+        }
       };
+    case CHANGE_LINKS:
+        return {
+            ...state,
+            dd: {
+            ...state.dd,
+            links: payload.links
+            }
+        };
     default:
       return state;
   }
