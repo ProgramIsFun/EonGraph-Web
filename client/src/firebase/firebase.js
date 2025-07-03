@@ -178,4 +178,3 @@ export function repoooooo(setnotice, setrepo) {
     return getRepoData;
 }
 
-export const ee=console.error

@@ -2,9 +2,8 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {ForceGraph2D} from "react-force-graph";
 
 import {v4 as uuidv4} from 'uuid';
-import {ee} from "../../firebase/firebase";
 import {draggggggg, removeNodeAndRelatedLinks} from "../../util/helperfile";
-import {l} from "../../util/log11";
+import {ee, l} from "../../util/log11";
 
 export default function BuildGraph({ setdd, repo, ...props}) {
 
@@ -74,7 +73,7 @@ export default function BuildGraph({ setdd, repo, ...props}) {
         if (fgRef.current) {
             fgRef.current.d3Force('charge').strength(c.repulsive_Force_Scale)
             fgRef.current.d3ReheatSimulation();
-            // l("updateddddddddddd")
+            l("updateddddddddddd")
         } else {
             ee("not updateddddddddddd")
         }
