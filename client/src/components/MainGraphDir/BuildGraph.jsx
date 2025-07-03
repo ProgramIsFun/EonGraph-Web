@@ -7,6 +7,9 @@ import {ee, l} from "../../util/log11";
 import {connect} from "react-redux";
 
 function BuildGraph(props) {
+
+    let c = props.c
+
     let setdd= props.setdd
     let repo= props.repo
     let rr=props.all33
@@ -63,7 +66,6 @@ function BuildGraph(props) {
     }, [objectToBeInspected]);
 
 
-    let c = props.c
 
     const nodeIdCounter = useRef(0)
 
