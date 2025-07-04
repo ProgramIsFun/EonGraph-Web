@@ -178,24 +178,22 @@ function BuildGraph(props) {
         if (1) {
 
             if (objectToBeInspected === node) {
+                l("unsetting objectToBeInspected")
                 setObjectToBeInspected({})
                 return
             }
 
             if (Object.keys(objectToBeInspected).length === 0) {
+                l("setting objectToBeInspected", node)
                 setObjectToBeInspected(node)
                 setHoverNode(node)
 
             } else {
-
+                l("")
                 // Check if the link already exists
-
-
                 let shouldAddLink = false;
 
                 // check if any link in the links have the same source and target.
-
-
                 shouldAddLink = !lc.some(link => {
                         let lll = (link.source.id === objectToBeInspected.id && link.target.id === node.id) || (link.source.id === node.id && link.target.id === objectToBeInspected.id)
                         if (lll) {
@@ -223,11 +221,6 @@ function BuildGraph(props) {
 
                     setObjectToBeInspected({})
                 }
-
-
-                //
-                // setObjectToBeInspected(node)
-                // setHoverNode(node)
 
             }
 
