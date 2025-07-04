@@ -19,6 +19,8 @@ export const cccccccccc = {
 
 const initialState = {
   settings:{
+
+    // 2D
     "repulsive_Force_Scale": -100,
     "node_font_size": 6,
     "global_scale_adjustment_coefficient": 0.5,
@@ -26,7 +28,10 @@ const initialState = {
     "linkWidth": 0.3,
     "linkDirectionalParticles": 4,
     "linkDirectionalParticleWidth": 2,
-    "linkDirectionalParticleSpeed": 0.002
+    "linkDirectionalParticleSpeed": 0.002,
+
+    // VR
+    "VR_linkWidth":0.6
   },
   dd:{nodes: [], links: []},
 };
