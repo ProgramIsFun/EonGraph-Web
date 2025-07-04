@@ -7,7 +7,7 @@ import SpriteText from 'three-spritetext';
 import {l} from "../../util/log11";
 import {connect} from "react-redux";
 
-function TextNodeVR(props) {
+function VR(props) {
     let dd = props.dd;
     let c = props.c;
     const newdd = (dd);
@@ -61,4 +61,4 @@ function TextNodeVR(props) {
 }
 
 
-export default connect(state => state)(TextNodeVR);
+export default connect(state => state)(VR);

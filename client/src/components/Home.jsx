@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo, useRef, useState} from "react";
 import HighLight from "./MainGraphDir/HighLight";
 import ReactForceGraph from "./MainGraphDir/ReactForceGraph";
-import TextNodeVR from "./MainGraphDir/TextNodeVR";
+import TextNodeVR from "./MainGraphDir/VR";
 import {dbbbbb, repoooooo} from "../firebase/firebase";
 
 import * as firebase from 'firebase/app'
