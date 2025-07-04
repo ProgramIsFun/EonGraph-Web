@@ -24,9 +24,9 @@ export const cccccccccc = {
   "linkDirectionalParticleSpeed":
       {"value": 0.002, "min": 0.001, "max": 0.01, "step": 0.001},
 
-    // VR
-     "VR_linkWidth":
-        {"value": 0.6, "min": 0, "max": 1, "step": 0.1}
+  // VR
+  "VR_linkWidth":
+      {"value": 0.6, "min": 0, "max": 1, "step": 0.1}
 }
 
 
