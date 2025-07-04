@@ -404,10 +404,6 @@ function BuildGraph(props) {
                 linkDirectionalParticleSpeed={linkDirectionalParticleSpeed}
 
 
-
-                ///////////////////////
-
-
                 ///////////////////////////////////////////////////////////////////////
 
 
@@ -431,9 +427,7 @@ function BuildGraph(props) {
 
                 nodeCanvasObject={
                     lll
-
                 }
-
 
                 nodePointerAreaPaint={(node, color, ctx) => {
                     ctx.fillStyle = color;
