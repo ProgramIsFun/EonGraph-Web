@@ -31,6 +31,12 @@ export const cccccccccc = {
         {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
   "VR_linkWidth":
       {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
+    "VR_linkDirectionalParticles":
+        {"value": 4, "min": 1, "max": 10, "step": 1},
+    "VR_linkDirectionalParticleWidth":
+            {"value": 2, "min": 1, "max": 10, "step": 1},
+    "VR_linkDirectionalParticleSpeed":
+            {"value": 0.002, "min": 0.001, "max": 0.01, "step": 0.001},
 
 }
 
@@ -53,6 +59,9 @@ const initialState = {
     "VR_node_font_size": 6,
     "VR_linkOpacity": 0.6,
     "VR_linkWidth":0.6,
+    "VR_linkDirectionalParticles": 4,
+    "VR_linkDirectionalParticleWidth": 2,
+    "VR_linkDirectionalParticleSpeed": 0.002,
   },
   dd:{nodes: [], links: []},
 };
