@@ -25,8 +25,13 @@ export const cccccccccc = {
       {"value": 0.002, "min": 0.001, "max": 0.01, "step": 0.001},
 
   // VR
+  "VR_node_font_size":
+        {"value": 6, "min": 1, "max": 20, "step": 1},
+  "VR_linkOpacity":
+        {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
   "VR_linkWidth":
-      {"value": 0.6, "min": 0, "max": 1, "step": 0.1}
+      {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
+
 }
 
 
@@ -34,9 +39,9 @@ const initialState = {
   settings:{
 
     // 2D
+    "global_scale_adjustment_coefficient": 0.5,
     "repulsive_Force_Scale": -100,
     "node_font_size": 6,
-    "global_scale_adjustment_coefficient": 0.5,
     "link_opacity": 0.6,
     "linkWidth": 0.3,
     "linkDirectionalParticles": 4,
@@ -44,7 +49,10 @@ const initialState = {
     "linkDirectionalParticleSpeed": 0.002,
 
     // VR
-    "VR_linkWidth":0.6
+
+    "VR_node_font_size": 6,
+    "VR_linkOpacity": 0.6,
+    "VR_linkWidth":0.6,
   },
   dd:{nodes: [], links: []},
 };
