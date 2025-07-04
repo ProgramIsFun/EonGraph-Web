@@ -81,18 +81,18 @@ function BuildGraph(props) {
     let nc = dd.nodes
     let lc = dd.links
 
-
+    let a=c.repulsive_Force_Scale
     useEffect(() => {
 
         if (fgRef.current) {
-            fgRef.current.d3Force('charge').strength(c.repulsive_Force_Scale)
+            fgRef.current.d3Force('charge').strength(a)
             fgRef.current.d3ReheatSimulation();
             l("updateddddddddddd")
         } else {
             ee("not updateddddddddddd")
         }
 
-    }, [c.repulsive_Force_Scale]);
+    }, [a]);
 
 
     const distance = (node1, node2) => {
