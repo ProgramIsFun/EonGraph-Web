@@ -81,7 +81,7 @@ function BuildGraph(props) {
     let nc = dd.nodes
     let lc = dd.links
 
-    let a=c.repulsive_Force_Scale
+    let a=c.TwoD_repulsive_Force_Scale
     useEffect(() => {
         if (fgRef.current) {
             fgRef.current.d3Force('charge').strength(a)
