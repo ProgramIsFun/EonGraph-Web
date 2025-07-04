@@ -289,12 +289,13 @@ function BuildGraph(props) {
 
     }
 
-    let node_font_size=c.node_font_size
-    let global_scale_adjustment_coefficient=c.global_scale_adjustment_coefficient
-    let linkWidth=c.linkWidth
-    let linkDirectionalParticles=c.linkDirectionalParticles
-    let linkDirectionalParticleWidth=c.linkDirectionalParticleWidth
-    let linkDirectionalParticleSpeed=c.linkDirectionalParticleSpeed
+    let node_font_size=c.TwoD_node_font_size
+    let global_scale_adjustment_coefficient=c.TwoD_global_scale_adjustment_coefficient
+    let linkWidth=c.TwoD_linkWidth
+    let linkDirectionalParticles=c.TwoD_linkDirectionalParticles
+    let linkDirectionalParticleWidth=c.TwoD_linkDirectionalParticleWidth
+    let linkDirectionalParticleSpeed=c.TwoD_linkDirectionalParticleSpeed
+
     return <>
 
 
