@@ -8,7 +8,7 @@ import * as firebase from 'firebase/app'
 import {calculateCollapseddd, datassss, keydownnnnnn} from "../util/helperfile";
 import TextNode from "./MainGraphDir/TextNode";
 import BuildGraph from "./MainGraphDir/BuildGraph";
-import FloatingControlPanel from "./widgets/FloatingControlPanel";
+import FloatingControlPanel from "./widgets/ControlPanel";
 import {v4 as uuidv4} from "uuid";
 import {ObjectTable} from "./widgets/smallTable";
 import _ from "lodash";
