@@ -70,7 +70,6 @@ function Graph(props) {
         "linkDirectionalParticleSpeed": 0.002
     })
 
-    const [usingNEO4J, setUsingNEO4J] = useState(true)
     const [objectToBeInspected, setObjectToBeInspected] = useState({})
 
     const collapseddd = useMemo(calculateCollapseddd(dd), [dd]);
@@ -472,8 +471,6 @@ function Graph(props) {
                 fileContent={fileContent}
                 setFileContent={setFileContent}
                 fetchData11={fetchData11}
-                usingNEO4J={usingNEO4J}
-                setUsingNEO4J={setUsingNEO4J}
                 fgRef={fgRef}
                 useremote={useremote}
                 setUseremote={setUseremote}
