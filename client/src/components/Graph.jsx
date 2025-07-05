@@ -14,6 +14,7 @@ import {ObjectTable} from "./widgets/NodeTable";
 import _ from "lodash";
 import {l} from "../util/log11";
 import {connect, useDispatch} from "react-redux";
+import {CHANGE_DATA} from "../actions/types";
 
 
 function Graph(props) {
@@ -170,7 +171,7 @@ function Graph(props) {
         const clonedObject = _.cloneDeep(datassss);
 
         dispatch({
-            type: "CHANGE_DATA",
+            type: CHANGE_DATA,
             payload: {
                 nodes: clonedObject.nodes,
                 links: clonedObject.links
@@ -412,7 +413,7 @@ function Graph(props) {
 
     const emptyGraph = async () => {
         dispatch({
-            type: "CHANGE_DATA",
+            type: CHANGE_DATA,
             payload: {
                 nodes: [],
                 links: []
@@ -436,7 +437,7 @@ function Graph(props) {
 
             // setdd(jsonData);
             dispatch({
-                type: "CHANGE_DATA",
+                type: CHANGE_DATA,
                 payload: {
                     nodes: jsonData.nodes,
                     links: jsonData.links
