@@ -404,8 +404,7 @@ function BuildGraph(props) {
                 linkDirectionalParticleSpeed={linkDirectionalParticleSpeed}
 
 
-                ///////////////////////////////////////////////////////////////////////
-
+                // nodes
 
                 nodeCanvasObjectMode={
                     node => {
