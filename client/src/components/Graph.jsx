@@ -5,7 +5,7 @@ import TextNodeVR from "./MainGraphDir/VR";
 import {dbbbbb, repoooooo} from "../firebase/firebase";
 
 import * as firebase from 'firebase/app'
-import {calculateCollapseddd, datassss, keydownnnnnn} from "../util/helperfile";
+import {calculateCollapseddd, datassss, keydownnnnnn, rawdata} from "../util/helperfile";
 import TextNode from "./MainGraphDir/TextNode";
 import BuildGraph from "./MainGraphDir/BuildGraph";
 import FloatingControlPanel from "./widgets/ControlPanel";
@@ -16,12 +16,6 @@ import {l} from "../util/log11";
 import {connect, useDispatch} from "react-redux";
 import {CHANGE_DATA} from "../actions/types";
 
-
-function rawdata(jsonData) {
-    let stringified = JSON.stringify(jsonData)
-    const obj = JSON.parse(stringified);
-    l("obj", obj)
-}
 
 function Graph(props) {
     const dispatch = useDispatch();
