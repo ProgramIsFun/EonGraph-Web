@@ -16,7 +16,7 @@ import {l} from "../util/log11";
 import {connect, useDispatch} from "react-redux";
 
 
-function Home(props) {
+function Graph(props) {
     const dispatch = useDispatch();
 
     const [globalscale, setglobalscale] = useState(1)
@@ -541,4 +541,4 @@ function Home(props) {
 }
 
 
-export default connect(state => state, {})(Home);
+export default connect(state => state, {})(Graph);

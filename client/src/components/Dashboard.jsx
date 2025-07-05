@@ -1,5 +1,5 @@
 import React, {Component, useEffect, useState} from 'react';
-import Home from "./Home";
+import Home from "./Graph";
 import { connect } from 'react-redux';
 import {l} from "../util/log11";
 
