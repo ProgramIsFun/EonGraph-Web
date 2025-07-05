@@ -1,3 +1,8 @@
+// avoid doing state calculations inside your action creators (or thunks)
+// , even after asynchronous API calls.
+//     Instead, you should dispatch an action describing what happened,
+//     and let the reducer calculate the next state
+
 import {
     CHANGE_SETTINGS,
     CHANGE_DATA,
