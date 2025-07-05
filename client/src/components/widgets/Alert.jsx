@@ -9,10 +9,6 @@ const Alert111 = ({ alerts }) =>
     </div>
   ));
 
-Alert111.propTypes = {
-  alerts: PropTypes.array.isRequired
-};
-
 const mapStateToProps = (state) => ({
   alerts: state.alert
 });

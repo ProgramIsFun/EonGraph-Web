@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
 import Dashboard2 from "./components/Dashboard2";
-import Alert from './layout/Alert';
+import Alert from './components/widgets/Alert';
 
 function App() {
     return (
