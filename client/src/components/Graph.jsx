@@ -17,6 +17,12 @@ import {connect, useDispatch} from "react-redux";
 import {CHANGE_DATA} from "../actions/types";
 
 
+function rawdata(jsonData) {
+    let stringified = JSON.stringify(jsonData)
+    const obj = JSON.parse(stringified);
+    l("obj", obj)
+}
+
 function Graph(props) {
     const dispatch = useDispatch();
 
@@ -259,8 +265,6 @@ function Graph(props) {
             case 2:
                 component = <TextNodeVR dd={dd}
                                         c={c}
-
-
                 />;
                 break;
             case 3:
@@ -419,7 +423,6 @@ function Graph(props) {
                 links: []
             }
         } )
-        // setdd({nodes: [], links: []})
     }
     const fetchData11 = async () => {
         try {
@@ -428,10 +431,7 @@ function Graph(props) {
             l("fetching data from ", b + '/api/v0/return_all_nodes111')
             const response = await fetch(b + '/api/v0/return_all_nodes111');
             const jsonData = await response.json();
-
-            let stringified = JSON.stringify(jsonData)
-            const obj = JSON.parse(stringified);
-            l("obj", obj)
+            rawdata(jsonData);
 
             jsonData.nodes.forEach(node => {
                     node.id = node.user_generate_id_7577777777
