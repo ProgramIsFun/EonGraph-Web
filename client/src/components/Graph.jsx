@@ -425,17 +425,19 @@ function Graph(props) {
         try {
             let b = useremote ? backendurl2 : backendurl
 
-            l("2222222fetching data from ", b + '/api/v0/return_all_nodes111')
+            l("fetching data from ", b + '/api/v0/return_all_nodes111')
             const response = await fetch(b + '/api/v0/return_all_nodes111');
             const jsonData = await response.json();
-            l("jsonData", jsonData)
+
+            let stringified = JSON.stringify(jsonData)
+            const obj = JSON.parse(stringified);
+            l("obj", obj)
 
             jsonData.nodes.forEach(node => {
                     node.id = node.user_generate_id_7577777777
                 }
             )
 
-            // setdd(jsonData);
             dispatch({
                 type: CHANGE_DATA,
                 payload: {
