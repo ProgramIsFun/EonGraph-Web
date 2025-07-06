@@ -318,6 +318,11 @@ function BuildGraph(props) {
         } :
         undefined;
     let onNodeClick = 1 ? Focus : Normalclick;
+    let onNodeRightClick = (node) => {
+        if (1) {
+            removeNode(node)
+        }
+    };
     return <>
 
 
@@ -338,15 +343,9 @@ function BuildGraph(props) {
 
                 //click
 
-                onNodeClick={
-                    onNodeClick
-                }
+                onNodeClick={onNodeClick}
                 onNodeRightClick={
-                    (node) => {
-                        if (1) {
-                            removeNode(node)
-                        }
-                    }
+                    onNodeRightClick
                 }
                 onLinkClick={
 
