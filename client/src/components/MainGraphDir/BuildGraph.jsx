@@ -308,6 +308,9 @@ function BuildGraph(props) {
         dispatch({ type: ADD_NODE, payload: newNode });
         updateGraphData();
     }
+
+
+
     let node_font_size=c.TwoD_node_font_size
     let global_scale_adjustment_coefficient=c.TwoD_global_scale_adjustment_coefficient
     let linkWidth=c.TwoD_linkWidth
@@ -315,6 +318,7 @@ function BuildGraph(props) {
     let linkDirectionalParticleWidth=c.TwoD_linkDirectionalParticleWidth
     let linkDirectionalParticleSpeed=c.TwoD_linkDirectionalParticleSpeed
 
+    let onNodeDrag = enableDragging ? dragFun : undefined;
     return <>
 
 
@@ -330,7 +334,7 @@ function BuildGraph(props) {
                 //drag
 
                 onNodeDrag={
-                    enableDragging ? dragFun : undefined
+                    onNodeDrag
                 }
 
                 onNodeDragEnd={
