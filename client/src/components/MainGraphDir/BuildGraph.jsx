@@ -149,11 +149,9 @@ function BuildGraph(props) {
 
 
     ////////////////////////////////////////////////////////////////////////////////
-    const nnn2 = useCallback(node => {
+    const Focus = useCallback(node => {
         // Aim at node from outside it
         let m = "2d"
-
-
         if (m == "3d") {
             const distance = 40;
             const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
@@ -166,12 +164,10 @@ function BuildGraph(props) {
             fgRef.current.centerAt(node.x, node.y, 1000);
             fgRef.current.zoom(8, 2000);
         }
-
-
     }, [fgRef]);
 
 
-    const nnn = (node) => {
+    const Normalclick  = (node) => {
 
         console.log("received node click", node)
 
@@ -222,10 +218,7 @@ function BuildGraph(props) {
 
                     setObjectToBeInspected({})
                 }
-
             }
-
-
         } else {
             rename(node, 'nodeeeeeee')
         }
@@ -348,7 +341,7 @@ function BuildGraph(props) {
                 //click
 
                 onNodeClick={
-                    0 ? nnn2 : nnn
+                    1 ? Focus : Normalclick
                 }
                 onNodeRightClick={
                     (node) => {
