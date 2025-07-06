@@ -168,10 +168,7 @@ function BuildGraph(props) {
 
 
     const Normalclick  = (node) => {
-
         console.log("received node click", node)
-
-
         if (1) {
 
             if (objectToBeInspected === node) {
@@ -186,7 +183,7 @@ function BuildGraph(props) {
                 setHoverNode(node)
 
             } else {
-                l("")
+                
                 // Check if the link already exists
                 let shouldAddLink = false;
 
