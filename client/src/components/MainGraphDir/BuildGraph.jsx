@@ -5,7 +5,7 @@ import {v4 as uuidv4} from 'uuid';
 import {draggggggg, removeNodeAndRelatedLinks} from "../../util/helperfile";
 import {ee, l} from "../../util/log11";
 import {connect} from "react-redux";
-import { useDispatch } from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
 
 
@@ -23,8 +23,6 @@ function BuildGraph(props) {
 
     // l("we're using a ref because we want to store something and some time not to rerender the whole thing.")
     const fgRef = props.fgRef
-
-
 
 
     const collapseddd = props.collapseddd
@@ -81,7 +79,7 @@ function BuildGraph(props) {
     let nc = dd.nodes
     let lc = dd.links
 
-    let a=c.TwoD_repulsive_Force_Scale
+    let a = c.TwoD_repulsive_Force_Scale
     useEffect(() => {
         if (fgRef.current) {
             fgRef.current.d3Force('charge').strength(a)
@@ -107,7 +105,10 @@ function BuildGraph(props) {
     };
 
     const removeLink = link => {
-        if (!link.id) { l("link has no id", link); return; }
+        if (!link.id) {
+            l("link has no id", link);
+            return;
+        }
         const remaininglinks = dd.links.filter(l => l.id !== link.id);
         l("remaining links length", remaininglinks.length, "link id", link.id, "dd links length", dd.links.length)
         setdd(
@@ -115,7 +116,7 @@ function BuildGraph(props) {
                 return {...prev, links: remaininglinks}
             }
         );
-        dispatch({ type: CHANGE_LINKS, payload: remaininglinks })
+        dispatch({type: CHANGE_LINKS, payload: remaininglinks})
 
     };
 
@@ -290,8 +291,7 @@ function BuildGraph(props) {
     }
 
 
-
-    let onBackgroundClick=event => {
+    let onBackgroundClick = event => {
         console.log("received background click")
         //https://github.com/vasturiano/react-force-graph/issues/378
         // use screen2GraphCoords to get the graph coordinates of the click
@@ -305,18 +305,17 @@ function BuildGraph(props) {
             name: `node_${nodeId}`,
             ...(fixing && {fx: coords.x, fy: coords.y})
         };
-        dispatch({ type: ADD_NODE, payload: newNode });
+        dispatch({type: ADD_NODE, payload: newNode});
         updateGraphData();
     }
 
 
-
-    let node_font_size=c.TwoD_node_font_size
-    let global_scale_adjustment_coefficient=c.TwoD_global_scale_adjustment_coefficient
-    let linkWidth=c.TwoD_linkWidth
-    let linkDirectionalParticles=c.TwoD_linkDirectionalParticles
-    let linkDirectionalParticleWidth=c.TwoD_linkDirectionalParticleWidth
-    let linkDirectionalParticleSpeed=c.TwoD_linkDirectionalParticleSpeed
+    let node_font_size = c.TwoD_node_font_size
+    let global_scale_adjustment_coefficient = c.TwoD_global_scale_adjustment_coefficient
+    let linkWidth = c.TwoD_linkWidth
+    let linkDirectionalParticles = c.TwoD_linkDirectionalParticles
+    let linkDirectionalParticleWidth = c.TwoD_linkDirectionalParticleWidth
+    let linkDirectionalParticleSpeed = c.TwoD_linkDirectionalParticleSpeed
 
     let onNodeDrag = enableDragging ? dragFun : undefined;
     let onNodeDragEnd = enableDragging
@@ -325,7 +324,6 @@ function BuildGraph(props) {
             dragSourceNode.current = null;
             interimLink.current = null;
             updateGraphData();
-
 
         } :
         undefined;
@@ -345,9 +343,7 @@ function BuildGraph(props) {
 
                 onNodeDrag={onNodeDrag}
 
-                onNodeDragEnd={
-                    onNodeDragEnd
-}
+                onNodeDragEnd={onNodeDragEnd}
 
                 //click
 
