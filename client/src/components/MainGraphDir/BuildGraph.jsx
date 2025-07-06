@@ -183,7 +183,7 @@ function BuildGraph(props) {
                 setHoverNode(node)
 
             } else {
-                
+
                 // Check if the link already exists
                 let shouldAddLink = false;
 
@@ -231,7 +231,7 @@ function BuildGraph(props) {
     let enableDragging = false
 
 
-    const lll = (node, ctx, globalScale) => {
+    const nodeCanvasObject = (node, ctx, globalScale) => {
 
         if (1) {
             paintRing(node, ctx);
@@ -393,7 +393,7 @@ function BuildGraph(props) {
                 }
 
                 nodeCanvasObject={
-                    lll
+                    nodeCanvasObject
                 }
 
                 nodePointerAreaPaint={(node, color, ctx) => {
