@@ -319,6 +319,16 @@ function BuildGraph(props) {
     let linkDirectionalParticleSpeed=c.TwoD_linkDirectionalParticleSpeed
 
     let onNodeDrag = enableDragging ? dragFun : undefined;
+    let onNodeDragEnd = enableDragging
+        ?
+        () => {
+            dragSourceNode.current = null;
+            interimLink.current = null;
+            updateGraphData();
+
+
+        } :
+        undefined;
     return <>
 
 
@@ -333,21 +343,11 @@ function BuildGraph(props) {
 
                 //drag
 
-                onNodeDrag={
-                    onNodeDrag
-                }
+                onNodeDrag={onNodeDrag}
 
                 onNodeDragEnd={
-                    enableDragging
-                        ?
-                        () => {
-                            dragSourceNode.current = null;
-                            interimLink.current = null;
-                            updateGraphData();
-
-
-                        } :
-                        undefined}
+                    onNodeDragEnd
+}
 
                 //click
 
