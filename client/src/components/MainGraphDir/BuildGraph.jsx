@@ -367,9 +367,7 @@ function BuildGraph(props) {
 
                 }
                 onLinkRightClick={(link) => removeLink(link)}
-                onBackgroundClick={
-                    onBackgroundClick
-                }
+                onBackgroundClick={onBackgroundClick}
 
                 //links
                 linkDirectionalArrowLength={1 ? undefined : 8}
