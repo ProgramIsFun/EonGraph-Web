@@ -545,7 +545,12 @@ export function keydownnnnnn(
             rename(objectToBeInspected, "node")
         }
         if (event.key === 'd') {
-            await removegithubRepoNode(objectToBeInspected, dd, setdd, setObjectToBeInspected);
+            await removegithubRepoNode(
+                objectToBeInspected,
+                dd,
+                setdd,
+                setObjectToBeInspected
+            );
         }
 
         if (event.key === '`') {

@@ -6,7 +6,7 @@
 import {
     CHANGE_SETTINGS,
     CHANGE_DATA,
-    CHANGE_LINKS, CHANGE_USING_NEO4J
+    CHANGE_LINKS, CHANGE_USING_NEO4J, ADD_NODE
 } from '../actions/types';
 
 export const cccccccccc = {
@@ -102,6 +102,16 @@ function all33Reducer(state = initialState, action) {
                     links: payload.links
                 }
             };
+
+        case ADD_NODE:
+            return {
+                ...state,
+                dd: {
+                    ...state.dd,
+                    nodes: [...state.dd.nodes, payload]
+                }
+            };
+
         case CHANGE_LINKS:
             return {
                 ...state,
