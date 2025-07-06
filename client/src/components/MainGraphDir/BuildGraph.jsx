@@ -374,10 +374,7 @@ function BuildGraph(props) {
                     onBackgroundClick
                 }
 
-
                 //links
-
-
                 linkDirectionalArrowLength={1 ? undefined : 8}
                 linkDirectionalArrowRelPos={1 ? undefined : 1}
 
