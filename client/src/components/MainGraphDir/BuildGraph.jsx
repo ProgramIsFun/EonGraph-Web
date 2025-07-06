@@ -323,6 +323,11 @@ function BuildGraph(props) {
             removeNode(node)
         }
     };
+    let onLinkClick = (link) => {
+        if (0) {
+            rename(link, 'link')
+        }
+    };
     return <>
 
 
@@ -347,11 +352,7 @@ function BuildGraph(props) {
                 onNodeRightClick={onNodeRightClick}
                 onLinkClick={
 
-                    (link) => {
-                        if (0) {
-                            rename(link, 'link')
-                        }
-                    }
+                    onLinkClick
                 }
                 onLinkRightClick={(link) => removeLink(link)}
                 onBackgroundClick={onBackgroundClick}
