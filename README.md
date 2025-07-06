@@ -1,12 +1,12 @@
 # force-graph-visualizer-and-editor
 
+## dev log
 
-One major task right now is to upgrade to use VITE instead of CRA 
+https://github.com/ProgramIsFun/force-graph-visualizer-and-editor/blob/8036c6306726cad4b7c1bd167d0bd16681f2a6d1/client/package.json#L25 Using a modified version because https://github.com/vasturiano/react-force-graph/issues/582#issuecomment-2978644840
 
 ## What is this project?
 
 project aims to provide an editing and visualizations of a forced directed graph.
-
 
 ## Introduction
 In very simple English, this project is for you to edit a graph in a 2D space, and you can also visualize the graph in a 3D space.
@@ -27,13 +27,7 @@ This project originally want to make me organize all my projects and repositorie
 
 
 ## How to run in dev mode
-
-1. You need to have a firebase project. Grab the credentials from the website. 
-   go to client/src/firebase/config1_Example.js, replace credentials with your own firebase credentials.  Rename the file into config1.js.
-
-   (make sure firestore is enabled)
-   (make sure firebase github auth is enabled ( ref https://firebase.google.com/docs/auth/web/github-auth ), firebase will specify the callback url that YOU HAVE TO SET IN GITHUB OAUTH APP )
-   (for my ref https://github.com/ProgramIsFun/github-repos-visualizer/blob/347604b23cc839086caa4dda1d1c0386a5fc5461/client/src/firebase/firebase.js#L16)
+1. clone the repo
 
 2a. if u dont use docker, you can run the app by running the following command in client directory:
 

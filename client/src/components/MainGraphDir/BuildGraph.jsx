@@ -317,7 +317,7 @@ function BuildGraph(props) {
 
         } :
         undefined;
-    let onNodeClick = 1 ? Focus : Normalclick;
+    let onNodeClick = 0 ? Focus : Normalclick;
     let onNodeRightClick = (node) => {
         if (1) {
             removeNode(node)
