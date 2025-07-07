@@ -396,5 +396,7 @@ const ControlPanel = (props) => {
     );
 };
 
-export default connect(state => state, {changeSetting}
+export default connect(
+    state => state,
+    {changeSetting}
 )(ControlPanel);
