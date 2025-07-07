@@ -36,7 +36,8 @@ function Graph(props) {
     const [istreemaxlevelrestricted, setistreemaxlevelrestricted] = useState(false)
     const [treemaxlevel, settreemaxlevel] = useState(3)
 
-    const [graphtypeee, setgraphtypeee] = useState(4)
+    const [graphtypeee2, setgraphtypeee] = useState(4)
+    let graphtypeee = all33.graphtypeee;
     const [repo, setrepo] = useState(0)
     const [notice, setnotice] = useState("")
 
@@ -433,8 +434,10 @@ function Graph(props) {
                 setFileContent2={setFileContent2}
                 dd={dd}
                 setdd={setdd}
+
                 setpage={setgraphtypeee}
                 page={graphtypeee}
+
                 getRepoData={getRepoData}
                 setrepo={setrepo}
                 fileContent={fileContent}

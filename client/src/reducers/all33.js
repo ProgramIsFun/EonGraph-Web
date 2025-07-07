@@ -88,7 +88,10 @@ const initialState = {
 
     localbackendurl: 'http://localhost:5000',
     remotebackendurl: "https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net",
-    useremote: false // true means use remote backend, false means use local backend
+    useremote: false, // true means use remote backend, false means use local backend
+
+    graphtypeee:4
+
 };
 
 function all33Reducer(state = initialState, action) {
@@ -147,6 +150,11 @@ function all33Reducer(state = initialState, action) {
             return {
                 ...state,
                 useremote: payload
+            };
+        case 'SET_GRAPHTYPEEE':
+            return {
+                ...state,
+                graphtypeee: payload
             };
         default:
             return state;

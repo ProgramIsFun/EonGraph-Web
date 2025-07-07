@@ -31,7 +31,6 @@ const ControlPanel = (props) => {
     const setdd = props.setdd;
 
 
-    const setpage = props.setpage;
     const page = props.page;
     const getRepoData = props.getRepoData;
     const setrepo = props.setrepo;
@@ -213,9 +212,41 @@ const ControlPanel = (props) => {
                     <br></br>
                     <br></br>
                     <>view mode control</>
-                    <button id="emit-particles-btn" onClick={() => setpage(0)}>3d</button>
-                    <button id="emit-particles-btn" onClick={() => setpage(2)}>3d-vr</button>
-                    <button id="emit-particles-btn" onClick={() => setpage(4)}>2d-build</button>
+                    <button id="emit-particles-btn" onClick={
+                        () => {
+
+                            dispatch({"type": "SET_GRAPHTYPEEE",
+                                payload: 0
+                            }
+                            );
+
+
+                        }
+
+                    }>3d</button>
+                    <button id="emit-particles-btn" onClick={
+
+                        () => {
+                            dispatch({"type": "SET_GRAPHTYPEEE",
+                                payload: 2
+                            }
+                            );
+
+
+                        }
+
+
+                    }>3d-vr</button>
+                    <button id="emit-particles-btn" onClick={() =>
+                        {
+                            dispatch({"type": "SET_GRAPHTYPEEE",
+                                payload: 4
+                            }
+                            );
+
+                        }
+
+                    }>2d-build</button>
 
                     <br></br>
 
