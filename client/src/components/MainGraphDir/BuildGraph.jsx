@@ -178,10 +178,7 @@ function BuildGraph(props) {
                 if (objectToBeInspected === node) {
                     l("clicked on the same node, unsetting objectToBeInspected")
                     setObjectToBeInspected({})
-
                 } else {
-
-
                     // Check if the link already exists
                     let shouldAddLink = false;
                     // check if any link in the links have the same source and target.
