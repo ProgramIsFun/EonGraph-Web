@@ -8,7 +8,7 @@ import {l} from "../../util/log11";
 import {connect} from "react-redux";
 
 function VR(props) {
-    let dd = props.dd;
+    let dd = props.all33.dd;
     let c2 = props.c;
     let c=props.all33.settings;
 
