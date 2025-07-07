@@ -140,9 +140,7 @@ function Graph(props) {
             l("removing event listeners for keydown and wheel");
             window.removeEventListener('keydown', handleKeyDown);
             window.removeEventListener('wheel', handleScroll);
-
         };
-
     }, [objectToBeInspected, link111, dd, graphtypeee]); // Empty dependency array means this effect runs once on mount
 
 
