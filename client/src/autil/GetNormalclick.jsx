@@ -1,5 +1,5 @@
-import {l} from "../../autil/log11";
-import {CHANGE_LINKS, SET_OBJECT_TO_BE_INSPECTED} from "../../actions/types";
+import {l} from "./log11";
+import {CHANGE_LINKS, SET_OBJECT_TO_BE_INSPECTED} from "../actions/types";
 import {v4 as uuidv4} from "uuid";
 
 export function getNormalclick(objectToBeInspected, dispatch, dd, rename) {
