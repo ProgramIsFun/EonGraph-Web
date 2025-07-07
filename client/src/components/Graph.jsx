@@ -240,14 +240,8 @@ function Graph(props) {
             case 0:
                 component = <ReactForceGraph dd={dd} fgRef={fgRef}/>;
                 break;
-            case 1:
-                component = <HighLight dd={dd}/>;
-                break;
             case 2:
                 component = <VR/>;
-                break;
-            case 3:
-                component = <TextNode dd={dd}/>;
                 break;
             case 4:
                 component = <BuildGraph dd={dd}
