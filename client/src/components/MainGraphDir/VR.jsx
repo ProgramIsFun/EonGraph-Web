@@ -9,7 +9,7 @@ import {connect} from "react-redux";
 
 function VR(props) {
     let dd = props.all33.dd;
-    let c2 = props.c;
+
     let c=props.all33.settings;
 
     let a1=()=>{
