@@ -13,7 +13,7 @@ function BuildGraph(props) {
     l("BuildGraph props1", props)
 
     const dispatch = useDispatch();
-    let all33= props.all33
+    let all33 = props.all33
     let c = all33.settings
     const dd = all33.dd
     // l("BuildGraph props",  dd)
@@ -42,7 +42,7 @@ function BuildGraph(props) {
         let b = node === objectToBeInspected;
         if (!(b || node.collapsed)) {
             // l("node is not objectToBeInspected or collapsed, skipping paintRing", node.id, "objectToBeInspected", objectToBeInspected.id)
-        }else{
+        } else {
             l("trigger")
             const NODE_R = 8;
 
@@ -116,7 +116,7 @@ function BuildGraph(props) {
 
     const removeNode = node => {
         if (1) {
-            removeNodeAndRelatedLinks(dd, node, setdd,dispatch);
+            removeNodeAndRelatedLinks(dd, node, setdd, dispatch);
         } else {
             l("before remove node: lc length", lc.length, "nc length", nc.length)
             let lc2 = lc.filter(
@@ -187,13 +187,13 @@ function BuildGraph(props) {
                             )
                             if (lll) {
                                 l("link already exists!!!!!!!!!", link.source.id, objectToBeInspected.id, link.target.id, node.id)
-                            }else{
+                            } else {
 
                             }
                             return lll
                         }
                     );
-                    shouldAddLink =!some
+                    shouldAddLink = !some
                     if (shouldAddLink) {
                         let linkId = uuidv4()
                         l("objectToBeInspected.id", objectToBeInspected.id, "node.id", node.id)
@@ -203,10 +203,17 @@ function BuildGraph(props) {
                             target: node.id,
                             name: 'link_' + linkId
                         };
-                        setdd(prevNc => ({
-                            ...prevNc, // Spread to copy other properties of nc, if there are any
-                            links: [...prevNc.links, interimLink], // Create a new array with all old nodes plus the new one
-                        }));
+                        // setdd(prevNc => ({
+                        //     ...prevNc, // Spread to copy other properties of nc, if there are any
+                        //     links: [...prevNc.links, interimLink], // Create a new array with all old nodes plus the new one
+                        // }));
+                        dispatch({
+                            type: CHANGE_LINKS, payload: [
+                                    ...dd.links, interimLink
+
+                            ]
+                        })
+
 
                         dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: {}})
                     }
