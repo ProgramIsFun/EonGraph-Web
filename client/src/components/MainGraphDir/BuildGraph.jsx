@@ -2,8 +2,8 @@ import React, {useCallback, useEffect, useRef} from 'react';
 import {ForceGraph2D} from "react-force-graph";
 
 import {v4 as uuidv4} from 'uuid';
-import {draggggggg, removeNodeAndRelatedLinks} from "../../util/helperfile";
-import {ee, l} from "../../util/log11";
+import {draggggggg, removeNodeAndRelatedLinks} from "../../autil/helperfile";
+import {ee, l} from "../../autil/log11";
 import {connect, useDispatch} from "react-redux";
 import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
 import {getNormalclick} from "./GetNormalclick";

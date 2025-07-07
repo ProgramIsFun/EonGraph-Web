@@ -1,4 +1,4 @@
-import {l} from "../../util/log11";
+import {l} from "../../autil/log11";
 import {CHANGE_LINKS, SET_OBJECT_TO_BE_INSPECTED} from "../../actions/types";
 import {v4 as uuidv4} from "uuid";
 

@@ -3592,10 +3592,10 @@ snapshots:
   '@firebase/auth@0.15.0(@firebase/app-types@0.6.1)(@firebase/app@0.6.11)(@firebase/util@0.3.2)':
     dependencies:
       '@firebase/app': 0.6.11
-      '@firebase/auth-types': 0.10.1(@firebase/app-types@0.6.1)(@firebase/util@0.3.2)
+      '@firebase/auth-types': 0.10.1(@firebase/app-types@0.6.1)(@firebase/autil@0.3.2)
     transitivePeerDependencies:
       - '@firebase/app-types'
-      - '@firebase/util'
+      - '@firebase/autil'
 
   '@firebase/component@0.1.19':
     dependencies:
@@ -3608,7 +3608,7 @@ snapshots:
 
   '@firebase/database@0.6.13(@firebase/app-types@0.6.1)':
     dependencies:
-      '@firebase/auth-interop-types': 0.1.5(@firebase/app-types@0.6.1)(@firebase/util@0.3.2)
+      '@firebase/auth-interop-types': 0.1.5(@firebase/app-types@0.6.1)(@firebase/autil@0.3.2)
       '@firebase/component': 0.1.19
       '@firebase/database-types': 0.5.2
       '@firebase/logger': 0.2.6
@@ -3721,7 +3721,7 @@ snapshots:
       '@firebase/app': 0.6.11
       '@firebase/app-types': 0.6.1
       '@firebase/component': 0.1.19
-      '@firebase/storage-types': 0.3.13(@firebase/app-types@0.6.1)(@firebase/util@0.3.2)
+      '@firebase/storage-types': 0.3.13(@firebase/app-types@0.6.1)(@firebase/autil@0.3.2)
       '@firebase/util': 0.3.2
       tslib: 1.14.1
 
@@ -5022,7 +5022,7 @@ snapshots:
       '@firebase/analytics': 0.6.0(@firebase/app-types@0.6.1)(@firebase/app@0.6.11)
       '@firebase/app': 0.6.11
       '@firebase/app-types': 0.6.1
-      '@firebase/auth': 0.15.0(@firebase/app-types@0.6.1)(@firebase/app@0.6.11)(@firebase/util@0.3.2)
+      '@firebase/auth': 0.15.0(@firebase/app-types@0.6.1)(@firebase/app@0.6.11)(@firebase/autil@0.3.2)
       '@firebase/database': 0.6.13(@firebase/app-types@0.6.1)
       '@firebase/firestore': 1.18.0(@firebase/app-types@0.6.1)(@firebase/app@0.6.11)
       '@firebase/functions': 0.5.1(@firebase/app-types@0.6.1)(@firebase/app@0.6.11)
