@@ -4,12 +4,13 @@ import JsonView from '@uiw/react-json-view';
 
 import {removegithubRepoNode, rename} from "../../util/helperfile";
 import {l} from "../../util/log11";
-import {connect} from "react-redux";
+import {connect, useDispatch} from "react-redux";
 
 
 // use the component in your app!
 const ObjectTable = (props) => {
     // Convert object entries into an array of [key, value] pairs for easy mapping
+    const dispatch = useDispatch();
 
     let dd = props.dd;
     let setdd = props.setdd;
@@ -90,7 +91,7 @@ const ObjectTable = (props) => {
         "--w-rjv-type-undefined-color": "#569cd6"
     }
     let aaaaaaa1 = async () => {
-        await removegithubRepoNode(objectToBeInspected, dd, setdd, setObjectToBeInspected);
+        await removegithubRepoNode(objectToBeInspected, dd, setdd, dispatch);
     }
     return (
         <div>

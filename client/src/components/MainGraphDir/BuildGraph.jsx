@@ -121,7 +121,7 @@ function BuildGraph(props) {
 
     const removeNode = node => {
         if (1) {
-            removeNodeAndRelatedLinks(dd, node, setdd, setObjectToBeInspected);
+            removeNodeAndRelatedLinks(dd, node, setdd,dispatch);
         } else {
             l("before remove node: lc length", lc.length, "nc length", nc.length)
             let lc2 = lc.filter(
@@ -171,12 +171,11 @@ function BuildGraph(props) {
             if (Object.keys(objectToBeInspected).length === 0) {
                 l("setting objectToBeInspected", node)
                 dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: node})
-
-
             } else {
                 if (objectToBeInspected === node) {
                     l("clicked on the same node, unsetting objectToBeInspected")
-                    setObjectToBeInspected({})
+
+                    dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: {}})
                 } else {
                     // Check if the link already exists
                     let shouldAddLink = false;
@@ -202,7 +201,8 @@ function BuildGraph(props) {
                             ...prevNc, // Spread to copy other properties of nc, if there are any
                             links: [...prevNc.links, interimLink], // Create a new array with all old nodes plus the new one
                         }));
-                        setObjectToBeInspected({})
+
+                        dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: {}})
                     }
 
 

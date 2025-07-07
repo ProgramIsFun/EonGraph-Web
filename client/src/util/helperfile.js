@@ -1,6 +1,7 @@
 import {Octokit} from "@octokit/core";
 import {v4 as uuidv4} from "uuid";
 import {l} from "./log11";
+import {SET_OBJECT_TO_BE_INSPECTED} from "../actions/types";
 
 export let datassss = {
     "nodes": [
@@ -429,8 +430,9 @@ export function draggggggg(linkIdCounter, interimLink, links, removeLink, dragSo
     return dragFun;
 }
 
-export function removeNodeAndRelatedLinks(dd, node, setdd, setObjectToBeInspected) {
-    setObjectToBeInspected({})
+export function removeNodeAndRelatedLinks(dd, node, setdd,dispatch) {
+    // setObjectToBeInspected({})
+    dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: node})
 
 
     console.log("Before remove node: links length", dd.links.length, "nodes length", dd.nodes.length);
@@ -451,7 +453,7 @@ export function removeNodeAndRelatedLinks(dd, node, setdd, setObjectToBeInspecte
     console.log("After remove node: links length", remainingLinks.length, "nodes length", remainingNodes.length);
 }
 
-export async function removegithubRepoNode(objectToBeInspected, dd, setdd, setObjectToBeInspected) {
+export async function removegithubRepoNode(objectToBeInspected, dd, setdd, dispatch) {
     try {
 
         const userResponse = window.confirm("Are you sure you want to delete?" + objectToBeInspected.name);
@@ -470,7 +472,7 @@ export async function removegithubRepoNode(objectToBeInspected, dd, setdd, setOb
             }
         })
         l("deleted")
-        removeNodeAndRelatedLinks(dd, objectToBeInspected, setdd, setObjectToBeInspected);
+        removeNodeAndRelatedLinks(dd, objectToBeInspected, setdd, dispatch);
         l("deleted1")
 
 
@@ -551,7 +553,7 @@ export function keydownnnnnn(
                     objectToBeInspected,
                     dd,
                     setdd,
-                    setObjectToBeInspected
+                    dispatch
                 );
             } else {
             }
