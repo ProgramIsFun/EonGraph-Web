@@ -6,39 +6,33 @@ import ReactDOM from 'react-dom/client';
 import aframe from 'aframe';
 
 
-
 import './index.css';
 
 
 import App from './App';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 import store from './store';
 
 
+let aaaaaaaappppppppp = <React.StrictMode>
+    {0 ?
 
-let aaaaaaaappppppppp=<React.StrictMode>
-    { 0?
 
-
-<></>
+        <></>
         :
 
         <Provider store={store}>
-                <App/>
+            <App/>
         </Provider>
-
-
-
 
 
     }
 </React.StrictMode>
 
 
-
-if (0){
+if (0) {
     ReactDOM1.render(aaaaaaaappppppppp, document.getElementById('root'));
-}else {
+} else {
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         aaaaaaaappppppppp
