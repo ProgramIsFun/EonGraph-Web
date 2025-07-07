@@ -12,10 +12,26 @@ function VR(props) {
     let c2 = props.c;
     let c=props.all33.settings;
     const newdd = (dd);
-
+    let a1=()=>{
+        var scene = document.querySelector('a-scene');
+        if (scene) {
+            // a-scene exists; now access camera
+            var cameraEl = scene.camera && scene.camera.el;
+            if (cameraEl && cameraEl.object3D && cameraEl.object3D.position) {
+                var position = cameraEl.object3D.position;
+                // use position here
+                console.log(position);
+            } else {
+                console.warn('Camera or its position is not available yet.');
+            }
+        } else {
+            console.warn('<a-scene> tag not found in the document.');
+        }
+    }
 
     let linkWidth= c.VR_linkWidth;
     return <>
+        <button onClick={a1}>Get Camera Position</button>
         <ForceGraphVR
             graphData={newdd}
             nodeAutoColorBy="group"
