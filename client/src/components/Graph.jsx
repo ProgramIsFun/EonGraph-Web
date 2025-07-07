@@ -54,16 +54,6 @@ function Graph(props) {
     const [search, setSearch] = useState("")
     const [filterdd, setFilterdd] = useState([])
 
-    const [c, setc] = useState({
-        "repulsive_Force_Scale": -100,
-        "node_font_size": 6,
-        "global_scale_adjustment_coefficient": 0.5,
-        "link_opacity": 0.6,
-        "linkWidth": 0.3,
-        "linkDirectionalParticles": 4,
-        "linkDirectionalParticleWidth": 2,
-        "linkDirectionalParticleSpeed": 0.002
-    })
 
     const [objectToBeInspected, setObjectToBeInspected] = useState({})
 
@@ -445,7 +435,6 @@ function Graph(props) {
     return (
         <>
             <FloatingControlPanel
-                c={c}
 
                 emptyGraph={emptyGraph}
                 loadSample={loadSample}
