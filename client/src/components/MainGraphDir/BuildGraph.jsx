@@ -6,7 +6,7 @@ import {draggggggg, removeNodeAndRelatedLinks} from "../../util/helperfile";
 import {ee, l} from "../../util/log11";
 import {connect} from "react-redux";
 import {useDispatch} from 'react-redux';
-import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
+import {ADD_NODE, CHANGE_LINKS, SET_OBJECT_TO_BE_INSPECTED} from "../../actions/types";
 
 
 function BuildGraph(props) {
@@ -173,8 +173,8 @@ function BuildGraph(props) {
             if (Object.keys(objectToBeInspected).length === 0) {
                 l("setting objectToBeInspected", node)
 
-                setObjectToBeInspected(node)
-
+                // setObjectToBeInspected(node)
+                dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: node})
 
                 setHoverNode(node)
             } else {
