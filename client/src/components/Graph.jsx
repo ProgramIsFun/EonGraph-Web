@@ -123,7 +123,8 @@ function Graph(props) {
     };
 
     useEffect(() => {
-        const handleKeyDown = keydownnnnnn(setObjectToBeInspected,
+        const handleKeyDown = keydownnnnnn(
+            setObjectToBeInspected,
             saveGraph,
             objectToBeInspected,
             dd,
@@ -137,6 +138,7 @@ function Graph(props) {
         window.addEventListener('wheel', handleScroll);
         // Cleanup
         return () => {
+            l("removing event listeners for keydown and wheel");
             window.removeEventListener('keydown', handleKeyDown);
             window.removeEventListener('wheel', handleScroll);
 
