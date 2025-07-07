@@ -141,12 +141,22 @@ const ObjectTable = (props) => {
                     }
                     {
                         1 ?
-                        <JsonView value={objectToBeInspected}
+                            <>
 
-                                  style={aaaaaaa}
-                        /> :
-                        <ReactJson src={props.objectToBeInspected}
-                        />
+                                {/*This will crash the website if in Vr mode*/}
+                                <JsonView value={objectToBeInspected}
+
+                                          style={aaaaaaa}
+                                />
+                            </>
+
+                            :
+                            <>
+                                <ReactJson
+                                    src={props.objectToBeInspected}
+                                />
+                            </>
+
                     }
 
 
