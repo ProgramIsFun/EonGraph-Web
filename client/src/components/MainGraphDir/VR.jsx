@@ -11,7 +11,7 @@ function VR(props) {
     let dd = props.dd;
     let c2 = props.c;
     let c=props.all33.settings;
-    const newdd = (dd);
+
     let a1=()=>{
         var scene = document.querySelector('a-scene');
         if (scene) {
@@ -33,7 +33,7 @@ function VR(props) {
     return <>
         <button onClick={a1}>Get Camera Position</button>
         <ForceGraphVR
-            graphData={newdd}
+            graphData={dd}
             nodeAutoColorBy="group"
 
             onNodeClick={(node, event) => {

@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo, useRef, useState} from "react";
 import HighLight from "./MainGraphDir/HighLight";
 import ReactForceGraph from "./MainGraphDir/ReactForceGraph";
-import TextNodeVR from "./MainGraphDir/VR";
+import VR from "./MainGraphDir/VR";
 import {dbbbbb, repoooooo} from "../firebase/firebase";
 
 import * as firebase from 'firebase/app'
@@ -256,7 +256,7 @@ function Graph(props) {
                 component = <HighLight dd={dd}/>;
                 break;
             case 2:
-                component = <TextNodeVR dd={dd}
+                component = <VR dd={dd}
                                         c={c}
                 />;
                 break;
