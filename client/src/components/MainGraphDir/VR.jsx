@@ -12,7 +12,7 @@ function VR(props) {
 
     let c=props.all33.settings;
 
-    let a1=()=>{
+    let getCameraPosition = () => {
         var scene = document.querySelector('a-scene');
         if (scene) {
             // a-scene exists; now access camera
@@ -31,7 +31,7 @@ function VR(props) {
 
     let linkWidth= c.VR_linkWidth;
     return <>
-        <button onClick={a1}>Get Camera Position</button>
+        <button onClick={getCameraPosition}>Get Camera Position</button>
         <ForceGraphVR
             graphData={dd}
             nodeAutoColorBy="group"
