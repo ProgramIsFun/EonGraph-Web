@@ -375,8 +375,6 @@ export const rename = (nodeOrLink, type) => {
 };
 
 export function draggggggg(linkIdCounter, interimLink, links, removeLink, dragSourceNode, nodes, distance) {
-
-
     const snapInDistance = 15;
     const snapOutDistance = 40;
     const setInterimLink = (source, target) => {
@@ -388,7 +386,6 @@ export function draggggggg(linkIdCounter, interimLink, links, removeLink, dragSo
             name: 'link_' + linkId
         };
         links.push(interimLink.current);
-
     };
     const removeInterimLinkWithoutAddingIt = () => {
         removeLink(interimLink.current);
