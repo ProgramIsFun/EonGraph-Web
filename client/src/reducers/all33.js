@@ -6,7 +6,7 @@
 import {
     CHANGE_SETTINGS,
     CHANGE_DATA,
-    CHANGE_LINKS, CHANGE_USING_NEO4J, ADD_NODE, SET_OBJECT_TO_BE_INSPECTED
+    CHANGE_LINKS, CHANGE_USING_NEO4J, ADD_NODE, SET_OBJECT_TO_BE_INSPECTED, SET_USEREMOTE
 } from '../actions/types';
 
 export const cccccccccc = {
@@ -81,7 +81,8 @@ const initialState = {
 
     objectToBeInspected: {},
     localbackendurl: 'http://localhost:5000',
-    remotebackendurl:"https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net"
+    remotebackendurl: "https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net"
+    useremote: false // true means use remote backend, false means use local backend
 };
 
 function all33Reducer(state = initialState, action) {
@@ -135,6 +136,11 @@ function all33Reducer(state = initialState, action) {
             return {
                 ...state,
                 objectToBeInspected: payload
+            };
+        case SET_USEREMOTE:
+            return {
+                ...state,
+                useremote: payload
             };
         default:
             return state;
