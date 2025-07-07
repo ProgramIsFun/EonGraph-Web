@@ -141,7 +141,6 @@ function Graph(props) {
             link111,
             lc,
             graphtypeee,
-            setc,
             dispatch
         );
         window.addEventListener('keydown', handleKeyDown);
