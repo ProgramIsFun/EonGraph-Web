@@ -80,6 +80,8 @@ const initialState = {
     usingNEO4J: true,
 
     objectToBeInspected: {},
+
+
     localbackendurl: 'http://localhost:5000',
     remotebackendurl: "https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net",
     useremote: false // true means use remote backend, false means use local backend

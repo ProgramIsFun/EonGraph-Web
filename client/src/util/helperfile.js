@@ -372,10 +372,9 @@ export const rename = (nodeOrLink, type) => {
         return;
     }
     nodeOrLink.name = value;
-    // updateGraphData();
 };
 
-export function draggggggg(linkIdCounter, interimLink, links, updateGraphData, removeLink, dragSourceNode, nodes, distance) {
+export function draggggggg(linkIdCounter, interimLink, links, removeLink, dragSourceNode, nodes, distance) {
 
 
     const snapInDistance = 15;
@@ -389,12 +388,12 @@ export function draggggggg(linkIdCounter, interimLink, links, updateGraphData, r
             name: 'link_' + linkId
         };
         links.push(interimLink.current);
-        updateGraphData();
+
     };
     const removeInterimLinkWithoutAddingIt = () => {
         removeLink(interimLink.current);
         interimLink.current = null;
-        updateGraphData();
+
     };
 
 
