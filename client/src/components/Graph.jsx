@@ -46,7 +46,7 @@ function Graph(props) {
     const [fileContent, setFileContent] = useState("aaaa");
     const [fileContent2, setFileContent2] = useState("aaaabbbbbb");
 
-    const [backendurl, setBackendurl] = useState("http://localhost:5000");
+    const [localbackendurl, setlocalbackendurl] = useState("http://localhost:5000");
     const [backendurl2, setBackendurl2] = useState("https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net");
     const [useremote, setUseremote] = useState(false);
 
@@ -417,7 +417,7 @@ function Graph(props) {
     }
     const fetchData11 = async () => {
         try {
-            let b = useremote ? backendurl2 : backendurl
+            let b = useremote ? backendurl2 : localbackendurl
 
             l("fetching data from ", b + '/api/v0/return_all_nodes111')
             const response = await fetch(b + '/api/v0/return_all_nodes111');
