@@ -5,7 +5,7 @@ import 'firebase/firestore';
 
 // import * as firebase from "firebase";
 import GitHub from "github-api";
-import {cgg} from "../autil/helperfile";
+import {cgg} from "../helperfile";
 import {firebaseConfig} from "./config1";
 import firebase from "firebase/app";
 

@@ -2,7 +2,7 @@ import React, {useEffect, useMemo, useRef, useState} from "react";
 import HighLight from "./MainGraphDir/HighLight";
 import ReactForceGraph from "./MainGraphDir/ReactForceGraph";
 import VR from "./MainGraphDir/VR";
-import {dbbbbb, repoooooo} from "../firebase/firebase";
+import {dbbbbb, repoooooo} from "../autil/firebase/firebase";
 
 import * as firebase from 'firebase/app'
 import {calculateCollapseddd, datassss, keydownnnnnn, rawdata} from "../autil/helperfile";
