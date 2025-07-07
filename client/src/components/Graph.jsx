@@ -257,7 +257,6 @@ function Graph(props) {
                                         fgRef={fgRef}
                                         checkExistInGraph={checkExistInGraph}
                                         returnListRepo={returnListRepo}
-                                        objectToBeInspected={objectToBeInspected}
                                         setObjectToBeInspected={setObjectToBeInspected}
                                         fixing={fixing}
                                         setFixing={setFixing}

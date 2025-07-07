@@ -20,7 +20,7 @@ function BuildGraph(props) {
     // const dd = props.dd
     let setdd = props.setdd
 
-    const objectToBeInspected = props.objectToBeInspected
+    const objectToBeInspected = all33.objectToBeInspected
 
     // l("we're using a ref because we want to store something and some time not to rerender the whole thing.")
     const fgRef = props.fgRef
@@ -41,11 +41,11 @@ function BuildGraph(props) {
             collapseddd
             :
             dd
-    const [hoverNode, setHoverNode] = useState(null);
 
     const paintRing = useCallback((node, ctx) => {
 
-        if (!(node === objectToBeInspected || node.collapsed)) {
+        let b = node === objectToBeInspected;
+        if (!(b || node.collapsed)) {
             // l("node is not objectToBeInspected or collapsed, skipping paintRing", node.id, "objectToBeInspected", objectToBeInspected.id)
         }else{
             l("trigger")
@@ -55,10 +55,9 @@ function BuildGraph(props) {
             ctx.arc(node.x, node.y, NODE_R * 1.4, 0, 2 * Math.PI, false);
 
             if (0) {
-                ctx.fillStyle = node === !hoverNode ? 'red' : 'orange';
-                ctx.fill();
+
             } else {
-                ctx.strokeStyle = node === objectToBeInspected ? 'orange' : 'red'; // Notice the corrected condition check
+                ctx.strokeStyle = b ? 'orange' : 'red'; // Notice the corrected condition check
                 // Set the line width of the border
                 ctx.lineWidth = 3; // You can adjust the border thickness by changing the value
                 // Draw the border
@@ -173,7 +172,7 @@ function BuildGraph(props) {
                 l("setting objectToBeInspected", node)
                 dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: node})
 
-                setHoverNode(node)
+
             } else {
                 if (objectToBeInspected === node) {
                     l("clicked on the same node, unsetting objectToBeInspected")
