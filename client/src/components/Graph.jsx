@@ -15,7 +15,47 @@ import _ from "lodash";
 import {l} from "../util/log11";
 import {connect, useDispatch} from "react-redux";
 import {CHANGE_DATA} from "../actions/types";
+import * as PropTypes from "prop-types";
 
+
+function Graphinformation(props) {
+    return <>
+        number of nodes:
+        {JSON.stringify(props.dd.nodes.length)}
+        {" "}
+
+        number of links:
+        {JSON.stringify(props.dd.links.length)}
+        {" "}
+
+        collapseddd nodes:
+        {JSON.stringify(props.collapseddd.nodes.length)}
+        {" "}
+
+        collapseddd links:
+        {JSON.stringify(props.collapseddd.links.length)}
+        {" "}
+
+        restrictdd nodes:
+        {JSON.stringify(props.restrictdd.nodes.length)}
+        {" "}
+        restrictdd links:
+        {JSON.stringify(props.restrictdd.links.length)}
+        {" "}
+
+        globalscale
+        {/*(this value could be gets by looking into the function by nodeCanvasObject.):*/}
+        {JSON.stringify(props.value)}
+
+    </>;
+}
+
+Graphinformation.propTypes = {
+    dd: PropTypes.any,
+    collapseddd: PropTypes.shape({nodes: PropTypes.any, links: PropTypes.any}),
+    restrictdd: PropTypes.shape({nodes: PropTypes.arrayOf(PropTypes.any), links: PropTypes.arrayOf(PropTypes.any)}),
+    value: PropTypes.number
+};
 
 function Graph(props) {
     const dispatch = useDispatch();
@@ -468,37 +508,14 @@ function Graph(props) {
                 treemaxlevel={treemaxlevel}
                 settreemaxlevel={settreemaxlevel}
             ></FloatingControlPanel>
-            {showBasicInfo &&
-                <>
-                    number of nodes:
-                    {JSON.stringify(dd.nodes.length)}
-                    {" "}
-
-                    number of links:
-                    {JSON.stringify(dd.links.length)}
-                    {" "}
-
-
-                    collapseddd nodes:
-                    {JSON.stringify(collapseddd.nodes.length)}
-                    {" "}
-                    collapseddd links:
-                    {JSON.stringify(collapseddd.links.length)}
-                    {" "}
-
-
-                    restrictdd nodes:
-                    {JSON.stringify(restrictdd.nodes.length)}
-                    {" "}
-                    restrictdd links:
-                    {JSON.stringify(restrictdd.links.length)}
-                    {" "}
-
-                    globalscale
-                    {/*(this value could be gets by looking into the function by nodeCanvasObject.):*/}
-                    {JSON.stringify(globalscale)}
-
-                </>
+            {
+                showBasicInfo &&
+                <Graphinformation
+                    dd={dd}
+                    collapseddd={collapseddd}
+                    restrictdd={restrictdd}
+                    value={globalscale}
+                />
 
             }
 
