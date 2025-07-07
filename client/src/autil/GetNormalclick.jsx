@@ -8,7 +8,8 @@ export function getNormalclick(objectToBeInspected, dispatch, dd) {
         if (1) {
             if (Object.keys(objectToBeInspected).length === 0) {
                 l("setting objectToBeInspected", node)
-                // dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: node})
+                l("In VR mode this will crash whole website ")
+                dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: node})
             } else {
 
 
