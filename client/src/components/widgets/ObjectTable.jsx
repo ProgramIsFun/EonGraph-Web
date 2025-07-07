@@ -11,13 +11,14 @@ import {connect, useDispatch} from "react-redux";
 const ObjectTable = (props) => {
     // Convert object entries into an array of [key, value] pairs for easy mapping
     const dispatch = useDispatch();
+    let all33 = props.all33;
 
     let dd = props.dd;
     let setdd = props.setdd;
 
     const [isExpanded, setIsExpanded] = useState(true);
 
-    let objectToBeInspected = props.all33.objectToBeInspected;
+    let objectToBeInspected = all33.objectToBeInspected;
 
     let setObjectToBeInspected = props.setObjectToBeInspected;
 
@@ -28,7 +29,8 @@ const ObjectTable = (props) => {
         entries = Object.entries(props.objectToBeInspected);
 
     } catch (e) {
-        return <div>error</div>
+        l("Error converting object to entries:", e);
+        entries = [];
     }
 
     // Define styles for the floating table
@@ -105,18 +107,16 @@ const ObjectTable = (props) => {
                     }}>
                         rename
                     </button>
+
                     <button onClick={() => {
-
-
                         aaaaaaa1()
-
-
                     }}>
                         remove github repo
                     </button>
+
                     <button onClick={
                         () => {
-                            // l("collapsinggggggggggggg")
+                            l("collapsinggggggggggggg")
                             setdd(dd => {
                                 return {
                                     ...dd,
