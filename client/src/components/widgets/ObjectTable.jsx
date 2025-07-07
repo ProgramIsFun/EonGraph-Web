@@ -9,6 +9,7 @@ import {connect, useDispatch} from "react-redux";
 
 // use the component in your app!
 const ObjectTable = (props) => {
+    // l("ObjectTable render", props);
     // Convert object entries into an array of [key, value] pairs for easy mapping
     const dispatch = useDispatch();
     let all33 = props.all33;
@@ -19,7 +20,8 @@ const ObjectTable = (props) => {
     const [isExpanded, setIsExpanded] = useState(true);
 
     let objectToBeInspected = all33.objectToBeInspected;
-
+    l("objectToBeInspected111", objectToBeInspected, '__threeObj' in objectToBeInspected);
+    const { __threeObj, ...objectToBeInspected2 } = objectToBeInspected;
     let setObjectToBeInspected = props.setObjectToBeInspected;
 
 
@@ -95,20 +97,24 @@ const ObjectTable = (props) => {
     let aaaaaaa1 = async () => {
         await removegithubRepoNode(objectToBeInspected, dd, setdd, dispatch);
     }
-    let element = 1 ?
+    let element = 1
+        ?
         <>
             {graphtypeee == 4 ?
                 <JsonView value={objectToBeInspected}
 
                           style={aaaaaaa}
                 /> :
-                <></>
+                <><JsonView value={objectToBeInspected2}
+
+                            style={aaaaaaa}
+                /></>
             }
         </>
         :
         <>
             <ReactJson
-                src={props.objectToBeInspected}
+                src={objectToBeInspected}
             />
         </>;
     return (
