@@ -359,12 +359,8 @@ export function genRandomTree(N = 300, reverse = false) {
     return temp1
 }
 
-export function cgg(bb, aa) {
-    if (aa) {
-        console.log(bb, aa)
-    } else {
-        console.log(bb)
-    }
+export function cgg(...args) {
+    console.log(...args);
 }
 
 export const rename = (nodeOrLink, type) => {
