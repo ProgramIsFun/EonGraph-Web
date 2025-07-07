@@ -183,10 +183,8 @@ function BuildGraph(props) {
                 setHoverNode(node)
 
             } else {
-
                 // Check if the link already exists
                 let shouldAddLink = false;
-
                 // check if any link in the links have the same source and target.
                 shouldAddLink = !lc.some(link => {
                         let lll = (link.source.id === objectToBeInspected.id && link.target.id === node.id) || (link.source.id === node.id && link.target.id === objectToBeInspected.id)
@@ -196,12 +194,9 @@ function BuildGraph(props) {
                         return lll
                     }
                 )
-
                 if (shouldAddLink) {
                     let linkId = uuidv4()
-
                     l("objectToBeInspected.id", objectToBeInspected.id, "node.id", node.id)
-
                     const interimLink = {
                         id: linkId,
                         source: objectToBeInspected.id,
@@ -212,7 +207,6 @@ function BuildGraph(props) {
                         ...prevNc, // Spread to copy other properties of nc, if there are any
                         links: [...prevNc.links, interimLink], // Create a new array with all old nodes plus the new one
                     }));
-
                     setObjectToBeInspected({})
                 }
             }
