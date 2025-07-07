@@ -427,9 +427,7 @@ export function draggggggg(linkIdCounter, interimLink, links, removeLink, dragSo
 }
 
 export function removeNodeAndRelatedLinks(dd, node, setdd,dispatch) {
-    // setObjectToBeInspected({})
     dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: node})
-
 
     console.log("Before remove node: links length", dd.links.length, "nodes length", dd.nodes.length);
 
