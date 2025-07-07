@@ -25,11 +25,12 @@ function Graph(props) {
     const [dd2, setdd] = useState(
         {nodes: [], links: []}
     )
-    let dd=props.all33.dd
-
-
+    let all33 = props.all33
+    let dd=all33.dd
     let nc = dd.nodes
     let lc = dd.links
+
+
 
     // console.log("entering home ,data dd is now ", dd)
 
