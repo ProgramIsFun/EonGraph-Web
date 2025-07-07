@@ -159,7 +159,7 @@ function BuildGraph(props) {
     }, [fgRef]);
 
 
-    const Normalclick = getNormalclick(objectToBeInspected, dispatch, dd, rename)
+    const Normalclick = getNormalclick(objectToBeInspected, dispatch, dd)
     ////////////////////////////////////////////////////////////////////////////
     const dragSourceNode = useRef(null)
     const linkIdCounter = useRef(0)
