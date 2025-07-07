@@ -130,7 +130,7 @@ function all33Reducer(state = initialState, action) {
                 ...state,
                 dd: {
                     ...state.dd,
-                    links: payload.links
+                    links: payload
                 }
             };
         case CHANGE_USING_NEO4J:
