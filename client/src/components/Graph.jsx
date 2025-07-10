@@ -15,6 +15,7 @@ import _ from "lodash";
 import {l} from "../autil/log11";
 import {connect, useDispatch} from "react-redux";
 import {CHANGE_DATA} from "../actions/types";
+import {fetchData11} from "../actions/all33";
 
 
 function Graph(props) {
@@ -44,10 +45,10 @@ function Graph(props) {
     const [fileContent, setFileContent] = useState("aaaa");
     const [fileContent2, setFileContent2] = useState("aaaabbbbbb");
 
-    const [localbackendurl, setlocalbackendurl] = useState("http://localhost:5000");
-    const [remotebackendurl, setRemotebackendurl] = useState("https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net");
-    const [useremote, setUseremote] = useState(false);
-
+    let localbackendurl=all33.localbackendurl;
+    let remotebackendurl= all33.remotebackendurl;
+    const [useremote2, setUseremote] = useState(false);
+    let useremote = all33.useremote;
     const [search, setSearch] = useState("")
     const [filterdd, setFilterdd] = useState([])
 
@@ -394,37 +395,7 @@ function Graph(props) {
             }
         } )
     }
-    const fetchData11 = async () => {
-        try {
-            let b = useremote ? remotebackendurl : localbackendurl
 
-            l("fetching data from ", b + '/api/v0/return_all_nodes111')
-            const response = await fetch(b + '/api/v0/return_all_nodes111');
-            const jsonData = await response.json();
-            rawdata(jsonData);
-
-
-            let duplicateOriginalIdToJustID=true;
-
-            if (duplicateOriginalIdToJustID) {
-                jsonData.nodes.forEach(node => {
-                        node.id = node.user_generate_id_7577777777
-                    }
-                )
-            }
-
-            dispatch({
-                type: CHANGE_DATA,
-                payload: {
-                    nodes: jsonData.nodes,
-                    links: jsonData.links
-                }
-            })
-
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
     let showBasicInfo = false
     return (
         <>
@@ -447,7 +418,7 @@ function Graph(props) {
                 setrepo={setrepo}
                 fileContent={fileContent}
                 setFileContent={setFileContent}
-                fetchData11={fetchData11}
+
                 fgRef={fgRef}
                 useremote={useremote}
                 setUseremote={setUseremote}
