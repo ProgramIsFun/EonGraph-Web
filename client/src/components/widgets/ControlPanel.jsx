@@ -10,7 +10,7 @@ import {connect, useDispatch} from "react-redux";
 import {l} from "../../autil/log11";
 import {changeSetting, fetchData11} from "../../actions/all33";
 import {cccccccccc} from "../../reducers/all33";
-import {CHANGE_USING_NEO4J} from "../../actions/types";
+import {CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
 
 
 const ControlPanel = (props) => {
@@ -194,7 +194,8 @@ const ControlPanel = (props) => {
                         checked={useremote}
                         onChange={(event) => {
 
-                            setUseremote(event.target.checked);
+                            dispatch({"type": CHANGE_USEREMOTE, payload: event.target.checked})
+                            // setUseremote(event.target.checked);
                         }
                     }
                     />
