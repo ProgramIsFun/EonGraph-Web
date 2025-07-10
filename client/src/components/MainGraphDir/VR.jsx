@@ -11,8 +11,8 @@ import {getNormalclick} from "../../autil/GetNormalclick";
 function VR(props) {
     const dispatch = useDispatch();
     let all33 = props.all33;
-    let dd=all33.dd;
-    let c=all33.settings;
+    let dd = all33.dd;
+    let c = all33.settings;
     let objectToBeInspected = all33.objectToBeInspected;
 
     let getCameraPosition = () => {
@@ -32,7 +32,22 @@ function VR(props) {
         }
     }
     const Normalclick = getNormalclick(objectToBeInspected, dispatch, dd)
-    let linkWidth= c.VR_linkWidth;
+    let linkWidth = c.VR_linkWidth;
+    let nodeThreeObject = node => {
+        const label2 = !node.name ? node.id : node.name;
+        const replaceStringAinB = (strA, strB) => {
+            if (strB.startsWith(strA)) {
+                return strB.replace(strA, 'e');
+            }
+            return strB; // No change if stringB does not start with stringA
+        };
+        let label = replaceStringAinB("everythingallaccount", label2)
+        // if there is a name, we use the name, if there is no, we use the ID.
+        const sprite = new SpriteText(label);
+        sprite.color = node.color;
+        sprite.textHeight = 8;
+        return sprite;
+    };
     return <>
         <button onClick={getCameraPosition}>Get Camera Position</button>
         <ForceGraphVR
@@ -47,21 +62,7 @@ function VR(props) {
 
 
             nodeThreeObject={
-                node => {
-                    const label2 = !node.name ? node.id : node.name;
-                    const replaceStringAinB = (strA, strB) => {
-                        if (strB.startsWith(strA)) {
-                            return strB.replace(strA, 'e');
-                        }
-                        return strB; // No change if stringB does not start with stringA
-                    };
-                    let label = replaceStringAinB("everythingallaccount", label2)
-                    // if there is a name, we use the name, if there is no, we use the ID.
-                    const sprite = new SpriteText(label);
-                    sprite.color = node.color;
-                    sprite.textHeight = 8;
-                    return sprite;
-                }
+                nodeThreeObject
             }
 
 
