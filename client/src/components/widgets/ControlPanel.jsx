@@ -18,6 +18,7 @@ const ControlPanel = (props) => {
     const dispatch = useDispatch();
 
     l("ControlPanel render", props);
+    let all33= props.all33;
     const [tempNumber, setTempNumber] = useState(3);
     const emptyGraph = props.emptyGraph;
     const loadSample = props.loadSample;
@@ -27,7 +28,7 @@ const ControlPanel = (props) => {
     const fileContent2 = props.fileContent2;
     const setFileContent2 = props.setFileContent2;
 
-    const dd = props.dd;
+    const dd= all33.dd;
     const setdd = props.setdd;
 
 
@@ -117,7 +118,7 @@ const ControlPanel = (props) => {
         //     simulation.restart(); // Step 1: Pause the simulation
         // }
     }
-    let all33= props.all33;
+
     let useremote = all33.useremote;
     let localbackendurl = all33.localbackendurl;
     let remotebackendurl = all33.remotebackendurl;
