@@ -403,10 +403,15 @@ function Graph(props) {
             const jsonData = await response.json();
             rawdata(jsonData);
 
-            jsonData.nodes.forEach(node => {
-                    node.id = node.user_generate_id_7577777777
-                }
-            )
+
+            let duplicateOriginalIdToJustID=true;
+
+            if (duplicateOriginalIdToJustID) {
+                jsonData.nodes.forEach(node => {
+                        node.id = node.user_generate_id_7577777777
+                    }
+                )
+            }
 
             dispatch({
                 type: CHANGE_DATA,

@@ -270,6 +270,8 @@ function BuildGraph(props) {
         }
     };
     let onLinkRightClick = (link) => removeLink(link);
+    let nodeIdaccessor=all33.nodeIdaccessor;
+    l("nodeIdaccessor", nodeIdaccessor)
     return <>
 
 
@@ -277,7 +279,7 @@ function BuildGraph(props) {
             // border: "3px solid green",
         }}>
             <ForceGraph2D
-
+                nodeId={nodeIdaccessor}
                 ref={fgRef}
 
                 graphData={graphData}

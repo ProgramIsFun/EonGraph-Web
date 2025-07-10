@@ -233,10 +233,7 @@ export const changeSetting = (key, value) => async (dispatch) => {
     } catch (err) {
 
     }
-    
-
 }
-
 
 export const fetchNodeData = (nodeId) => async (dispatch) => {
     try {
