@@ -266,11 +266,15 @@ export const fetchData11 = (b) => async (dispatch) => {
     }
 
 }
-export const fetchNodeData = (nodeId) => async (dispatch) => {
+export const fetchNodeData = (nodeId) => async (dispatch,getState) => {
     try {
 
+        const state = getState();
+        l("fetchNodeData state", state)
+        let url = state.all33.settings.url;
 
-        const res = await fetch('/api/v0/get_specific_node_with_specific_id/', {
+
+        const res = await fetch(b+'/api/v0/get_specific_node_with_specific_id/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
