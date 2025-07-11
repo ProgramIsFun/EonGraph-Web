@@ -291,11 +291,25 @@ export const fetchNodeData = (nodeId) => async (dispatch,getState) => {
             l("Network response was not ok", res.statusText);
             throw new Error('Network response was not ok');
         }
-        l("response from fetchNodeData", res)
-        dispatch({
-            type: 'FETCH_NODE_DATA',
-            payload: res.data
-        });
+        let body= await res.json();
+        l("response from fetchNodeData", body)
+        l("body.node", body.node[0])
+        let ku={
+            "labels": [
+            "normalNode588888888"
+        ],
+            "properties": {
+            "name": "ionic",
+                "user_generate_id_7577777777": "39bbb8f8-19dd-4421-b2de-4ffa90f96a36"
+        }
+        }
+        if (0) {
+            dispatch({
+                type: 'FETCH_NODE_DATA',
+                payload: res.data
+            });
+        } else {
+        }
     } catch (err) {
         dispatch(setAlert('Error fetching node data', 'danger'));
     }
