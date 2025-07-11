@@ -246,7 +246,7 @@ export const fetchData11 = (b) => async (dispatch) => {
         rawdata(jsonData);
 
 
-        let duplicateOriginalIdToJustID=true;
+        let duplicateOriginalIdToJustID = true;
         if (duplicateOriginalIdToJustID) {
             jsonData.nodes.forEach(node => {
                     node.id = node.user_generate_id_7577777777
@@ -266,7 +266,7 @@ export const fetchData11 = (b) => async (dispatch) => {
     }
 
 }
-export const fetchNodeData = (nodeId) => async (dispatch,getState) => {
+export const fetchNodeData = (nodeId) => async (dispatch, getState) => {
     try {
 
         const state = getState();
@@ -278,7 +278,7 @@ export const fetchNodeData = (nodeId) => async (dispatch,getState) => {
         let remotebackendurl = all33.remotebackendurl;
         let b = useremote ? remotebackendurl : localbackendurl
         l("fetchNodeData b", b)
-        const res = await fetch(b+'/api/v0/get_specific_node_with_specific_id', {
+        const res = await fetch(b + '/api/v0/get_specific_node_with_specific_id', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -291,17 +291,17 @@ export const fetchNodeData = (nodeId) => async (dispatch,getState) => {
             l("Network response was not ok", res.statusText);
             throw new Error('Network response was not ok');
         }
-        let body= await res.json();
+        let body = await res.json();
         l("response from fetchNodeData", body)
         l("body.node", body.node[0])
-        let ku={
+        let ku = {
             "labels": [
-            "normalNode588888888"
-        ],
+                "normalNode588888888"
+            ],
             "properties": {
-            "name": "ionic",
+                "name": "ionic",
                 "user_generate_id_7577777777": "39bbb8f8-19dd-4421-b2de-4ffa90f96a36"
-        }
+            }
         }
         if (0) {
             dispatch({
