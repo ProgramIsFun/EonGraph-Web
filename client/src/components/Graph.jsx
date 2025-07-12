@@ -418,8 +418,7 @@ function Graph(props) {
                 search={search}
                 setSearch={setSearch}
                 filterdd={filterdd}
-                
-                setObjectToBeInspected={setObjectToBeInspected}
+
                 istreemaxlevelrestricted={istreemaxlevelrestricted}
                 setistreemaxlevelrestricted={setistreemaxlevelrestricted}
                 treemaxlevel={treemaxlevel}
