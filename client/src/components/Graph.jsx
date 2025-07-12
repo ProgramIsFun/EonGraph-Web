@@ -230,9 +230,9 @@ function Graph(props) {
         }
     }
 
-    const returnGraph1 = (index) => {
+    const returnGraph1 = (graphtypeee) => {
                 let component;
-                switch (index) {
+                switch (graphtypeee) {
                     case "ThreeD":
                     case 0:
                         component = <ThreeD dd={dd} fgRef={fgRef}/>;
