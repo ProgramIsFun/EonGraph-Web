@@ -491,7 +491,8 @@ export function keydownnnnnn(
 
 
         l("key presseddddddddddd", event.key)
-        if (graphtypeee !== 4) {
+        if (1) {
+            l("all shortcuts are disabled for now")
             return
         }
 
