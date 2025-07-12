@@ -253,21 +253,21 @@ const ControlPanel = (props) => {
 
                             dispatch({
                                     "type": "SET_GRAPHTYPEEE",
-                                    payload: 0
+                                    payload: 'ThreeD'
                                 }
                             );
 
 
                         }
 
-                    }>3d
+                    }>ThreeD
                     </button>
                     <button id="emit-particles-btn" onClick={
 
                         () => {
                             dispatch({
                                     "type": "SET_GRAPHTYPEEE",
-                                    payload: 2
+                                    payload: "VR"
                                 }
                             );
 
@@ -275,18 +275,18 @@ const ControlPanel = (props) => {
                         }
 
 
-                    }>3d-vr
+                    }>VR
                     </button>
                     <button id="emit-particles-btn" onClick={() => {
                         dispatch({
                                 "type": "SET_GRAPHTYPEEE",
-                                payload: 4
+                                payload: 'TwoD'
                             }
                         );
 
                     }
 
-                    }>2d-build
+                    }>TwoD
                     </button>
 
                     <br></br>
