@@ -7,6 +7,7 @@ import {ee, l} from "../../autil/log11";
 import {connect, useDispatch} from "react-redux";
 import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
 import {getNormalclick} from "../../autil/GetNormalclick";
+import {distance1and2} from "./common/helper";
 
 
 function TwoD(props) {
@@ -80,9 +81,7 @@ function TwoD(props) {
     }, [a]);
 
 
-    const distance = (node1, node2) => {
-        return Math.sqrt(Math.pow(node1.x - node2.x, 2) + Math.pow(node1.y - node2.y, 2));
-    };
+
 
     const rename = (nodeOrLink, type) => {
         let value = prompt('Name this ' + type + ':', nodeOrLink.name);
@@ -160,7 +159,15 @@ function TwoD(props) {
     const dragSourceNode = useRef(null)
     const linkIdCounter = useRef(0)
     const interimLink = useRef(null)
-    const dragFun = draggggggg(linkIdCounter, interimLink, dd.links, removeLink, dragSourceNode, dd.nodes, distance);
+    const dragFun = draggggggg(
+        linkIdCounter,
+        interimLink,
+        dd.links,
+        removeLink,
+        dragSourceNode,
+        dd.nodes,
+        distance1and2
+    );
     /////////////////////////////////////////////////
 
 
