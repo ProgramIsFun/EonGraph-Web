@@ -18,7 +18,7 @@ const ControlPanel = (props) => {
     const dispatch = useDispatch();
 
     l("ControlPanel render", props);
-    let all33= props.all33;
+    let all33 = props.all33;
     const [tempNumber, setTempNumber] = useState(3);
     const emptyGraph = props.emptyGraph;
     const loadSample = props.loadSample;
@@ -28,7 +28,7 @@ const ControlPanel = (props) => {
     const fileContent2 = props.fileContent2;
     const setFileContent2 = props.setFileContent2;
 
-    const dd= all33.dd;
+    const dd = all33.dd;
     const setdd = props.setdd;
 
 
@@ -66,7 +66,6 @@ const ControlPanel = (props) => {
     const usingNEO4J = props.all33.usingNEO4J;
 
 
-
     const changeSetting = props.changeSetting;
     const [value, setValue] = React.useState(30);
 
@@ -75,10 +74,8 @@ const ControlPanel = (props) => {
     };
 
 
-
     let c = props.all33.settings;
     l("ControlPanel c", c);
-
 
 
     const [isVisible, setIsVisible] = useState(true); // State to manage the visibility
@@ -198,7 +195,7 @@ const ControlPanel = (props) => {
                             dispatch({"type": CHANGE_USEREMOTE, payload: event.target.checked})
                             // setUseremote(event.target.checked);
                         }
-                    }
+                        }
                     />
 
 
@@ -224,38 +221,43 @@ const ControlPanel = (props) => {
                     <button id="emit-particles-btn" onClick={
                         () => {
 
-                            dispatch({"type": "SET_GRAPHTYPEEE",
-                                payload: 0
-                            }
+                            dispatch({
+                                    "type": "SET_GRAPHTYPEEE",
+                                    payload: 0
+                                }
                             );
 
 
                         }
 
-                    }>3d</button>
+                    }>3d
+                    </button>
                     <button id="emit-particles-btn" onClick={
 
                         () => {
-                            dispatch({"type": "SET_GRAPHTYPEEE",
-                                payload: 2
-                            }
+                            dispatch({
+                                    "type": "SET_GRAPHTYPEEE",
+                                    payload: 2
+                                }
                             );
 
 
                         }
 
 
-                    }>3d-vr</button>
-                    <button id="emit-particles-btn" onClick={() =>
-                        {
-                            dispatch({"type": "SET_GRAPHTYPEEE",
+                    }>3d-vr
+                    </button>
+                    <button id="emit-particles-btn" onClick={() => {
+                        dispatch({
+                                "type": "SET_GRAPHTYPEEE",
                                 payload: 4
                             }
-                            );
+                        );
 
-                        }
+                    }
 
-                    }>2d-build</button>
+                    }>2d-build
+                    </button>
 
                     <br></br>
 
@@ -298,16 +300,13 @@ const ControlPanel = (props) => {
                     </button>
 
                     <button id="emit-particles-btn" onClick={() => {
-
                         const bloomPass = new UnrealBloomPass();
                         bloomPass.strength = 4;
                         bloomPass.radius = 1;
                         bloomPass.threshold = 0;
                         fgRef.current.postProcessingComposer().addPass(bloomPass);
-
                     }}>zoomToFit
                     </button>
-
 
                     <div
                         // we want to take its overflow.  so that we can scroll it
@@ -317,7 +316,6 @@ const ControlPanel = (props) => {
                             height: "100px"
                         }}
                     >{returnListRepo()}</div>
-
 
                     <div>search</div>
                     <TextField
@@ -349,7 +347,7 @@ const ControlPanel = (props) => {
                             return (
                                 <div key={key} className="horizontal-bar">
 
-                                    {key.split('_').join(' ')}
+                                    {key}
                                     <Slider
                                         aria-label={key}
                                         value={typeof c[key] === 'number' ? c[key] : 0}
@@ -368,8 +366,6 @@ const ControlPanel = (props) => {
                             )
                         })
                     }
-
-
                     <div>
                         <label>
                             <input
@@ -416,5 +412,5 @@ const ControlPanel = (props) => {
 
 export default connect(
     state => state,
-    {changeSetting,fetchData11}
+    {changeSetting, fetchData11}
 )(ControlPanel);

@@ -79,10 +79,8 @@ function VR(props) {
 
 
             backgroundColor={"#000000"}
-
             // backgroundColor="rgba(0,0,0,0)"
             // nodeThreeObjectExtend={true}
-
             linkWidth={linkWidth}
             linkDirectionalParticles={c.linkDirectionalParticles}
             linkDirectionalParticleWidth={c.linkDirectionalParticleWidth}
