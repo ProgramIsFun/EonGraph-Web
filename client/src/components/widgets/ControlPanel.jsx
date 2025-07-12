@@ -32,7 +32,8 @@ const ControlPanel = (props) => {
     const setdd = props.setdd;
 
 
-    const page = props.page;
+    // const page = props.page;
+    const graphtypeee=all33.graphtypeee;
     const getRepoData = props.getRepoData;
     const setrepo = props.setrepo;
     const fileContent = props.fileContent;
@@ -124,6 +125,7 @@ const ControlPanel = (props) => {
         fetchData11(b)
     };
 
+    let prefix=""
     let map = Object.keys(c)
         .filter(key => key.startsWith(prefix))
         .map(
@@ -291,14 +293,14 @@ const ControlPanel = (props) => {
                     <br></br>
 
                     {
-                        page == 4 && <button id="emit-particles-btn"
+                        graphtypeee == 4 && <button id="emit-particles-btn"
                                              onClick={getRepoData}
 
                         >getAllRepos</button>
                     }
 
                     {
-                        page == 4 && <FileDrop
+                        graphtypeee == 4 && <FileDrop
                             fileContent={fileContent}
                             setFileContent={setFileContent}
                             setrepo={setrepo}
