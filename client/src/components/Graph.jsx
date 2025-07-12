@@ -404,7 +404,7 @@ function Graph(props) {
                 notice={notice}
                 fileContent2={fileContent2}
                 setFileContent2={setFileContent2}
-                dd={dd}
+                
                 setdd={setdd}
                 getRepoData={getRepoData}
                 setrepo={setrepo}
