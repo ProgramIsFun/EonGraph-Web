@@ -234,15 +234,12 @@ function Graph(props) {
                 let component;
                 switch (graphtypeee) {
                     case "ThreeD":
-                    case 0:
                         component = <ThreeD dd={dd} fgRef={fgRef}/>;
                         break;
                     case "VR":
-                    case 2:
                         component = <VR fgRef={fgRef}/>;
                         break;
                     case "TwoD":
-                    case 4:
                         component = <TwoD dd={dd}
                                           setdd={setdd}
                                           collapseddd={collapseddd}
