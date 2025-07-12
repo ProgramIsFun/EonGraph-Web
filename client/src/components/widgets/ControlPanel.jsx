@@ -122,9 +122,9 @@ const ControlPanel = (props) => {
         fetchData11(b)
     };
 
-    let prefix = ""
+    let prefix = graphtypeee
     let map = Object.keys(c)
-        .filter(key => key.startsWith(prefix))
+        .filter(key => key.startsWith(graphtypeee))
         .map(
             (key) => {
 
