@@ -238,7 +238,7 @@ function Graph(props) {
                 component = <ThreeD dd={dd} fgRef={fgRef}/>;
                 break;
             case 2:
-                component = <VR/>;
+                component = <VR  fgRef={fgRef}/>;
                 break;
             case 4:
                 component = <BuildGraph dd={dd}
