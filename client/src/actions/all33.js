@@ -266,6 +266,8 @@ export const fetchData11 = (b) => async (dispatch) => {
     }
 
 }
+
+
 export const fetchNodeData = (nodeId) => async (dispatch, getState) => {
     try {
 
