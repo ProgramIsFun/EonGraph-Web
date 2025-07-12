@@ -224,7 +224,7 @@ const ControlPanel = (props) => {
                         onChange={(event) => {
 
                             dispatch({"type": CHANGE_USEREMOTE, payload: event.target.checked})
-                            // setUseremote(event.target.checked);
+
                         }
                         }
                     />
