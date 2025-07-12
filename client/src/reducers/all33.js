@@ -79,24 +79,14 @@ const initialState = {
         "VR_linkDirectionalParticleWidth": 2,
         "VR_linkDirectionalParticleSpeed": 0.002,
     },
-
     dd: {nodes: [], links: []},
-
     nodeIdaccessor:NODE_ID_ACCESSOR, // this is the accessor for the node id, it can be changed to any property of the node object, like "name" or "label"
-
     usingNEO4J: true,
-
     objectToBeInspected: {},
-
-
     localbackendurl: 'http://localhost:5000',
     remotebackendurl: "https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net",
     useremote: false, // true means use remote backend, false means use local backend
-
     graphtypeee:'VR',
-
-
-
 };
 
 function all33Reducer(state = initialState, action) {
