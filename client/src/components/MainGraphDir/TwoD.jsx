@@ -9,14 +9,14 @@ import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
 import {getNormalclick} from "../../autil/GetNormalclick";
 
 
-function Two_D(props) {
-    l("Two_D props1", props)
+function TwoD(props) {
+    l("TwoD props1", props)
 
     const dispatch = useDispatch();
     let all33 = props.all33
     let c = all33.settings
     const dd = all33.dd
-    // l("Two_D props",  dd)
+    // l("TwoD props",  dd)
     // const dd = props.dd
     let setdd = props.setdd
 
@@ -43,14 +43,10 @@ function Two_D(props) {
         if (!(b || node.collapsed)) {
             // l("node is not objectToBeInspected or collapsed, skipping paintRing", node.id, "objectToBeInspected", objectToBeInspected.id)
         } else {
-
             const NODE_R = 8;
-
             ctx.beginPath();
             ctx.arc(node.x, node.y, NODE_R * 1.4, 0, 2 * Math.PI, false);
-
             if (0) {
-
             } else {
                 ctx.strokeStyle = b ? 'orange' : 'red'; // Notice the corrected condition check
                 // Set the line width of the border
@@ -172,13 +168,11 @@ function Two_D(props) {
 
 
     const nodeCanvasObject = (node, ctx, globalScale) => {
-
         if (1) {
             paintRing(node, ctx);
         }
         if (1) {
             const label2 = !node.name ? node.id : node.name;
-
             const replaceStringAinB = (strA, strB) => {
                 // Check if stringB starts with stringA
                 if (strB.startsWith(strA)) {
@@ -187,25 +181,18 @@ function Two_D(props) {
                 }
                 return strB; // No change if stringB does not start with stringA
             };
-
             let label = replaceStringAinB("everythingallaccount", label2)
-
             const fontSize = node_font_size / (globalScale * global_scale_adjustment_coefficient);
             ctx.font = `${fontSize}px Sans-Serif`;
             const textWidth = ctx.measureText(label).width;
             const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
-
-
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-
-
             let BackgroundColor = false
             if (BackgroundColor) {
                 // This fill a white background to text
                 // ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
                 // ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
-
                 ctx.fillStyle = 'rgba(255, 255, 0, 0.1)';
                 ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
             }
@@ -214,10 +201,7 @@ function Two_D(props) {
             ctx.fillText(label, node.x, node.y);
 
             node.__bckgDimensions = bckgDimensions; // to re-use in nodePointerAreaPaint
-
         }
-
-
     }
 
 
@@ -345,4 +329,4 @@ function Two_D(props) {
 
 }
 
-export default connect(state => state)(Two_D);
+export default connect(state => state)(TwoD);
