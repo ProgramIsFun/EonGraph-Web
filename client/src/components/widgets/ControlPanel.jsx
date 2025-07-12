@@ -32,7 +32,7 @@ const ControlPanel = (props) => {
     const setdd = props.setdd;
 
 
-    // const page = props.page;
+
     const graphtypeee = all33.graphtypeee;
     const getRepoData = props.getRepoData;
     const setrepo = props.setrepo;
