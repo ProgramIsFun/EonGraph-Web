@@ -218,11 +218,10 @@ const ControlPanel = (props) => {
                     <input
                         type="checkbox"
                         checked={useremote}
-                        onChange={(event) => {
-
-                            dispatch({"type": CHANGE_USEREMOTE, payload: event.target.checked})
-
-                        }
+                        onChange={
+                            (event) => {
+                                dispatch({"type": CHANGE_USEREMOTE, payload: event.target.checked})
+                            }
                         }
                     />
 
