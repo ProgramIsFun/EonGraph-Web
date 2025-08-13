@@ -13,6 +13,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v2
       - run: pnpm run b
+        with:
+          version: 10
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
