@@ -18,7 +18,7 @@ function VR(props) {
 
     let fgRef = props.fgRef;
     let a = c.VR_repulsive_Force_Scale
-
+    let node_font_size=c.VR_node_font_size;
     useEffect(() => {
         if (fgRef.current) {
             fgRef.current.d3Force('charge').strength(a)
@@ -48,6 +48,7 @@ function VR(props) {
     }
     const Normalclick = getNormalclick(objectToBeInspected, dispatch, dd)
     let linkWidth = c.VR_linkWidth;
+
     let nodeThreeObject = node => {
         // Node object accessor function or attribute for generating a custom 3d object to render as graph nodes.
         // Should return an instance of ThreeJS Object3d.
@@ -59,9 +60,10 @@ function VR(props) {
         // if there is a name, we use the name, if there is no, we use the ID.
         const sprite = new SpriteText(label);
         sprite.color = node.color;
-        sprite.textHeight = 8;
+        sprite.textHeight = node_font_size;
         return sprite;
     };
+
     return <>
         <button onClick={getCameraPosition}>Get Camera Position</button>
         <ForceGraphVR
