@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useRef} from 'react';
 import {ForceGraph2D} from "react-force-graph";
 
 import {v4 as uuidv4} from 'uuid';
-import {draggggggg, removeNodeAndRelatedLinks} from "../../autil/helperfile";
+import {draggggggg, removeNodeAndRelatedLinks, replaceStringAinB} from "../../autil/helperfile";
 import {ee, l} from "../../autil/log11";
 import {connect, useDispatch} from "react-redux";
 import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
@@ -180,14 +180,7 @@ function TwoD(props) {
         }
         if (1) {
             const label2 = !node.name ? node.id : node.name;
-            const replaceStringAinB = (strA, strB) => {
-                // Check if stringB starts with stringA
-                if (strB.startsWith(strA)) {
-                    // Replace stringA with '1' in stringB
-                    return strB.replace(strA, 'e');
-                }
-                return strB; // No change if stringB does not start with stringA
-            };
+      
             let label = replaceStringAinB("everythingallaccount", label2)
             const fontSize = node_font_size / (globalScale * global_scale_adjustment_coefficient);
             ctx.font = `${fontSize}px Sans-Serif`;

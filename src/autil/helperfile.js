@@ -717,6 +717,12 @@ export let aaaaaaa = {
 
 
 
+export const replaceStringAinB = (strA, strB) => {
+    if (strB.startsWith(strA)) {
+        return strB.replace(strA, 'e');
+    }
+    return strB; // No change if stringB does not start with stringA
+};
 
 
 
