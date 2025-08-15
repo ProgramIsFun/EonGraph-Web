@@ -2,7 +2,7 @@ import {ForceGraph3D} from 'react-force-graph';
 import React, {useEffect, useState} from 'react';
 import cloneDeep from "lodash/cloneDeep";
 import SpriteText from "https://esm.sh/three-spritetext";
-import {l} from "../../autil/logHelper";
+import {l} from "../../autil/loghelper";
 
 
 let THREE = window.THREE
