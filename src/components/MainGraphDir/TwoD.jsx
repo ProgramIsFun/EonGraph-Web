@@ -6,7 +6,7 @@ import {draggggggg, removeNodeAndRelatedLinks, replaceStringAinB} from "../../au
 import {ee, l} from "../../autil/loghelper";
 import {connect, useDispatch} from "react-redux";
 import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
-import {getNormalclick} from "../../autil/GetNormalclick";
+import {getNormalclick} from "../../autil/GetNormalClick";
 import {distance1and2} from "./common/helper";
 
 
