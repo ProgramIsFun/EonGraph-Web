@@ -2,12 +2,11 @@ import React, {useCallback, useEffect, useRef} from 'react';
 import {ForceGraph2D} from "react-force-graph";
 
 import {v4 as uuidv4} from 'uuid';
-import {draggggggg, removeNodeAndRelatedLinks, replaceStringAinB} from "../../autil/helperfile";
+import {distance1and2, draggggggg, removeNodeAndRelatedLinks, replaceStringAinB} from "../../autil/helperfile";
 import {ee, l} from "../../autil/loghelper";
 import {connect, useDispatch} from "react-redux";
 import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
 import {getNormalclick} from "../../autil/GetNormalClick";
-import {distance1and2} from "./common/helper";
 
 
 function TwoD(props) {
