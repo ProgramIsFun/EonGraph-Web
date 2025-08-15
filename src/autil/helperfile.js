@@ -1,6 +1,6 @@
 import {Octokit} from "@octokit/core";
 import {v4 as uuidv4} from "uuid";
-import {l} from "./log11";
+import {l} from "./logHelper";
 import {SET_OBJECT_TO_BE_INSPECTED} from "../actions/types";
 
 export let datassss = {
