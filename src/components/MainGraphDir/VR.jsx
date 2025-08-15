@@ -6,7 +6,7 @@ import SpriteText from 'three-spritetext';
 
 import {ee, l} from "../../autil/loghelper";
 import {connect, useDispatch} from "react-redux";
-import {getNormalclick} from "../../autil/GetNormalClick";
+import {getNormalclick} from "../widgets/GetNormalClick";
 import {replaceStringAinB} from "../../autil/helperfile";
 
 function VR(props) {
