@@ -3,7 +3,7 @@ import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
 import {InputLabel, TextField, Typography} from "@mui/material";
 import {auth} from "../../autil/firebase";
-import FileDrop from "../../autil/FileDrop";
+import FileDrop from "./FileDrop";
 import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 import {cgg} from "../../autil/helperfile";
 import {connect, useDispatch} from "react-redux";
