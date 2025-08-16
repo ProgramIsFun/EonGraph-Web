@@ -734,7 +734,7 @@ export const distance1and2 = (node1, node2) => {
 
 export function repoooooo(setnotice, setrepo) {
     const getRepoData = async () => {
-        cgg("getting")
+        l("getting")
         setnotice("getting data from github api")
         // case 1 we call REST directly
 
