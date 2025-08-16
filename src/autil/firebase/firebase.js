@@ -34,7 +34,6 @@ export function repoooooo(setnotice, setrepo) {
         setnotice("getting data from github api")
         // case 1 we call REST directly
 
-
         // const repoUrl = `https://api.github.com/users/${username}/repos`;
         //
         // // console.log
@@ -126,11 +125,6 @@ export function repoooooo(setnotice, setrepo) {
             }
         )
 
-
-
-
-
-
         if (0) { // one request in one document or inside one document?
 
             var myTimestamp = firebase.firestore.Timestamp.fromDate(new Date());
@@ -147,9 +141,7 @@ export function repoooooo(setnotice, setrepo) {
             })
         }
 
-
         try {
-
             const json = JSON.stringify(repoos.data);
             const blob = new Blob([json], {type: 'application/json'});
             const href = URL.createObjectURL(blob);
@@ -169,11 +161,6 @@ export function repoooooo(setnotice, setrepo) {
         } finally {
         }
 
-
-
-
-
-        return
     }
     return getRepoData;
 }
