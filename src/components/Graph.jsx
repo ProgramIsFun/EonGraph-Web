@@ -244,7 +244,6 @@ function Graph(props) {
                                   setdd={setdd}
                                   collapseddd={collapseddd}
                                   repo={repo}
-
                                   fgRef={fgRef}
                                   checkExistInGraph={checkExistInGraph}
                                   returnListRepo={returnListRepo}
