@@ -780,11 +780,6 @@ export function repoooooo(setnotice, setrepo) {
             const doc = await docRef.get()
             gittoken = doc.data().accessToken
         }
-
-        // cgg(doc.data().accessToken)
-
-        // let tokenn=
-
         const gh = new GitHub({
             token: gittoken
             // make sure this has repo scope right for private repo list
@@ -799,8 +794,6 @@ export function repoooooo(setnotice, setrepo) {
             //   2.1 after change, does original access token have effect?  Yes
             //
             // also note if ac A approve oauth app D to access organization C,  ac B(if member of C) could see D have access to C in oauth procedure
-
-
         });
 
         const me = gh.getUser();
