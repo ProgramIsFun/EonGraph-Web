@@ -769,16 +769,18 @@ export function repoooooo(setnotice, setrepo) {
 
 
         // need to get the token from server first
+
+
         var docRef = dbbbbb.collection("users").doc(auth().currentUser.uid);
 
         const doc = await docRef.get()
-        let ttoken = doc.data().accessToken
+        let gittoken = doc.data().accessToken
         // cgg(doc.data().accessToken)
 
         // let tokenn=
 
         const gh = new GitHub({
-            token: ttoken
+            token: gittoken
             // make sure this has repo scope right for private repo list
 
             // however for safty, no read only scope  https://stackoverflow.com/a/72326284/10964992
