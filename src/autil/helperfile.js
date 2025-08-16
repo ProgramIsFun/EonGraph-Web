@@ -777,7 +777,7 @@ export function repoooooo(setrepo) {
             let gittoken;
 
             if (1) {
-                gittoken = process.env.VITE_GITHUB_ACCESS_TOKEN;
+                gittoken = import.meta.env.VITE_GITHUB_ACCESS_TOKEN;
             } else {
                 var docRef = dbbbbb.collection("users").doc(auth().currentUser.uid);
                 const doc = await docRef.get()
