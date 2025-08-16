@@ -377,7 +377,7 @@ function Graph(props) {
 
     }
 
-    const getRepoData = repoooooo(setnotice, setrepo);
+    const getRepoData = repoooooo(setrepo);
 
     const emptyGraph = async () => {
         dispatch({

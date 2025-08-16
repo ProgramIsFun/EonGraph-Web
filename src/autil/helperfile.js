@@ -732,12 +732,11 @@ export const distance1and2 = (node1, node2) => {
     return Math.sqrt(Math.pow(node1.x - node2.x, 2) + Math.pow(node1.y - node2.y, 2));
 };
 
-export function repoooooo(setnotice, setrepo) {
+export function repoooooo(setrepo) {
     const getRepoData = async () => {
         l("getting")
 
 
-        setnotice("getting data from github api")
         // case 1 we call REST directly
 
         // const repoUrl = `https://api.github.com/users/${username}/repos`;
@@ -802,9 +801,7 @@ export function repoooooo(setnotice, setrepo) {
         let repoos;
         try {
             repoos = await me.listRepos()
-            setnotice(p => {
-                return p + " successful, got " + repoos.data.length + " repos."
-            })
+
             // this list all repo
             // later also user UI will wait for data retriving.
 
@@ -814,9 +811,7 @@ export function repoooooo(setnotice, setrepo) {
             //     console.log(reposJson)
             // });
         } catch (e) {
-            setnotice(p => {
-                return p + "Fail, access token not longer valid, maybe user revoke access "
-            })
+
             console.log("this access token not longer valid, maybe user revoke access  ")
             return
         } finally {
@@ -825,10 +820,6 @@ export function repoooooo(setnotice, setrepo) {
 
         l("stored", repoos)
         setrepo(repoos.data)
-        setnotice(p => {
-                return p + " saving data to database."
-            }
-        )
 
         if (0) { // one request in one document or inside one document?
             var myTimestamp = firebase.firestore.Timestamp.fromDate(new Date());
@@ -837,9 +828,6 @@ export function repoooooo(setnotice, setrepo) {
                 time: myTimestamp
             })
             // Uncaught (in promise) FirebaseError: Document 'projects/githubvisssss202324/databases/(default)/documents/users/NcVakMNaAEYR0wT7eiU0Ax5HTi82/repofetchhhhhhhhh/6j5IKFgVkBmsqCoyWMyd' cannot be written because its size (2,971,208 bytes) exceeds the maximum allowed size of 1,048,576 bytes.
-            setnotice(p => {
-                return p + " Succesfully saved data to database."
-            })
         }
 
         try {
@@ -854,9 +842,6 @@ export function repoooooo(setnotice, setrepo) {
             document.body.removeChild(link);
             URL.revokeObjectURL(href);
         } catch (e) {
-            setnotice(p => {
-                return p + " Fail to download json file."
-            })
             console.log("Fail to download json file.")
         } finally {
         }
