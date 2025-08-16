@@ -429,7 +429,7 @@ export function draggggggg(linkIdCounter, interimLink, links, removeLink, dragSo
     return dragFun;
 }
 
-export function removeNodeAndRelatedLinks(dd, node, setdd,dispatch) {
+export function removeNodeAndRelatedLinks(dd, node, setdd, dispatch) {
     dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: node})
 
     console.log("Before remove node: links length", dd.links.length, "nodes length", dd.nodes.length);
@@ -681,6 +681,7 @@ export function calculateCollapseddd(dd) {
         return newdd
     };
 }
+
 export function rawdata(jsonData) {
     let stringified = JSON.stringify(jsonData);
     const obj = JSON.parse(stringified);
@@ -719,7 +720,6 @@ export let aaaaaaa = {
 }
 
 
-
 export const replaceStringAinB = (strA, strB) => {
     if (strB.startsWith(strA)) {
         return strB.replace(strA, 'e');
@@ -735,6 +735,8 @@ export const distance1and2 = (node1, node2) => {
 export function repoooooo(setnotice, setrepo) {
     const getRepoData = async () => {
         l("getting")
+
+
         setnotice("getting data from github api")
         // case 1 we call REST directly
 
@@ -770,9 +772,9 @@ export function repoooooo(setnotice, setrepo) {
 
         // need to get the token from server first
         let gittoken;
-        
+
         if (1) {
-            gittoken= process.env.REACT_APP_GITHUB_ACCESS_TOKEN;
+            gittoken = process.env.REACT_APP_GITHUB_ACCESS_TOKEN;
         } else {
             var docRef = dbbbbb.collection("users").doc(auth().currentUser.uid);
             const doc = await docRef.get()
@@ -810,7 +812,7 @@ export function repoooooo(setnotice, setrepo) {
             setnotice(p => {
                 return p + " successful, got " + repoos.data.length + " repos."
             })
-            // this list all repo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            // this list all repo
             // later also user UI will wait for data retriving.
 
             /////////////////////////////////////////// IF promise chain intead of async
@@ -828,7 +830,7 @@ export function repoooooo(setnotice, setrepo) {
 
         }
 
-        cgg("stored", repoos)
+        l("stored", repoos)
         setrepo(repoos.data)
         setnotice(p => {
                 return p + " saving data to database."
@@ -836,16 +838,12 @@ export function repoooooo(setnotice, setrepo) {
         )
 
         if (0) { // one request in one document or inside one document?
-
             var myTimestamp = firebase.firestore.Timestamp.fromDate(new Date());
-
             await dbbbbb.collection("users").doc(auth().currentUser.uid).collection("repofetchhhhhhhhh").doc().set({
                 repodata: repoos.data,
                 time: myTimestamp
             })
             // Uncaught (in promise) FirebaseError: Document 'projects/githubvisssss202324/databases/(default)/documents/users/NcVakMNaAEYR0wT7eiU0Ax5HTi82/repofetchhhhhhhhh/6j5IKFgVkBmsqCoyWMyd' cannot be written because its size (2,971,208 bytes) exceeds the maximum allowed size of 1,048,576 bytes.
-
-
             setnotice(p => {
                 return p + " Succesfully saved data to database."
             })
@@ -867,10 +865,11 @@ export function repoooooo(setnotice, setrepo) {
                 return p + " Fail to download json file."
             })
             console.log("Fail to download json file.")
-            return
         } finally {
         }
 
     }
+
+
     return getRepoData;
 }
