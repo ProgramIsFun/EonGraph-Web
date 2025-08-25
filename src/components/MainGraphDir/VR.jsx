@@ -14,7 +14,7 @@ function VR(props) {
     let all33 = props.all33;
     let dd = all33.dd;
     let c = all33.settings;
-
+    let nodeId=all33.nodeIdaccessor;
 
     let fgRef = props.fgRef;
     let repulsiveForceScale = c.VR_repulsive_Force_Scale
@@ -70,6 +70,7 @@ function VR(props) {
     return <>
         <button onClick={getCameraPosition}>Get Camera Position</button>
         <ForceGraphVR
+            nodeId={nodeId}
             ref={fgRef}
             graphData={dd}
             nodeAutoColorBy="group"
