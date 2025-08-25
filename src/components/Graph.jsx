@@ -394,6 +394,7 @@ function Graph(props) {
     return (
         <>
             <FloatingControlPanel
+
                 emptyGraph={emptyGraph}
                 loadSample={loadSample}
                 saveGraph={saveGraph}

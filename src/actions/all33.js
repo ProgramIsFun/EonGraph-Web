@@ -246,13 +246,16 @@ export const fetchData11 = (b) => async (dispatch) => {
         rawdata(jsonData);
 
 
-        let duplicateOriginalIdToJustID = true;
+        let duplicateOriginalIdToJustID = false;
         if (duplicateOriginalIdToJustID) {
             jsonData.nodes.forEach(node => {
                     node.id = node.user_generate_id_7577777777
                 }
             )
         }
+
+
+
         dispatch({
             type: CHANGE_DATA,
             payload: {
