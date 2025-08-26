@@ -201,12 +201,7 @@ const ControlPanel = (props) => {
                         }}
                     /> if set to true, any change of the graph would be sent
                         to database.
-                        <button onClick={
-                            () => {
-                                fetchData111()
-                            }
-                        }>get the graph from nE04J
-                        </button>
+
                     </p>
 
 
@@ -228,7 +223,13 @@ const ControlPanel = (props) => {
                     <p>{notice}</p>
 
                     <br/>
-                    <>general control</>
+                    <>graph data management</>
+                    <button onClick={
+                        () => {
+                            fetchData111()
+                        }
+                    }>get the graph from nE04J
+                    </button>
                     <button id="emit-particles-btn" onClick={emptyGraph}>emptyGraph</button>
                     <button id="emit-particles-btn" onClick={loadSample}>loadSample</button>
                     <button id="emit-particles-btn" onClick={saveGraph}>saveGraph</button>
@@ -319,7 +320,9 @@ const ControlPanel = (props) => {
 
 
                     <br/>
+
                     <br/>
+                    <p>repo related</p>
                     {
                         <button id="emit-particles-btn"
                                 onClick={getRepoData}
