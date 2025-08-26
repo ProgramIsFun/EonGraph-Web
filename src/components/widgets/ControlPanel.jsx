@@ -229,6 +229,12 @@ const ControlPanel = (props) => {
                         }
                     }>get the graph from nE04J
                     </button>
+                    <button onClick={
+                        () => {
+
+                        }
+                    }>update nodes positions to NEO4J
+                    </button>
                     <button id="emit-particles-btn" onClick={emptyGraph}>emptyGraph</button>
                     <button id="emit-particles-btn" onClick={loadSample}>loadSample</button>
                     <button id="emit-particles-btn" onClick={saveGraph}>saveGraph</button>
