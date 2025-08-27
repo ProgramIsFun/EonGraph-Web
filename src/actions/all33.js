@@ -237,11 +237,11 @@ export const changeSetting = (key, value) => async (dispatch) => {
     }
 }
 
-export const fetchData11 = (b) => async (dispatch) => {
+export const fetchData11 = (baseUrl) => async (dispatch) => {
     try {
 
-        l("fetching data from ", b + '/api/v0/return_all_nodes111')
-        const response = await fetch(b + '/api/v0/return_all_nodes111');
+        l("fetching data from ", baseUrl + '/api/v0/return_all_nodes111')
+        const response = await fetch(baseUrl + '/api/v0/return_all_nodes111');
         const jsonData = await response.json();
         rawdata(jsonData);
 
