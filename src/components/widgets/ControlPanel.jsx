@@ -7,7 +7,7 @@ import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass
 import {cgg} from "../../autil/helperfile";
 import {connect, useDispatch} from "react-redux";
 import {l} from "../../autil/loghelper";
-import {changeSetting, fetchData11} from "../../actions/all33";
+import {changeSetting, fetchData11, updateNodesPositionsToBackend} from "../../actions/all33";
 import {cccccccccc} from "../../reducers/all33";
 import {CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
 
@@ -49,6 +49,7 @@ const ControlPanel = (props) => {
     const treemaxlevel = props.treemaxlevel;
     const settreemaxlevel = props.settreemaxlevel;
     const fetchData11 = props.fetchData11;
+    const updateNodesPositionsToBackend=props.updateNodesPositionsToBackend;
 
     const inputRef1 = useRef(null);
 
@@ -231,9 +232,9 @@ const ControlPanel = (props) => {
                     </button>
                     <button onClick={
                         () => {
-
+                            updateNodesPositionsToBackend()
                         }
-                    }>update nodes positions to NEO4J
+                    }>update nodes positions to Backend
                     </button>
                     <button id="emit-particles-btn" onClick={emptyGraph}>emptyGraph</button>
                     <button id="emit-particles-btn" onClick={loadSample}>loadSample</button>
@@ -423,5 +424,10 @@ const ControlPanel = (props) => {
 
 export default connect(
     state => state,
-    {changeSetting, fetchData11}
+    {
+        changeSetting,
+        fetchData11,
+        updateNodesPositionsToBackend
+
+    }
 )(ControlPanel);
