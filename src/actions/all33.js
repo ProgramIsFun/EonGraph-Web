@@ -2,14 +2,16 @@ import api from '../autil/api';
 import {setAlert} from './alert';
 
 import {
+    ACCOUNT_DELETED,
+    CHANGE_DATA,
+    CHANGE_SETTINGS,
+    CLEAR_PROFILE,
     GET_PROFILE,
     GET_PROFILES,
-    PROFILE_ERROR,
-    UPDATE_PROFILE,
-    CLEAR_PROFILE,
-    ACCOUNT_DELETED,
     GET_REPOS,
-    NO_REPOS, CHANGE_SETTINGS, CHANGE_DATA
+    NO_REPOS,
+    PROFILE_ERROR,
+    UPDATE_PROFILE
 } from './types';
 import {l} from "../autil/loghelper";
 import {rawdata} from "../autil/helperfile";
@@ -296,8 +298,7 @@ export const updateNodesPositionsToBackend = () => async (dispatch, getState) =>
         let body = await res.json();
         l("response from updateNodesPositionsToBackend", body)
         dispatch(setAlert('Node positions updated to backend', 'success'));
-    }
-    catch (err) {
+    } catch (err) {
         dispatch(setAlert('Error updating node positions to backend', 'danger'));
     }
 }
