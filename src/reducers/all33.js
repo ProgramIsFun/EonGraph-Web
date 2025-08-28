@@ -12,7 +12,7 @@ import {
     SET_OBJECT_TO_BE_INSPECTED,
     SET_USEREMOTE, CHANGE_USEREMOTE, FETCH_NODE_DATA
 } from '../actions/types';
-import {localbackendurl, NODE_ID_ACCESSOR, remotebackendurl} from "../constants";
+import {localbackendurl, NODE_ID_ACCESSOR, remotebackendurl, SAMPLE_CYPHER} from "../constants";
 
 export const cccccccccc = {
 
@@ -89,7 +89,7 @@ const initialState = {
     graphtypeee:'VR',
     useNodeLocationWhenLoadingGraph:true,
 
-    cypherEditorMainContent:"MATCH (n)-[r]->(m) RETURN n,r,m LIMIT 100", // not used
+    cypherEditorMainContent:SAMPLE_CYPHER, // not used
 };
 
 function all33Reducer(state = initialState, action) {

@@ -367,7 +367,7 @@ export const fetchNodeData = (nodeId) => async (dispatch, getState) => {
 // cypher query
 export const executeCypherQuery = (cypherQuery) => async (dispatch, getState) => {
     try {
-        throw "not implemented yet"
+        // throw "not implemented yet"
         const state = getState();
         l("executeCypherQuery state", state)
         let all33 = state.all33;
@@ -378,15 +378,17 @@ export const executeCypherQuery = (cypherQuery) => async (dispatch, getState) =>
         let b = useremote ? remotebackendurl : localbackendurl
         l("executeCypherQuery b", b)
         l("executeCypherQuery cypherQuery", cypherQuery)
-        const res = await fetch(b + '/api/v0/execute_cypher_query', {
+        const res = await fetch(b + '/api/v0/run_any_cypher', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                cypherQuery: cypherQuery
+                data: cypherQuery
             })
         })
+        l("after fetch executeCypherQuery")
+
         if (!res.ok) {
             l("Network response was not ok", res.statusText);
             throw new Error('Network response was not ok');
@@ -394,14 +396,16 @@ export const executeCypherQuery = (cypherQuery) => async (dispatch, getState) =>
         let body = await res.json();
         l("response from executeCypherQuery", body)
 
-        if (body.nodes && body.links) {
-            dispatch({
-                type: CHANGE_DATA,
-                payload: {
-                    nodes: body.nodes,
-                    links: body.links
-                }
-            })
+        1/0
+        if (body) {
+            l("body is 123321", body)
+            // dispatch({
+            //     type: CHANGE_DATA,
+            //     payload: {
+            //         nodes: body.nodes,
+            //         links: body.links
+            //     }
+            // })
             dispatch(setAlert('Cypher query executed and data updated', 'success'));
         } else {
             dispatch(setAlert('No nodes or links returned from query', 'warning'));
