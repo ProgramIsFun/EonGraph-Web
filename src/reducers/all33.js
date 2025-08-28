@@ -88,6 +88,8 @@ const initialState = {
     useremote: false, // true means use remote backend, false means use local backend
     graphtypeee:'VR',
     useNodeLocationWhenLoadingGraph:true,
+
+    cypherEditorMainContent:"MATCH (n)-[r]->(m) RETURN n,r,m LIMIT 100",
 };
 
 function all33Reducer(state = initialState, action) {
