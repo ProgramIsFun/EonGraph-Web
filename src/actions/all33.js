@@ -254,6 +254,7 @@ export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
 
         let injectCustomTolinks = false;
         if (injectCustomTolinks) {
+            // will persist in the link object, and can be used to render links differently
             jsonData.links.forEach(link => {
                 link.custom123 = Math.random().toString(36).substring(7);
             });
