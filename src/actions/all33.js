@@ -239,6 +239,8 @@ export const changeSetting = (key, value) => async (dispatch) => {
     }
 }
 
+const getBackendUrl = (all33) => all33.useremote ? all33.remotebackendurl : all33.localbackendurl;
+
 export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
     try {
 
@@ -294,10 +296,7 @@ export const updateNodesPositionsToBackend = () => async (dispatch, getState) =>
             })
         )
         let all33 = state.all33;
-        let useremote = all33.useremote;
-        let localbackendurl = all33.localbackendurl;
-        let remotebackendurl = all33.remotebackendurl;
-        let b = useremote ? remotebackendurl : localbackendurl
+        let b = getBackendUrl(all33)
         l("updateNodesPositionsToBackend b", b)
         const res = await fetch(b + '/api/v0/update_nodes_positions', {
             method: 'POST',
@@ -328,11 +327,7 @@ export const fetchSingleNodeData = (nodeId) => async (dispatch, getState) => {
         const state = getState();
         l("fetchSingleNodeData state", state)
         let all33 = state.all33;
-
-        let useremote = all33.useremote;
-        let localbackendurl = all33.localbackendurl;
-        let remotebackendurl = all33.remotebackendurl;
-        let b = useremote ? remotebackendurl : localbackendurl
+        let b = getBackendUrl(all33)
         l("fetchSingleNodeData b", b)
         const res = await fetch(b + '/api/v0/get_specific_node_with_specific_id', {
             method: 'POST',
@@ -378,11 +373,7 @@ export const executeCypherQuery = (cypherQuery) => async (dispatch, getState) =>
         const state = getState();
         l("executeCypherQuery state", state)
         let all33 = state.all33;
-
-        let useremote = all33.useremote;
-        let localbackendurl = all33.localbackendurl;
-        let remotebackendurl = all33.remotebackendurl;
-        let b = useremote ? remotebackendurl : localbackendurl
+        let b = getBackendUrl(all33)
         l("executeCypherQuery b", b)
         l("executeCypherQuery cypherQuery", cypherQuery)
         const res = await fetch(b + '/api/v0/run_any_cypher', {
