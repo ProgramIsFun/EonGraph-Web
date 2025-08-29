@@ -113,7 +113,10 @@ function all33Reducer(state = initialState, action) {
                 dd: {
                     nodes: payload.nodes,
                     links: payload.links
-                }
+                },
+                nodeIdaccessor: payload.nodeIdaccessor !== undefined
+                    ? payload.nodeIdaccessor
+                    : state.nodeIdaccessor
             };
 
         case ADD_NODE:
