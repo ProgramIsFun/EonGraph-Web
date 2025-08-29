@@ -250,7 +250,7 @@ export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
         l("getting id fild name")
         const nodeIdField = "user_generate_id_7577777777"; // change this to your desired field name
 
-        let injectCustomTolinks=false;
+        let injectCustomTolinks = false;
         if (injectCustomTolinks) {
             jsonData.links.forEach(link => {
                 link.custom123 = Math.random().toString(36).substring(7);
@@ -285,12 +285,12 @@ export const updateNodesPositionsToBackend = () => async (dispatch, getState) =>
         // get the nodes from the state, only with id, x, y, z
         const state = getState();
         l("updateNodesPositionsToBackend state", state)
-        let nodeIDXYZ=state.all33.dd.nodes.map(
+        let nodeIDXYZ = state.all33.dd.nodes.map(
             node => ({
-            id: node.id,
-            x: node.x,
-            y: node.y,
-            z: node.z
+                id: node.id,
+                x: node.x,
+                y: node.y,
+                z: node.z
             })
         )
         let all33 = state.all33;
