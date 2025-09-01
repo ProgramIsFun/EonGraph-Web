@@ -14,6 +14,26 @@ import {SAMPLE_CYPHER} from "../../constants";
 import Collapsible from "react-collapsible";
 
 
+
+const BorderWrapper = ({ children, triggerName,style = {} }) => {
+    const defaultStyle = {
+        border: '2px solid #333',
+        padding: '16px',
+        borderRadius: '8px',
+        display: 'inline-block',
+        ...style, // allow custom styles via props
+    };
+    return (
+        <Collapsible trigger={triggerName}>
+            <div style={defaultStyle}>
+                {children}
+            </div>
+        </Collapsible>
+
+    );
+};
+
+
 const ControlPanel = (props) => {
 
     const dispatch = useDispatch();
@@ -181,9 +201,7 @@ const ControlPanel = (props) => {
                     <button onClick={toggleVisibility}>Hide</button>
 
                     <br/>
-
-
-                    <Collapsible trigger="Render control">
+                    <BorderWrapper triggerName={"Render control"}>
                         <button
                             onClick={() => {
                                 cgg("signing out");
@@ -205,7 +223,9 @@ const ControlPanel = (props) => {
                             }
                         > start
                         </button>
-                    </Collapsible>
+                    </BorderWrapper>
+
+
                     <Collapsible trigger="Global control">
                         <p>
                             usingNEO4J: {usingNEO4J ? 'True' : 'False'}
