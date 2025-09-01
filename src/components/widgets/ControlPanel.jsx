@@ -248,10 +248,6 @@ const ControlPanel = (props) => {
                             placeholder="Type your text here..."
                             style={{padding: '10px', fontSize: '16px'}}
                         />
-                        <div>
-                            <p>Preview:</p>
-                            <pre>{value2}</pre>
-                        </div>
                         <button
                             onClick={() => {
                                 let ggg = JSON.parse(value2)
@@ -282,10 +278,6 @@ const ControlPanel = (props) => {
                             placeholder="Type your text here..."
                             style={{padding: '10px', fontSize: '16px'}}
                         />
-                        <div>
-                            <p>Preview:</p>
-                            <pre>{value}</pre>
-                        </div>
                         <button
                             onClick={() => {
                                 executeCypherQuery(value)
