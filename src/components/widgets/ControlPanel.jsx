@@ -19,7 +19,7 @@ import {SAMPLE_CYPHER} from "../../constants";
 import Collapsible from "react-collapsible";
 
 
-const BorderWrapper = ({children, triggerName, style = {}}) => {
+const BorderWrapper = ({children, trigger, style = {}}) => {
     const defaultStyle = {
         border: '2px solid #333',
         // padding: '16px',
@@ -29,7 +29,7 @@ const BorderWrapper = ({children, triggerName, style = {}}) => {
     };
     return (
         <div style={defaultStyle}>
-            <Collapsible trigger={triggerName}>
+            <Collapsible trigger={trigger}>
                 {children}
             </Collapsible>
         </div>
@@ -201,7 +201,7 @@ const ControlPanel = (props) => {
                 >
                     <button onClick={toggleVisibility}>Hide</button>
                     <br/>
-                    <BorderWrapper triggerName={"Render control"}>
+                    <BorderWrapper trigger={"Render control"}>
                         <button
                             onClick={() => {
                                 cgg("signing out");
@@ -226,7 +226,7 @@ const ControlPanel = (props) => {
                     </BorderWrapper>
 
 
-                    <Collapsible trigger="Global control">
+                    <BorderWrapper trigger="Global control">
                         <p>
                             usingNEO4J: {usingNEO4J ? 'True' : 'False'}
                             <input
@@ -252,8 +252,8 @@ const ControlPanel = (props) => {
                                 }
                             />(false=local backend, true=remote backend)
                         </p>
-                    </Collapsible>
-                    <Collapsible trigger="cypher area">
+                    </BorderWrapper>
+                    <BorderWrapper trigger="cypher area">
                         <div>
                         <textarea
                             rows={10}
@@ -272,7 +272,7 @@ const ControlPanel = (props) => {
                         </div>
                         <br/>
                         <br/>
-                    </Collapsible>
+                    </BorderWrapper>
 
                     <p>list of subgraph id</p>
                     <p></p>
