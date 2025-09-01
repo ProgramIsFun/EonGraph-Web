@@ -206,7 +206,7 @@ const ControlPanel = (props) => {
                         > start
                         </button>
                     </Collapsible>
-                    <Collapsible trigger="Start here">
+                    <Collapsible trigger="Global control">
                         <p>
                             usingNEO4J: {usingNEO4J ? 'True' : 'False'}
                             <input
@@ -233,13 +233,25 @@ const ControlPanel = (props) => {
                         />(false=local backend, true=remote backend)
                         </p>
                     </Collapsible>
-
-
-
-                    <p>notice</p>
-                    <p>{notice}</p>
-                    <br/>
-
+                    <Collapsible trigger="cypher area">
+                        <div>
+                        <textarea
+                            rows={10}
+                            cols={50}
+                            value={value}
+                            onChange={handleChange}
+                            placeholder="Type your text here..."
+                            style={{padding: '10px', fontSize: '16px'}}
+                        />
+                            <button
+                                onClick={() => {
+                                    executeCypherQuery(value)
+                                }}
+                            >execute cypher</button>
+                        </div>
+                        <br/>
+                        <br/>
+                    </Collapsible>
 
                     <p>list of subgraph id</p>
                     <p></p>
@@ -249,24 +261,8 @@ const ControlPanel = (props) => {
                     <p></p>
                     <br/>
 
-                    <>cypher area</>
-                    <div>
-                        <textarea
-                            rows={10}
-                            cols={50}
-                            value={value}
-                            onChange={handleChange}
-                            placeholder="Type your text here..."
-                            style={{padding: '10px', fontSize: '16px'}}
-                        />
-                        <button
-                            onClick={() => {
-                                executeCypherQuery(value)
-                            }}
-                        >execute cypher</button>
-                    </div>
-                    <br/>
-                    <br/>
+
+
 
 
                     <>graph data management， get, set, del</>
