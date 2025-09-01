@@ -238,7 +238,16 @@ const ControlPanel = (props) => {
                     <br/>
 
 
-                    <>graph json area</>
+                    <p>list of subgraph id</p>
+                    <p></p>
+                    <br/>
+
+                    <p>subgraphid right now</p>
+                    <p></p>
+                    <br/>
+                    
+
+                    <>import graph json</>
                     <div>
                         <textarea
                             rows={10}
