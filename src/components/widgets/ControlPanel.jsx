@@ -7,15 +7,19 @@ import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass
 import {cgg} from "../../autil/helperfile";
 import {connect, useDispatch} from "react-redux";
 import {l} from "../../autil/loghelper";
-import {changeSetting, executeCypherQuery, fetchAllNodesAndRelations, updateNodesPositionsToBackend} from "../../actions/all33";
+import {
+    changeSetting,
+    executeCypherQuery,
+    fetchAllNodesAndRelations,
+    updateNodesPositionsToBackend
+} from "../../actions/all33";
 import {cccccccccc} from "../../reducers/all33";
 import {CHANGE_DATA, CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
 import {SAMPLE_CYPHER} from "../../constants";
 import Collapsible from "react-collapsible";
 
 
-
-const BorderWrapper = ({ children, triggerName,style = {} }) => {
+const BorderWrapper = ({children, triggerName, style = {}}) => {
     const defaultStyle = {
         border: '2px solid #333',
         // padding: '16px',
@@ -26,7 +30,7 @@ const BorderWrapper = ({ children, triggerName,style = {} }) => {
     return (
         <div style={defaultStyle}>
             <Collapsible trigger={triggerName}>
-            {children}
+                {children}
             </Collapsible>
         </div>
     );
@@ -36,8 +40,6 @@ const BorderWrapper = ({ children, triggerName,style = {} }) => {
 const ControlPanel = (props) => {
 
     const dispatch = useDispatch();
-
-
 
 
     l("ControlPanel render", props);
@@ -51,7 +53,7 @@ const ControlPanel = (props) => {
     const fileContent2 = props.fileContent2;
     const setFileContent2 = props.setFileContent2;
 
-    const executeCypherQuery=props.executeCypherQuery;
+    const executeCypherQuery = props.executeCypherQuery;
 
     const dd = all33.dd;
     const setdd = props.setdd;
@@ -91,7 +93,6 @@ const ControlPanel = (props) => {
 
 
     const changeSetting = props.changeSetting;
-
 
 
     const [value, setValue] = React.useState(SAMPLE_CYPHER);
@@ -191,14 +192,14 @@ const ControlPanel = (props) => {
 
         <>
             {isVisible ? (
-                <div className="floating-control-panel"
-
-                     style={{
-                         overflow: "scroll",
-                         height: "80vh",
-                     }}>
+                <div
+                    className="floating-control-panel"
+                    style={{
+                        overflow: "scroll",
+                        height: "80vh",
+                    }}
+                >
                     <button onClick={toggleVisibility}>Hide</button>
-
                     <br/>
                     <BorderWrapper triggerName={"Render control"}>
                         <button
@@ -229,27 +230,27 @@ const ControlPanel = (props) => {
                         <p>
                             usingNEO4J: {usingNEO4J ? 'True' : 'False'}
                             <input
-                            type="checkbox"
-                            checked={usingNEO4J}
-                            onChange={(event) => {
-                                let a = event.target.checked;
-                                dispatch({"type": CHANGE_USING_NEO4J, payload: a})
-                            }}
+                                type="checkbox"
+                                checked={usingNEO4J}
+                                onChange={(event) => {
+                                    let a = event.target.checked;
+                                    dispatch({"type": CHANGE_USING_NEO4J, payload: a})
+                                }}
                             />
                             (if set to true, any change of the graph would be sent
                             to database)
                         </p>
                         <br/>
                         <p>useremote: {useremote ? 'True' : 'False'}
-                        <input
-                            type="checkbox"
-                            checked={useremote}
-                            onChange={
-                                (event) => {
-                                    dispatch({"type": CHANGE_USEREMOTE, payload: event.target.checked})
+                            <input
+                                type="checkbox"
+                                checked={useremote}
+                                onChange={
+                                    (event) => {
+                                        dispatch({"type": CHANGE_USEREMOTE, payload: event.target.checked})
+                                    }
                                 }
-                            }
-                        />(false=local backend, true=remote backend)
+                            />(false=local backend, true=remote backend)
                         </p>
                     </Collapsible>
                     <Collapsible trigger="cypher area">
@@ -266,7 +267,8 @@ const ControlPanel = (props) => {
                                 onClick={() => {
                                     executeCypherQuery(value)
                                 }}
-                            >execute cypher</button>
+                            >execute cypher
+                            </button>
                         </div>
                         <br/>
                         <br/>
@@ -279,9 +281,6 @@ const ControlPanel = (props) => {
                     <p>subgraphid right now</p>
                     <p></p>
                     <br/>
-
-
-
 
 
                     <>graph data management， get, set, del</>
@@ -309,14 +308,15 @@ const ControlPanel = (props) => {
                                 dispatch({
                                     type: CHANGE_DATA,
                                     payload: {
-                                        nodes:ggg.nodes,
-                                        links:ggg.links,
+                                        nodes: ggg.nodes,
+                                        links: ggg.links,
                                         nodeIdaccessor: "id"
                                     },
 
                                 })
                             }}
-                        >execute import</button>
+                        >execute import
+                        </button>
                     </div>
                     <br/>
                     <br/>
