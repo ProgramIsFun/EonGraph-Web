@@ -11,6 +11,7 @@ import {changeSetting, executeCypherQuery, fetchAllNodesAndRelations, updateNode
 import {cccccccccc} from "../../reducers/all33";
 import {CHANGE_DATA, CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
 import {SAMPLE_CYPHER} from "../../constants";
+import Collapsible from "react-collapsible";
 
 
 const ControlPanel = (props) => {
@@ -181,57 +182,59 @@ const ControlPanel = (props) => {
 
                     <br/>
 
-                    <button
-                        onClick={() => {
-                            cgg("signing out");
-                            auth.getAuth().signOut();
-                        }}
-                    >
-                        Logout
-                    </button>
-                    <button
-                        onClick={
-                            fixAllNodes
-                        }
-                    > stop
-                    </button>
 
-                    <button
-                        onClick={
-                            unfixAllNodes
-                        }
-                    > start
-                    </button>
-
-                    <br/>
-
-                    <br/>
-
-                    <p>usingNEO4J: {usingNEO4J ? 'True' : 'False'}<input
-                        type="checkbox"
-                        checked={usingNEO4J}
-                        onChange={(event) => {
-                            let a = event.target.checked;
-                            dispatch({"type": CHANGE_USING_NEO4J, payload: a})
-                        }}
-                    /> (if set to true, any change of the graph would be sent
-                        to database)
-
-                    </p>
-
-
-                    <br/>
-
-                    <p>useremote: {useremote ? 'True' : 'False'} (false=local backend, true=remote backend)</p>
-                    <input
-                        type="checkbox"
-                        checked={useremote}
-                        onChange={
-                            (event) => {
-                                dispatch({"type": CHANGE_USEREMOTE, payload: event.target.checked})
+                    <Collapsible trigger="Render control">
+                        <button
+                            onClick={() => {
+                                cgg("signing out");
+                                auth.getAuth().signOut();
+                            }}
+                        >
+                            Logout
+                        </button>
+                        <button
+                            onClick={
+                                fixAllNodes
                             }
-                        }
-                    />
+                        > stop
+                        </button>
+
+                        <button
+                            onClick={
+                                unfixAllNodes
+                            }
+                        > start
+                        </button>
+                    </Collapsible>
+                    <Collapsible trigger="Start here">
+                        <p>
+                            usingNEO4J: {usingNEO4J ? 'True' : 'False'}
+                            <input
+                            type="checkbox"
+                            checked={usingNEO4J}
+                            onChange={(event) => {
+                                let a = event.target.checked;
+                                dispatch({"type": CHANGE_USING_NEO4J, payload: a})
+                            }}
+                            />
+                            (if set to true, any change of the graph would be sent
+                            to database)
+                        </p>
+                        <br/>
+                        <p>useremote: {useremote ? 'True' : 'False'}
+                        <input
+                            type="checkbox"
+                            checked={useremote}
+                            onChange={
+                                (event) => {
+                                    dispatch({"type": CHANGE_USEREMOTE, payload: event.target.checked})
+                                }
+                            }
+                        />(false=local backend, true=remote backend)
+                        </p>
+                    </Collapsible>
+
+
 
                     <p>notice</p>
                     <p>{notice}</p>
