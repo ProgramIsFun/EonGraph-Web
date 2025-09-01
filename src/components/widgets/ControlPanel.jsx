@@ -246,6 +246,34 @@ const ControlPanel = (props) => {
                     <p></p>
                     <br/>
 
+                    <>cypher area</>
+                    <div>
+                        <textarea
+                            rows={10}
+                            cols={50}
+                            value={value}
+                            onChange={handleChange}
+                            placeholder="Type your text here..."
+                            style={{padding: '10px', fontSize: '16px'}}
+                        />
+                        <button
+                            onClick={() => {
+                                executeCypherQuery(value)
+                            }}
+                        >execute cypher</button>
+                    </div>
+                    <br/>
+                    <br/>
+
+
+                    <>graph data management， get, set, del</>
+                    <button onClick={
+                        () => {
+                            fetchData111()
+                        }
+                    }>get the graph from nE04J
+                    </button>
+
 
                     <>import new graph with json (will not affect db), assume node id is named id</>
                     <div>
@@ -275,41 +303,13 @@ const ControlPanel = (props) => {
                     <br/>
                     <br/>
 
-
-
-                    <>cypher area</>
-                    <div>
-                        <textarea
-                            rows={10}
-                            cols={50}
-                            value={value}
-                            onChange={handleChange}
-                            placeholder="Type your text here..."
-                            style={{padding: '10px', fontSize: '16px'}}
-                        />
-                        <button
-                            onClick={() => {
-                                executeCypherQuery(value)
-                            }}
-                        >execute cypher</button>
-                    </div>
-                    <br/>
-                    <br/>
-
-
-                    <>graph data management</>
-                    <button onClick={
-                        () => {
-                            fetchData111()
-                        }
-                    }>get the graph from nE04J
-                    </button>
                     <button onClick={
                         () => {
                             updateNodesPositionsToBackend()
                         }
                     }>update nodes positions to Backend
                     </button>
+
                     <button id="emit-particles-btn" onClick={emptyGraph}>emptyGraph</button>
                     <button id="emit-particles-btn" onClick={loadSample}>loadSample</button>
                     <button id="emit-particles-btn" onClick={saveGraph}>saveGraph</button>
