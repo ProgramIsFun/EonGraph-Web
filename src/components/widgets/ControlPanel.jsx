@@ -335,48 +335,29 @@ const ControlPanel = (props) => {
                             setdd={setdd}
                             text={"loadGraphFromLocal"}
                         ></FileDrop>
-
-
                     </BorderWrapper>
-
-
-
-
-
-
-
-
 
                     <br></br>
                     <br></br>
                     <>view mode control</>
                     <button id="emit-particles-btn" onClick={
                         () => {
-
                             dispatch({
                                     "type": "SET_GRAPHTYPEEE",
                                     payload: 'ThreeD'
                                 }
                             );
-
-
                         }
-
                     }>ThreeD
                     </button>
                     <button id="emit-particles-btn" onClick={
-
                         () => {
                             dispatch({
                                     "type": "SET_GRAPHTYPEEE",
                                     payload: "VR"
                                 }
                             );
-
-
                         }
-
-
                     }>VR
                     </button>
                     <button id="emit-particles-btn" onClick={() => {
@@ -385,7 +366,6 @@ const ControlPanel = (props) => {
                                 payload: 'TwoD'
                             }
                         );
-
                     }
 
                     }>TwoD
