@@ -199,31 +199,9 @@ const ControlPanel = (props) => {
                         height: "80vh",
                     }}
                 >
-                    <button onClick={toggleVisibility}>Hide</button>
+                    <button onClick={toggleVisibility}>Hide this menu</button>
                     <br/>
-                    <BorderWrapper trigger={"Render control"}>
-                        <button
-                            onClick={() => {
-                                cgg("signing out");
-                                auth.getAuth().signOut();
-                            }}
-                        >
-                            Logout
-                        </button>
-                        <button
-                            onClick={
-                                fixAllNodes
-                            }
-                        > stop
-                        </button>
 
-                        <button
-                            onClick={
-                                unfixAllNodes
-                            }
-                        > start
-                        </button>
-                    </BorderWrapper>
 
 
                     <BorderWrapper trigger="Global control">
@@ -340,6 +318,21 @@ const ControlPanel = (props) => {
                     <br></br>
                     <br></br>
                     <BorderWrapper trigger="view mode control">
+
+                        <BorderWrapper trigger={"Render control"}>
+                            <button
+                                onClick={
+                                    fixAllNodes
+                                }
+                            > stop
+                            </button>
+                            <button
+                                onClick={
+                                    unfixAllNodes
+                                }
+                            > start
+                            </button>
+                        </BorderWrapper>
 
                         <button id="emit-particles-btn" onClick={
                             () => {
