@@ -428,33 +428,32 @@ const ControlPanel = (props) => {
                                 height: "100px"
                             }}
                         >{returnListRepo()}</div>
-
                     </BorderWrapper>
                     <br/>
                     <br/>
+                    <BorderWrapper trigger="search area">
+                        <TextField
+                            label="Enter something"   // You can change the label text here
+                            variant="outlined"        // Style variant, options: "filled", "outlined", "standard"
+                            value={search}
+                            onChange={handleInputChange}
+                        />
+                        <div style={
+                            {
+                                overflow: "scroll",
+                                height: "100px"
+                            }
+                        }>{filterdd.map((item) => {
+                            return <li onClick={() => {
+                                l("Please implement this functionality to inspect the item");
+                                // setObjectToBeInspected(item);
 
+                            }}>{item.name}</li>
+                        })}
 
-                    <div>search</div>
-                    <TextField
-                        label="Enter something"   // You can change the label text here
-                        variant="outlined"        // Style variant, options: "filled", "outlined", "standard"
-                        value={search}
-                        onChange={handleInputChange}
-                    />
-                    <div style={
-                        {
-                            overflow: "scroll",
-                            height: "100px"
-                        }
-                    }>{filterdd.map((item) => {
-                        return <li onClick={() => {
-                            l("Please implement this functionality to inspect the item");
-                            // setObjectToBeInspected(item);
+                        </div>
 
-                        }}>{item.name}</li>
-                    })}
-
-                    </div>
+                    </BorderWrapper>
 
                     {map
                     }
