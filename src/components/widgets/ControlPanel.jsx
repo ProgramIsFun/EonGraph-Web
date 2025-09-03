@@ -339,69 +339,71 @@ const ControlPanel = (props) => {
 
                     <br></br>
                     <br></br>
-                    <>view mode control</>
-                    <button id="emit-particles-btn" onClick={
-                        () => {
-                            dispatch({
-                                    "type": "SET_GRAPHTYPEEE",
-                                    payload: 'ThreeD'
-                                }
-                            );
-                        }
-                    }>ThreeD
-                    </button>
-                    <button id="emit-particles-btn" onClick={
-                        () => {
-                            dispatch({
-                                    "type": "SET_GRAPHTYPEEE",
-                                    payload: "VR"
-                                }
-                            );
-                        }
-                    }>VR
-                    </button>
-                    <button id="emit-particles-btn" onClick={() => {
-                        dispatch({
-                                "type": "SET_GRAPHTYPEEE",
-                                payload: 'TwoD'
+                    <BorderWrapper trigger="view mode control">
+
+                        <button id="emit-particles-btn" onClick={
+                            () => {
+                                dispatch({
+                                        "type": "SET_GRAPHTYPEEE",
+                                        payload: 'ThreeD'
+                                    }
+                                );
                             }
-                        );
-                    }
+                        }>ThreeD
+                        </button>
+                        <button id="emit-particles-btn" onClick={
+                            () => {
+                                dispatch({
+                                        "type": "SET_GRAPHTYPEEE",
+                                        payload: "VR"
+                                    }
+                                );
+                            }
+                        }>VR
+                        </button>
+                        <button id="emit-particles-btn" onClick={() => {
+                            dispatch({
 
-                    }>TwoD
-                    </button>
-
-                    <br></br>
-
-                    <button id="emit-particles-btn" onClick={() => {
-                        fgRef.current.zoomToFit(400)
-                    }}>fit all
-                    </button>
-
-                    <button id="emit-particles-btn" onClick={() => {
-                        fgRef.current.centerAt(0, 0, 1000);
-
-                    }}>center
-                    </button>
-                    <button id="emit-particles-btn" onClick={() => {
-                        let ggg = objectToBeInspected.x
-                        let ggg2 = objectToBeInspected.y
-                        if (ggg) {
-
-                            fgRef.current.centerAt(ggg, ggg2, 1000);
+                                    "type": "SET_GRAPHTYPEEE",
+                                    payload: 'TwoD'
+                                }
+                            );
                         }
+                        }>TwoD
+                        </button>
 
-                    }}>zoom at selected node
-                    </button>
+                        <br></br>
 
-                    <button id="emit-particles-btn" onClick={() => {
-                        const bloomPass = new UnrealBloomPass();
-                        bloomPass.strength = 4;
-                        bloomPass.radius = 1;
-                        bloomPass.threshold = 0;
-                        fgRef.current.postProcessingComposer().addPass(bloomPass);
-                    }}>zoomToFit
-                    </button>
+                        <button id="emit-particles-btn" onClick={() => {
+                            fgRef.current.zoomToFit(400)
+                        }}>fit all
+                        </button>
+
+                        <button id="emit-particles-btn" onClick={() => {
+                            fgRef.current.centerAt(0, 0, 1000);
+                        }}>center
+                        </button>
+                        <button id="emit-particles-btn" onClick={() => {
+                            let ggg = objectToBeInspected.x
+                            let ggg2 = objectToBeInspected.y
+                            if (ggg) {
+
+                                fgRef.current.centerAt(ggg, ggg2, 1000);
+                            }
+                        }}>zoom at selected node
+                        </button>
+
+                        <button id="emit-particles-btn" onClick={() => {
+                            const bloomPass = new UnrealBloomPass();
+                            bloomPass.strength = 4;
+                            bloomPass.radius = 1;
+                            bloomPass.threshold = 0;
+                            fgRef.current.postProcessingComposer().addPass(bloomPass);
+                        }}>zoomToFit
+                        </button>
+
+                    </BorderWrapper>
+
 
 
                     <br/>
