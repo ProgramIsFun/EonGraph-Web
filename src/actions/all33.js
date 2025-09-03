@@ -246,6 +246,9 @@ export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
 
         l("fetching data from ", baseUrl + '/api/v0/return_all_nodes111')
         const response = await fetch(baseUrl + '/api/v0/return_all_nodes111');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const jsonData = await response.json();
         rawdata(jsonData);
 
