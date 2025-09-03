@@ -404,36 +404,35 @@ const ControlPanel = (props) => {
 
                     </BorderWrapper>
 
+                    <BorderWrapper trigger="github repo related">
 
+                        {
+                            <button id="emit-particles-btn"
+                                    onClick={getRepoData}
+                            >getAllRepos</button>
+                        }
+                        {
+                            <FileDrop
+                                fileContent={fileContent}
+                                setFileContent={setFileContent}
+                                setrepo={setrepo}
+                                text={"load repo list from local"}
+                            >
+                            </FileDrop>
+                        }
+                        <div
+                            // we want to take its overflow.  so that we can scroll it
+                            style={{
+                                border: "3px solid red",
+                                overflow: "auto",
+                                height: "100px"
+                            }}
+                        >{returnListRepo()}</div>
 
+                    </BorderWrapper>
+                    <br/>
                     <br/>
 
-                    <br/>
-                    <p>repo related</p>
-                    {
-                        <button id="emit-particles-btn"
-                                onClick={getRepoData}
-
-                        >getAllRepos</button>
-                    }
-
-                    {
-                        <FileDrop
-                            fileContent={fileContent}
-                            setFileContent={setFileContent}
-                            setrepo={setrepo}
-                            text={"load repo list from local"}
-                        >
-                        </FileDrop>
-                    }
-                    <div
-                        // we want to take its overflow.  so that we can scroll it
-                        style={{
-                            border: "3px solid red",
-                            overflow: "auto",
-                            height: "100px"
-                        }}
-                    >{returnListRepo()}</div>
 
                     <div>search</div>
                     <TextField
