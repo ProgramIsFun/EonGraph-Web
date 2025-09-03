@@ -316,7 +316,6 @@ const ControlPanel = (props) => {
                     </BorderWrapper>
 
                     <br></br>
-                    <br></br>
                     <BorderWrapper trigger="view mode control">
 
                         <BorderWrapper trigger={"Render control"}>
@@ -397,7 +396,7 @@ const ControlPanel = (props) => {
                         {map
                         }
                     </BorderWrapper>
-
+                    <br/>
                     <BorderWrapper trigger="github repo related">
 
                         {
@@ -424,7 +423,6 @@ const ControlPanel = (props) => {
                         >{returnListRepo()}</div>
                     </BorderWrapper>
                     <br/>
-                    <br/>
                     <BorderWrapper trigger="search area">
                         <TextField
                             label="Enter something"   // You can change the label text here
@@ -448,7 +446,7 @@ const ControlPanel = (props) => {
                         </div>
 
                     </BorderWrapper>
-
+                    <br/>
 
                     <BorderWrapper trigger="deprecated">
                         <div>
