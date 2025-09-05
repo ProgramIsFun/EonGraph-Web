@@ -19,7 +19,17 @@ import {SAMPLE_CYPHER} from "../../constants";
 import Collapsible from "react-collapsible";
 
 
-const BorderWrapper = ({children, trigger, style = {}}) => {
+const BorderCollapsibleWrapper = ({children, trigger}) => {
+    return (
+        <BorderWrapper>
+            <Collapsible trigger={trigger}>
+                {children}
+            </Collapsible>
+        </BorderWrapper>
+    );
+};
+
+const BorderWrapper = ({children, style = {}}) => {
     const defaultStyle = {
         border: '2px solid #333',
         // padding: '16px',
@@ -29,12 +39,11 @@ const BorderWrapper = ({children, trigger, style = {}}) => {
     };
     return (
         <div style={defaultStyle}>
-            <Collapsible trigger={trigger}>
-                {children}
-            </Collapsible>
+            {children}
         </div>
     );
-};
+}
+
 
 
 const ControlPanel = (props) => {
@@ -204,7 +213,7 @@ const ControlPanel = (props) => {
 
 
 
-                    <BorderWrapper trigger="Global control">
+                    <BorderCollapsibleWrapper trigger="Global control">
                         <p>
                             usingNEO4J: {usingNEO4J ? 'True' : 'False'}
                             <input
@@ -229,8 +238,8 @@ const ControlPanel = (props) => {
                                 }
                             />(false=local backend, true=remote backend)
                         </p>
-                    </BorderWrapper>
-                    <BorderWrapper trigger="cypher area">
+                    </BorderCollapsibleWrapper>
+                    <BorderCollapsibleWrapper trigger="cypher area">
                         <div>
                         <textarea
                             rows={10}
@@ -249,9 +258,9 @@ const ControlPanel = (props) => {
                         </div>
                         <br/>
                         <br/>
-                    </BorderWrapper>
+                    </BorderCollapsibleWrapper>
 
-                    <BorderWrapper trigger="graph data management(read,write)">
+                    <BorderCollapsibleWrapper trigger="graph data management(read,write)">
                         <button onClick={
                             () => {
                                 fetchData111()
@@ -268,6 +277,9 @@ const ControlPanel = (props) => {
                         <p>subgraphid right now</p>
                         <br/>
                         <br/>
+
+                        <BorderWrapper>
+
 
                         <>overwrite current graph with json (will not affect db), assume node id is named id</>
                         <div>
@@ -295,6 +307,7 @@ const ControlPanel = (props) => {
                             >execute import
                             </button>
                         </div>
+                        </BorderWrapper>
                         <br/>
                         <br/>
                         <button onClick={
@@ -314,12 +327,12 @@ const ControlPanel = (props) => {
                             setdd={setdd}
                             text={"loadGraphFromLocal"}
                         ></FileDrop>
-                    </BorderWrapper>
+                    </BorderCollapsibleWrapper>
 
                     <br></br>
-                    <BorderWrapper trigger="view mode control">
+                    <BorderCollapsibleWrapper trigger="view mode control">
 
-                        <BorderWrapper trigger={"Render control"}>
+                        <BorderCollapsibleWrapper trigger={"Render control"}>
                             <button
                                 onClick={
                                     fixAllNodes
@@ -332,7 +345,7 @@ const ControlPanel = (props) => {
                                 }
                             > start
                             </button>
-                        </BorderWrapper>
+                        </BorderCollapsibleWrapper>
 
                         <button id="emit-particles-btn" onClick={
                             () => {
@@ -396,9 +409,9 @@ const ControlPanel = (props) => {
                         </button>
                         {map
                         }
-                    </BorderWrapper>
+                    </BorderCollapsibleWrapper>
                     <br/>
-                    <BorderWrapper trigger="github repo related">
+                    <BorderCollapsibleWrapper trigger="github repo related">
 
                         {
                             <button id="emit-particles-btn"
@@ -422,9 +435,9 @@ const ControlPanel = (props) => {
                                 height: "100px"
                             }}
                         >{returnListRepo()}</div>
-                    </BorderWrapper>
+                    </BorderCollapsibleWrapper>
                     <br/>
-                    <BorderWrapper trigger="search area">
+                    <BorderCollapsibleWrapper trigger="search area">
                         <TextField
                             label="Enter something"   // You can change the label text here
                             variant="outlined"        // Style variant, options: "filled", "outlined", "standard"
@@ -446,10 +459,10 @@ const ControlPanel = (props) => {
 
                         </div>
 
-                    </BorderWrapper>
+                    </BorderCollapsibleWrapper>
                     <br/>
 
-                    <BorderWrapper trigger="deprecated">
+                    <BorderCollapsibleWrapper trigger="deprecated">
                         <div>
                             <label>
                                 <input
@@ -484,7 +497,7 @@ const ControlPanel = (props) => {
                             <p>treemaxlevel: {treemaxlevel}</p>
                         </div>
 
-                    </BorderWrapper>
+                    </BorderCollapsibleWrapper>
 
                 </div>
             ) : (
