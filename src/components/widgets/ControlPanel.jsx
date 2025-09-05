@@ -307,8 +307,10 @@ const ControlPanel = (props) => {
                             </div>
                         </BorderWrapper>
                         <BorderWrapper>
-                        upsert current graph
+                            <button onClick={
+                                () => {
 
+                                }}>upsert current graph(plz make sure the unique id exist on all node in the current graph)</button>
                         </BorderWrapper>
                         <br/>
                         <br/>
