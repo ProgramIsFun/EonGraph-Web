@@ -75,7 +75,7 @@ const initialState = {
         "VR_node_font_size": 6,
         "VR_linkOpacity": 0.6,
         "VR_linkWidth": 0.6,
-        "VR_linkDirectionalParticles": 4,
+        "VR_linkDirectionalParticles": 0,
         "VR_linkDirectionalParticleWidth": 2,
         "VR_linkDirectionalParticleSpeed": 0.002,
     },
