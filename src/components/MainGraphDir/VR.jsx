@@ -67,8 +67,10 @@ function VR(props) {
         const group = new THREE.Group();
         group.add(sprite);
 
+
+        let shouldGrow=true
         // If this node is selected, add static "glow" sphere
-        if (true) {
+        if (shouldGrow) {
             const geoOuter = new THREE.SphereGeometry(node_font_size * 2.5, 24, 24);
             const matOuter = new THREE.MeshBasicMaterial({
                 color: HIGHLIGHT_HALO_COLOR,
