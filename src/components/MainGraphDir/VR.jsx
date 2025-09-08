@@ -52,6 +52,9 @@ function VR(props) {
     const Normalclick = getNormalclick(objectToBeInspected, dispatch, dd)
     let linkWidth = c.VR_linkWidth;
 
+
+    const HIGHLIGHT_HALO_OPACITY = 0.15; // or whatever you like
+    const HIGHLIGHT_HALO_COLOR = 0xffff00; // yellow, or "#ff0", or 0xffffff for white
     const nodeThreeObject = node => {
         const label2 = !node.name ? node.id : node.name;
         let label = replaceStringAinB("everythingallaccount", label2);
@@ -66,15 +69,15 @@ function VR(props) {
 
         // If this node is selected, add static "glow" sphere
         if (true) {
-            const geo = new THREE.SphereGeometry(node_font_size * 0.75, 16, 16); // Adjust size as needed
-            const mat = new THREE.MeshBasicMaterial({
-                color: node.color,
+            const geoOuter = new THREE.SphereGeometry(node_font_size * 2.5, 24, 24);
+            const matOuter = new THREE.MeshBasicMaterial({
+                color: HIGHLIGHT_HALO_COLOR,
                 transparent: true,
-                opacity: 0.2, // Light/see-through effect
+                opacity: HIGHLIGHT_HALO_OPACITY,
                 depthWrite: false
             });
-            const sphere = new THREE.Mesh(geo, mat);
-            group.add(sphere);
+            const sphereOuter = new THREE.Mesh(geoOuter, matOuter);
+            group.add(sphereOuter);
         }
 
         return group;
