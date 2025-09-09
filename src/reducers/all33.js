@@ -82,7 +82,6 @@ const initialState = {
     },
     dd: {nodes: [], links: []},
     nodeIdAccessor: NODE_ID_ACCESSOR, // this is the accessor for the node id, it can be changed to any property of the node object, like "name" or "label"
-    
     usingNEO4J: true,
     objectToBeInspected: {},
     localBackendUrl: localBackendUrl,
