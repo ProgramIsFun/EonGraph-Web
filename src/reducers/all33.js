@@ -49,6 +49,10 @@ export const cccccccccc = {
         {"value": 2, "min": 1, "max": 10, "step": 1},
     "VR_linkDirectionalParticleSpeed":
         {"value": 0.002, "min": 0.000, "max": 0.01, "step": 0.001},
+    "VR_highlightHaloOpacity":
+        {"value": 0.15, "min": 0, "max": 1, "step": 0.01},
+    "VR_highlightHaloColor":
+        {"value": 0xffff00, "min": 0x000000, "max": 0xffffff, "step": 1},
 
 }
 
@@ -73,6 +77,8 @@ const initialState = {
         "VR_linkDirectionalParticles": 0,
         "VR_linkDirectionalParticleWidth": 2,
         "VR_linkDirectionalParticleSpeed": 0.002,
+        "VR_highlightHaloOpacity": 0.15,
+        "VR_highlightHaloColor": 0xffff00,
     },
     dd: {nodes: [], links: []},
     nodeIdaccessor:NODE_ID_ACCESSOR, // this is the accessor for the node id, it can be changed to any property of the node object, like "name" or "label"
