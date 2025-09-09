@@ -81,7 +81,7 @@ const initialState = {
         "VR_highlightHaloColor": 0xffff00,
     },
     dd: {nodes: [], links: []},
-    nodeIdaccessor: NODE_ID_ACCESSOR, // this is the accessor for the node id, it can be changed to any property of the node object, like "name" or "label"
+    nodeIdAccessor: NODE_ID_ACCESSOR, // this is the accessor for the node id, it can be changed to any property of the node object, like "name" or "label"
     usingNEO4J: true,
     objectToBeInspected: {},
     localbackendurl: localbackendurl,
@@ -115,9 +115,9 @@ function all33Reducer(state = initialState, action) {
                     nodes: payload.nodes,
                     links: payload.links
                 },
-                nodeIdaccessor: payload.nodeIdaccessor !== undefined
-                    ? payload.nodeIdaccessor
-                    : state.nodeIdaccessor
+                nodeIdAccessor: payload.nodeIdAccessor !== undefined
+                    ? payload.nodeIdAccessor
+                    : state.nodeIdAccessor
             };
 
         case ADD_NODE:

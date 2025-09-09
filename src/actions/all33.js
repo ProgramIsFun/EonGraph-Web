@@ -277,7 +277,7 @@ export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
             payload: {
                 nodes: jsonData.nodes,
                 links: jsonData.links,
-                nodeIdaccessor: nodeIdField
+                nodeIdAccessor: nodeIdField
             }
         })
     } catch (error) {

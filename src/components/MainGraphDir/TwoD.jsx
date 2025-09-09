@@ -258,8 +258,8 @@ function TwoD(props) {
         }
     };
     let onLinkRightClick = (link) => removeLink(link);
-    let nodeIdr=all33.nodeIdaccessor;
-    l("nodeIdaccessor", nodeIdaccessor)
+    let nodeIdr=all33.nodeIdAccessor;
+    l("nodeIdAccessor", nodeIdAccessor)
     return <>
 
 

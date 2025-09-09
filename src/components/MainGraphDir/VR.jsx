@@ -14,7 +14,7 @@ function VR(props) {
     let all33 = props.all33;
     let dd = all33.dd;
     let c = all33.settings;
-    let nodeId=all33.nodeIdaccessor;
+    let nodeId=all33.nodeIdAccessor;
 
     let fgRef = props.fgRef;
     let repulsiveForceScale = c.VR_repulsive_Force_Scale
