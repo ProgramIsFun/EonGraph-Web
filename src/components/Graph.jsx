@@ -4,7 +4,7 @@ import VR from "./MainGraphDir/VR";
 import {dbbbbb} from "../autil/firebase/firebase";
 
 import * as firebase from 'firebase/app'
-import {calculateCollapseddd, datassss, keydownnnnnn, rawdata, repoooooo} from "../autil/helperfile";
+import {calculateCollapseddd, datassss, keydownHandler, rawdata, repoooooo} from "../autil/helperfile";
 
 import TwoD from "./MainGraphDir/TwoD";
 import FloatingControlPanel from "./widgets/ControlPanel";
@@ -120,7 +120,7 @@ function Graph(props) {
     };
 
     useEffect(() => {
-        const handleKeyDown = keydownnnnnn(
+        const handleKeyDown = keydownHandler(
             setObjectToBeInspected,
             saveGraph,
             objectToBeInspected,
