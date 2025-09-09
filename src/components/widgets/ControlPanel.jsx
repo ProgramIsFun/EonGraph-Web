@@ -158,10 +158,10 @@ const ControlPanel = (props) => {
     }
 
     let useremote = all33.useremote;
-    let localbackendurl = all33.localbackendurl;
+    let localBackendUrl = all33.localBackendUrl;
     let remotebackendurl = all33.remotebackendurl;
     const fetchDataDB = async () => {
-        let baseUrl = useremote ? remotebackendurl : localbackendurl
+        let baseUrl = useremote ? remotebackendurl : localBackendUrl
         fetchDataDB_(baseUrl)
     };
 
