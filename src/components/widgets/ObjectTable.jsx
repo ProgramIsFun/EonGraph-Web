@@ -14,7 +14,7 @@ const ObjectTable = (props) => {
     // Convert object entries into an array of [key, value] pairs for easy mapping
     const dispatch = useDispatch();
     let all33 = props.all33;
-    let graphtypeee = all33.graphtypeee;
+    let graphTypeRender = all33.graphTypeRender;
     let dd = props.dd;
     let setdd = props.setdd;
     let fetchNodeData= props.fetchNodeData;
@@ -75,7 +75,7 @@ const ObjectTable = (props) => {
     let element = 1
         ?
         <>
-            {graphtypeee == 4 ?
+            {graphTypeRender == 4 ?
                 <JsonView value={objectToBeInspected}
 
                           style={aaaaaaa}

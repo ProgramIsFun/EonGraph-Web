@@ -35,7 +35,7 @@ function Graph(props) {
     const [istreemaxlevelrestricted, setistreemaxlevelrestricted] = useState(false)
     const [treemaxlevel, settreemaxlevel] = useState(3)
 
-    let graphtypeee = all33.graphtypeee;
+    let graphTypeRender = all33.graphTypeRender;
     const [repo, setrepo] = useState(0)
     const [notice, setnotice] = useState("")
 
@@ -131,7 +131,7 @@ function Graph(props) {
                 setdd,
                 link111,
                 lc,
-                graphtypeee,
+                graphTypeRender,
                 dispatch
             );
 
@@ -146,7 +146,7 @@ function Graph(props) {
         }else{
             l("not using event listeners for keydown and wheel")
         }
-    }, [objectToBeInspected, link111, dd, graphtypeee]); // Empty dependency array means this effect runs once on mount
+    }, [objectToBeInspected, link111, dd, graphTypeRender]); // Empty dependency array means this effect runs once on mount
 
 
     // every time search changes, we want to filter the repo
@@ -240,9 +240,9 @@ function Graph(props) {
         }
     }
 
-    const returnGraph1 = (graphtypeee) => {
+    const returnGraph1 = (graphTypeRender) => {
         let component;
-        switch (graphtypeee) {
+        switch (graphTypeRender) {
             case "ThreeD":
                 component = <ThreeD dd={dd} fgRef={fgRef}/>;
                 break;
@@ -474,7 +474,7 @@ function Graph(props) {
                     // border: "3px solid purple",
                 }}
             >
-                {returnGraph1(graphtypeee)}
+                {returnGraph1(graphTypeRender)}
             </div>
         </>
 
