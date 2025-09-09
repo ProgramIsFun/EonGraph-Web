@@ -11,7 +11,7 @@ import {
     changeSetting,
     executeCypherQuery,
     fetchAllNodesAndRelations,
-    updateNodesPositionsToBackend
+    updateCurrentGraphNodesPositionsToBackend
 } from "../../actions/all33";
 import {cccccccccc} from "../../reducers/all33";
 import {CHANGE_DATA, CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
@@ -381,9 +381,8 @@ const ControlPanel = (props) => {
                                 () => {
 
                                 }}>
-                                add current graph to db(plz make sure the unique id exist on all node in the current
-                                graph)
-                                positions will be ignored
+                                add current graph to db
+                                (plz make sure the unique id exist on all node in the current graph)
                                 (prefer you add a subgraph id property to all nodes, so that you can load this subgraph
                                 later)
                             </button>
@@ -595,7 +594,7 @@ export default connect(
     {
         changeSetting,
         fetchData11: fetchAllNodesAndRelations,
-        updateNodesPositionsToBackend,
+        updateNodesPositionsToBackend: updateCurrentGraphNodesPositionsToBackend,
         executeCypherQuery
     }
 )(ControlPanel);

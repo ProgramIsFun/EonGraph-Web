@@ -286,11 +286,11 @@ export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
 
 }
 
-export const updateNodesPositionsToBackend = () => async (dispatch, getState) => {
+export const updateCurrentGraphNodesPositionsToBackend = () => async (dispatch, getState) => {
     try {
         // get the nodes from the state, only with id, x, y, z
         const state = getState();
-        l("updateNodesPositionsToBackend state", state)
+        l("updateCurrentGraphNodesPositionsToBackend state", state)
         let nodeIDXYZ = state.all33.dd.nodes.map(
             node => ({
                 id: node.id,
@@ -301,7 +301,7 @@ export const updateNodesPositionsToBackend = () => async (dispatch, getState) =>
         )
         let all33 = state.all33;
         let b = getBackendUrl(all33)
-        l("updateNodesPositionsToBackend b", b)
+        l("updateCurrentGraphNodesPositionsToBackend b", b)
         const res = await fetch(b + '/api/v0/update_nodes_positions', {
             method: 'POST',
             headers: {
@@ -316,10 +316,10 @@ export const updateNodesPositionsToBackend = () => async (dispatch, getState) =>
             throw new Error('Network response was not ok');
         }
         let body = await res.json();
-        l("response from updateNodesPositionsToBackend", body)
+        l("response from updateCurrentGraphNodesPositionsToBackend", body)
         // dispatch(setAlert('Node positions updated to backend', 'success'));
     } catch (err) {
-        l("error in updateNodesPositionsToBackend", err)
+        l("error in updateCurrentGraphNodesPositionsToBackend", err)
         // dispatch(setAlert('Error updating node positions to backend', 'danger'));
     }
 }
