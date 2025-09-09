@@ -157,11 +157,11 @@ const ControlPanel = (props) => {
         // }
     }
 
-    let useremote = all33.useremote;
+    let useRemote = all33.useRemote;
     let localBackendUrl = all33.localBackendUrl;
     let remoteBackendUrl = all33.remoteBackendUrl;
     const fetchDataDB = async () => {
-        let baseUrl = useremote ? remoteBackendUrl : localBackendUrl
+        let baseUrl = useRemote ? remoteBackendUrl : localBackendUrl
         fetchDataDB_(baseUrl)
     };
 
@@ -225,10 +225,10 @@ const ControlPanel = (props) => {
                             (if set to true, some changes of the graph would affect db)
                         </p>
                         <br/>
-                        <p>useremote: {useremote ? 'True' : 'False'}
+                        <p>useRemote: {useRemote ? 'True' : 'False'}
                             <input
                                 type="checkbox"
-                                checked={useremote}
+                                checked={useRemote}
                                 onChange={
                                     (event) => {
                                         dispatch({"type": CHANGE_USEREMOTE, payload: event.target.checked})
