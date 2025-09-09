@@ -309,6 +309,43 @@ const ControlPanel = (props) => {
                         }>add prop to all node</button>
                         <br/>
 
+                        <p>delete prop from all node</p>
+                        <button onClick={
+                            () => {
+                                let key = prompt("Enter the property key to delete:");
+                                if (key !== null) {
+                                    let inplace=true
+                                    if (inplace) {
+                                        dd.nodes.forEach(node => {
+                                            // Directly modify each node object
+                                            delete node[key];
+                                        });
+                                        dispatch({
+                                            type: CHANGE_DATA,
+                                            payload: {
+                                                nodes: dd.nodes,     // `dd.nodes` has been modified in place
+                                                links: dd.links,
+                                                nodeIdaccessor: all33.nodeIdaccessor
+                                            }
+                                        });
+                                    }else {
+                                        let newNodes = dd.nodes.map(node => {
+                                            const {[key]: _, ...rest} = node; // Destructure to exclude the key
+                                            return rest; // Return the new object without the key
+                                        });
+                                        dispatch({
+                                            type: CHANGE_DATA,
+                                            payload: {
+                                                nodes: newNodes,
+                                                links: dd.links,
+                                                nodeIdaccessor: all33.nodeIdaccessor
+                                            }
+                                        });
+                                    }
+                                }
+                            }
+                        }>delete prop from all node</button>
+
 
 
 
