@@ -56,6 +56,9 @@ function VR(props) {
     const HIGHLIGHT_HALO_OPACITY = c.VR_highlightHaloOpacity; // or whatever you like
     const HIGHLIGHT_HALO_COLOR = c.VR_highlightHaloColor; // yellow, or "#ff0", or 0xffffff for white
     const nodeThreeObject = node => {
+        // Group to hold the sprite and highlight sphere
+        const group = new THREE.Group();
+
         const label2 = !node.name ? node.id : node.name;
         let label = replaceStringAinB("everythingallaccount", label2);
         // SpriteText node
@@ -63,13 +66,9 @@ function VR(props) {
         sprite.color = node.color;
         sprite.textHeight = node_font_size;
 
-        // Group to hold the sprite and highlight sphere
-        const group = new THREE.Group();
         group.add(sprite);
 
-
         let shouldGrow=true
-        // If this node is selected, add static "glow" sphere
         if (shouldGrow) {
             const geoOuter = new THREE.SphereGeometry(node_font_size * 2.5, 24, 24);
             const matOuter = new THREE.MeshBasicMaterial({
