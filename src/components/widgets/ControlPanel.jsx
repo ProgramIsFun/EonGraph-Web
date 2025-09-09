@@ -239,14 +239,14 @@ const ControlPanel = (props) => {
                     </BorderCollapsibleWrapper>
                     <BorderCollapsibleWrapper trigger="cypher area">
                         <div>
-                        <textarea
-                            rows={10}
-                            cols={50}
-                            value={value}
-                            onChange={handleChange}
-                            placeholder="Type your text here..."
-                            style={{padding: '10px', fontSize: '16px'}}
-                        />
+                            <textarea
+                                rows={10}
+                                cols={50}
+                                value={value}
+                                onChange={handleChange}
+                                placeholder="Type your text here..."
+                                style={{padding: '10px', fontSize: '16px'}}
+                            />
                             <button
                                 onClick={() => {
                                     executeCypherQuery(value)
@@ -276,7 +276,7 @@ const ControlPanel = (props) => {
                                 if (key !== null
                                     && value !== null
                                 ) {
-                                    let inplace=true
+                                    let inplace = true
                                     if (inplace) {
                                         dd.nodes.forEach(node => {
                                             // Directly modify each node object
@@ -290,7 +290,7 @@ const ControlPanel = (props) => {
                                                 nodeIdaccessor: all33.nodeIdaccessor
                                             }
                                         });
-                                    }else {
+                                    } else {
                                         let newNodes = dd.nodes.map(node => ({
                                             ...node,
                                             [key]: value
@@ -306,7 +306,8 @@ const ControlPanel = (props) => {
                                     }
                                 }
                             }
-                        }>add prop to all node</button>
+                        }>add prop to all node
+                        </button>
                         <br/>
 
                         <p>delete prop from all node (local)</p>
@@ -314,7 +315,7 @@ const ControlPanel = (props) => {
                             () => {
                                 let key = prompt("Enter the property key to delete:");
                                 if (key !== null) {
-                                    let inplace=true
+                                    let inplace = true
                                     if (inplace) {
                                         dd.nodes.forEach(node => {
                                             // Directly modify each node object
@@ -328,7 +329,7 @@ const ControlPanel = (props) => {
                                                 nodeIdaccessor: all33.nodeIdaccessor
                                             }
                                         });
-                                    }else {
+                                    } else {
                                         let newNodes = dd.nodes.map(node => {
                                             const {[key]: _, ...rest} = node; // Destructure to exclude the key
                                             return rest; // Return the new object without the key
@@ -344,9 +345,8 @@ const ControlPanel = (props) => {
                                     }
                                 }
                             }
-                        }>delete prop from all node</button>
-
-
+                        }>delete prop from all node
+                        </button>
 
 
                         <p>list of subgraph id</p>
