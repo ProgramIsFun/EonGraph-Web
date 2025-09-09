@@ -12,7 +12,7 @@ import {
     SET_OBJECT_TO_BE_INSPECTED,
     SET_USEREMOTE, CHANGE_USEREMOTE, FETCH_NODE_DATA
 } from '../actions/types';
-import {localBackendUrl, NODE_ID_ACCESSOR, remotebackendurl, SAMPLE_CYPHER} from "../constants";
+import {localBackendUrl, NODE_ID_ACCESSOR, remoteBackendUrl, SAMPLE_CYPHER} from "../constants";
 
 export const cccccccccc = {
     // 2D
@@ -86,7 +86,7 @@ const initialState = {
     usingNEO4J: true,
     objectToBeInspected: {},
     localBackendUrl: localBackendUrl,
-    remotebackendurl: remotebackendurl,
+    remoteBackendUrl: remoteBackendUrl,
     useremote: false, // true means use remote backend, false means use local backend
     graphtypeee: 'VR',
     useNodeLocationWhenLoadingGraph: true,
