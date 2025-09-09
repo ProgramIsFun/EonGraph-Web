@@ -268,7 +268,7 @@ const ControlPanel = (props) => {
                         <br/>
                         <br/>
 
-                        <p>add prop value to all node</p>
+                        <p>add prop value to all node (local)</p>
                         <button onClick={
                             () => {
                                 let key = prompt("Enter the property key:");
@@ -309,7 +309,7 @@ const ControlPanel = (props) => {
                         }>add prop to all node</button>
                         <br/>
 
-                        <p>delete prop from all node</p>
+                        <p>delete prop from all node (local)</p>
                         <button onClick={
                             () => {
                                 let key = prompt("Enter the property key to delete:");
