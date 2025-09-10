@@ -23,15 +23,13 @@ const ObjectTable = (props) => {
 
     let objectToBeInspected = all33.objectToBeInspected;
     l("objectToBeInspected111", objectToBeInspected, '__threeObj' in objectToBeInspected);
-    const {__threeObj, ...objectToBeInspected2} = objectToBeInspected;
+    const {__threeObj, ...objectToBeInspectedWithoutThreeObj} = objectToBeInspected;
     let setObjectToBeInspected = props.setObjectToBeInspected;
 
 
     let entries
     try {
-        // l("data2222222222", props)
         entries = Object.entries(props.objectToBeInspected);
-
     } catch (e) {
         l("Error converting object to entries:", e);
         entries = [];
@@ -82,11 +80,14 @@ const ObjectTable = (props) => {
                 <JsonView value={objectToBeInspected}
 
                           style={aaaaaaa}
-                /> :
-                <><JsonView value={objectToBeInspected2}
+                />
+                :
+                <>
+                    <JsonView value={objectToBeInspectedWithoutThreeObj}
 
                             style={aaaaaaa}
-                /></>
+                />
+                </>
             }
         </>
         :
