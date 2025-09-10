@@ -69,7 +69,7 @@ const ObjectTable = (props) => {
     const link = props.objectToBeInspected.reponested
         && props.objectToBeInspected.reponested.html_url;
 
-    let aaaaaaa1 = async () => {
+    let removeGithubRepo = async () => {
         await removegithubRepoNode(objectToBeInspected, dd, setdd, dispatch);
     }
     let element = 1
@@ -97,11 +97,13 @@ const ObjectTable = (props) => {
     let interfaceTable = 1
         ?
         <div style={tableStyle}>
+
             <button onClick={() => {
                 fetchNodeData(objectToBeInspected.id)
             }}
-            >refetch
+            >refetch data
             </button>
+
             <button onClick={() => {
                 rename(props.objectToBeInspected, "node")
             }}>
@@ -109,8 +111,9 @@ const ObjectTable = (props) => {
             </button>
 
             <button onClick={() => {
-                aaaaaaa1()
+                removeGithubRepo()
             }}>
+
                 remove github repo
             </button>
 
