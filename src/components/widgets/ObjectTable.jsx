@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import MicrolinkJsonView from '@microlink/react-json-view'
 
 import UiwJsonView from '@uiw/react-json-view';
-
+import ReactJson from 'react-json-view'
 import {aaaaaaa, removegithubRepoNode, rename} from "../../autil/helperfile";
 import {l} from "../../autil/loghelper";
 import {connect, useDispatch} from "react-redux";
@@ -77,21 +77,47 @@ const ObjectTable = (props) => {
 
     let allowThreeObjInJsonForRender=false
     let objForJsonView = allowThreeObjInJsonForRender?objectToBeInspected:objectToBeInspectedWithoutThreeObj;
-    let coreViewer = 1
-        ?
-        <>  <Demo></Demo>
-            <UiwJsonView
-                value={objForJsonView}
-                style={aaaaaaa}
-            />
-        </>
-        :
-        <>
-            <MicrolinkJsonView   // this library is weird looking, opacity is 100
-                src={objForJsonView}
 
-            />
-        </>;
+
+
+    function renderViewer(coreViewer) {
+        switch (coreViewer) {
+            case 1:
+                return (
+                    <>
+                        <Demo />
+                        <UiwJsonView
+                            value={objForJsonView}
+                            style={aaaaaaa}
+                        />
+                    </>
+                );
+            case 2:
+                return (
+                    <>
+                        <MicrolinkJsonView
+                            src={objForJsonView}
+                        />
+                    </>
+                );
+            case 3:
+                return (
+                    <>
+                        <ReactJson src={objForJsonView}
+                        onEdit={(t)=>{
+                            l("onedited",t)
+                        }}
+                        />
+                    </>
+                );
+            default:
+                return null;
+        }
+    }
+
+
+
+    let coreViewer = renderViewer(3);
 
     let useLibrary=true
 
