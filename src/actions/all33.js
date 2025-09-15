@@ -244,8 +244,8 @@ const getBackendUrl = (all33) => all33.useRemote ? all33.remoteBackendUrl : all3
 export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
     try {
 
-        l("fetching data from ", baseUrl + '/api/v0/return_all_nodes111')
-        const response = await fetch(baseUrl + '/api/v0/return_all_nodes111');
+        l("fetching data from ", baseUrl + '/api/v0/return_all_nodes_and_their_connections_if_any')
+        const response = await fetch(baseUrl + '/api/v0/return_all_nodes_and_their_connections_if_any');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
