@@ -253,7 +253,7 @@ export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
         rawdata(jsonData);
 
         l("getting id fild name")
-        const nodeIdField = "user_generate_id_7577777777"; // change this to your desired field name
+        const nodeIdField = "user_generate_id_7577777777"; // this should be from api call instead of hardcoded
 
         let injectCustomTolinks = false;
         if (injectCustomTolinks) {
