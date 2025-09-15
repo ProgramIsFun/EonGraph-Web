@@ -17,7 +17,7 @@ import {ValuesSetting} from "../../reducers/all33";
 import {CHANGE_DATA, CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
 import {SAMPLE_CYPHER} from "../../constants";
 import Collapsible from "react-collapsible";
-
+import {SketchPicker} from "react-color";
 
 const BorderCollapsibleWrapper = ({children, trigger}) => {
     return (
@@ -48,6 +48,8 @@ const BorderWrapper = ({children, style = {}}) => {
 const ControlPanel = (props) => {
 
     const dispatch = useDispatch();
+
+    const [color, setColor] = useState("#fff");
 
 
     l("ControlPanel render", props);
@@ -177,28 +179,46 @@ const ControlPanel = (props) => {
                 let min = ValuesSetting[key].min
                 let step = ValuesSetting[key].step
                 let useSlider = ValuesSetting[key].changeableType && ValuesSetting[key].changeableType.includes("slider");
+                let useColorPicker = ValuesSetting[key].changeableType && ValuesSetting[key].changeableType.includes("colorPicker");
                 return (
                     <div key={key} className="horizontal-bar">
 
                         propname:{key}
-                        {useSlider&& <Slider
-                            aria-label={key}
-                            value={
-                                typeof c[key] === 'number' ?
-                                    c[key]
-                                    : 0
-                            }
-                            onChange={
-                                (event, newValue) => {
-                                    l("Slider changed", key, newValue);
-                                    changeSetting(key, newValue);
+                        {useSlider &&
+                            <Slider
+                                aria-label={key}
+                                value={
+                                    typeof c[key] === 'number' ?
+                                        c[key]
+                                        : 0
                                 }
-                            }
-                            min={min}
-                            max={max}
-                            step={step}
-                        />}
+                                onChange={
+                                    (event, newValue) => {
+                                        l("Slider changed", key, newValue);
+                                        changeSetting(key, newValue);
+                                    }
+                                }
+                                min={min}
+                                max={max}
+                                step={step}
+                            />
+                        }
+                        {
+                            useColorPicker &&
+                            <>
+                                <SketchPicker
+                                    color={c[key]}
+                                    onChangeComplete={(color) => {
+                                        l("Color selected:", color);
+                                        // Get the hex string value
+                                        const hexString = color.hex; // "#aa6f6f"
+                                        const hexNumber = parseInt(hexString.replace(/^#/, ''), 16);
+                                        changeSetting(key, hexNumber);
+                                    }}
 
+                                />
+                            </>
+                        }
 
                         propvalue:{c[key]}
 
