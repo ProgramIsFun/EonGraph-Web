@@ -521,6 +521,17 @@ const ControlPanel = (props) => {
                         {
                             map
                         }
+
+                        <button onClick={
+                            ()=>{
+                                let exportObj=c;
+                                let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
+                                let dlAnchorElem = document.createElement('a');
+                                dlAnchorElem.setAttribute("href", dataStr);
+                                dlAnchorElem.setAttribute("download", "settings.json");
+                                dlAnchorElem.click();
+                            }
+                        }>export the render settings in json</button>
                     </BorderCollapsibleWrapper>
                     <br/>
                     <BorderCollapsibleWrapper trigger="github repo related">
