@@ -13,7 +13,7 @@ import {
     fetchAllNodesAndRelations,
     updateCurrentGraphNodesPositionsToBackend
 } from "../../actions/all33";
-import {cccccccccc} from "../../reducers/all33";
+import {OriginalValues} from "../../reducers/all33";
 import {CHANGE_DATA, CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
 import {SAMPLE_CYPHER} from "../../constants";
 import Collapsible from "react-collapsible";
@@ -167,20 +167,27 @@ const ControlPanel = (props) => {
 
     let prefix = graphTypeRender
     let map = Object.keys(c)
-        .filter(key => key.startsWith(graphTypeRender))
+        .filter(
+            key => key.startsWith(graphTypeRender)
+        )
         .map(
             (key) => {
 
-                let max = cccccccccc[key].max
-                let min = cccccccccc[key].min
-                let step = cccccccccc[key].step
+                let max = OriginalValues[key].max
+                let min = OriginalValues[key].min
+                let step = OriginalValues[key].step
                 return (
                     <div key={key} className="horizontal-bar">
 
-                        {key}
+                        propname:{key}
+
                         <Slider
                             aria-label={key}
-                            value={typeof c[key] === 'number' ? c[key] : 0}
+                            value={
+                                typeof c[key] === 'number' ?
+                                    c[key]
+                                    : 0
+                            }
                             onChange={
                                 (event, newValue) => {
                                     l("Slider changed", key, newValue);
@@ -191,7 +198,9 @@ const ControlPanel = (props) => {
                             max={max}
                             step={step}
                         />
-                        {c[key]}
+
+                        propvalue:{c[key]}
+
                     </div>
                 )
             });
@@ -486,7 +495,9 @@ const ControlPanel = (props) => {
                             fgRef.current.postProcessingComposer().addPass(bloomPass);
                         }}>zoomToFit
                         </button>
-                        {map
+
+                        {
+                            map
                         }
                     </BorderCollapsibleWrapper>
                     <br/>

@@ -14,7 +14,7 @@ import {
 } from '../actions/types';
 import {localBackendUrl, NODE_ID_ACCESSOR, remoteBackendUrl, SAMPLE_CYPHER} from "../constants";
 
-export const cccccccccc = {
+export const OriginalValues = {
     // 2D
     "TwoD_global_scale_adjustment_coefficient":
         {"value": 0.5, "min": 0.1, "max": 1, "step": 0.1},
