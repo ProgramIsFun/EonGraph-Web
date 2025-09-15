@@ -55,6 +55,9 @@ function VR(props) {
 
     const HIGHLIGHT_HALO_OPACITY = c.VR_highlightHaloOpacity; // or whatever you like
     const HIGHLIGHT_HALO_COLOR = c.VR_highlightHaloColor; // yellow, or "#ff0", or 0xffffff for white
+    const HIGHLIGHT_HALO_RADIUS = node_font_size * 2.5; // slightly larger than the sprite size
+    const HIGHLIGHT_HALO_WIDTH_SEGMENTS = 24; // number of segments to make the sphere smooth
+    const HIGHLIGHT_HALO_HEIGHT_SEGMENTS = 24;
     const nodeThreeObject = node => {
         // Group to hold the sprite and highlight sphere
         const group = new THREE.Group();
@@ -70,7 +73,7 @@ function VR(props) {
 
         let shouldGrow=true
         if (shouldGrow) {
-            const geoOuter = new THREE.SphereGeometry(node_font_size * 2.5, 24, 24);
+            const geoOuter = new THREE.SphereGeometry(HIGHLIGHT_HALO_RADIUS, HIGHLIGHT_HALO_WIDTH_SEGMENTS, HIGHLIGHT_HALO_HEIGHT_SEGMENTS);
             const matOuter = new THREE.MeshBasicMaterial({
                 color: HIGHLIGHT_HALO_COLOR,
                 transparent: true,
