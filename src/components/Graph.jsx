@@ -240,7 +240,7 @@ function Graph(props) {
         }
     }
 
-    const returnGraph1 = (graphTypeRender) => {
+    const returnGraphOfType = (graphTypeRender) => {
         let component;
         switch (graphTypeRender) {
             case "ThreeD":
@@ -474,7 +474,7 @@ function Graph(props) {
                     // border: "3px solid purple",
                 }}
             >
-                {returnGraph1(graphTypeRender)}
+                {returnGraphOfType(graphTypeRender)}
             </div>
         </>
 
