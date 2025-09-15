@@ -4,7 +4,7 @@ import VR from "./mainGraphDir/VR";
 import {dbbbbb} from "../autil/firebase/firebase";
 
 import * as firebase from 'firebase/app'
-import {calculateCollapseddd, datassss, keydownHandler, rawdata, repoooooo} from "../autil/helperfile";
+import {calculateCollapseddd, sample_graph_data, keydownHandler, rawdata, repoooooo} from "../autil/helperfile";
 
 import TwoD from "./mainGraphDir/TwoD";
 import FloatingControlPanel from "./widgets/ControlPanel";
@@ -161,7 +161,7 @@ function Graph(props) {
     )
 
     const loadSample = () => {
-        const clonedObject = _.cloneDeep(datassss);
+        const clonedObject = _.cloneDeep(sample_graph_data);
         dispatch({
             type: CHANGE_DATA,
             payload: {

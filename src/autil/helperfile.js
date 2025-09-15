@@ -3,10 +3,9 @@ import {v4 as uuidv4} from "uuid";
 import {l} from "./loghelper";
 import {SET_OBJECT_TO_BE_INSPECTED} from "../actions/types";
 import GitHub from "github-api";
-import firebase from "firebase";
 import {auth, dbbbbb} from "./firebase/firebase";
 
-export let datassss = {
+export let sample_graph_data = {
     "nodes": [
         {"id": "Myriel", "group": 1},
         {"id": "Napoleon", "group": 1},
