@@ -184,7 +184,8 @@ const ControlPanel = (props) => {
                     <div key={key} className="horizontal-bar">
 
                         propname:{key}
-                        {useSlider &&
+                        {
+                            useSlider &&
                             <Slider
                                 aria-label={key}
                                 value={
