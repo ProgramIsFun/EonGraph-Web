@@ -64,15 +64,16 @@ function VR(props) {
         // Group to hold the sprite and highlight sphere
         const group = new THREE.Group();
 
+        // ITEM 1: Text label
         const label2 = !node.name ? node.id : node.name;
         let label = replaceStringAinB("everythingallaccount", label2);
         // SpriteText node
         const sprite = new SpriteText(label);
         sprite.color = node.color;
         sprite.textHeight = node_font_size;
-
         group.add(sprite);
 
+        // ITEM 2: Highlight halo (a semi-transparent sphere)
         let shouldGrow=true
         if (shouldGrow) {
             const geoOuter = new THREE.SphereGeometry(HIGHLIGHT_HALO_RADIUS, HIGHLIGHT_HALO_WIDTH_SEGMENTS, HIGHLIGHT_HALO_HEIGHT_SEGMENTS);
