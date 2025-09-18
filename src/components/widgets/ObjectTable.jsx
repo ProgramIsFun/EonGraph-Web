@@ -85,7 +85,7 @@ const ObjectTable = (props) => {
             case 1:
                 return (
                     <>
-                        <Demo />
+                        {/*<Demo />*/}
                         <UiwJsonView
                             value={objForJsonView}
                             style={aaaaaaa}
@@ -117,7 +117,7 @@ const ObjectTable = (props) => {
 
 
 
-    let coreViewer = renderViewer(3);
+    let coreViewer = renderViewer(1);
 
     let useLibrary=true
 
