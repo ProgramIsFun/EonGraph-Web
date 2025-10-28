@@ -66,7 +66,7 @@ const initialState = {
         "TwoD_linkDirectionalParticleWidth": 2,
         "TwoD_linkDirectionalParticleSpeed": 0.002,
         // VR
-        "VR_link_strength":100,
+        "VR_link_strength":100,    // https://github.com/vasturiano/react-force-graph/issues/592
         "VR_repulsive_Force_Scale": -100,
         "VR_node_font_size": 6,
         "VR_linkOpacity": 0.6,
