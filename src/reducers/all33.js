@@ -32,8 +32,6 @@ export const ValuesSetting = {
     "TwoD_linkDirectionalParticleSpeed":
         {"value": 0.002, "min": 0.001, "max": 0.01, "step": 0.001, "changeableType": ["slider"]},
     // VR
-    "VR_global_scale_adjustment_coefficient":
-        {"value": 0.5, "min": 0.1, "max": 1, "step": 0.1, "changeableType": ["slider"]},
     "VR_repulsive_Force_Scale":
         {"value": -100, "min": -1000, "max": 1, "step": 1, "changeableType": ["slider"]},
     "VR_node_font_size":
@@ -66,7 +64,6 @@ const initialState = {
         "TwoD_linkDirectionalParticleWidth": 2,
         "TwoD_linkDirectionalParticleSpeed": 0.002,
         // VR
-        "VR_global_scale_adjustment_coefficient": 0.5,
         "VR_repulsive_Force_Scale": -100,
         "VR_node_font_size": 6,
         "VR_linkOpacity": 0.6,
