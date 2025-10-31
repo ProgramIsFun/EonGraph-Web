@@ -21,18 +21,23 @@ import {SketchPicker} from "react-color";
 
 const BorderCollapsibleWrapper = ({children, trigger}) => {
     return (
+        <span
+            // style={{marginBottom: '2px', display: 'block'}}
+        >
+
         <BorderWrapper>
             <Collapsible trigger={trigger}>
                 {children}
             </Collapsible>
         </BorderWrapper>
-    );
+        </span>
+        );
 };
 
 const BorderWrapper = ({children, style = {}}) => {
     const defaultStyle = {
         border: '2px solid #333',
-        // padding: '16px',
+        padding: '16px',
         // borderRadius: '8px',
         display: 'inline-block',
         ...style, // allow custom styles via props
@@ -428,11 +433,15 @@ const ControlPanel = (props) => {
                             }
                         }>update nodes positions to Backend
                         </button>
-
+                        <br/>
                         <button id="emit-particles-btn" onClick={emptyGraph}>emptyGraph</button>
+                        <br/>
                         <button id="emit-particles-btn" onClick={loadSample}>loadSample</button>
+                        <br/>
                         <button id="emit-particles-btn" onClick={saveGraph}>saveGraph</button>
+                        <br/>
                         <button id="emit-particles-btn" onClick={loadGraphFromLastSave}>loadGraphFromLastSave</button>
+                        <br/>
                         <FileDrop
                             fileContent={fileContent2}
                             setFileContent={setFileContent2}
