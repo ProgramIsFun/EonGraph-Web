@@ -290,18 +290,22 @@ export const updateCurrentGraphNodesPositionsToBackend = () => async (dispatch, 
     try {
         // get the nodes from the state, only with id, x, y, z
         const state = getState();
-        l("updateCurrentGraphNodesPositionsToBackend state", state)
 
+        let all33 = state.all33;
+        l("updateCurrentGraphNodesPositionsToBackend state", state)
+        const id_accessor = all33.nodeIdAccessor;
         // only extract position
-        let nodeIDXYZ = state.all33.dd.nodes.map(
+        let nodeIDXYZ = all33.dd.nodes.map(
             node => ({
-                id: node.id,
-                x: node.x,
-                y: node.y,
-                z: node.z
+                [id_accessor]: node[id_accessor],
+                X: node.x,
+                Y: node.y,
+                Z: node.z
             })
         )
-        let all33 = state.all33;
+        l("nodeIDXYZ to be sent to backend", nodeIDXYZ)
+
+
         let b = getBackendUrl(all33)
         l("updateCurrentGraphNodesPositionsToBackend b", b)
         const res = await fetch(b + '/api/v0/update_position_of_all_nodes', {
@@ -310,7 +314,8 @@ export const updateCurrentGraphNodesPositionsToBackend = () => async (dispatch, 
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                nodes: nodeIDXYZ
+                data_points: nodeIDXYZ,
+                prefix:"WebApp"
             })
         })
         if (!res.ok) {
