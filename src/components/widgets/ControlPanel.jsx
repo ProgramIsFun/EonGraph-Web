@@ -91,7 +91,7 @@ const ControlPanel = (props) => {
     const setistreemaxlevelrestricted = props.setistreemaxlevelrestricted;
     const treemaxlevel = props.treemaxlevel;
     const settreemaxlevel = props.settreemaxlevel;
-    const fetchDataDB_ = props.fetchData11;
+    const fetchDataDB_ = props.fetchDataAll;
     const updateNodesPositionsToBackend = props.updateNodesPositionsToBackend;
 
     const inputRef1 = useRef(null);
@@ -299,7 +299,7 @@ const ControlPanel = (props) => {
                             () => {
                                 fetchDataDB()
                             }
-                        }>get the graph from nE04J
+                        }>get the graph from Neo4J
                         </button>
                         <br/>
                         <br/>
@@ -649,7 +649,7 @@ export default connect(
     state => state,
     {
         changeSetting,
-        fetchData11: fetchAllNodesAndRelations,
+        fetchDataAll: fetchAllNodesAndRelations,
         updateNodesPositionsToBackend: updateCurrentGraphNodesPositionsToBackend,
         executeCypherQuery
     }

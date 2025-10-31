@@ -252,7 +252,8 @@ export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
         const jsonData = await response.json();
         rawdata(jsonData);
 
-        l("getting id fild name")
+
+        l("getting id fild name, this should be from api call instead of hardcoded")
         const nodeIdField = "user_generate_id_7577777777"; // this should be from api call instead of hardcoded
 
         let injectCustomTolinks = false;
@@ -262,6 +263,8 @@ export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
                 link.custom123 = Math.random().toString(36).substring(7);
             });
         }
+
+
 
         let duplicateOriginalIdToJustID = false;
         if (duplicateOriginalIdToJustID) {
