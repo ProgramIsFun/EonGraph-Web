@@ -684,7 +684,7 @@ export function calculateCollapseddd(dd) {
 export function rawdata(jsonData) {
     let stringified = JSON.stringify(jsonData);
     const obj = JSON.parse(stringified);
-    l("obj", obj);
+    l("obj666611111111122333885555555566", obj);
 }
 
 

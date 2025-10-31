@@ -263,6 +263,9 @@ export const fetchAllNodesAndRelations = () => async (dispatch, getState) => {
         l("getting id fild name, this should be from api call instead of hardcoded")
         const nodeIdField = "user_generate_id_7577777777"; // this should be from api call instead of hardcoded
 
+
+
+        // not used
         let injectCustomTolinks = false;
         if (injectCustomTolinks) {
             // will persist in the link object, and can be used to render links differently
@@ -271,8 +274,7 @@ export const fetchAllNodesAndRelations = () => async (dispatch, getState) => {
             });
         }
 
-
-
+        // not used
         let duplicateOriginalIdToJustID = false;
         if (duplicateOriginalIdToJustID) {
             // only useful if the nodeid prop pass to react force graph must be "id"
@@ -281,6 +283,35 @@ export const fetchAllNodesAndRelations = () => async (dispatch, getState) => {
                 }
             )
         }
+
+        // if using position ,  we fix the nodes to their positions from backend
+        let prefix="WebApp"
+        let useNodeLocationWhenLoadingGraph = 1;
+        if (useNodeLocationWhenLoadingGraph) {
+            jsonData.nodes.forEach(node => {
+                if (
+                    node.hasOwnProperty(prefix + "_X")
+                    && node.hasOwnProperty(prefix + "_Y")
+                    && node.hasOwnProperty(prefix + "_Z")
+                ) {
+                    let x = node[prefix + "_X"];
+                    let y = node[prefix + "_Y"];
+                    let z = node[prefix + "_Z"];
+                    if (
+                        x !== null && y !== null && z !== null
+                    ) {
+                        node.x = x;
+                        node.y = y;
+                        node.z = z;
+                        node.fx = x;
+                        node.fy = y;
+                        node.fz = z;
+                    }
+                }
+            });
+        }
+
+
 
         dispatch({
             type: CHANGE_DATA,
