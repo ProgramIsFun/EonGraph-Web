@@ -304,7 +304,7 @@ export const updateCurrentGraphNodesPositionsToBackend = () => async (dispatch, 
         let all33 = state.all33;
         let b = getBackendUrl(all33)
         l("updateCurrentGraphNodesPositionsToBackend b", b)
-        const res = await fetch(b + '/api/v0/update_nodes_positions', {
+        const res = await fetch(b + '/api/v0/update_position_of_all_nodes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
