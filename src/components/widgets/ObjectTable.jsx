@@ -10,10 +10,8 @@ import {fetchSingleNodeData} from "../../actions/all33";
 import Demo from "./ExampleJson";
 
 
-// use the component in your app!
 const ObjectTable = (props) => {
-    // l("ObjectTable render", props);
-    // Convert object entries into an array of [key, value] pairs for easy mapping
+
     const dispatch = useDispatch();
     let all33 = props.all33;
     let graphTypeRender = all33.graphTypeRender;
@@ -24,7 +22,6 @@ const ObjectTable = (props) => {
     const [isExpanded, setIsExpanded] = useState(true);
 
     let objectToBeInspected = all33.objectToBeInspected;
-    // l("objectToBeInspected111", objectToBeInspected, '__threeObj' in objectToBeInspected);
 
     l("graphTypeRender obj", graphTypeRender)
     const {__threeObj, ...objectToBeInspectedWithoutThreeObj} = objectToBeInspected;
@@ -52,7 +49,6 @@ const ObjectTable = (props) => {
         display: isExpanded ? 'table' : 'none', // Control display based on isExpanded state
     };
 
-    // Optional: Define styles for table cells for better appearance
     const cellStyle = {
         padding: '1px',
         border: '1px solid #ddd',
@@ -67,7 +63,7 @@ const ObjectTable = (props) => {
     };
 
 
-    // isRepo
+
     const link = props.objectToBeInspected.reponested
         && props.objectToBeInspected.reponested.html_url;
 
@@ -126,7 +122,8 @@ const ObjectTable = (props) => {
         <div style={tableStyle}>
 
             <button onClick={() => {
-                fetchNodeData(objectToBeInspected.id)
+                l("refetching data for node id:", objectToBeInspected.id)
+                // fetchNodeData(objectToBeInspected.id)
             }}
             >refetch data
             </button>
