@@ -14,7 +14,9 @@ const ObjectTable = (props) => {
 
     const dispatch = useDispatch();
     let all33 = props.all33;
+    l("ObjectTable all33", all33)
     let graphTypeRender = all33.graphTypeRender;
+    let nodeIdAccessor= all33.nodeIdAccessor;
     let dd = props.dd;
     let setdd = props.setdd;
     let fetchNodeData = props.fetchNodeData;
@@ -122,8 +124,9 @@ const ObjectTable = (props) => {
         <div style={tableStyle}>
 
             <button onClick={() => {
-                l("refetching data for node id:", objectToBeInspected.id)
-                // fetchNodeData(objectToBeInspected.id)
+                let id=objectToBeInspected[nodeIdAccessor]
+                l("refetching data for node id:", id)
+                fetchNodeData(id)
             }}
             >refetch data
             </button>
