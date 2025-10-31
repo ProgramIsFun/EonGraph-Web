@@ -168,8 +168,7 @@ const ControlPanel = (props) => {
     let localBackendUrl = all33.localBackendUrl;
     let remoteBackendUrl = all33.remoteBackendUrl;
     const fetchDataDB = async () => {
-        let baseUrl = useRemote ? remoteBackendUrl : localBackendUrl
-        fetchDataDB_(baseUrl)
+        fetchDataDB_()
     };
 
     let prefix = graphTypeRender
