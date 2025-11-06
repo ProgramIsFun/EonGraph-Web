@@ -1,14 +1,6 @@
 import {
   CHANGE_SETTINGS,
-  CLEAR_PROFILE,
-  GET_PROFILE,
-  GET_PROFILES,
-  GET_REPOS,
-  NO_REPOS,
-  PROFILE_ERROR,
-  UPDATE_PROFILE
 } from '../actions/types';
-
 
 export const cccccccccc = {
   "repulsive_Force_Scale":
@@ -23,7 +15,6 @@ export const cccccccccc = {
 }
 
 
-
 const initialState = {
   settings:{
     "repulsive_Force_Scale": -100,
@@ -35,6 +26,7 @@ const initialState = {
     "linkDirectionalParticleWidth": 2,
     "linkDirectionalParticleSpeed": 0.002
   },
+  dd:{nodes: [], links: []},
   profile: null,
   profiles: [],
   repos: [],
@@ -58,43 +50,8 @@ function all33Reducer(state = initialState, action) {
                 [key]: value
             }
         };
-    case GET_PROFILE:
-    case UPDATE_PROFILE:
-      return {
-        ...state,
-        profile: payload,
-        loading: false
-      };
-    case GET_PROFILES:
-      return {
-        ...state,
-        profiles: payload,
-        loading: false
-      };
-    case PROFILE_ERROR:
-      return {
-        ...state,
-        error: payload,
-        loading: false,
-        profile: null
-      };
-    case CLEAR_PROFILE:
-      return {
-        ...state,
-        profile: null,
-        repos: []
-      };
-    case GET_REPOS:
-      return {
-        ...state,
-        repos: payload,
-        loading: false
-      };
-    case NO_REPOS:
-      return {
-        ...state,
-        repos: []
-      };
+
+
     default:
       return state;
   }
