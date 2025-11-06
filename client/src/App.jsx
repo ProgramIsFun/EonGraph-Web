@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import "./App.css";
 import Dashboard2 from "./components/minorsss/Dashboard2";
 import { AAAA1 } from "./components/AAAA1";
 import Alert from './layout/Alert';
