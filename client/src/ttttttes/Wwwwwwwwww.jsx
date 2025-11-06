@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ForceGraph2D } from 'react-force-graph';
 import * as d3 from 'd3';
 import dat from 'dat.gui';
-import {l} from "../firebase/firebase";
+
+import {l} from "../util/log11";
 // import './App.css'; // Assuming you’ll have some CSS
 
 const useForceUpdate = () => {

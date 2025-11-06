@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {l} from "../../firebase/firebase";
 import ReactJson from '@microlink/react-json-view'
 import JsonView from '@uiw/react-json-view';
 
 import {removegithubRepoNode, rename} from "../../util/helperfile";
+import {l} from "../../util/log11";
 
 
 // use the component in your app!

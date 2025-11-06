@@ -3,7 +3,8 @@ import {ForceGraphVR} from 'react-force-graph';
 import React from 'react';
 
 import SpriteText from 'three-spritetext';
-import {l} from "../../firebase/firebase";
+
+import {l} from "../../util/log11";
 
 export default function TextNodeVR({dd,...props}) {
     let c= props.c;

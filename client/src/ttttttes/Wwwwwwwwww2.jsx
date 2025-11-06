@@ -2,7 +2,8 @@ import {useCallback, useMemo, useState} from "react";
 
 import {ForceGraph3D} from "react-force-graph";
 import {genRandomTree} from "../util/helperfile";
-import {l} from "../firebase/firebase";
+
+import {l} from "../util/log11";
 
 const ExpandableGraph = ({graphData}) => {
     const rootId = 0;

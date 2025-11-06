@@ -1,6 +1,6 @@
 import {Octokit} from "@octokit/core";
-import {l} from "../firebase/firebase";
 import {v4 as uuidv4} from "uuid";
+import {l} from "./log11";
 
 export let datassss = {
     "nodes": [

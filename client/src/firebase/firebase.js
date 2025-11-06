@@ -8,6 +8,7 @@ import GitHub from "github-api";
 import {cgg} from "../util/helperfile";
 import {firebaseConfig} from "./config1";
 import firebase from "firebase/app";
+
 /**
  * Creates and initializes a Firebase app.
  */
@@ -177,5 +178,4 @@ export function repoooooo(setnotice, setrepo) {
     return getRepoData;
 }
 
-export const l=console.log
 export const ee=console.error
