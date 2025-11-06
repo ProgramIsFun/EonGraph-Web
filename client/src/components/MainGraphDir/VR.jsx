@@ -1,10 +1,10 @@
 import {ForceGraphVR} from 'react-force-graph';
 
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import SpriteText from 'three-spritetext';
 
-import {l} from "../../autil/log11";
+import {ee, l} from "../../autil/log11";
 import {connect, useDispatch} from "react-redux";
 import {getNormalclick} from "../../autil/GetNormalclick";
 
@@ -13,6 +13,20 @@ function VR(props) {
     let all33 = props.all33;
     let dd = all33.dd;
     let c = all33.settings;
+
+
+    let fgRef = props.fgRef;
+    let a = c.TwoD_repulsive_Force_Scale
+
+    useEffect(() => {
+        if (fgRef.current) {
+            fgRef.current.d3Force('charge').strength(a)
+            fgRef.current.d3ReheatSimulation();
+            l("updateddddddddddd")
+        } else {
+            ee("not updateddddddddddd")
+        }
+    }, [a]);
     let objectToBeInspected = all33.objectToBeInspected;
 
     let getCameraPosition = () => {
@@ -51,6 +65,7 @@ function VR(props) {
     return <>
         <button onClick={getCameraPosition}>Get Camera Position</button>
         <ForceGraphVR
+            ref={fgRef}
             graphData={dd}
             nodeAutoColorBy="group"
 
