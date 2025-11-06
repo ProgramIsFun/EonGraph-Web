@@ -16,7 +16,7 @@ function VR(props) {
 
 
     let fgRef = props.fgRef;
-    let a = c.TwoD_repulsive_Force_Scale
+    let a = c.VR_repulsive_Force_Scale
 
     useEffect(() => {
         if (fgRef.current) {
@@ -68,14 +68,11 @@ function VR(props) {
             ref={fgRef}
             graphData={dd}
             nodeAutoColorBy="group"
-
             onNodeClick={(node, event) => {
                 l("Node clicked22222:", node);
                 l("Event333333333:", event);
                 Normalclick(node);
             }}
-
-
             nodeThreeObject={
                 nodeThreeObject
             }
