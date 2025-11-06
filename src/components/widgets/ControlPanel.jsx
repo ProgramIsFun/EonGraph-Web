@@ -45,7 +45,6 @@ const BorderWrapper = ({children, style = {}}) => {
 }
 
 
-
 const ControlPanel = (props) => {
 
     const dispatch = useDispatch();
@@ -212,7 +211,6 @@ const ControlPanel = (props) => {
                     <br/>
 
 
-
                     <BorderCollapsibleWrapper trigger="Global control">
                         <p>
                             usingNEO4J: {usingNEO4J ? 'True' : 'False'}
@@ -281,32 +279,32 @@ const ControlPanel = (props) => {
                         <BorderWrapper>
 
 
-                        <>overwrite current graph with json (will not affect db), assume node id is named id</>
-                        <div>
-                        <textarea
-                            rows={10}
-                            cols={50}
-                            value={value2}
-                            onChange={handleChange2}
-                            placeholder="Type your text here..."
-                            style={{padding: '10px', fontSize: '16px'}}
-                        />
-                            <button
-                                onClick={() => {
-                                    let ggg = JSON.parse(value2)
-                                    dispatch({
-                                        type: CHANGE_DATA,
-                                        payload: {
-                                            nodes: ggg.nodes,
-                                            links: ggg.links,
-                                            nodeIdaccessor: "id"
-                                        },
+                            <>overwrite current graph with json (will not affect db), assume node id is named id</>
+                            <div>
+                                <textarea
+                                    rows={10}
+                                    cols={50}
+                                    value={value2}
+                                    onChange={handleChange2}
+                                    placeholder="Type your text here..."
+                                    style={{padding: '10px', fontSize: '16px'}}
+                                />
+                                <button
+                                    onClick={() => {
+                                        let ggg = JSON.parse(value2)
+                                        dispatch({
+                                            type: CHANGE_DATA,
+                                            payload: {
+                                                nodes: ggg.nodes,
+                                                links: ggg.links,
+                                                nodeIdaccessor: "id"
+                                            },
 
-                                    })
-                                }}
-                            >execute import
-                            </button>
-                        </div>
+                                        })
+                                    }}
+                                >execute import
+                                </button>
+                            </div>
                         </BorderWrapper>
                         <br/>
                         <br/>
