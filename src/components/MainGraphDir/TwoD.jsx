@@ -6,7 +6,7 @@ import {distance1and2, draggggggg, removeNodeAndRelatedLinks, replaceStringAinB}
 import {ee, l} from "../../autil/loghelper";
 import {connect, useDispatch} from "react-redux";
 import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
-import {getNormalclick} from "../../autil/GetNormalClick";
+import {getNormalclick} from "../widgets/GetNormalClick";
 
 
 function TwoD(props) {
