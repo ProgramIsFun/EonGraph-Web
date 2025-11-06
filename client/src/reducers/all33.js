@@ -10,7 +10,7 @@ import {
     CHANGE_USING_NEO4J,
     ADD_NODE,
     SET_OBJECT_TO_BE_INSPECTED,
-    SET_USEREMOTE, CHANGE_USEREMOTE
+    SET_USEREMOTE, CHANGE_USEREMOTE, FETCH_NODE_DATA
 } from '../actions/types';
 import {NODE_ID_ACCESSOR} from "../autil/CONSTANT";
 
@@ -165,6 +165,11 @@ function all33Reducer(state = initialState, action) {
             return {
                 ...state,
                 useremote: payload
+            };
+        case FETCH_NODE_DATA:
+            l("not implemented yet, payload", payload)
+            return {
+                ...state
             };
         default:
             return state;

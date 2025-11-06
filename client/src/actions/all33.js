@@ -283,6 +283,7 @@ export const fetchNodeData = (nodeId) => async (dispatch) => {
             l("Network response was not ok", response.statusText);
             throw new Error('Network response was not ok');
         }
+        l("response from fetchNodeData", res)
         dispatch({
             type: 'FETCH_NODE_DATA',
             payload: res.data
