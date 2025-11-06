@@ -41,8 +41,6 @@ function Home() {
     const [fileContent2, setFileContent2] = useState("aaaabbbbbb");
 
 
-
-
     const [backendurl, setBackendurl] = useState("http://localhost:5000");
     const [backendurl2, setBackendurl2] = useState("https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net");
     const [useremote, setUseremote] = useState(false);
@@ -63,7 +61,6 @@ function Home() {
     })
 
     const [usingNEO4J, setUsingNEO4J] = useState(true)
-
 
 
     const [objectToBeInspected, setObjectToBeInspected] = useState({})
@@ -153,7 +150,6 @@ function Home() {
         window.addEventListener('keydown', handleKeyDown);
 
         window.addEventListener('wheel', handleScroll);
-
 
 
         // Cleanup
@@ -436,7 +432,7 @@ function Home() {
     }
     const fetchData11 = async () => {
         try {
-            let b=useremote? backendurl2 : backendurl
+            let b = useremote ? backendurl2 : backendurl
 
             l("2222222fetching data from ", b + '/api/v0/return_all_nodes111')
             const response = await fetch(b + '/api/v0/return_all_nodes111');
@@ -444,8 +440,8 @@ function Home() {
             l("jsonData", jsonData)
 
             jsonData.nodes.forEach(node => {
-                node.id = node.user_generate_id_7577777777
-            }
+                    node.id = node.user_generate_id_7577777777
+                }
             )
 
 
