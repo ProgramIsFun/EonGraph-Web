@@ -247,10 +247,11 @@ export const fetch_all_nodes_and_relations = (baseUrl) => async (dispatch) => {
         const jsonData = await response.json();
         rawdata(jsonData);
 
-        let injectCustomTolinks=true;
+        l("getting id fild name")
+        const nodeIdField = "user_generate_id_7577777777"; // change this to your desired field name
+
+        let injectCustomTolinks=false;
         if (injectCustomTolinks) {
-            // add a custom property to each link in jsonData.links
-            // random value
             jsonData.links.forEach(link => {
                 link.custom123 = Math.random().toString(36).substring(7);
             });
@@ -258,6 +259,7 @@ export const fetch_all_nodes_and_relations = (baseUrl) => async (dispatch) => {
 
         let duplicateOriginalIdToJustID = false;
         if (duplicateOriginalIdToJustID) {
+            // only useful if the nodeid prop pass to react force graph must be "id"
             jsonData.nodes.forEach(node => {
                     node.id = node.user_generate_id_7577777777
                 }
@@ -268,10 +270,10 @@ export const fetch_all_nodes_and_relations = (baseUrl) => async (dispatch) => {
             type: CHANGE_DATA,
             payload: {
                 nodes: jsonData.nodes,
-                links: jsonData.links
+                links: jsonData.links,
+                nodeIdaccessor: nodeIdField
             }
         })
-
     } catch (error) {
         console.error('Error fetching data:', error);
     }
@@ -280,13 +282,9 @@ export const fetch_all_nodes_and_relations = (baseUrl) => async (dispatch) => {
 
 export const updateNodesPositionsToBackend = () => async (dispatch, getState) => {
     try {
-
-
         // get the nodes from the state, only with id, x, y, z
-
         const state = getState();
         l("updateNodesPositionsToBackend state", state)
-
         let nodeIDXYZ=state.all33.dd.nodes.map(
             node => ({
             id: node.id,
@@ -408,13 +406,6 @@ export const executeCypherQuery = (cypherQuery) => async (dispatch, getState) =>
 
         if (body) {
             l("body is 123321", body)
-            // dispatch({
-            //     type: CHANGE_DATA,
-            //     payload: {
-            //         nodes: body.nodes,
-            //         links: body.links
-            //     }
-            // })
 
             // dispatch(setAlert('Cypher query executed and data updated', 'success'));
         } else {

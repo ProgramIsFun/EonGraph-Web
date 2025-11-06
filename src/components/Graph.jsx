@@ -159,8 +159,10 @@ function Graph(props) {
             type: CHANGE_DATA,
             payload: {
                 nodes: clonedObject.nodes,
-                links: clonedObject.links
-            }
+                links: clonedObject.links,
+                nodeIdaccessor: "id"
+            },
+
         })
     }
     const checkExistInGraph = (item) => {
