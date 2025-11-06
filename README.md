@@ -29,21 +29,20 @@ This project originally want to make me organize all my projects and repositorie
 ## How to run in dev mode
 1. clone the repo
 
-2a. if u dont use docker, you can run the app by running the following command in client directory:
+2.
+
+if u dont use docker, you can run the app by running the following command in client directory:
 
 - `yarn`
 
 - `yarn start`
 
-
-2b.if u use docker, ignore step 2a, and you can run the app by running the following command in root directory:
-
+if u use docker, ignore step 2a, and you can run the app by running the following command in root directory:
 - `docker-compose up --build`
-  ~~
-  ~~
-  3.then go to localhost:3000 to see the website
 
-4.if you are using electron. you can run the following command in client directory:
+3. then go to localhost:3000 to see the website
+
+4. if you are using electron. you can run the following command in client directory:
 
 - `yarn e`
 
