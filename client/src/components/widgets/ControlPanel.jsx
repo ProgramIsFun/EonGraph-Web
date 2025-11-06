@@ -120,12 +120,7 @@ const ControlPanel = (props) => {
         //     simulation.restart(); // Step 1: Pause the simulation
         // }
     }
-    const handleChange11 = (propName, newValue) => {
-        setc(prevState => ({
-            ...prevState,
-            [propName]: newValue
-        }));
-    };
+
 
 
     return (
@@ -337,7 +332,6 @@ const ControlPanel = (props) => {
                                         onChange={
                                             (event, newValue) => {
                                                 l("Slider changed", key, newValue);
-                                                handleChange11(key, newValue);
                                                 changeSetting(key, newValue);
                                             }
                                         }
