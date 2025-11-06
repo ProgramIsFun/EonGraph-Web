@@ -319,8 +319,6 @@ function Home() {
 
 
     function processData(dd) {
-
-
         // for node, just store the id and the display name
         let hinode = dd.nodes.map(({id, name, repoid, ...keepAttrs}) => {
 
@@ -333,13 +331,6 @@ function Home() {
 
             }
         )
-
-
-        // for link, store the id and the source and target
-        // let hilinks = dd.links.map(({index, source, target, ...keepAttrs}) => {
-        //         return {index, source: {id: source.id}, target: {id: target.id}}
-        //     }
-        // )
         let hilinks = dd.links.map(({index, source, target, ...keepAttrs}) => {
                 return {
                     index,
@@ -469,12 +460,8 @@ function Home() {
         <>
 
             <FloatingControlPanel
-
-
                 c={c}
                 setc={setc}
-
-
                 emptyGraph={emptyGraph}
                 loadSample={loadSample}
                 saveGraph={saveGraph}
@@ -490,31 +477,20 @@ function Home() {
                 setrepo={setrepo}
                 fileContent={fileContent}
                 setFileContent={setFileContent}
-
                 fetchData11={fetchData11}
                 usingNEO4J={usingNEO4J}
                 setUsingNEO4J={setUsingNEO4J}
-
                 fgRef={fgRef}
-
-
                 useremote={useremote}
                 setUseremote={setUseremote}
-
                 returnListRepo={returnListRepo}
-
-
                 fixing={fixing}
                 setFixing={setFixing}
-
-
                 search={search}
                 setSearch={setSearch}
                 filterdd={filterdd}
                 objectToBeInspected={objectToBeInspected}
                 setObjectToBeInspected={setObjectToBeInspected}
-
-
                 istreemaxlevelrestricted={istreemaxlevelrestricted}
                 setistreemaxlevelrestricted={setistreemaxlevelrestricted}
                 treemaxlevel={treemaxlevel}
@@ -560,10 +536,7 @@ function Home() {
                 setObjectToBeInspected={setObjectToBeInspected}
                 dd={dd}
                 setdd={setdd}
-
-
             >
-
             </ObjectTable>
             <div
                 style={{
