@@ -291,6 +291,8 @@ export const updateCurrentGraphNodesPositionsToBackend = () => async (dispatch, 
         // get the nodes from the state, only with id, x, y, z
         const state = getState();
         l("updateCurrentGraphNodesPositionsToBackend state", state)
+
+        // only extract position
         let nodeIDXYZ = state.all33.dd.nodes.map(
             node => ({
                 id: node.id,
