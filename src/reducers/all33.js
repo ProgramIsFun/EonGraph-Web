@@ -81,15 +81,15 @@ const initialState = {
         "VR_highlightHaloColor": 0xffff00,
     },
     dd: {nodes: [], links: []},
-    nodeIdaccessor:NODE_ID_ACCESSOR, // this is the accessor for the node id, it can be changed to any property of the node object, like "name" or "label"
+    nodeIdaccessor: NODE_ID_ACCESSOR, // this is the accessor for the node id, it can be changed to any property of the node object, like "name" or "label"
     usingNEO4J: true,
     objectToBeInspected: {},
     localbackendurl: localbackendurl,
     remotebackendurl: remotebackendurl,
     useremote: false, // true means use remote backend, false means use local backend
-    graphtypeee:'VR',
-    useNodeLocationWhenLoadingGraph:true,
-    cypherEditorMainContent:SAMPLE_CYPHER, // not used
+    graphtypeee: 'VR',
+    useNodeLocationWhenLoadingGraph: true,
+    cypherEditorMainContent: SAMPLE_CYPHER, // not used
 };
 
 function all33Reducer(state = initialState, action) {
