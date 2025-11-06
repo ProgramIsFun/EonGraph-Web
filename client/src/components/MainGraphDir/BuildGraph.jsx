@@ -344,9 +344,7 @@ function BuildGraph(props) {
                 //click
 
                 onNodeClick={onNodeClick}
-                onNodeRightClick={
-                    onNodeRightClick
-                }
+                onNodeRightClick={onNodeRightClick}
                 onLinkClick={
 
                     (link) => {
@@ -354,7 +352,6 @@ function BuildGraph(props) {
                             rename(link, 'link')
                         }
                     }
-
                 }
                 onLinkRightClick={(link) => removeLink(link)}
                 onBackgroundClick={onBackgroundClick}
