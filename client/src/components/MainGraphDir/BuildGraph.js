@@ -331,17 +331,7 @@ export default function BuildGraph({ setdd, repo, ...props}) {
                         } :
                         undefined}
 
-
                 //////////////////////////////////////
-
-
-                // nodeAutoColorBy="id"
-                // nodeColor={
-                //     node => node === dragSourceNode.current ||
-                //     (interimLink.current && (node === interimLink.current.source || node === interimLink.current.target))
-                //         ? 'orange' : null
-                // }
-
 
                 onNodeClick={
                     0 ? nnn2 : nnn
