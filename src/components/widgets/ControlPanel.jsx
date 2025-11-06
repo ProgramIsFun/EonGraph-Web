@@ -288,23 +288,6 @@ const ControlPanel = (props) => {
 
                     <br></br>
 
-                    {
-                         <button id="emit-particles-btn"
-                                                    onClick={getRepoData}
-
-                        >getAllRepos</button>
-                    }
-
-                    {
-                         <FileDrop
-                            fileContent={fileContent}
-                            setFileContent={setFileContent}
-                            setrepo={setrepo}
-                            text={"load repo list from local"}
-                        >
-                        </FileDrop>
-                    }
-
                     <button id="emit-particles-btn" onClick={() => {
                         fgRef.current.zoomToFit(400)
                     }}>fit all
@@ -335,6 +318,25 @@ const ControlPanel = (props) => {
                     }}>zoomToFit
                     </button>
 
+
+                    <br/>
+                    <br/>
+                    {
+                        <button id="emit-particles-btn"
+                                onClick={getRepoData}
+
+                        >getAllRepos</button>
+                    }
+
+                    {
+                        <FileDrop
+                            fileContent={fileContent}
+                            setFileContent={setFileContent}
+                            setrepo={setrepo}
+                            text={"load repo list from local"}
+                        >
+                        </FileDrop>
+                    }
                     <div
                         // we want to take its overflow.  so that we can scroll it
                         style={{
