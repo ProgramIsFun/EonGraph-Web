@@ -256,9 +256,7 @@ function Graph(props) {
                 component = <HighLight dd={dd}/>;
                 break;
             case 2:
-                component = <VR dd={dd}
-
-                />;
+                component = <VR/>;
                 break;
             case 3:
                 component = <TextNode dd={dd}/>;
