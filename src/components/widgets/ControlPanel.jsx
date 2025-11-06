@@ -10,6 +10,7 @@ import {l} from "../../autil/loghelper";
 import {changeSetting, executeCypherQuery, fetchData11, updateNodesPositionsToBackend} from "../../actions/all33";
 import {cccccccccc} from "../../reducers/all33";
 import {CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
+import {SAMPLE_CYPHER} from "../../constants";
 
 
 const ControlPanel = (props) => {
@@ -70,7 +71,7 @@ const ControlPanel = (props) => {
 
 
 
-    const [value, setValue] = React.useState(30);
+    const [value, setValue] = React.useState(SAMPLE_CYPHER);
 
     const handleChange = (e) => {
         setValue(e.target.value);
