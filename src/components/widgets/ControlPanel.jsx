@@ -18,18 +18,17 @@ import Collapsible from "react-collapsible";
 const BorderWrapper = ({ children, triggerName,style = {} }) => {
     const defaultStyle = {
         border: '2px solid #333',
-        padding: '16px',
-        borderRadius: '8px',
+        // padding: '16px',
+        // borderRadius: '8px',
         display: 'inline-block',
         ...style, // allow custom styles via props
     };
     return (
-        <Collapsible trigger={triggerName}>
-            <div style={defaultStyle}>
-                {children}
-            </div>
-        </Collapsible>
-
+        <div style={defaultStyle}>
+            <Collapsible trigger={triggerName}>
+            {children}
+            </Collapsible>
+        </div>
     );
 };
 
