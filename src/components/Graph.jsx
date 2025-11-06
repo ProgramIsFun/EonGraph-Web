@@ -231,29 +231,29 @@ function Graph(props) {
     }
 
     const returnGraph1 = (graphtypeee) => {
-                let component;
-                switch (graphtypeee) {
-                    case "ThreeD":
-                        component = <ThreeD dd={dd} fgRef={fgRef}/>;
-                        break;
-                    case "VR":
-                        component = <VR fgRef={fgRef}/>;
-                        break;
-                    case "TwoD":
-                        component = <TwoD dd={dd}
-                                          setdd={setdd}
-                                          collapseddd={collapseddd}
-                                          repo={repo}
+        let component;
+        switch (graphtypeee) {
+            case "ThreeD":
+                component = <ThreeD dd={dd} fgRef={fgRef}/>;
+                break;
+            case "VR":
+                component = <VR fgRef={fgRef}/>;
+                break;
+            case "TwoD":
+                component = <TwoD dd={dd}
+                                  setdd={setdd}
+                                  collapseddd={collapseddd}
+                                  repo={repo}
 
-                                          fgRef={fgRef}
-                                          checkExistInGraph={checkExistInGraph}
-                                        returnListRepo={returnListRepo}
-                                        setObjectToBeInspected={setObjectToBeInspected}
-                                        fixing={fixing}
-                                        setFixing={setFixing}
-                                        restrictdd={restrictdd}
-                                        setrestrictdd={setrestrictdd}
-                                        istreemaxlevelrestricted={istreemaxlevelrestricted}
+                                  fgRef={fgRef}
+                                  checkExistInGraph={checkExistInGraph}
+                                  returnListRepo={returnListRepo}
+                                  setObjectToBeInspected={setObjectToBeInspected}
+                                  fixing={fixing}
+                                  setFixing={setFixing}
+                                  restrictdd={restrictdd}
+                                  setrestrictdd={setrestrictdd}
+                                  istreemaxlevelrestricted={istreemaxlevelrestricted}
 
 
                 />;
