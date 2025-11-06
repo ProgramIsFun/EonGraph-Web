@@ -12,7 +12,7 @@ import {
     SET_OBJECT_TO_BE_INSPECTED,
     SET_USEREMOTE, CHANGE_USEREMOTE, FETCH_NODE_DATA
 } from '../actions/types';
-import {NODE_ID_ACCESSOR} from "../autil/CONSTANT";
+import {NODE_ID_ACCESSOR} from "../autil/constants";
 
 export const cccccccccc = {
 
