@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v2
+      - run: pnpm install --frozen-lockfile
       - run: pnpm run b
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
