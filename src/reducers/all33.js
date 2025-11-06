@@ -47,11 +47,11 @@ export const cccccccccc = {
     "VR_linkWidth":
         {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
     "VR_linkDirectionalParticles":
-        {"value": 4, "min": 1, "max": 10, "step": 1},
+        {"value": 4, "min": 0, "max": 10, "step": 1},
     "VR_linkDirectionalParticleWidth":
         {"value": 2, "min": 1, "max": 10, "step": 1},
     "VR_linkDirectionalParticleSpeed":
-        {"value": 0.002, "min": 0.001, "max": 0.01, "step": 0.001},
+        {"value": 0.002, "min": 0.000, "max": 0.01, "step": 0.001},
 
 }
 

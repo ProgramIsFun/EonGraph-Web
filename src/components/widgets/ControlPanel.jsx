@@ -214,15 +214,15 @@ const ControlPanel = (props) => {
                             let a = event.target.checked;
                             dispatch({"type": CHANGE_USING_NEO4J, payload: a})
                         }}
-                    /> if set to true, any change of the graph would be sent
-                        to database.
+                    /> (if set to true, any change of the graph would be sent
+                        to database)
 
                     </p>
 
 
                     <br/>
 
-                    <p>useremote: {useremote ? 'True' : 'False'} , false=local backend, true=remote backend.</p>
+                    <p>useremote: {useremote ? 'True' : 'False'} (false=local backend, true=remote backend)</p>
                     <input
                         type="checkbox"
                         checked={useremote}
@@ -245,9 +245,9 @@ const ControlPanel = (props) => {
                     <p>subgraphid right now</p>
                     <p></p>
                     <br/>
-                    
 
-                    <>import graph json</>
+
+                    <>import new graph with json (will not affect db)</>
                     <div>
                         <textarea
                             rows={10}
