@@ -2,7 +2,7 @@
 
 ## dev log
 
-https://github.com/ProgramIsFun/force-graph-visualizer-and-editor/blob/8036c6306726cad4b7c1bd167d0bd16681f2a6d1/client/package.json#L25 Using a modified version because https://github.com/vasturiano/react-force-graph/issues/582#issuecomment-2978644840
+https://github.com/ProgramIsFun/force-graph-visualizer-and-editor/blob/8036c6306726cad4b7c1bd167d0bd16681f2a6d1/client/package.json#L25 Using a modified version because https://github.com/vasturiano/react-force-graph/issues/582#issuecomment-2978644840      https://github.com/everythingallaccount/to-do-/issues/16 
 
 ## What is this project?
 
