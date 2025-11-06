@@ -734,6 +734,14 @@ export const distance1and2 = (node1, node2) => {
 
 export function repoooooo(setrepo) {
     const getRepoData = async () => {
+
+
+        
+        const VITE_GITHUB_ACCESS_TOKEN = import.meta.env.VITE_GITHUB_ACCESS_TOKEN;
+        console.log(VITE_GITHUB_ACCESS_TOKEN);
+        return
+
+
         l("getting")
 
 
