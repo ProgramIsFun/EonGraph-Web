@@ -65,12 +65,14 @@ const ControlPanel = (props) => {
 
 
     const changeSetting = props.changeSetting;
+
+
+
     const [value, setValue] = React.useState(30);
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
+    const handleChange = (e) => {
+        setValue(e.target.value);
     };
-
 
     let c = all33.settings;
     l("ControlPanel c", c);
