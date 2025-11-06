@@ -41,7 +41,7 @@ export const cccccccccc = {
     "VR_repulsive_Force_Scale":
         {"value": -100, "min": -1000, "max": 1, "step": 1},
     "VR_node_font_size":
-        {"value": 6, "min": 1, "max": 20, "step": 1},
+        {"value": 6, "min": 1, "max": 200, "step": 1},
     "VR_linkOpacity":
         {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
     "VR_linkWidth":
