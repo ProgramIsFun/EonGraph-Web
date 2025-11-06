@@ -50,7 +50,7 @@ let aaaaaaaappppppppp=<React.StrictMode>
 
 
 
-if (1){
+if (0){
     ReactDOM1.render(aaaaaaaappppppppp, document.getElementById('root'));
 }else {
     const root = ReactDOM.createRoot(document.getElementById('root'));
