@@ -8,7 +8,7 @@ import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass
 import {cgg} from "../../autil/helperfile";
 import {connect, useDispatch} from "react-redux";
 import {l} from "../../autil/log11";
-import {changeSetting} from "../../actions/all33";
+import {changeSetting, fetchData11} from "../../actions/all33";
 import {cccccccccc} from "../../reducers/all33";
 import {CHANGE_USING_NEO4J} from "../../actions/types";
 
@@ -64,8 +64,7 @@ const ControlPanel = (props) => {
 
     const usingNEO4J = props.all33.usingNEO4J;
 
-    const useremote = props.useremote;
-    const setUseremote = props.setUseremote;
+
 
     const changeSetting = props.changeSetting;
     const [value, setValue] = React.useState(30);
@@ -118,8 +117,14 @@ const ControlPanel = (props) => {
         //     simulation.restart(); // Step 1: Pause the simulation
         // }
     }
-
-
+    let all33= props.all33;
+    let useremote = all33.useremote;
+    let localbackendurl = all33.localbackendurl;
+    let remotebackendurl = all33.remotebackendurl;
+    const fetchData111 = async () => {
+        let b = useremote ? remotebackendurl : localbackendurl
+        fetchData11(b)
+    };
 
     return (
 
@@ -173,7 +178,7 @@ const ControlPanel = (props) => {
                         to database.
                         <button onClick={
                             () => {
-                                fetchData11()
+                                fetchData111()
                             }
                         }>get the graph from nE04J
                         </button>
@@ -188,8 +193,10 @@ const ControlPanel = (props) => {
                         type="checkbox"
                         checked={useremote}
                         onChange={(event) => {
+
                             setUseremote(event.target.checked);
-                        }}
+                        }
+                    }
                     />
 
 
@@ -407,5 +414,5 @@ const ControlPanel = (props) => {
 
 export default connect(
     state => state,
-    {changeSetting}
+    {changeSetting,fetchData11}
 )(ControlPanel);

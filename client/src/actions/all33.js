@@ -9,8 +9,10 @@ import {
     CLEAR_PROFILE,
     ACCOUNT_DELETED,
     GET_REPOS,
-    NO_REPOS, CHANGE_SETTINGS
+    NO_REPOS, CHANGE_SETTINGS, CHANGE_DATA
 } from './types';
+import {l} from "../autil/log11";
+import {rawdata} from "../autil/helperfile";
 
 // Get current users profile
 export const getCurrentProfile = () => async (dispatch) => {
@@ -235,6 +237,35 @@ export const changeSetting = (key, value) => async (dispatch) => {
     }
 }
 
+export const fetchData11 = (b) => async (dispatch) => {
+    try {
+
+        l("fetching data from ", b + '/api/v0/return_all_nodes111')
+        const response = await fetch(b + '/api/v0/return_all_nodes111');
+        const jsonData = await response.json();
+        rawdata(jsonData);
+
+
+        let duplicateOriginalIdToJustID=true;
+        if (duplicateOriginalIdToJustID) {
+            jsonData.nodes.forEach(node => {
+                    node.id = node.user_generate_id_7577777777
+                }
+            )
+        }
+        dispatch({
+            type: CHANGE_DATA,
+            payload: {
+                nodes: jsonData.nodes,
+                links: jsonData.links
+            }
+        })
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+
+}
 export const fetchNodeData = (nodeId) => async (dispatch) => {
     try {
         const res = await api.get(`/nodes/${nodeId}`);
