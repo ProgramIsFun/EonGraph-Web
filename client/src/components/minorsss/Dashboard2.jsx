@@ -1,5 +1,5 @@
 import React, {Component, useEffect, useState} from 'react';
-import PropTypes from 'prop-types';
+
 import buttonList from './initialButtonList';
 import Layout from '../../containers/Layout';
 import SocialProfileList from './SocialProfileList';
@@ -85,8 +85,6 @@ const Dashboard = ({ providerData }) => {
     );
 };
 
-Dashboard.propTypes = {
-    providerData: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+
 
 export default Dashboard;
