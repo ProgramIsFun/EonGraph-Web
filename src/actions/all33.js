@@ -241,11 +241,18 @@ export const changeSetting = (key, value) => async (dispatch) => {
 
 const getBackendUrl = (all33) => all33.useRemote ? all33.remoteBackendUrl : all33.localBackendUrl;
 
-export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
+export const fetchAllNodesAndRelations = () => async (dispatch, getState) => {
     try {
 
-        l("fetching data from ", baseUrl + '/api/v0/return_all_nodes_and_their_connections_if_any')
-        const response = await fetch(baseUrl + '/api/v0/return_all_nodes_and_their_connections_if_any');
+        const state = getState();
+
+        let all33 = state.all33;
+
+        let b = getBackendUrl(all33)
+        l("fetching data from ",  b+ '/api/v0/return_all_nodes_and_their_connections_if_any')
+
+
+        const response = await fetch(b + '/api/v0/return_all_nodes_and_their_connections_if_any');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
