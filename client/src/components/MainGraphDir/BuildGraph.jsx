@@ -5,10 +5,12 @@ import {v4 as uuidv4} from 'uuid';
 import {draggggggg, removeNodeAndRelatedLinks} from "../../util/helperfile";
 import {ee, l} from "../../util/log11";
 import {connect} from "react-redux";
+import { useDispatch } from 'react-redux';
+
 
 function BuildGraph(props) {
 
-
+    const dispatch = useDispatch();
     let c = props.all33.settings
 
     let setdd = props.setdd
@@ -110,6 +112,7 @@ function BuildGraph(props) {
             }
         );
 
+        dispatch({ type: CHANGE_LINKS, payload: remaininglinks })
         // lc.splice(lc.indexOf(link), 1);
     };
 

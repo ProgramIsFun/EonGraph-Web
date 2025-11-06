@@ -5,6 +5,7 @@ import React from 'react';
 import SpriteText from 'three-spritetext';
 
 import {l} from "../../util/log11";
+import {connect} from "react-redux";
 
 function TextNodeVR(props) {
     let dd = props.dd;
