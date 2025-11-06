@@ -53,7 +53,10 @@ function Graph(props) {
 
     const [objectToBeInspected, setObjectToBeInspected] = useState({})
 
-    const collapseddd = useMemo(calculateCollapseddd(dd), [dd]);
+    const collapseddd = useMemo(
+        calculateCollapseddd(dd),
+        [dd]
+    );
     l("collapseddd is now ", collapseddd)
     useEffect(() => {
         if (istreemaxlevelrestricted) {
