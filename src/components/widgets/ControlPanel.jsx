@@ -289,14 +289,14 @@ const ControlPanel = (props) => {
                     <br></br>
 
                     {
-                        graphtypeee == 4 && <button id="emit-particles-btn"
+                         <button id="emit-particles-btn"
                                                     onClick={getRepoData}
 
                         >getAllRepos</button>
                     }
 
                     {
-                        graphtypeee == 4 && <FileDrop
+                         <FileDrop
                             fileContent={fileContent}
                             setFileContent={setFileContent}
                             setrepo={setrepo}
