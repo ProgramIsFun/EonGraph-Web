@@ -83,7 +83,6 @@ function BuildGraph(props) {
 
     let a=c.repulsive_Force_Scale
     useEffect(() => {
-
         if (fgRef.current) {
             fgRef.current.d3Force('charge').strength(a)
             fgRef.current.d3ReheatSimulation();
@@ -91,7 +90,6 @@ function BuildGraph(props) {
         } else {
             ee("not updateddddddddddd")
         }
-
     }, [a]);
 
 
@@ -316,10 +314,12 @@ function BuildGraph(props) {
 
                 graphData={realdd}
 
+                //drag
 
                 onNodeDrag={
                     enableDragging ? dragFun : undefined
                 }
+
                 onNodeDragEnd={
                     enableDragging
                         ?
@@ -332,7 +332,7 @@ function BuildGraph(props) {
                         } :
                         undefined}
 
-                //////////////////////////////////////
+                //click
 
                 onNodeClick={
                     0 ? nnn2 : nnn
@@ -344,21 +344,6 @@ function BuildGraph(props) {
                         }
                     }
                 }
-
-
-                ///////////////////////
-
-
-                linkDirectionalArrowLength={1 ? undefined : 8}
-                linkDirectionalArrowRelPos={1 ? undefined : 1}
-
-                linkColor={link => link === interimLink.current ? 'orange' : '#bbbbbb'}
-                linkLineDash={link => link === interimLink.current ? [2, 2] : []}
-
-                linkWidth={c.linkWidth}
-                linkDirectionalParticles={c.linkDirectionalParticles}
-                linkDirectionalParticleWidth={c.linkDirectionalParticleWidth}
-                linkDirectionalParticleSpeed={c.linkDirectionalParticleSpeed}
 
                 onLinkClick={
 
@@ -374,8 +359,6 @@ function BuildGraph(props) {
                 }
                 onLinkRightClick={(link) => removeLink(link)}
 
-
-                ///////////////////////
                 onBackgroundClick={
 
                     event => {
@@ -409,9 +392,26 @@ function BuildGraph(props) {
 
                         updateGraphData();
                     }
-
-                    // testUpdate
                 }
+
+
+                //links
+
+
+                linkDirectionalArrowLength={1 ? undefined : 8}
+                linkDirectionalArrowRelPos={1 ? undefined : 1}
+
+                linkColor={link => link === interimLink.current ? 'orange' : '#bbbbbb'}
+                linkLineDash={link => link === interimLink.current ? [2, 2] : []}
+
+                linkWidth={c.linkWidth}
+                linkDirectionalParticles={c.linkDirectionalParticles}
+                linkDirectionalParticleWidth={c.linkDirectionalParticleWidth}
+                linkDirectionalParticleSpeed={c.linkDirectionalParticleSpeed}
+
+
+
+                ///////////////////////
 
 
                 ///////////////////////////////////////////////////////////////////////
