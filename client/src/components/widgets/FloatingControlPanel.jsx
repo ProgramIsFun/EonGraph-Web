@@ -5,10 +5,11 @@ import {InputLabel, TextField, Typography} from "@mui/material";
 import {auth} from "../../firebase";
 import FileDrop from "../../util/KKKKKKKKK";
 import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass';
-import {cccccccccc, cgg} from "../../util/helperfile";
+import {cgg} from "../../util/helperfile";
 import {connect} from "react-redux";
 import {l} from "../../util/log11";
 import {changeSetting} from "../../actions/all33";
+import {cccccccccc} from "../../reducers/all33";
 
 const FloatingControlPanel = (props) => {
 
