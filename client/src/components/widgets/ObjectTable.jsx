@@ -16,7 +16,8 @@ const ObjectTable = (props) => {
 
     const [isExpanded, setIsExpanded] = useState(true);
 
-    let objectToBeInspected = props.objectToBeInspected;
+    let objectToBeInspected=props.all33.objectToBeInspected;
+
     let setObjectToBeInspected = props.setObjectToBeInspected;
 
 
@@ -136,8 +137,8 @@ const ObjectTable = (props) => {
 
                     {link && <a href={link} target="_blank" rel="noreferrer">View on GitHub</a>}
                     {1 ?
-                        <JsonView value={props.objectToBeInspected}
-                            // style={githubDarkTheme}
+                        <JsonView value={objectToBeInspected}
+
                                   style={aaaaaaa}
                         /> : <ReactJson src={props.objectToBeInspected}
                         />}
