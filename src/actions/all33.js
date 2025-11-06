@@ -239,7 +239,7 @@ export const changeSetting = (key, value) => async (dispatch) => {
     }
 }
 
-const getBackendUrl = (all33) => all33.useremote ? all33.remotebackendurl : all33.localBackendUrl;
+const getBackendUrl = (all33) => all33.useremote ? all33.remoteBackendUrl : all33.localBackendUrl;
 
 export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
     try {
