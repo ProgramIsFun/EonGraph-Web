@@ -17,20 +17,20 @@ function VR(props) {
 
 
     let fgRef = props.fgRef;
-    let a = c.VR_repulsive_Force_Scale
+    let repulsiveForceScale = c.VR_repulsive_Force_Scale
     let node_font_size=c.VR_node_font_size;
     let linkDirectionalParticles= c.VR_linkDirectionalParticles;
     let linkDirectionalParticleWidth=c.VR_linkDirectionalParticleWidth;
     let linkDirectionalParticleSpeed=c.VR_linkDirectionalParticleSpeed;
     useEffect(() => {
         if (fgRef.current) {
-            fgRef.current.d3Force('charge').strength(a)
+            fgRef.current.d3Force('charge').strength(repulsiveForceScale)
             fgRef.current.d3ReheatSimulation();
-            l("d3Force charge strength updated to:", a);
+            l("d3Force charge strength updated to:", repulsiveForceScale);
         } else {
             ee("not updated, fgRef.current is not defined or not ready yet.");
         }
-    }, [a]);
+    }, [repulsiveForceScale]);
     let objectToBeInspected = all33.objectToBeInspected;
 
     let getCameraPosition = () => {
