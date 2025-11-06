@@ -26,9 +26,9 @@ function VR(props) {
         if (fgRef.current) {
             fgRef.current.d3Force('charge').strength(a)
             fgRef.current.d3ReheatSimulation();
-            l("updateddddddddddd")
+            l("d3Force charge strength updated to:", a);
         } else {
-            ee("not updateddddddddddd")
+            ee("not updated, fgRef.current is not defined or not ready yet.");
         }
     }, [a]);
     let objectToBeInspected = all33.objectToBeInspected;
