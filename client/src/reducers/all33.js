@@ -6,7 +6,7 @@
 import {
     CHANGE_SETTINGS,
     CHANGE_DATA,
-    CHANGE_LINKS, CHANGE_USING_NEO4J, ADD_NODE
+    CHANGE_LINKS, CHANGE_USING_NEO4J, ADD_NODE, SET_OBJECT_TO_BE_INSPECTED
 } from '../actions/types';
 
 export const cccccccccc = {
@@ -75,7 +75,8 @@ const initialState = {
         "VR_linkDirectionalParticleSpeed": 0.002,
     },
     dd: {nodes: [], links: []},
-    usingNEO4J: true
+    usingNEO4J: true,
+    objectToBeInspected: {}
 };
 
 function all33Reducer(state = initialState, action) {
@@ -124,6 +125,11 @@ function all33Reducer(state = initialState, action) {
             return {
                 ...state,
                 usingNEO4J: payload
+            };
+        case SET_OBJECT_TO_BE_INSPECTED:
+            return {
+                ...state,
+                objectToBeInspected: payload
             };
         default:
             return state;
