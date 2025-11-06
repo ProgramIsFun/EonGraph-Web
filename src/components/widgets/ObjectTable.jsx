@@ -72,7 +72,10 @@ const ObjectTable = (props) => {
     let removeGithubRepo = async () => {
         await removegithubRepoNode(objectToBeInspected, dd, setdd, dispatch);
     }
-    let element = 1
+
+
+
+    let coreViewer = 1
         ?
         <>
             {graphTypeRender == 4 ?
@@ -150,9 +153,8 @@ const ObjectTable = (props) => {
                 </a>
             }
             {
-                element
+                coreViewer
             }
-
 
         </div>
         :
