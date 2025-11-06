@@ -6,7 +6,7 @@ import {draggggggg, removeNodeAndRelatedLinks} from "../../autil/helperfile";
 import {ee, l} from "../../autil/log11";
 import {connect, useDispatch} from "react-redux";
 import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
-import {getNormalclick} from "./GetNormalclick";
+import {getNormalclick} from "../../autil/GetNormalclick";
 
 
 function BuildGraph(props) {
