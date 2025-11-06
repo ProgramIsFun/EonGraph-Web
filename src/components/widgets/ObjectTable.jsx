@@ -17,7 +17,7 @@ const ObjectTable = (props) => {
     let graphTypeRender = all33.graphTypeRender;
     let dd = props.dd;
     let setdd = props.setdd;
-    let fetchNodeData= props.fetchNodeData;
+    let fetchNodeData = props.fetchNodeData;
 
     const [isExpanded, setIsExpanded] = useState(true);
 
@@ -98,7 +98,8 @@ const ObjectTable = (props) => {
             <button onClick={() => {
                 fetchNodeData(objectToBeInspected.id)
             }}
-                    >refetch</button>
+            >refetch
+            </button>
             <button onClick={() => {
                 rename(props.objectToBeInspected, "node")
             }}>
@@ -179,4 +180,4 @@ const ObjectTable = (props) => {
 };
 
 
-export default connect(state => state,{fetchNodeData: fetchSingleNodeData})(ObjectTable);
+export default connect(state => state, {fetchNodeData: fetchSingleNodeData})(ObjectTable);
