@@ -52,6 +52,7 @@ This project originally want to make me organize all my projects and repositorie
 https://github.com/ProgramIsFun/github-repos-visualizer
 
 ## to do
+- [] Removing the hardcode access token https://github.com/ProgramIsFun/force-graph-visualizer-and-editor/blob/ba80c903dbab324f062a369dc60f69b84359eb8c/client/src/util/helperfile.js#L466C20-L466C60
 - [] building an Unreal Engine version
     - https://github.com/thomaswall/ue4-force-graph
         - successfully run in my window 11 and I installed Visual Studio 2022
