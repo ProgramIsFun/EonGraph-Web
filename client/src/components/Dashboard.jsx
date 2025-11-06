@@ -6,11 +6,14 @@ import {l} from "../util/log11";
 const Dashboard = (pppp) => {
     l("Dashboard render", pppp);
     return (
-
             <Graph />
     );
 };
 
 
 
-export default connect( state => state )(Dashboard);
+export default connect(
+    state => state
+)(
+        Dashboard
+);
