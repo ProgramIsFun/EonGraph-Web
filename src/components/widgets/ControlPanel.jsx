@@ -207,8 +207,7 @@ const ControlPanel = (props) => {
 
                     <br/>
 
-                    <p>useremote: {useremote ? 'True' : 'False'} if set to false, we use local backend, if set to true,
-                        we use remote backend.</p>
+                    <p>useremote: {useremote ? 'True' : 'False'} , false=local backend, true=remote backend.</p>
                     <input
                         type="checkbox"
                         checked={useremote}
