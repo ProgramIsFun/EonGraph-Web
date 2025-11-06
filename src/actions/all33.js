@@ -245,7 +245,6 @@ export const fetchData11 = (baseUrl) => async (dispatch) => {
         const jsonData = await response.json();
         rawdata(jsonData);
 
-
         let duplicateOriginalIdToJustID = false;
         if (duplicateOriginalIdToJustID) {
             jsonData.nodes.forEach(node => {
@@ -253,8 +252,6 @@ export const fetchData11 = (baseUrl) => async (dispatch) => {
                 }
             )
         }
-
-
 
         dispatch({
             type: CHANGE_DATA,

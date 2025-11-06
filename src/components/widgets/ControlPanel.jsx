@@ -117,8 +117,8 @@ const ControlPanel = (props) => {
     let localbackendurl = all33.localbackendurl;
     let remotebackendurl = all33.remotebackendurl;
     const fetchData111 = async () => {
-        let b = useremote ? remotebackendurl : localbackendurl
-        fetchData11(b)
+        let baseUrl = useremote ? remotebackendurl : localbackendurl
+        fetchData11(baseUrl)
     };
 
     let prefix = graphtypeee
