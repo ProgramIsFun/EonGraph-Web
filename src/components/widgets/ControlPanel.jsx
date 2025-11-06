@@ -324,6 +324,19 @@ const ControlPanel = (props) => {
                             }
                         }>update nodes positions to Backend
                         </button>
+
+                        <button id="emit-particles-btn" onClick={emptyGraph}>emptyGraph</button>
+                        <button id="emit-particles-btn" onClick={loadSample}>loadSample</button>
+                        <button id="emit-particles-btn" onClick={saveGraph}>saveGraph</button>
+                        <button id="emit-particles-btn" onClick={loadGraphFromLastSave}>loadGraphFromLastSave</button>
+                        <FileDrop
+                            fileContent={fileContent2}
+                            setFileContent={setFileContent2}
+                            setdd={setdd}
+                            text={"loadGraphFromLocal"}
+                        ></FileDrop>
+
+
                     </BorderWrapper>
 
 
@@ -332,18 +345,6 @@ const ControlPanel = (props) => {
 
 
 
-
-
-                    <button id="emit-particles-btn" onClick={emptyGraph}>emptyGraph</button>
-                    <button id="emit-particles-btn" onClick={loadSample}>loadSample</button>
-                    <button id="emit-particles-btn" onClick={saveGraph}>saveGraph</button>
-                    <button id="emit-particles-btn" onClick={loadGraphFromLastSave}>loadGraphFromLastSave</button>
-                    <FileDrop
-                        fileContent={fileContent2}
-                        setFileContent={setFileContent2}
-                        setdd={setdd}
-                        text={"loadGraphFromLocal"}
-                    ></FileDrop>
 
 
                     <br></br>
