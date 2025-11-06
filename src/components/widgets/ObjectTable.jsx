@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ReactJson from '@microlink/react-json-view'
+import MicrolinkReactJson from '@microlink/react-json-view'
 
 import UiwJsonView from '@uiw/react-json-view';
 
@@ -87,7 +87,7 @@ const ObjectTable = (props) => {
         </>
         :
         <>
-            <ReactJson   // this library is weird looking, opacity is 100
+            <MicrolinkReactJson   // this library is weird looking, opacity is 100
                 src={objForJsonView}
 
             />
