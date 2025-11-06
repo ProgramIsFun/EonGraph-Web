@@ -1,7 +1,7 @@
 import React, {Component, useEffect, useState} from 'react';
-import Home from "../Home";
+import Home from "./Home";
 import { connect } from 'react-redux';
-import {l} from "../../util/log11";
+import {l} from "../util/log11";
 
 const Dashboard = (pppp) => {
     l("Dashboard render", pppp);
