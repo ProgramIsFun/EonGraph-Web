@@ -239,7 +239,7 @@ export const changeSetting = (key, value) => async (dispatch) => {
     }
 }
 
-export const fetch_all_nodes_and_relations = (baseUrl) => async (dispatch) => {
+export const fetchAllNodesAndRelations = (baseUrl) => async (dispatch) => {
     try {
 
         l("fetching data from ", baseUrl + '/api/v0/return_all_nodes111')
