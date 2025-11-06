@@ -2,8 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Login from "./components/minorsss/Login";
 import "./App.css";
-import withAuthentication from './containers/withAuthentication';
-
 import Dashboard2 from "./components/minorsss/Dashboard2";
 import { AAAA1 } from "./components/AAAA1";
 
