@@ -317,6 +317,7 @@ function BuildGraph(props) {
 
         } :
         undefined;
+    let onNodeClick = 1 ? Focus : Normalclick;
     return <>
 
 
@@ -338,7 +339,7 @@ function BuildGraph(props) {
                 //click
 
                 onNodeClick={
-                    1 ? Focus : Normalclick
+                    onNodeClick
                 }
                 onNodeRightClick={
                     (node) => {
