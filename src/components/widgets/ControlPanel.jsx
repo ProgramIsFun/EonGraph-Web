@@ -9,13 +9,16 @@ import {connect, useDispatch} from "react-redux";
 import {l} from "../../autil/loghelper";
 import {changeSetting, executeCypherQuery, fetchAllNodesAndRelations, updateNodesPositionsToBackend} from "../../actions/all33";
 import {cccccccccc} from "../../reducers/all33";
-import {CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
+import {CHANGE_DATA, CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
 import {SAMPLE_CYPHER} from "../../constants";
 
 
 const ControlPanel = (props) => {
 
     const dispatch = useDispatch();
+
+
+
 
     l("ControlPanel render", props);
     let all33 = props.all33;
@@ -75,6 +78,12 @@ const ControlPanel = (props) => {
 
     const handleChange = (e) => {
         setValue(e.target.value);
+    };
+
+
+    const [value2, setValue2] = React.useState("12");
+    const handleChange2 = (e) => {
+        setValue2(e.target.value);
     };
 
     let c = all33.settings;
@@ -227,6 +236,41 @@ const ControlPanel = (props) => {
                     <p>notice</p>
                     <p>{notice}</p>
                     <br/>
+
+
+                    <>graph json area</>
+                    <div>
+                        <textarea
+                            rows={10}
+                            cols={50}
+                            value={value2}
+                            onChange={handleChange2}
+                            placeholder="Type your text here..."
+                            style={{padding: '10px', fontSize: '16px'}}
+                        />
+                        <div>
+                            <p>Preview:</p>
+                            <pre>{value2}</pre>
+                        </div>
+                        <button
+                            onClick={() => {
+                                let ggg = JSON.parse(value2)
+                                dispatch({
+                                    type: CHANGE_DATA,
+                                    payload: {
+                                        nodes:ggg.nodes,
+                                        links:ggg.links,
+                                        nodeIdaccessor: "id"
+                                    },
+
+                                })
+                            }}
+                        >execute import</button>
+                    </div>
+                    <br/>
+                    <br/>
+
+
 
                     <>cypher area</>
                     <div>
