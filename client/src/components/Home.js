@@ -414,7 +414,12 @@ function Home() {
 
     const loadGraphFromLastSave = async () => {
         // filter the latest time saved graph from firebase firestore
-        let loadeddata = await dbbbbb.collection("users").doc(auth().currentUser.uid).collection("graphsavedtest").orderBy("time", "desc").limit(1).get()
+        let loadeddata = await dbbbbb.collection("users")
+            .doc(auth().currentUser.uid)
+            .collection("graphsavedtest")
+            .orderBy("time", "desc")
+            .limit(1)
+            .get()
         loadeddata.forEach(doc => {
             console.log(doc.id, '=>', doc.data().graphdata);
             setdd(doc.data().graphdata)
@@ -424,11 +429,8 @@ function Home() {
 
     const getRepoData = repoooooo(setnotice, setrepo);
 
-
     const emptyGraph = async () => {
-        // node none, link none
         setdd({nodes: [], links: []})
-
     }
     const fetchData11 = async () => {
         try {
