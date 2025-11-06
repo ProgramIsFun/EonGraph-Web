@@ -215,8 +215,7 @@ const ControlPanel = (props) => {
                                     dispatch({"type": CHANGE_USING_NEO4J, payload: a})
                                 }}
                             />
-                            (if set to true, any change of the graph would be sent
-                            to database)
+                            (if set to true, some changes of the graph would affect db)
                         </p>
                         <br/>
                         <p>useremote: {useremote ? 'True' : 'False'}
@@ -252,23 +251,25 @@ const ControlPanel = (props) => {
                         <br/>
                     </BorderWrapper>
 
-                    <BorderWrapper trigger="graph data management， get, set, del">
-                        <p>list of subgraph id</p>
-                        <p></p>
-                        <br/>
-
-                        <p>subgraphid right now</p>
-                        <p></p>
-                        <br/>
-                        <></>
+                    <BorderWrapper trigger="graph data management(read,write)">
                         <button onClick={
                             () => {
                                 fetchData111()
                             }
                         }>get the graph from nE04J
                         </button>
+                        <br/>
+                        <br/>
 
-                        <>import new graph with json (will not affect db), assume node id is named id</>
+                        <p>list of subgraph id</p>
+                        <br/>
+                        <br/>
+
+                        <p>subgraphid right now</p>
+                        <br/>
+                        <br/>
+
+                        <>overwrite current graph with json (will not affect db), assume node id is named id</>
                         <div>
                         <textarea
                             rows={10}
