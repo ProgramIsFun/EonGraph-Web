@@ -12,7 +12,7 @@ const ObjectTable = (props) => {
     // Convert object entries into an array of [key, value] pairs for easy mapping
     const dispatch = useDispatch();
     let all33 = props.all33;
-
+    let graphtypeee = all33.graphtypeee;
     let dd = props.dd;
     let setdd = props.setdd;
 
@@ -95,6 +95,22 @@ const ObjectTable = (props) => {
     let aaaaaaa1 = async () => {
         await removegithubRepoNode(objectToBeInspected, dd, setdd, dispatch);
     }
+    let element = 1 ?
+        <>
+            {graphtypeee == 4 ?
+                <JsonView value={objectToBeInspected}
+
+                          style={aaaaaaa}
+                /> :
+                <></>
+            }
+        </>
+        :
+        <>
+            <ReactJson
+                src={props.objectToBeInspected}
+            />
+        </>;
     return (
         <div>
             <button style={buttonStyle} onClick={() => setIsExpanded(!isExpanded)}>
@@ -140,23 +156,7 @@ const ObjectTable = (props) => {
                         View on GitHub</a>
                     }
                     {
-                        1 ?
-                            <>
-
-                                {/*This will crash the website if in Vr mode*/}
-                                <JsonView value={objectToBeInspected}
-
-                                          style={aaaaaaa}
-                                />
-                            </>
-
-                            :
-                            <>
-                                <ReactJson
-                                    src={props.objectToBeInspected}
-                                />
-                            </>
-
+                        element
                     }
 
 
