@@ -89,7 +89,7 @@ const initialState = {
     graphtypeee:'VR',
     useNodeLocationWhenLoadingGraph:true,
 
-    cypherEditorMainContent:"MATCH (n)-[r]->(m) RETURN n,r,m LIMIT 100",
+    cypherEditorMainContent:"MATCH (n)-[r]->(m) RETURN n,r,m LIMIT 100", // not used
 };
 
 function all33Reducer(state = initialState, action) {
