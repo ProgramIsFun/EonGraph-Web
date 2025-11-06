@@ -348,15 +348,6 @@ const ControlPanel = (props) => {
                         }>delete prop from all node
                         </button>
 
-
-                        <p>list of subgraph id</p>
-                        <br/>
-                        <br/>
-
-                        <p>subgraphid right now</p>
-                        <br/>
-                        <br/>
-
                         <BorderWrapper>
                             <>overwrite current graph with json (will not affect db), assume node id is named id</>
                             <div>
