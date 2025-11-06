@@ -49,8 +49,6 @@ function Graph(props) {
     let useremote = all33.useremote;
     const [search, setSearch] = useState("")
     const [filterdd, setFilterdd] = useState([])
-
-
     const [objectToBeInspected, setObjectToBeInspected] = useState({})
 
     const collapseddd = useMemo(
@@ -157,7 +155,6 @@ function Graph(props) {
 
     const loadSample = () => {
         const clonedObject = _.cloneDeep(datassss);
-
         dispatch({
             type: CHANGE_DATA,
             payload: {
@@ -398,7 +395,6 @@ function Graph(props) {
     return (
         <>
             <FloatingControlPanel
-
                 emptyGraph={emptyGraph}
                 loadSample={loadSample}
                 saveGraph={saveGraph}
@@ -408,15 +404,12 @@ function Graph(props) {
                 setFileContent2={setFileContent2}
                 dd={dd}
                 setdd={setdd}
-
                 setpage={setgraphtypeee}
                 page={graphtypeee}
-
                 getRepoData={getRepoData}
                 setrepo={setrepo}
                 fileContent={fileContent}
                 setFileContent={setFileContent}
-
                 fgRef={fgRef}
                 useremote={useremote}
                 setUseremote={setUseremote}
