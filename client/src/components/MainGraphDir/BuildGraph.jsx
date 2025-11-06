@@ -34,7 +34,7 @@ function BuildGraph(props) {
     const fixing = props.fixing
     const restrictdd = props.restrictdd
     const istreemaxlevelrestricted = props.istreemaxlevelrestricted
-    const realdd = istreemaxlevelrestricted ?
+    const graphData = istreemaxlevelrestricted ?
         restrictdd :
         1
             ?
@@ -325,7 +325,7 @@ function BuildGraph(props) {
 
                 ref={fgRef}
 
-                graphData={realdd}
+                graphData={graphData}
 
                 //drag
 
@@ -360,12 +360,9 @@ function BuildGraph(props) {
                 onLinkClick={
 
                     (link) => {
-
-
                         if (0) {
                             rename(link, 'link')
                         }
-
                     }
 
                 }
