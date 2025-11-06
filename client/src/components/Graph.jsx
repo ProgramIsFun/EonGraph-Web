@@ -411,8 +411,7 @@ function Graph(props) {
                 fileContent={fileContent}
                 setFileContent={setFileContent}
                 fgRef={fgRef}
-          
-                setUseremote={setUseremote}
+                
                 returnListRepo={returnListRepo}
                 fixing={fixing}
                 setFixing={setFixing}
