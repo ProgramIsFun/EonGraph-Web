@@ -267,6 +267,41 @@ export const fetchData11 = (baseUrl) => async (dispatch) => {
 
 }
 
+export const updateNodesPositionsToBackend = () => async (dispatch, getState) => {
+    try {
+        throw "to be implemented"
+
+        const state = getState();
+        l("updateNodesPositionsToBackend state", state)
+        let all33 = state.all33;
+
+        let useremote = all33.useremote;
+        let localbackendurl = all33.localbackendurl;
+        let remotebackendurl = all33.remotebackendurl;
+        let b = useremote ? remotebackendurl : localbackendurl
+        l("updateNodesPositionsToBackend b", b)
+        const res = await fetch(b + '/api/v0/update_nodes_positions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nodes: nodes
+            })
+        })
+        if (!res.ok) {
+            l("Network response was not ok", res.statusText);
+            throw new Error('Network response was not ok');
+        }
+        let body = await res.json();
+        l("response from updateNodesPositionsToBackend", body)
+        dispatch(setAlert('Node positions updated to backend', 'success'));
+    }
+    catch (err) {
+        dispatch(setAlert('Error updating node positions to backend', 'danger'));
+    }
+}
+
 
 export const fetchNodeData = (nodeId) => async (dispatch, getState) => {
     try {
