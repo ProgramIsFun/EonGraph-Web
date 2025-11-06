@@ -33,7 +33,7 @@ const ControlPanel = (props) => {
 
 
     // const page = props.page;
-    const graphtypeee=all33.graphtypeee;
+    const graphtypeee = all33.graphtypeee;
     const getRepoData = props.getRepoData;
     const setrepo = props.setrepo;
     const fileContent = props.fileContent;
@@ -125,36 +125,36 @@ const ControlPanel = (props) => {
         fetchData11(b)
     };
 
-    let prefix=""
+    let prefix = ""
     let map = Object.keys(c)
         .filter(key => key.startsWith(prefix))
         .map(
-        (key) => {
+            (key) => {
 
-            let max = cccccccccc[key].max
-            let min = cccccccccc[key].min
-            let step = cccccccccc[key].step
-            return (
-                <div key={key} className="horizontal-bar">
+                let max = cccccccccc[key].max
+                let min = cccccccccc[key].min
+                let step = cccccccccc[key].step
+                return (
+                    <div key={key} className="horizontal-bar">
 
-                    {key}
-                    <Slider
-                        aria-label={key}
-                        value={typeof c[key] === 'number' ? c[key] : 0}
-                        onChange={
-                            (event, newValue) => {
-                                l("Slider changed", key, newValue);
-                                changeSetting(key, newValue);
+                        {key}
+                        <Slider
+                            aria-label={key}
+                            value={typeof c[key] === 'number' ? c[key] : 0}
+                            onChange={
+                                (event, newValue) => {
+                                    l("Slider changed", key, newValue);
+                                    changeSetting(key, newValue);
+                                }
                             }
-                        }
-                        min={min}
-                        max={max}
-                        step={step}
-                    />
-                    {c[key]}
-                </div>
-            )
-        });
+                            min={min}
+                            max={max}
+                            step={step}
+                        />
+                        {c[key]}
+                    </div>
+                )
+            });
     return (
 
 
@@ -294,7 +294,7 @@ const ControlPanel = (props) => {
 
                     {
                         graphtypeee == 4 && <button id="emit-particles-btn"
-                                             onClick={getRepoData}
+                                                    onClick={getRepoData}
 
                         >getAllRepos</button>
                     }
