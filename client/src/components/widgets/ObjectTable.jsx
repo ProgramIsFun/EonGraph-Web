@@ -142,20 +142,24 @@ const ObjectTable = (props) => {
                         <button onClick={
                             () => {
                                 l("collapsinggggggggggggg")
-                                setdd(dd => {
-                                    return {
-                                        ...dd,
-                                        nodes: dd.nodes.map(node => {
-                                            if (node.id === objectToBeInspected.id) { // Replace 'specificNodeId' with the actual id or condition to find your node
-                                                // l("collapsinggggggggggggg2")
+                                if (0) {
+                                    setdd(dd => {
+                                        return {
+                                            ...dd,
+                                            nodes: dd.nodes.map(node => {
+                                                if (node.id === objectToBeInspected.id) { // Replace 'specificNodeId' with the actual id or condition to find your node
+                                                    // l("collapsinggggggggggggg2")
 
-                                                return {...node, collapsed: !node.collapsed};
-                                            }
-                                            return node;
-                                        })
-                                    };
-                                });
-                                setObjectToBeInspected({})
+                                                    return {...node, collapsed: !node.collapsed};
+                                                }
+                                                return node;
+                                            })
+                                        };
+                                    });
+                                    setObjectToBeInspected({})
+                                } else {
+                                    l("not implemented yet")
+                                }
                             }}>
                             {objectToBeInspected.collapsed ? 'Expand' : 'Collapse'}
                         </button>
