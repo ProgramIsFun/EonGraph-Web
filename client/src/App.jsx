@@ -5,6 +5,7 @@ import "./App.css";
 import withAuthentication from './containers/withAuthentication';
 
 import Dashboard2 from "./components/minorsss/Dashboard2";
+import {AAAA1} from "./components/AAAA1";
 
 
 
@@ -16,7 +17,8 @@ function App() {
                 <Route exact path="/login" component={Login}/>
                 <Route path="/dashboard" component={withAuthentication(Dashboard2)}/>
                 <Redirect from="/" to="/login"/>
-                {/*<Route exact path="/" component={Home}/>*/}
+
+                <Route exact path="/1" component={AAAA1}/>
             </Switch>
         </Router>
 
