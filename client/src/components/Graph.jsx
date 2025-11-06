@@ -266,7 +266,7 @@ function Graph(props) {
                                         setdd={setdd}
                                         collapseddd={collapseddd}
                                         repo={repo}
-                                        c={c}
+
                                         fgRef={fgRef}
                                         checkExistInGraph={checkExistInGraph}
                                         updateGraphData={updateGraphData}
@@ -446,7 +446,7 @@ function Graph(props) {
         <>
             <FloatingControlPanel
                 c={c}
-                setc={setc}
+
                 emptyGraph={emptyGraph}
                 loadSample={loadSample}
                 saveGraph={saveGraph}

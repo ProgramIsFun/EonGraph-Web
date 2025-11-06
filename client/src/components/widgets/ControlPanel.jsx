@@ -81,7 +81,6 @@ const ControlPanel = (props) => {
     l("ControlPanel c", c);
 
 
-    let setc = props.setc;
 
     const [isVisible, setIsVisible] = useState(true); // State to manage the visibility
 
