@@ -59,25 +59,10 @@ https://gitvisual-7d9a8.web.app
 
 ## How to use
 
-after starting, just login with github
-
-then play around with the button there
-
-
-## warning
-- there are tons of unused codes in this repo ( actions, reducer, etc) . please ignore them. Or you could remove them.
-
-
-## before u deploy
-- check the security rules of firestore in client/firestore.rules and publish it to your firebase project
-
+play around with the button there
 
 ## how to deploy
 - just init firebase hosting and deploy it very easily.
-
-
-
-
 
 ## screenshot
 
