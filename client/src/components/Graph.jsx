@@ -6,7 +6,7 @@ import {dbbbbb, repoooooo} from "../autil/firebase/firebase";
 import * as firebase from 'firebase/app'
 import {calculateCollapseddd, datassss, keydownnnnnn, rawdata} from "../autil/helperfile";
 
-import BuildGraph from "./MainGraphDir/TwoD";
+import TwoD from "./MainGraphDir/TwoD";
 import FloatingControlPanel from "./widgets/ControlPanel";
 import {v4 as uuidv4} from "uuid";
 import ObjectTable from "./widgets/ObjectTable";
@@ -25,7 +25,7 @@ function Graph(props) {
         {nodes: [], links: []}
     )
     let all33 = props.all33
-    let dd=all33.dd
+    let dd = all33.dd
     let nc = dd.nodes
     let lc = dd.links
 
@@ -43,8 +43,8 @@ function Graph(props) {
     const [fileContent, setFileContent] = useState("aaaa");
     const [fileContent2, setFileContent2] = useState("aaaabbbbbb");
 
-    let localbackendurl=all33.localbackendurl;
-    let remotebackendurl= all33.remotebackendurl;
+    let localbackendurl = all33.localbackendurl;
+    let remotebackendurl = all33.remotebackendurl;
     const [useremote2, setUseremote] = useState(false);
     let useremote = all33.useremote;
     const [search, setSearch] = useState("")
@@ -238,10 +238,10 @@ function Graph(props) {
                 component = <ThreeD dd={dd} fgRef={fgRef}/>;
                 break;
             case 2:
-                component = <VR  fgRef={fgRef}/>;
+                component = <VR fgRef={fgRef}/>;
                 break;
             case 4:
-                component = <BuildGraph dd={dd}
+                component = <TwoD dd={dd}
                                         setdd={setdd}
                                         collapseddd={collapseddd}
                                         repo={repo}
@@ -388,7 +388,7 @@ function Graph(props) {
                 nodes: [],
                 links: []
             }
-        } )
+        })
     }
 
     let showBasicInfo = false
