@@ -4,10 +4,11 @@ import JsonView from '@uiw/react-json-view';
 
 import {removegithubRepoNode, rename} from "../../util/helperfile";
 import {l} from "../../util/log11";
+import {connect} from "react-redux";
 
 
 // use the component in your app!
-export const ObjectTable = (props) => {
+const ObjectTable = (props) => {
     // Convert object entries into an array of [key, value] pairs for easy mapping
 
     let dd = props.dd;
@@ -121,7 +122,7 @@ export const ObjectTable = (props) => {
                                         if (node.id === objectToBeInspected.id) { // Replace 'specificNodeId' with the actual id or condition to find your node
                                             // l("collapsinggggggggggggg2")
 
-                                            return { ...node, collapsed: !node.collapsed };
+                                            return {...node, collapsed: !node.collapsed};
                                         }
                                         return node;
                                     })
@@ -160,8 +161,9 @@ export const ObjectTable = (props) => {
                     ))}
                     </tbody>
                 </table>}
-
-
         </div>
     );
 };
+
+
+export default connect(state => state)(ObjectTable);
