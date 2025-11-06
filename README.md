@@ -1,5 +1,9 @@
 # force-graph-visualizer-and-editor
 
+## What is this project?
+
+project aims to provide an editing and visualizations of a forced directed graph.
+
 
 ## Introduction
 In very simple English, this project is for you to edit a graph in a 2D space, and you can also visualize the graph in a 3D space.
