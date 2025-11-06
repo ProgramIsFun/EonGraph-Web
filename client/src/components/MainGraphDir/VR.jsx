@@ -9,9 +9,12 @@ import {connect} from "react-redux";
 
 function VR(props) {
     let dd = props.dd;
-    let c = props.c;
+    let c2 = props.c;
+    let c=props.all33.settings;
     const newdd = (dd);
 
+
+    let linkWidth= c.VR_linkWidth;
     return <>
         <ForceGraphVR
             graphData={newdd}
@@ -50,8 +53,7 @@ function VR(props) {
             // backgroundColor="rgba(0,0,0,0)"
             // nodeThreeObjectExtend={true}
 
-
-            linkWidth={c.linkWidth}
+            linkWidth={linkWidth}
             linkDirectionalParticles={c.linkDirectionalParticles}
             linkDirectionalParticleWidth={c.linkDirectionalParticleWidth}
             linkDirectionalParticleSpeed={c.linkDirectionalParticleSpeed}
