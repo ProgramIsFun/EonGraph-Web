@@ -35,7 +35,6 @@ function Graph(props) {
     const [istreemaxlevelrestricted, setistreemaxlevelrestricted] = useState(false)
     const [treemaxlevel, settreemaxlevel] = useState(3)
 
-    const [graphtypeee2, setgraphtypeee] = useState(4)
     let graphtypeee = all33.graphtypeee;
     const [repo, setrepo] = useState(0)
     const [notice, setnotice] = useState("")
