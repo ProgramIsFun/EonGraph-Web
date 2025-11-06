@@ -493,7 +493,6 @@ export function keydownnnnnn(
     link111,
     lc,
     graphtypeee,
-    setc,
     dispatch
 ) {
     return async (event) => {
@@ -506,25 +505,29 @@ export function keydownnnnnn(
 
         if (event.key === '-') {
             l("minus pressed")
-            setc(prev => {
-                    return {
-                        ...prev,
-                        "node_font_size": prev.node_font_size - 0.1
 
-                    }
-                }
-            )
+            console.warn("reimplement this, it is not working")
+            // setc(prev => {
+            //         return {
+            //             ...prev,
+            //             "node_font_size": prev.node_font_size - 0.1
+            //
+            //         }
+            //     }
+            // )
 
         }
         if (event.key === '=') {
-            setc(prev => {
-                    return {
-                        ...prev,
-                        "node_font_size": prev.node_font_size + 0.1
+            console.warn("reimplement this, it is not working")
 
-                    }
-                }
-            )
+            // setc(prev => {
+            //         return {
+            //             ...prev,
+            //             "node_font_size": prev.node_font_size + 0.1
+            //
+            //         }
+            //     }
+            // )
         }
 
 
