@@ -268,7 +268,21 @@ export const fetchData11 = (b) => async (dispatch) => {
 }
 export const fetchNodeData = (nodeId) => async (dispatch) => {
     try {
-        const res = await api.get(`/api/v0/node_data/${nodeId}`);
+
+
+        const res = await fetch('/api/v0/get_specific_node_with_specific_id/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nodeIdAccess: nodeId
+            })
+        })
+        if (!response.ok) {
+            l("Network response was not ok", response.statusText);
+            throw new Error('Network response was not ok');
+        }
         dispatch({
             type: 'FETCH_NODE_DATA',
             payload: res.data
