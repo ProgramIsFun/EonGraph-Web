@@ -13,15 +13,20 @@ import {v4 as uuidv4} from "uuid";
 import {ObjectTable} from "./widgets/smallTable";
 import _ from "lodash";
 import {l} from "../util/log11";
+import {connect, useDispatch} from "react-redux";
 
 
-function Home() {
+function Home(props) {
+    const dispatch = useDispatch();
 
     const [globalscale, setglobalscale] = useState(1)
     const [fixing, setFixing] = useState(false);
-    const [dd, setdd] = useState(
+    const [dd2, setdd] = useState(
         {nodes: [], links: []}
     )
+    let dd=props.all33.dd
+
+
     let nc = dd.nodes
     let lc = dd.links
 
@@ -62,7 +67,7 @@ function Home() {
     const [objectToBeInspected, setObjectToBeInspected] = useState({})
 
     const collapseddd = useMemo(calculateCollapseddd(dd), [dd]);
-
+    l("collapseddd is now ", collapseddd)
     useEffect(() => {
         if (istreemaxlevelrestricted) {
 
@@ -163,7 +168,14 @@ function Home() {
     const loadSample = () => {
         const clonedObject = _.cloneDeep(datassss);
 
-        setdd(clonedObject)
+        // setdd(clonedObject)
+        dispatch({
+            type: "CHANGE_DATA",
+            payload: {
+                nodes: clonedObject.nodes,
+                links: clonedObject.links
+            }
+        })
     }
     const checkExistInGraph = (item) => {
 
@@ -515,4 +527,4 @@ function Home() {
 }
 
 
-export default (Home);
+export default connect(state => state, {})(Home);

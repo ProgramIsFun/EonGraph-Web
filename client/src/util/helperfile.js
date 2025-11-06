@@ -606,7 +606,6 @@ export function calculateCollapseddd(dd) {
         // find a node with collapsed property true
         let collapsedNodes = dd.nodes.filter(node => node.collapsed)
 
-
         l("collapsedNodes length", collapsedNodes.length)
         // for each node in collapsedNodes
         collapsedNodes.forEach(node => {
