@@ -93,7 +93,10 @@ const ObjectTable = (props) => {
     let element1 = 1
         ?
         <div style={tableStyle}>
+            <button onClick={() => {
 
+            }}
+                    >refetch</button>
             <button onClick={() => {
                 rename(props.objectToBeInspected, "node")
             }}>
