@@ -378,8 +378,10 @@ const ControlPanel = (props) => {
                             }
                         }>delete prop from all node
                         </button>
+                        <br/>
+                        <br/>
 
-                        <BorderWrapper>
+                        <BorderCollapsibleWrapper trigger="import/export graph as json">
                             <>overwrite current graph with json (will not affect db), assume node id is named id</>
                             <div>
                                 <textarea
@@ -406,7 +408,7 @@ const ControlPanel = (props) => {
                                 >execute import
                                 </button>
                             </div>
-                        </BorderWrapper>
+                        </BorderCollapsibleWrapper>
                         <BorderWrapper>
                             <button onClick={
                                 () => {
