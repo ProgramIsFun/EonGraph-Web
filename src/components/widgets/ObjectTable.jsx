@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ReactJson from '@microlink/react-json-view'
 
-import JsonView from '@uiw/react-json-view';
+import UiwJsonView from '@uiw/react-json-view';
 
 import {aaaaaaa, removegithubRepoNode, rename} from "../../autil/helperfile";
 import {l} from "../../autil/loghelper";
@@ -80,10 +80,10 @@ const ObjectTable = (props) => {
     let coreViewer = 1
         ?
         <>  <Demo></Demo>
-            {/*<JsonView*/}
-            {/*    value={objForJsonView}*/}
-            {/*    style={aaaaaaa}*/}
-            {/*/>*/}
+            <UiwJsonView
+                value={objForJsonView}
+                style={aaaaaaa}
+            />
         </>
         :
         <>
