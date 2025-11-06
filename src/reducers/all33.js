@@ -13,49 +13,46 @@ import {
     SET_USEREMOTE, CHANGE_USEREMOTE, FETCH_NODE_DATA
 } from '../actions/types';
 import {localBackendUrl, NODE_ID_ACCESSOR, remoteBackendUrl, SAMPLE_CYPHER} from "../constants";
-
-export const OriginalValues = {
+export const ValuesSetting = {
     // 2D
     "TwoD_global_scale_adjustment_coefficient":
-        {"value": 0.5, "min": 0.1, "max": 1, "step": 0.1},
+        {"value": 0.5, "min": 0.1, "max": 1, "step": 0.1, "changeableType": ["slider"]},
     "TwoD_repulsive_Force_Scale":
-        {"value": -100, "min": -1000, "max": 1, "step": 1},
+        {"value": -100, "min": -1000, "max": 1, "step": 1, "changeableType": ["slider"]},
     "TwoD_node_font_size":
-        {"value": 6, "min": 1, "max": 20, "step": 1},
+        {"value": 6, "min": 1, "max": 20, "step": 1, "changeableType": ["slider"]},
     "TwoD_linkOpacity":
-        {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
+        {"value": 0.6, "min": 0, "max": 1, "step": 0.1, "changeableType": ["slider"]},
     "TwoD_linkWidth":
-        {"value": 0.3, "min": 0, "max": 1, "step": 0.1},
+        {"value": 0.3, "min": 0, "max": 1, "step": 0.1, "changeableType": ["slider"]},
     "TwoD_linkDirectionalParticles":
-        {"value": 4, "min": 1, "max": 10, "step": 1},
+        {"value": 4, "min": 1, "max": 10, "step": 1, "changeableType": ["slider"]},
     "TwoD_linkDirectionalParticleWidth":
-        {"value": 2, "min": 1, "max": 10, "step": 1},
+        {"value": 2, "min": 1, "max": 10, "step": 1, "changeableType": ["slider"]},
     "TwoD_linkDirectionalParticleSpeed":
-        {"value": 0.002, "min": 0.001, "max": 0.01, "step": 0.001},
+        {"value": 0.002, "min": 0.001, "max": 0.01, "step": 0.001, "changeableType": ["slider"]},
     // VR
     "VR_global_scale_adjustment_coefficient":
-        {"value": 0.5, "min": 0.1, "max": 1, "step": 0.1},
+        {"value": 0.5, "min": 0.1, "max": 1, "step": 0.1, "changeableType": ["slider"]},
     "VR_repulsive_Force_Scale":
-        {"value": -100, "min": -1000, "max": 1, "step": 1},
+        {"value": -100, "min": -1000, "max": 1, "step": 1, "changeableType": ["slider"]},
     "VR_node_font_size":
-        {"value": 6, "min": 1, "max": 200, "step": 1},
+        {"value": 6, "min": 1, "max": 200, "step": 1, "changeableType": ["slider"]},
     "VR_linkOpacity":
-        {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
+        {"value": 0.6, "min": 0, "max": 1, "step": 0.1, "changeableType": ["slider"]},
     "VR_linkWidth":
-        {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
+        {"value": 0.6, "min": 0, "max": 1, "step": 0.1, "changeableType": ["slider"]},
     "VR_linkDirectionalParticles":
-        {"value": 0, "min": 0, "max": 10, "step": 1},
+        {"value": 0, "min": 0, "max": 10, "step": 1, "changeableType": ["slider"]},
     "VR_linkDirectionalParticleWidth":
-        {"value": 2, "min": 1, "max": 10, "step": 1},
+        {"value": 2, "min": 1, "max": 10, "step": 1, "changeableType": ["slider"]},
     "VR_linkDirectionalParticleSpeed":
-        {"value": 0.002, "min": 0.000, "max": 0.01, "step": 0.001},
+        {"value": 0.002, "min": 0.000, "max": 0.01, "step": 0.001, "changeableType": ["slider"]},
     "VR_highlightHaloOpacity":
-        {"value": 0.15, "min": 0, "max": 1, "step": 0.01},
+        {"value": 0.15, "min": 0, "max": 1, "step": 0.01, "changeableType": ["slider"]},
     "VR_highlightHaloColor":
-        {"value": 0xffff00, "min": 0x000000, "max": 0xffffff, "step": 1},
-
+        {"value": 0xffff00, "min": 0x000000, "max": 0xffffff, "step": 1, "changeableType": ["colorPicker"]},
 }
-
 
 const initialState = {
     settings: {

@@ -13,7 +13,7 @@ import {
     fetchAllNodesAndRelations,
     updateCurrentGraphNodesPositionsToBackend
 } from "../../actions/all33";
-import {OriginalValues} from "../../reducers/all33";
+import {ValuesSetting} from "../../reducers/all33";
 import {CHANGE_DATA, CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
 import {SAMPLE_CYPHER} from "../../constants";
 import Collapsible from "react-collapsible";
@@ -173,9 +173,9 @@ const ControlPanel = (props) => {
         .map(
             (key) => {
 
-                let max = OriginalValues[key].max
-                let min = OriginalValues[key].min
-                let step = OriginalValues[key].step
+                let max = ValuesSetting[key].max
+                let min = ValuesSetting[key].min
+                let step = ValuesSetting[key].step
                 return (
                     <div key={key} className="horizontal-bar">
 
