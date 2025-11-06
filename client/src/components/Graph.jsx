@@ -232,22 +232,25 @@ function Graph(props) {
     }
 
     const returnGraph1 = (index) => {
-        let component;
-        switch (index) {
-            case 0:
-                component = <ThreeD dd={dd} fgRef={fgRef}/>;
-                break;
-            case 2:
-                component = <VR fgRef={fgRef}/>;
-                break;
-            case 4:
-                component = <TwoD dd={dd}
-                                        setdd={setdd}
-                                        collapseddd={collapseddd}
-                                        repo={repo}
+                let component;
+                switch (index) {
+                    case "ThreeD":
+                    case 0:
+                        component = <ThreeD dd={dd} fgRef={fgRef}/>;
+                        break;
+                    case "VR":
+                    case 2:
+                        component = <VR fgRef={fgRef}/>;
+                        break;
+                    case "TwoD":
+                    case 4:
+                        component = <TwoD dd={dd}
+                                          setdd={setdd}
+                                          collapseddd={collapseddd}
+                                          repo={repo}
 
-                                        fgRef={fgRef}
-                                        checkExistInGraph={checkExistInGraph}
+                                          fgRef={fgRef}
+                                          checkExistInGraph={checkExistInGraph}
                                         returnListRepo={returnListRepo}
                                         setObjectToBeInspected={setObjectToBeInspected}
                                         fixing={fixing}
@@ -404,7 +407,6 @@ function Graph(props) {
                 setFileContent2={setFileContent2}
                 dd={dd}
                 setdd={setdd}
-                setpage={setgraphtypeee}
                 page={graphtypeee}
                 getRepoData={getRepoData}
                 setrepo={setrepo}
