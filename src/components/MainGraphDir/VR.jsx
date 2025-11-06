@@ -19,6 +19,9 @@ function VR(props) {
     let fgRef = props.fgRef;
     let a = c.VR_repulsive_Force_Scale
     let node_font_size=c.VR_node_font_size;
+    let linkDirectionalParticles= c.VR_linkDirectionalParticles;
+    let linkDirectionalParticleWidth=c.VR_linkDirectionalParticleWidth;
+    let linkDirectionalParticleSpeed=c.VR_linkDirectionalParticleSpeed;
     useEffect(() => {
         if (fgRef.current) {
             fgRef.current.d3Force('charge').strength(a)
@@ -84,9 +87,9 @@ function VR(props) {
             // backgroundColor="rgba(0,0,0,0)"
             // nodeThreeObjectExtend={true}
             linkWidth={linkWidth}
-            linkDirectionalParticles={c.linkDirectionalParticles}
-            linkDirectionalParticleWidth={c.linkDirectionalParticleWidth}
-            linkDirectionalParticleSpeed={c.linkDirectionalParticleSpeed}
+            linkDirectionalParticles={linkDirectionalParticles}
+            linkDirectionalParticleWidth={linkDirectionalParticleWidth}
+            linkDirectionalParticleSpeed={linkDirectionalParticleSpeed}
 
         />
     </>
