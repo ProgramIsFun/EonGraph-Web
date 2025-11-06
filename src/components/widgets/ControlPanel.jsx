@@ -401,7 +401,8 @@ const ControlPanel = (props) => {
                             fgRef.current.postProcessingComposer().addPass(bloomPass);
                         }}>zoomToFit
                         </button>
-
+                        {map
+                        }
                     </BorderWrapper>
 
                     <BorderWrapper trigger="github repo related">
@@ -455,8 +456,7 @@ const ControlPanel = (props) => {
 
                     </BorderWrapper>
 
-                    {map
-                    }
+
                     <div>
                         <label>
                             <input
