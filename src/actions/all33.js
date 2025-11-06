@@ -247,6 +247,15 @@ export const fetch_all_nodes_and_relations = (baseUrl) => async (dispatch) => {
         const jsonData = await response.json();
         rawdata(jsonData);
 
+        let injectCustomTolinks=true;
+        if (injectCustomTolinks) {
+            // add a custom property to each link in jsonData.links
+            // random value
+            jsonData.links.forEach(link => {
+                link.custom123 = Math.random().toString(36).substring(7);
+            });
+        }
+
         let duplicateOriginalIdToJustID = false;
         if (duplicateOriginalIdToJustID) {
             jsonData.nodes.forEach(node => {
