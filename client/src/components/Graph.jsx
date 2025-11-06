@@ -6,8 +6,8 @@ import {dbbbbb, repoooooo} from "../autil/firebase/firebase";
 
 import * as firebase from 'firebase/app'
 import {calculateCollapseddd, datassss, keydownnnnnn, rawdata} from "../autil/helperfile";
-import TextNode from "./MainGraphDir/TextNode";
-import BuildGraph from "./MainGraphDir/BuildGraph";
+
+import BuildGraph from "./MainGraphDir/Two_D";
 import FloatingControlPanel from "./widgets/ControlPanel";
 import {v4 as uuidv4} from "uuid";
 import ObjectTable from "./widgets/ObjectTable";

@@ -9,14 +9,14 @@ import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
 import {getNormalclick} from "../../autil/GetNormalclick";
 
 
-function BuildGraph(props) {
-    l("BuildGraph props1", props)
+function Two_D(props) {
+    l("Two_D props1", props)
 
     const dispatch = useDispatch();
     let all33 = props.all33
     let c = all33.settings
     const dd = all33.dd
-    // l("BuildGraph props",  dd)
+    // l("Two_D props",  dd)
     // const dd = props.dd
     let setdd = props.setdd
 
@@ -345,4 +345,4 @@ function BuildGraph(props) {
 
 }
 
-export default connect(state => state)(BuildGraph);
+export default connect(state => state)(Two_D);
