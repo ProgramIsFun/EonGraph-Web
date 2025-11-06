@@ -214,25 +214,10 @@ const ControlPanel = (props) => {
                     <br></br>
                     <>view mode control</>
                     <button id="emit-particles-btn" onClick={() => setpage(0)}>3d</button>
-                    {/*<button id="emit-particles-btn" onClick={() => setpage(1)}>2d</button>*/}
                     <button id="emit-particles-btn" onClick={() => setpage(2)}>3d-vr</button>
-                    {/*<button id="emit-particles-btn" onClick={() => setpage(3)}>2d-text</button>*/}
                     <button id="emit-particles-btn" onClick={() => setpage(4)}>2d-build</button>
 
                     <br></br>
-                    {page == 4 &&
-                        < p>
-
-                            {/*ADD NODE: LEFT <br/>*/}
-                            {/*RIGHT CLICK ON NODE: DELETE <br/>*/}
-                            {/*RIGHT CLICK ON LINK: DELETE LINK <br/>*/}
-                            {/*DRAG node A near node B: ADD connection A->B, <br/>*/}
-                            {/*{"Click getAllRepos, below will then show the list of repo (that you gave us access) that is not in the graph yet, left click any row to add that repo into the graph"}*/}
-
-                        </p>
-
-                    }
-
 
                     {
                         page == 4 && <button id="emit-particles-btn"
