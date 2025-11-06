@@ -1,6 +1,6 @@
 import React, {useEffect, useMemo, useRef, useState} from "react";
 import HighLight from "./MainGraphDir/HighLight";
-import Two_D from "./MainGraphDir/Two_D";
+import ThreeD from "./MainGraphDir/ThreeD";
 import VR from "./MainGraphDir/VR";
 import {dbbbbb, repoooooo} from "../autil/firebase/firebase";
 
@@ -240,7 +240,7 @@ function Graph(props) {
         let component;
         switch (index) {
             case 0:
-                component = <Two_D dd={dd} fgRef={fgRef}/>;
+                component = <ThreeD dd={dd} fgRef={fgRef}/>;
                 break;
             case 2:
                 component = <VR/>;

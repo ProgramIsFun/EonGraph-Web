@@ -201,7 +201,7 @@ THREE.CSS2DObject = CSS2DObject;
 THREE.CSS2DRenderer = CSS2DRenderer;
 
 
-export default function Two_D({dd, ...props}) {
+export default function ThreeD({dd, ...props}) {
     const fgRef = props.fgRef
     console.log("entering3D, deepclone property,await mutation to original prop")
 
