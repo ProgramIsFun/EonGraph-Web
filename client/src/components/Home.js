@@ -146,12 +146,8 @@ function Home() {
             graphtypeee,
             setc
         );
-
         window.addEventListener('keydown', handleKeyDown);
-
         window.addEventListener('wheel', handleScroll);
-
-
         // Cleanup
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
@@ -188,13 +184,11 @@ function Home() {
     }
     const addRepoInGraph = (item) => {
 
-
         // inject the repo into graph
         // if we take repoid in node to be the real identifier
         let index1 = nc.findIndex(
             node => node.repoid === item.id
         )
-
 
         if (index1 === -1) {
 
@@ -208,13 +202,11 @@ function Home() {
                 ...fixing ? {fx: 0, fy: 0} : {}
             }
 
-
             // Update state in an immutable way
             setdd(prevNc => ({
                 ...prevNc, // Spread to copy other properties of nc, if there are any
                 nodes: [...prevNc.nodes, newNode], // Create a new array with all old nodes plus the new one
             }));
-
 
             updateGraphData()
         } else {
@@ -241,24 +233,13 @@ function Home() {
                 // If both exist or don't exist in graph, maintain original order
                 return 0;
             }).map(item => {
-
                 if (checkExistInGraph(item)) {
                     return <li key={item.id} onClick={
                         () => addRepoInGraph(item)}>{item.full_name}</li>   // need clickable so that it adds to graph
                 } else {
                     return <li key={item.id} style={{color: 'gray'}}>{item.full_name}</li>
-
                 }
-
-
             })
-
-
-            //
-            // return repo.filter(checkExistInGraph).map(item => {
-            //     return <li key={item.id} onClick={
-            //         () => addRepoInGraph(item)}>{item.full_name}</li>   // need clickable so that it adds to graph
-            // })
         }
     }
 
