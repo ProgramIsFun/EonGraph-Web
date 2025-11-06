@@ -2,14 +2,16 @@ import {l} from "./log11";
 import {CHANGE_LINKS, SET_OBJECT_TO_BE_INSPECTED} from "../actions/types";
 import {v4 as uuidv4} from "uuid";
 
-export function getNormalclick(objectToBeInspected, dispatch, dd, rename) {
+export function getNormalclick(objectToBeInspected, dispatch, dd) {
     return (node) => {
-        console.log("received node click", node)
+        console.log("received node click..............................................", node)
         if (1) {
             if (Object.keys(objectToBeInspected).length === 0) {
                 l("setting objectToBeInspected", node)
-                dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: node})
+                // dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: node})
             } else {
+
+
                 if (objectToBeInspected === node) {
                     l("clicked on the same node, unsetting objectToBeInspected")
                     dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: {}})
@@ -62,8 +64,6 @@ export function getNormalclick(objectToBeInspected, dispatch, dd, rename) {
                 }
             }
 
-        } else {
-            rename(node, 'nodeeeeeee')
         }
     };
 }

@@ -5,12 +5,15 @@ import React from 'react';
 import SpriteText from 'three-spritetext';
 
 import {l} from "../../autil/log11";
-import {connect} from "react-redux";
+import {connect, useDispatch} from "react-redux";
+import {getNormalclick} from "../../autil/GetNormalclick";
 
 function VR(props) {
-    let dd = props.all33.dd;
-
-    let c=props.all33.settings;
+    const dispatch = useDispatch();
+    let all33 = props.all33;
+    let dd=all33.dd;
+    let c=all33.settings;
+    let objectToBeInspected = all33.objectToBeInspected;
 
     let getCameraPosition = () => {
         var scene = document.querySelector('a-scene');
@@ -28,7 +31,7 @@ function VR(props) {
             console.warn('<a-scene> tag not found in the document.');
         }
     }
-
+    const Normalclick = getNormalclick(objectToBeInspected, dispatch, dd)
     let linkWidth= c.VR_linkWidth;
     return <>
         <button onClick={getCameraPosition}>Get Camera Position</button>
@@ -39,6 +42,7 @@ function VR(props) {
             onNodeClick={(node, event) => {
                 l("Node clicked22222:", node);
                 l("Event333333333:", event);
+                Normalclick(node);
             }}
 
 
