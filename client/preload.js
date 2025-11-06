@@ -1,12 +1,4 @@
-// // In your preload.js
-// const { contextBridge, ipcRenderer } = require('electron');
-//
-// contextBridge.exposeInMainWorld('electron', {
-//     openDirectory: (path) => ipcRenderer.send('open-directory', path)
-// });
-//
-
-// In your preload.js
+// In preload.js
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electron', {
