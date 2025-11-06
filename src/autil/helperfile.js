@@ -479,7 +479,7 @@ export async function removegithubRepoNode(objectToBeInspected, dd, setdd, dispa
     }
 }
 
-export function keydownnnnnn(
+export function keydownHandler(
     setObjectToBeInspected,
     saveGraph,
     objectToBeInspected,
