@@ -42,7 +42,7 @@ const ControlPanel = (props) => {
     const returnListRepo = props.returnListRepo;
 
 
-    const objectToBeInspected = props.objectToBeInspected;
+    const objectToBeInspected = all33.objectToBeInspected;
     const setObjectToBeInspected = props.setObjectToBeInspected;
 
     const fixing = props.fixing;
