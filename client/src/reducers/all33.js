@@ -19,7 +19,7 @@ export const cccccccccc = {
     "TwoD_node_font_size":
         {"value": 6, "min": 1, "max": 20, "step": 1},
 
-    "TwoD_link_opacity":
+    "TwoD_linkOpacity":
         {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
     "TwoD_linkWidth":
         {"value": 0.3, "min": 0, "max": 1, "step": 0.1},
@@ -58,7 +58,7 @@ const initialState = {
         "TwoD_global_scale_adjustment_coefficient": 0.5,
         "TwoD_repulsive_Force_Scale": -100,
         "TwoD_node_font_size": 6,
-        "TwoD_link_opacity": 0.6,
+        "TwoD_linkOpacity": 0.6,
         "TwoD_linkWidth": 0.3,
         "TwoD_linkDirectionalParticles": 4,
         "TwoD_linkDirectionalParticleWidth": 2,
