@@ -73,7 +73,11 @@ const FloatingControlPanel = (props) => {
     };
 
 
-    let c = props.c;
+    let c2 = props.c;
+    let c=props.all33.settings;
+    l("FloatingControlPanel c", c);
+
+
     let setc = props.setc;
 
     const [isVisible, setIsVisible] = useState(true); // State to manage the visibility
