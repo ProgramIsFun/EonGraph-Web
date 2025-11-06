@@ -210,7 +210,7 @@ export default function ReactForceGraph({dd,...props}) {
     const extraRenderers = [new THREE.CSS2DRenderer()];
 
 
-    
+    let showiiiiii=false
 
 
     return <>
@@ -220,16 +220,29 @@ export default function ReactForceGraph({dd,...props}) {
 
 
             backgroundColor={"#000000"}
-            extraRenderers={extraRenderers}
+            extraRenderers={0?extraRenderers:undefined}
             graphData={newdd}
             nodeAutoColorBy="group"
-            nodeThreeObject={node => {
+
+            nodeThreeObject={
+
+
+                showiiiiii?
+                node => {
                 const nodeEl = document.createElement('div');
                 nodeEl.textContent = node.id;
                 nodeEl.style.color = node.color;
                 nodeEl.className = 'node-label';
                 return new THREE.CSS2DObject(nodeEl);
-            }}
+                }: undefined
+
+
+
+            }
+
+
+
+
             nodeThreeObjectExtend={true}
         />
     </>
