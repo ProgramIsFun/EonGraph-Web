@@ -49,6 +49,10 @@ function VR(props) {
     const Normalclick = getNormalclick(objectToBeInspected, dispatch, dd)
     let linkWidth = c.VR_linkWidth;
     let nodeThreeObject = node => {
+        // Node object accessor function or attribute for generating a custom 3d object to render as graph nodes.
+        // Should return an instance of ThreeJS Object3d.
+        // If a falsy value is returned, the default 3d object type will be used instead for that node.
+
         const label2 = !node.name ? node.id : node.name;
 
         let label = replaceStringAinB("everythingallaccount", label2)

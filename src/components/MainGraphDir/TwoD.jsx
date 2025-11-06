@@ -180,7 +180,7 @@ function TwoD(props) {
         }
         if (1) {
             const label2 = !node.name ? node.id : node.name;
-      
+
             let label = replaceStringAinB("everythingallaccount", label2)
             const fontSize = node_font_size / (globalScale * global_scale_adjustment_coefficient);
             ctx.font = `${fontSize}px Sans-Serif`;
@@ -188,6 +188,9 @@ function TwoD(props) {
             const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
+
+
+
             let BackgroundColor = false
             if (BackgroundColor) {
                 // This fill a white background to text
@@ -196,6 +199,8 @@ function TwoD(props) {
                 ctx.fillStyle = 'rgba(255, 255, 0, 0.1)';
                 ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
             }
+
+
             ctx.fillStyle = 'white'; // Set text color to white here
             // ctx.fillStyle = node.color;
             ctx.fillText(label, node.x, node.y);
