@@ -22,28 +22,26 @@ function TextNodeVR(props) {
             }}
 
 
-            nodeThreeObject={node => {
+            nodeThreeObject={
+                node => {
 
 
-                const label2 = !node.name ? node.id : node.name;
+                    const label2 = !node.name ? node.id : node.name;
+                    const replaceStringAinB = (strA, strB) => {
+                        if (strB.startsWith(strA)) {
+                            return strB.replace(strA, 'e');
+                        }
+                        return strB; // No change if stringB does not start with stringA
+                    };
+                    let label = replaceStringAinB("everythingallaccount", label2)
+                    // if there is a name, we use the name, if there is no, we use the ID.
+                    const sprite = new SpriteText(label);
+                    sprite.color = node.color;
+                    sprite.textHeight = 8;
+                    return sprite;
 
-                const replaceStringAinB = (strA, strB) => {
-                    // Check if stringB starts with stringA
-                    if (strB.startsWith(strA)) {
-                        // Replace stringA with '1' in stringB
-                        return strB.replace(strA, 'e');
-                    }
-                    return strB; // No change if stringB does not start with stringA
-                };
-
-                let label = replaceStringAinB("everythingallaccount", label2)
-
-                // if there is a name, we use the name, if there is no, we use the ID.
-                const sprite = new SpriteText(label);
-                sprite.color = node.color;
-                sprite.textHeight = 8;
-                return sprite;
-            }}
+                }
+            }
 
 
             backgroundColor={"#000000"}
