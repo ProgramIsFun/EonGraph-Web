@@ -406,7 +406,6 @@ function Graph(props) {
                 setFileContent2={setFileContent2}
                 dd={dd}
                 setdd={setdd}
-                page={graphtypeee}
                 getRepoData={getRepoData}
                 setrepo={setrepo}
                 fileContent={fileContent}
