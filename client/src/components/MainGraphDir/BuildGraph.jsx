@@ -170,46 +170,49 @@ function BuildGraph(props) {
     const Normalclick  = (node) => {
         console.log("received node click", node)
         if (1) {
-
-            if (objectToBeInspected === node) {
-                l("unsetting objectToBeInspected")
-                setObjectToBeInspected({})
-                return
-            }
-
-            if (Object.keys(objectToBeInspected).length === 0) {
+            if(Object.keys(objectToBeInspected).length === 0){
                 l("setting objectToBeInspected", node)
                 setObjectToBeInspected(node)
                 setHoverNode(node)
-
-            } else {
-                // Check if the link already exists
-                let shouldAddLink = false;
-                // check if any link in the links have the same source and target.
-                shouldAddLink = !lc.some(link => {
-                        let lll = (link.source.id === objectToBeInspected.id && link.target.id === node.id) || (link.source.id === node.id && link.target.id === objectToBeInspected.id)
-                        if (lll) {
-                            l("link already exists!!!!!!!!!", link.source.id, objectToBeInspected.id, link.target.id, node.id)
-                        }
-                        return lll
-                    }
-                )
-                if (shouldAddLink) {
-                    let linkId = uuidv4()
-                    l("objectToBeInspected.id", objectToBeInspected.id, "node.id", node.id)
-                    const interimLink = {
-                        id: linkId,
-                        source: objectToBeInspected.id,
-                        target: node.id,
-                        name: 'link_' + linkId
-                    };
-                    setdd(prevNc => ({
-                        ...prevNc, // Spread to copy other properties of nc, if there are any
-                        links: [...prevNc.links, interimLink], // Create a new array with all old nodes plus the new one
-                    }));
+            }else{
+                if (objectToBeInspected === node) {
+                    l("clicked on the same node, unsetting objectToBeInspected")
                     setObjectToBeInspected({})
+
+                }else{
+
+
+                        // Check if the link already exists
+                        let shouldAddLink = false;
+                        // check if any link in the links have the same source and target.
+                        shouldAddLink = !lc.some(link => {
+                                let lll = (link.source.id === objectToBeInspected.id && link.target.id === node.id) || (link.source.id === node.id && link.target.id === objectToBeInspected.id)
+                                if (lll) {
+                                    l("link already exists!!!!!!!!!", link.source.id, objectToBeInspected.id, link.target.id, node.id)
+                                }
+                                return lll
+                            }
+                        )
+                        if (shouldAddLink) {
+                            let linkId = uuidv4()
+                            l("objectToBeInspected.id", objectToBeInspected.id, "node.id", node.id)
+                            const interimLink = {
+                                id: linkId,
+                                source: objectToBeInspected.id,
+                                target: node.id,
+                                name: 'link_' + linkId
+                            };
+                            setdd(prevNc => ({
+                                ...prevNc, // Spread to copy other properties of nc, if there are any
+                                links: [...prevNc.links, interimLink], // Create a new array with all old nodes plus the new one
+                            }));
+                            setObjectToBeInspected({})
+                        }
+
+
                 }
             }
+
         } else {
             rename(node, 'nodeeeeeee')
         }
