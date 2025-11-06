@@ -1,5 +1,4 @@
 import React, {useEffect, useMemo, useRef, useState} from "react";
-import HighLight from "./MainGraphDir/HighLight";
 import ThreeD from "./MainGraphDir/ThreeD";
 import VR from "./MainGraphDir/VR";
 import {dbbbbb, repoooooo} from "../autil/firebase/firebase";
@@ -15,7 +14,6 @@ import _ from "lodash";
 import {l} from "../autil/log11";
 import {connect, useDispatch} from "react-redux";
 import {CHANGE_DATA} from "../actions/types";
-import {fetchData11} from "../actions/all33";
 
 
 function Graph(props) {
