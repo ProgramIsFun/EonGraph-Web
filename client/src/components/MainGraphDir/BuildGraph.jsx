@@ -25,10 +25,6 @@ function BuildGraph(props) {
     // l("we're using a ref because we want to store something and some time not to rerender the whole thing.")
     const fgRef = props.fgRef
 
-
-
-
-
     const collapseddd = props.collapseddd
     const setObjectToBeInspected = props.setObjectToBeInspected
     const fixing = props.fixing
@@ -43,7 +39,6 @@ function BuildGraph(props) {
             dd
 
     const paintRing = useCallback((node, ctx) => {
-
         let b = node === objectToBeInspected;
         if (!(b || node.collapsed)) {
             // l("node is not objectToBeInspected or collapsed, skipping paintRing", node.id, "objectToBeInspected", objectToBeInspected.id)
@@ -174,16 +169,26 @@ function BuildGraph(props) {
             } else {
                 if (objectToBeInspected === node) {
                     l("clicked on the same node, unsetting objectToBeInspected")
-
                     dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: {}})
                 } else {
-                    // Check if the link already exists
+
+                 
                     let shouldAddLink = false;
-                    // check if any link in the links have the same source and target.
-                    shouldAddLink = !lc.some(link => {
-                            let lll = (link.source.id === objectToBeInspected.id && link.target.id === node.id) || (link.source.id === node.id && link.target.id === objectToBeInspected.id)
+
+                    // check if any link in all the links have the same source and target.
+                    shouldAddLink = !lc.some(
+                        link => {
+                            let lll = (
+                                link.source.id === objectToBeInspected.id
+                                && link.target.id === node.id
+                            ) || (
+                                link.source.id === node.id &&
+                                link.target.id === objectToBeInspected.id
+                            )
                             if (lll) {
                                 l("link already exists!!!!!!!!!", link.source.id, objectToBeInspected.id, link.target.id, node.id)
+                            }else{
+
                             }
                             return lll
                         }
