@@ -213,8 +213,7 @@ const ControlPanel = (props) => {
 
                     <br/>
 
-                    <p>useremote: {useremote ? 'True' : 'False'} if set to true, the graph will be saved to remote
-                        storage.</p>
+                    <p>useremote: {useremote ? 'True' : 'False'} if set to false, we use local backend, if set to true, we use remote backend.</p>
                     <input
                         type="checkbox"
                         checked={useremote}
