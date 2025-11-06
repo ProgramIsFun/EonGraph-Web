@@ -31,8 +31,6 @@ const ControlPanel = (props) => {
     const dd = all33.dd;
     const setdd = props.setdd;
 
-
-
     const graphtypeee = all33.graphtypeee;
     const getRepoData = props.getRepoData;
     const setrepo = props.setrepo;
@@ -63,7 +61,7 @@ const ControlPanel = (props) => {
     };
     const filterdd = props.filterdd;
 
-    const usingNEO4J = props.all33.usingNEO4J;
+    const usingNEO4J = all33.usingNEO4J;
 
 
     const changeSetting = props.changeSetting;
@@ -74,7 +72,7 @@ const ControlPanel = (props) => {
     };
 
 
-    let c = props.all33.settings;
+    let c = all33.settings;
     l("ControlPanel c", c);
 
 
