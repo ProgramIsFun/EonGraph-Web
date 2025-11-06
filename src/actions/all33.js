@@ -404,6 +404,12 @@ export const executeCypherQuery = (cypherQuery) => async (dispatch, getState) =>
         if (body) {
             l("body is 123321", body)
 
+
+            let changeData=true;
+            if (changeData){
+
+
+            }
             // dispatch(setAlert('Cypher query executed and data updated', 'success'));
         } else {
             // dispatch(setAlert('No nodes or links returned from query', 'warning'));
