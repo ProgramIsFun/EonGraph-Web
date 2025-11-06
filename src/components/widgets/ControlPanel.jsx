@@ -274,26 +274,24 @@ const ControlPanel = (props) => {
                         <br/>
                     </BorderWrapper>
 
-                    <p>list of subgraph id</p>
-                    <p></p>
-                    <br/>
+                    <BorderWrapper trigger="graph data management， get, set, del">
+                        <p>list of subgraph id</p>
+                        <p></p>
+                        <br/>
 
-                    <p>subgraphid right now</p>
-                    <p></p>
-                    <br/>
+                        <p>subgraphid right now</p>
+                        <p></p>
+                        <br/>
+                        <></>
+                        <button onClick={
+                            () => {
+                                fetchData111()
+                            }
+                        }>get the graph from nE04J
+                        </button>
 
-
-                    <>graph data management， get, set, del</>
-                    <button onClick={
-                        () => {
-                            fetchData111()
-                        }
-                    }>get the graph from nE04J
-                    </button>
-
-
-                    <>import new graph with json (will not affect db), assume node id is named id</>
-                    <div>
+                        <>import new graph with json (will not affect db), assume node id is named id</>
+                        <div>
                         <textarea
                             rows={10}
                             cols={50}
@@ -302,31 +300,39 @@ const ControlPanel = (props) => {
                             placeholder="Type your text here..."
                             style={{padding: '10px', fontSize: '16px'}}
                         />
-                        <button
-                            onClick={() => {
-                                let ggg = JSON.parse(value2)
-                                dispatch({
-                                    type: CHANGE_DATA,
-                                    payload: {
-                                        nodes: ggg.nodes,
-                                        links: ggg.links,
-                                        nodeIdaccessor: "id"
-                                    },
+                            <button
+                                onClick={() => {
+                                    let ggg = JSON.parse(value2)
+                                    dispatch({
+                                        type: CHANGE_DATA,
+                                        payload: {
+                                            nodes: ggg.nodes,
+                                            links: ggg.links,
+                                            nodeIdaccessor: "id"
+                                        },
 
-                                })
-                            }}
-                        >execute import
+                                    })
+                                }}
+                            >execute import
+                            </button>
+                        </div>
+                        <br/>
+                        <br/>
+                        <button onClick={
+                            () => {
+                                updateNodesPositionsToBackend()
+                            }
+                        }>update nodes positions to Backend
                         </button>
-                    </div>
-                    <br/>
-                    <br/>
+                    </BorderWrapper>
 
-                    <button onClick={
-                        () => {
-                            updateNodesPositionsToBackend()
-                        }
-                    }>update nodes positions to Backend
-                    </button>
+
+
+
+
+
+
+
 
                     <button id="emit-particles-btn" onClick={emptyGraph}>emptyGraph</button>
                     <button id="emit-particles-btn" onClick={loadSample}>loadSample</button>
