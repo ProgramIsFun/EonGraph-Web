@@ -320,7 +320,7 @@ const FloatingControlPanel = (props) => {
                             let min = cccccccccc[key].min
                             let step = cccccccccc[key].step
                             return (
-                                <Stack key={key} spacing={2} direction="row" sx={{mb: 1}} alignItems="center">
+                                <div key={key} >
 
                                     {key.split('_').join(' ')}
                                     <Slider
@@ -339,7 +339,7 @@ const FloatingControlPanel = (props) => {
                                         step={step}
                                     />
                                     {c[key]}
-                                </Stack>
+                                </div>
                             )
                         })
                     }
