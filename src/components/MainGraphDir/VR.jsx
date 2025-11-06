@@ -7,6 +7,7 @@ import SpriteText from 'three-spritetext';
 import {ee, l} from "../../autil/log11";
 import {connect, useDispatch} from "react-redux";
 import {getNormalclick} from "../../autil/GetNormalclick";
+import {replaceStringAinB} from "../../autil/helperfile";
 
 function VR(props) {
     const dispatch = useDispatch();
@@ -49,12 +50,7 @@ function VR(props) {
     let linkWidth = c.VR_linkWidth;
     let nodeThreeObject = node => {
         const label2 = !node.name ? node.id : node.name;
-        const replaceStringAinB = (strA, strB) => {
-            if (strB.startsWith(strA)) {
-                return strB.replace(strA, 'e');
-            }
-            return strB; // No change if stringB does not start with stringA
-        };
+
         let label = replaceStringAinB("everythingallaccount", label2)
         // if there is a name, we use the name, if there is no, we use the ID.
         const sprite = new SpriteText(label);
