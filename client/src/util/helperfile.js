@@ -672,6 +672,11 @@ export function calculateCollapseddd(dd) {
         return newdd
     };
 }
+export function rawdata(jsonData) {
+    let stringified = JSON.stringify(jsonData);
+    const obj = JSON.parse(stringified);
+    l("obj", obj);
+}
 
 
 
