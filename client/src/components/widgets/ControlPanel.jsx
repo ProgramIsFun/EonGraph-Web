@@ -6,12 +6,16 @@ import {auth} from "../../firebase";
 import FileDrop from "../../util/KKKKKKKKK";
 import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 import {cgg} from "../../util/helperfile";
-import {connect} from "react-redux";
+import {connect, useDispatch} from "react-redux";
 import {l} from "../../util/log11";
 import {changeSetting} from "../../actions/all33";
 import {cccccccccc} from "../../reducers/all33";
+import {CHANGE_USING_NEO4J} from "../../actions/types";
+
 
 const ControlPanel = (props) => {
+
+    const dispatch = useDispatch();
 
     l("ControlPanel render", props);
     const [tempNumber, setTempNumber] = useState(3);
@@ -59,8 +63,7 @@ const ControlPanel = (props) => {
     };
     const filterdd = props.filterdd;
 
-    const usingNEO4J = props.usingNEO4J;
-    const setUsingNEO4J = props.setUsingNEO4J;
+    const usingNEO4J = props.all33.usingNEO4J;
 
     const useremote = props.useremote;
     const setUseremote = props.setUseremote;
@@ -166,21 +169,24 @@ const ControlPanel = (props) => {
 
                     <br/>
 
-                    <p>usingNEO4J: {usingNEO4J ? 'True' : 'False'} if set to true, any change of the graph would be sent
-                        to database.</p>
-                    <input
+                    <p>usingNEO4J: {usingNEO4J ? 'True' : 'False'}<input
                         type="checkbox"
                         checked={usingNEO4J}
                         onChange={(event) => {
-                            setUsingNEO4J(event.target.checked);
+                            let a = event.target.checked;
+                            dispatch({"type": CHANGE_USING_NEO4J, payload: a})
+
+
                         }}
-                    />
-                    <button onClick={
-                        () => {
-                            fetchData11()
-                        }
-                    }>get the graph from nE04J
-                    </button>
+                    />  if set to true, any change of the graph would be sent
+                        to database.  <button onClick={
+                            () => {
+                                fetchData11()
+                            }
+                        }>get the graph from nE04J
+                        </button>
+                    </p>
+
 
 
                     <br/>

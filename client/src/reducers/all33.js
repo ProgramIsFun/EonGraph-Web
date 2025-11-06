@@ -1,7 +1,7 @@
 import {
   CHANGE_SETTINGS,
   CHANGE_DATA,
-  CHANGE_LINKS
+  CHANGE_LINKS, CHANGE_USING_NEO4J
 } from '../actions/types';
 
 export const cccccccccc = {
@@ -70,6 +70,7 @@ const initialState = {
     "VR_linkDirectionalParticleSpeed": 0.002,
   },
   dd:{nodes: [], links: []},
+  usingNEO4J:true
 };
 
 function all33Reducer(state = initialState, action) {
@@ -88,7 +89,6 @@ function all33Reducer(state = initialState, action) {
                 [key]: value
             }
         };
-
     case CHANGE_DATA:
       return {
         ...state,
@@ -104,6 +104,11 @@ function all33Reducer(state = initialState, action) {
             ...state.dd,
             links: payload.links
             }
+        };
+    case CHANGE_USING_NEO4J:
+        return {
+            ...state,
+            usingNEO4J: payload
         };
     default:
       return state;
