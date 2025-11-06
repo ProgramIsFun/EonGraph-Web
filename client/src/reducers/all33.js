@@ -1,5 +1,6 @@
 import {
   CHANGE_SETTINGS,
+  CHANGE_DATA
 } from '../actions/types';
 
 export const cccccccccc = {
@@ -27,11 +28,6 @@ const initialState = {
     "linkDirectionalParticleSpeed": 0.002
   },
   dd:{nodes: [], links: []},
-  profile: null,
-  profiles: [],
-  repos: [],
-  loading: true,
-  error: {}
 };
 
 function all33Reducer(state = initialState, action) {
@@ -51,7 +47,11 @@ function all33Reducer(state = initialState, action) {
             }
         };
 
-
+    case CHANGE_DATA:
+      return {
+        ...state,
+        // fill
+      };
     default:
       return state;
   }
