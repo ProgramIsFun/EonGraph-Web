@@ -26,7 +26,6 @@ function BuildGraph(props) {
 
 
     const collapseddd = props.collapseddd
-    const updateGraphData = props.updateGraphData
     const objectToBeInspected = props.objectToBeInspected
     const setObjectToBeInspected = props.setObjectToBeInspected
     const fixing = props.fixing
@@ -101,7 +100,7 @@ function BuildGraph(props) {
             return;
         }
         nodeOrLink.name = value;
-        updateGraphData();
+
     };
 
     const removeLink = link => {
@@ -221,7 +220,7 @@ function BuildGraph(props) {
     const dragSourceNode = useRef(null)
     const linkIdCounter = useRef(0)
     const interimLink = useRef(null)
-    const dragFun = draggggggg(linkIdCounter, interimLink, dd.links, updateGraphData, removeLink, dragSourceNode, dd.nodes, distance);
+    const dragFun = draggggggg(linkIdCounter, interimLink, dd.links, removeLink, dragSourceNode, dd.nodes, distance);
     /////////////////////////////////////////////////
 
 
@@ -293,7 +292,7 @@ function BuildGraph(props) {
             ...(fixing && {fx: coords.x, fy: coords.y})
         };
         dispatch({type: ADD_NODE, payload: newNode});
-        updateGraphData();
+
     }
 
 
@@ -310,7 +309,7 @@ function BuildGraph(props) {
         () => {
             dragSourceNode.current = null;
             interimLink.current = null;
-            updateGraphData();
+
 
         } :
         undefined;

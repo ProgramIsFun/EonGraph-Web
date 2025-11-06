@@ -203,14 +203,13 @@ function Graph(props) {
                 nodes: [...prevNc.nodes, newNode], // Create a new array with all old nodes plus the new one
             }));
 
-            updateGraphData()
+
         } else {
             console.log("already exist!!!!!!!!!!")
         }
 
     }
-    const updateGraphData = () => {
-    }
+
     const returnListRepo = () => {
 
         // when graph change this will rerender
@@ -261,7 +260,6 @@ function Graph(props) {
 
                                         fgRef={fgRef}
                                         checkExistInGraph={checkExistInGraph}
-                                        updateGraphData={updateGraphData}
                                         returnListRepo={returnListRepo}
                                         objectToBeInspected={objectToBeInspected}
                                         setObjectToBeInspected={setObjectToBeInspected}
@@ -321,7 +319,6 @@ function Graph(props) {
         // console.log("processing data , saving only important properties", dd, ddRef)
         const dd = ddRef.current
         setnotice(" start saving graph. ")
-
         try {
             const cleanedData = {
                 nodes: dd.nodes.map(node => {
@@ -361,7 +358,6 @@ function Graph(props) {
             // so here  just filter the object to contain important.
             let finalData = processData(dd)
             setnotice(p => p + "removed unused attributes ")
-
 
             var myTimestamp = firebase.firestore.Timestamp.fromDate(new Date());
             // save graph to db
