@@ -271,12 +271,22 @@ export const fetchData11 = (baseUrl) => async (dispatch) => {
 
 export const updateNodesPositionsToBackend = () => async (dispatch, getState) => {
     try {
-        throw "to be implemented"
+
+
+        // get the nodes from the state, only with id, x, y, z
 
         const state = getState();
         l("updateNodesPositionsToBackend state", state)
-        let all33 = state.all33;
 
+        let nodeIDXYZ=state.all33.dd.nodes.map(
+            node => ({
+            id: node.id,
+            x: node.x,
+            y: node.y,
+            z: node.z
+            })
+        )
+        let all33 = state.all33;
         let useremote = all33.useremote;
         let localbackendurl = all33.localbackendurl;
         let remotebackendurl = all33.remotebackendurl;
@@ -288,7 +298,7 @@ export const updateNodesPositionsToBackend = () => async (dispatch, getState) =>
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                nodes: nodes
+                nodes: nodeIDXYZ
             })
         })
         if (!res.ok) {
@@ -297,9 +307,10 @@ export const updateNodesPositionsToBackend = () => async (dispatch, getState) =>
         }
         let body = await res.json();
         l("response from updateNodesPositionsToBackend", body)
-        dispatch(setAlert('Node positions updated to backend', 'success'));
+        // dispatch(setAlert('Node positions updated to backend', 'success'));
     } catch (err) {
-        dispatch(setAlert('Error updating node positions to backend', 'danger'));
+        l("error in updateNodesPositionsToBackend", err)
+        // dispatch(setAlert('Error updating node positions to backend', 'danger'));
     }
 }
 
