@@ -338,7 +338,7 @@ const FloatingControlPanel = (props) => {
                                         max={max}
                                         step={step}
                                     />
-                                    <Typography>{c[key]}</Typography>
+                                    {c[key]}
                                 </Stack>
                             )
                         })
