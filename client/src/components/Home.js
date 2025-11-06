@@ -41,6 +41,10 @@ function Home() {
     const [fileContent2, setFileContent2] = useState("aaaabbbbbb");
 
 
+
+
+    const [backendurl, setBackendurl] = useState("http://localhost:5000/");
+
     const [search, setSearch] = useState("")
     const [filterdd, setFilterdd] = useState([])
 
@@ -434,7 +438,7 @@ function Home() {
     }
     const fetchData11 = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/v0/return_all_nodes111');
+            const response = await fetch(backendurl + '/api/v0/return_all_nodes111');
             const jsonData = await response.json();
             l("jsonData", jsonData)
 
