@@ -172,7 +172,10 @@ function BuildGraph(props) {
         if (1) {
             if (Object.keys(objectToBeInspected).length === 0) {
                 l("setting objectToBeInspected", node)
+
                 setObjectToBeInspected(node)
+
+
                 setHoverNode(node)
             } else {
                 if (objectToBeInspected === node) {
