@@ -504,37 +504,41 @@ function Home() {
                 treemaxlevel={treemaxlevel}
                 settreemaxlevel={settreemaxlevel}
             ></FloatingControlPanel>
+            {false &&
 
-            <>
-                number of nodes:
-                {JSON.stringify(dd.nodes.length)}
-                {" "}
+                <>
+                    number of nodes:
+                    {JSON.stringify(dd.nodes.length)}
+                    {" "}
 
-                number of links:
-                {JSON.stringify(dd.links.length)}
-                {" "}
-
-
-                collapseddd nodes:
-                {JSON.stringify(collapseddd.nodes.length)}
-                {" "}
-                collapseddd links:
-                {JSON.stringify(collapseddd.links.length)}
-                {" "}
+                    number of links:
+                    {JSON.stringify(dd.links.length)}
+                    {" "}
 
 
-                restrictdd nodes:
-                {JSON.stringify(restrictdd.nodes.length)}
-                {" "}
-                restrictdd links:
-                {JSON.stringify(restrictdd.links.length)}
-                {" "}
+                    collapseddd nodes:
+                    {JSON.stringify(collapseddd.nodes.length)}
+                    {" "}
+                    collapseddd links:
+                    {JSON.stringify(collapseddd.links.length)}
+                    {" "}
 
-                globalscale
-                {/*(this value could be gets by looking into the function by nodeCanvasObject.):*/}
-                {JSON.stringify(globalscale)}
 
-            </>
+                    restrictdd nodes:
+                    {JSON.stringify(restrictdd.nodes.length)}
+                    {" "}
+                    restrictdd links:
+                    {JSON.stringify(restrictdd.links.length)}
+                    {" "}
+
+                    globalscale
+                    {/*(this value could be gets by looking into the function by nodeCanvasObject.):*/}
+                    {JSON.stringify(globalscale)}
+
+                </>
+
+            }
+
             <ObjectTable
                 objectToBeInspected={objectToBeInspected}
                 setObjectToBeInspected={setObjectToBeInspected}

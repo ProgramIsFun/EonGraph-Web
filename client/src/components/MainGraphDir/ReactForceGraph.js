@@ -214,7 +214,6 @@ export default function ReactForceGraph({dd,...props}) {
 
 
     return <>
-        <p>nothing special, just drag to change camera perspective</p>
         <ForceGraph3D
             ref={fgRef}
 
