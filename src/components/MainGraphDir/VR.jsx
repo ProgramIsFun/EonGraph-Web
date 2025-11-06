@@ -53,8 +53,8 @@ function VR(props) {
     let linkWidth = c.VR_linkWidth;
 
 
-    const HIGHLIGHT_HALO_OPACITY = 0.15; // or whatever you like
-    const HIGHLIGHT_HALO_COLOR = 0xffff00; // yellow, or "#ff0", or 0xffffff for white
+    const HIGHLIGHT_HALO_OPACITY = c.VR_highlightHaloOpacity; // or whatever you like
+    const HIGHLIGHT_HALO_COLOR = c.VR_highlightHaloColor; // yellow, or "#ff0", or 0xffffff for white
     const nodeThreeObject = node => {
         const label2 = !node.name ? node.id : node.name;
         let label = replaceStringAinB("everythingallaccount", label2);
