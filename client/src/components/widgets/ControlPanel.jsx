@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
 import {InputLabel, TextField, Typography} from "@mui/material";
-import {auth} from "../../firebase";
+import {auth} from "../../autil/firebase";
 import FileDrop from "../../autil/KKKKKKKKK";
 import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 import {cgg} from "../../autil/helperfile";
