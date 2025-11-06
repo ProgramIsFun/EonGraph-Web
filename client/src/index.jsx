@@ -12,6 +12,8 @@ import App from './App';
 import Wwwwwwwwww from "./ttttttes/Wwwwwwwwww";
 import Wwwwwwwwww2 from "./ttttttes/Wwwwwwwwww2";
 import Wwwwwwwwww3 from "./ttttttes/Wwwwwwwwww3";
+import { Provider } from 'react-redux';
+import store from './store';
 
 
 
@@ -37,9 +39,9 @@ let aaaaaaaappppppppp=<React.StrictMode>
 
         :
 
-
+<Provider store={store}>
         <App/>
-
+</Provider>
 
 
 
