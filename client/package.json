@@ -3,14 +3,10 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start": "react-scripts start",
     "s": "vite",
     "s1": "react-scripts start",
     "e": "electron electron1.js",
-    "k": "concurrently \"npm run start\" \"wait-on http://127.0.0.1:3000 && npm run e\"",
+    "k": "concurrently \"npm run s\" \"wait-on http://127.0.0.1:3000 && npm run e\"",
     "a": "wait-on http://127.0.0.1:3000 && npm run e"
   },
   "dependencies": {
