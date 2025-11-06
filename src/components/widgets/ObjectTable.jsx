@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import ReactJson from '@microlink/react-json-view'
+
 import JsonView from '@uiw/react-json-view';
 
 import {aaaaaaa, removegithubRepoNode, rename} from "../../autil/helperfile";
 import {l} from "../../autil/loghelper";
 import {connect, useDispatch} from "react-redux";
 import {fetchSingleNodeData} from "../../actions/all33";
+import Demo from "./ExampleJson";
 
 
 // use the component in your app!
@@ -77,20 +79,17 @@ const ObjectTable = (props) => {
     let objForJsonView = allowThreeObjInJsonForRender?objectToBeInspected:objectToBeInspectedWithoutThreeObj;
     let coreViewer = 1
         ?
-        <>
-
-
-            <JsonView
-                value={objForJsonView}
-                style={aaaaaaa}
-            />
-                
-
+        <>  <Demo></Demo>
+            {/*<JsonView*/}
+            {/*    value={objForJsonView}*/}
+            {/*    style={aaaaaaa}*/}
+            {/*/>*/}
         </>
         :
         <>
-            <ReactJson
-                src={objectToBeInspected}
+            <ReactJson   // this library is weird looking, opacity is 100
+                src={objForJsonView}
+
             />
         </>;
 
