@@ -1,12 +1,12 @@
 import React, {useEffect, useMemo, useRef, useState} from "react";
-import ThreeD from "./MainGraphDir/ThreeD";
-import VR from "./MainGraphDir/VR";
+import ThreeD from "./mainGraphDir/ThreeD";
+import VR from "./mainGraphDir/VR";
 import {dbbbbb} from "../autil/firebase/firebase";
 
 import * as firebase from 'firebase/app'
 import {calculateCollapseddd, datassss, keydownHandler, rawdata, repoooooo} from "../autil/helperfile";
 
-import TwoD from "./MainGraphDir/TwoD";
+import TwoD from "./mainGraphDir/TwoD";
 import FloatingControlPanel from "./widgets/ControlPanel";
 import {v4 as uuidv4} from "uuid";
 import ObjectTable from "./widgets/ObjectTable";
