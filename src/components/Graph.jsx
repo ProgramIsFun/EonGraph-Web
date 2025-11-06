@@ -167,7 +167,7 @@ function Graph(props) {
             payload: {
                 nodes: clonedObject.nodes,
                 links: clonedObject.links,
-                nodeIdaccessor: "id"
+                nodeIdAccessor: "id"
             },
 
         })

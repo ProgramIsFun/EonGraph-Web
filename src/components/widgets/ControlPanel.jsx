@@ -287,7 +287,7 @@ const ControlPanel = (props) => {
                                             payload: {
                                                 nodes: dd.nodes,     // `dd.nodes` has been modified in place
                                                 links: dd.links,
-                                                nodeIdaccessor: all33.nodeIdaccessor
+                                                nodeIdAccessor: all33.nodeIdAccessor
                                             }
                                         });
                                     } else {
@@ -300,7 +300,7 @@ const ControlPanel = (props) => {
                                             payload: {
                                                 nodes: newNodes,
                                                 links: dd.links,
-                                                nodeIdaccessor: all33.nodeIdaccessor
+                                                nodeIdAccessor: all33.nodeIdAccessor
                                             }
                                         });
                                     }
@@ -326,7 +326,7 @@ const ControlPanel = (props) => {
                                             payload: {
                                                 nodes: dd.nodes,     // `dd.nodes` has been modified in place
                                                 links: dd.links,
-                                                nodeIdaccessor: all33.nodeIdaccessor
+                                                nodeIdAccessor: all33.nodeIdAccessor
                                             }
                                         });
                                     } else {
@@ -339,7 +339,7 @@ const ControlPanel = (props) => {
                                             payload: {
                                                 nodes: newNodes,
                                                 links: dd.links,
-                                                nodeIdaccessor: all33.nodeIdaccessor
+                                                nodeIdAccessor: all33.nodeIdAccessor
                                             }
                                         });
                                     }
@@ -367,7 +367,7 @@ const ControlPanel = (props) => {
                                             payload: {
                                                 nodes: ggg.nodes,
                                                 links: ggg.links,
-                                                nodeIdaccessor: "id"
+                                                nodeIdAccessor: "id"
                                             },
 
                                         })
