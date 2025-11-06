@@ -87,7 +87,7 @@ const initialState = {
     objectToBeInspected: {},
     localBackendUrl: localBackendUrl,
     remoteBackendUrl: remoteBackendUrl,
-    useremote: false, // true means use remote backend, false means use local backend
+    useRemote: false, // true means use remote backend, false means use local backend
     graphTypeRender: 'VR',
     useNodeLocationWhenLoadingGraph: true,
     cypherEditorMainContent: SAMPLE_CYPHER, // not used
@@ -151,7 +151,7 @@ function all33Reducer(state = initialState, action) {
         case SET_USEREMOTE:
             return {
                 ...state,
-                useremote: payload
+                useRemote: payload
             };
         case 'SET_GRAPHTYPEEE':
             return {
@@ -161,7 +161,7 @@ function all33Reducer(state = initialState, action) {
         case CHANGE_USEREMOTE:
             return {
                 ...state,
-                useremote: payload
+                useRemote: payload
             };
         case FETCH_NODE_DATA:
             l("not implemented yet, payload", payload)

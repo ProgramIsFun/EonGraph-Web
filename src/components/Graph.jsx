@@ -44,8 +44,8 @@ function Graph(props) {
 
     let localBackendUrl = all33.localBackendUrl;
     let remoteBackendUrl = all33.remoteBackendUrl;
-    let useremote = all33.useremote;
-    let realUrl = useremote ? remoteBackendUrl : localBackendUrl;
+    let useRemote = all33.useRemote;
+    let realUrl = useRemote ? remoteBackendUrl : localBackendUrl;
 
     const [search, setSearch] = useState("")
     const [filterdd, setFilterdd] = useState([])
