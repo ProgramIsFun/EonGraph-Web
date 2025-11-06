@@ -329,7 +329,6 @@ export const updateCurrentGraphNodesPositionsToBackend = () => async (dispatch, 
 
 export const fetchSingleNodeData = (nodeId) => async (dispatch, getState) => {
     try {
-
         const state = getState();
         l("fetchSingleNodeData state", state)
         let all33 = state.all33;
