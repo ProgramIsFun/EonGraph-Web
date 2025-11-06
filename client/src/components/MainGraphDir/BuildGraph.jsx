@@ -6,7 +6,7 @@ import {draggggggg, removeNodeAndRelatedLinks} from "../../util/helperfile";
 import {ee, l} from "../../util/log11";
 import {connect} from "react-redux";
 import { useDispatch } from 'react-redux';
-import {CHANGE_LINKS} from "../../actions/types";
+import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
 
 
 function BuildGraph(props) {
@@ -338,7 +338,6 @@ function BuildGraph(props) {
                         }
                     }
                 }
-
                 onLinkClick={
 
                     (link) => {
@@ -352,23 +351,16 @@ function BuildGraph(props) {
 
                 }
                 onLinkRightClick={(link) => removeLink(link)}
-
                 onBackgroundClick={
 
                     event => {
 
                         console.log("received background click")
                         //https://github.com/vasturiano/react-force-graph/issues/378
-
                         // use screen2GraphCoords to get the graph coordinates of the click
                         let coords = fgRef.current.screen2GraphCoords(event.layerX, event.layerY);
-
                         console.log("coords", coords, "currentNodeId", nodeIdCounter)
-
-
                         let nodeId = nodeIdCounter.current++;
-
-
                         const newNode = {
                             id: uuidv4(), // Assuming uuidv4 is correctly imported and used to generate unique IDs
                             x: coords.x,
@@ -378,12 +370,7 @@ function BuildGraph(props) {
                             ...(fixing && {fx: coords.x, fy: coords.y})
                         };
 
-                        // Update state in an immutable way
-                        setdd(prevNc => ({
-                            ...prevNc, // Spread to copy other properties of nc, if there are any
-                            nodes: [...prevNc.nodes, newNode], // Create a new array with all old nodes plus the new one
-                        }));
-
+                        dispatch({ type: ADD_NODE, payload: newNode });
                         updateGraphData();
                     }
                 }

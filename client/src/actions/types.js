@@ -27,3 +27,4 @@ export const CHANGE_SETTINGS = 'CHANGE_SETTINGS';
 export const CHANGE_DATA = 'CHANGE_DATA';
 export const CHANGE_LINKS = 'CHANGE_LINKS';
 export const CHANGE_USING_NEO4J = 'CHANGE_USING_NEO4J';
+export const ADD_NODE= 'ADD_NODE';
