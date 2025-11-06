@@ -201,17 +201,13 @@ THREE.CSS2DObject = CSS2DObject;
 THREE.CSS2DRenderer = CSS2DRenderer;
 
 
-export default function ReactForceGraph({dd, ...props}) {
+export default function Two_D({dd, ...props}) {
     const fgRef = props.fgRef
     console.log("entering3D, deepclone property,await mutation to original prop")
 
-    // const newdd = cloneDeep(dd);
     const newdd = (dd);
 
-
-
     const extraRenderers = [new THREE.CSS2DRenderer()];
-
 
     let showiiiiii = true
 
