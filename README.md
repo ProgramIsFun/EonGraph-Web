@@ -41,8 +41,7 @@ if u dont use docker, you can run the app by running the following command in cl
 
 - `yarn start`
 
-if u use docker, ignore step 2a, and you can run the app by running the following command in root directory:
-- `docker-compose up --build`
+if u use docker, you can run the app 
 
 3. then go to localhost:3000 to see the website
 
