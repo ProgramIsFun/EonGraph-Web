@@ -43,7 +43,9 @@ function Home() {
 
 
 
-    const [backendurl, setBackendurl] = useState("http://localhost:5000/");
+    const [backendurl, setBackendurl] = useState("http://localhost:5000");
+    const [backendurl2, setBackendurl2] = useState("https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net");
+    const [useremote, setUseremote] = useState(false);
 
     const [search, setSearch] = useState("")
     const [filterdd, setFilterdd] = useState([])
@@ -488,6 +490,8 @@ function Home() {
                 fgRef={fgRef}
 
 
+                useremote={useremote}
+                setUseremote={setUseremote}
 
                 returnListRepo={returnListRepo}
 

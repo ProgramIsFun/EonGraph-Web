@@ -63,6 +63,9 @@ const FloatingControlPanel = (props) => {
     const usingNEO4J = props.usingNEO4J;
     const setUsingNEO4J = props.setUsingNEO4J;
 
+    const useremote= props.useremote;
+    const setUseremote = props.setUseremote;
+
 
     const [value, setValue] = React.useState(30);
 
@@ -161,9 +164,6 @@ const FloatingControlPanel = (props) => {
                     <br/>
 
                     <p>usingNEO4J: {usingNEO4J ? 'True' : 'False'}       if set to true, any change of the graph would be sent to database.</p>
-
-                    {/* Checkbox to toggle the state */}
-
                     <input
                             type="checkbox"
                             checked={usingNEO4J}
@@ -176,6 +176,16 @@ const FloatingControlPanel = (props) => {
 
 
                     <br/>
+
+                    <p>useremote: {useremote ? 'True' : 'False'}       if set to true, the graph will be saved to remote storage.</p>
+                    <input
+                        type="checkbox"
+                        checked={useremote}
+                        onChange={(event) => {
+                            setUseremote(event.target.checked);
+                        }}
+                    />
+
 
 
                     <p>{notice}</p>
