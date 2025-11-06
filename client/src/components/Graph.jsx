@@ -488,11 +488,8 @@ function Graph(props) {
                     globalscale
                     {/*(this value could be gets by looking into the function by nodeCanvasObject.):*/}
                     {JSON.stringify(globalscale)}
-
                 </>
-
             }
-
             <ObjectTable
                 objectToBeInspected={objectToBeInspected}
                 setObjectToBeInspected={setObjectToBeInspected}
