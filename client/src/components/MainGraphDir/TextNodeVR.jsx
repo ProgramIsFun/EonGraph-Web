@@ -6,7 +6,7 @@ import SpriteText from 'three-spritetext';
 
 import {l} from "../../util/log11";
 
-export default function TextNodeVR({dd,...props}) {
+function TextNodeVR({dd,...props}) {
     let c= props.c;
     const newdd = (dd);
 
@@ -61,3 +61,6 @@ export default function TextNodeVR({dd,...props}) {
 
         /></>
 }
+
+
+export default connect( state => state)(TextNodeVR);
