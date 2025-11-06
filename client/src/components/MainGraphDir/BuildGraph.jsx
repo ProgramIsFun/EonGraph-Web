@@ -10,23 +10,26 @@ import {ADD_NODE, CHANGE_LINKS, SET_OBJECT_TO_BE_INSPECTED} from "../../actions/
 
 
 function BuildGraph(props) {
+    l("BuildGraph props1", props)
 
     const dispatch = useDispatch();
-    let c = props.all33.settings
-    const dd = props.all33.dd
+    let all33= props.all33
+    let c = all33.settings
+    const dd = all33.dd
     // l("BuildGraph props",  dd)
     // const dd = props.dd
     let setdd = props.setdd
-    let repo = props.repo
-    let rr = props.all33
-    l("BuildGraph props1", props)
+
+    const objectToBeInspected = props.objectToBeInspected
 
     // l("we're using a ref because we want to store something and some time not to rerender the whole thing.")
     const fgRef = props.fgRef
 
 
+
+
+
     const collapseddd = props.collapseddd
-    const objectToBeInspected = props.objectToBeInspected
     const setObjectToBeInspected = props.setObjectToBeInspected
     const fixing = props.fixing
     const restrictdd = props.restrictdd
@@ -43,32 +46,29 @@ function BuildGraph(props) {
     const paintRing = useCallback((node, ctx) => {
 
         if (!(node === objectToBeInspected || node.collapsed)) {
-            return
+            // l("node is not objectToBeInspected or collapsed, skipping paintRing", node.id, "objectToBeInspected", objectToBeInspected.id)
+        }else{
+            l("trigger")
+            const NODE_R = 8;
+
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, NODE_R * 1.4, 0, 2 * Math.PI, false);
+
+            if (0) {
+                ctx.fillStyle = node === !hoverNode ? 'red' : 'orange';
+                ctx.fill();
+            } else {
+                ctx.strokeStyle = node === objectToBeInspected ? 'orange' : 'red'; // Notice the corrected condition check
+                // Set the line width of the border
+                ctx.lineWidth = 3; // You can adjust the border thickness by changing the value
+                // Draw the border
+                ctx.stroke();
+            }
+            if (node.collapsed) {
+                ctx.fillStyle = 'red';
+                ctx.fill();
+            }
         }
-        const NODE_R = 8;
-
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, NODE_R * 1.4, 0, 2 * Math.PI, false);
-
-        if (0) {
-            ctx.fillStyle = node === !hoverNode ? 'red' : 'orange';
-            ctx.fill();
-        } else {
-            ctx.strokeStyle = node === objectToBeInspected ? 'orange' : 'red'; // Notice the corrected condition check
-
-            // Set the line width of the border
-            ctx.lineWidth = 3; // You can adjust the border thickness by changing the value
-
-            // Draw the border
-            ctx.stroke();
-
-        }
-
-        if (node.collapsed) {
-            ctx.fillStyle = 'red';
-            ctx.fill();
-        }
-
 
     }, [objectToBeInspected]);
 
@@ -171,8 +171,6 @@ function BuildGraph(props) {
         if (1) {
             if (Object.keys(objectToBeInspected).length === 0) {
                 l("setting objectToBeInspected", node)
-
-                // setObjectToBeInspected(node)
                 dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: node})
 
                 setHoverNode(node)
@@ -314,6 +312,7 @@ function BuildGraph(props) {
         } :
         undefined;
     let onNodeClick = 0 ? Focus : Normalclick;
+
     let onNodeRightClick = (node) => {
         if (1) {
             removeNode(node)

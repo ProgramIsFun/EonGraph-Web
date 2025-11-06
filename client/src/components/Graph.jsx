@@ -30,10 +30,6 @@ function Graph(props) {
     let nc = dd.nodes
     let lc = dd.links
 
-
-
-    // console.log("entering home ,data dd is now ", dd)
-
     const [restrictdd, setrestrictdd] = useState(
         {nodes: [], links: []}
     )
