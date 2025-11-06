@@ -88,7 +88,7 @@ const initialState = {
     localBackendUrl: localBackendUrl,
     remoteBackendUrl: remoteBackendUrl,
     useremote: false, // true means use remote backend, false means use local backend
-    graphtypeee: 'VR',
+    graphTypeRender: 'VR',
     useNodeLocationWhenLoadingGraph: true,
     cypherEditorMainContent: SAMPLE_CYPHER, // not used
 };
@@ -156,7 +156,7 @@ function all33Reducer(state = initialState, action) {
         case 'SET_GRAPHTYPEEE':
             return {
                 ...state,
-                graphtypeee: payload
+                graphTypeRender: payload
             };
         case CHANGE_USEREMOTE:
             return {

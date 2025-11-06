@@ -487,7 +487,7 @@ export function keydownHandler(
     setdd,
     link111,
     lc,
-    graphtypeee,
+    graphTypeRender,
     dispatch
 ) {
     return async (event) => {

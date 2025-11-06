@@ -66,7 +66,7 @@ const ControlPanel = (props) => {
     const dd = all33.dd;
     const setdd = props.setdd;
 
-    const graphtypeee = all33.graphtypeee;
+    const graphTypeRender = all33.graphTypeRender;
     const getRepoData = props.getRepoData;
     const setrepo = props.setrepo;
     const fileContent = props.fileContent;
@@ -165,9 +165,9 @@ const ControlPanel = (props) => {
         fetchDataDB_(baseUrl)
     };
 
-    let prefix = graphtypeee
+    let prefix = graphTypeRender
     let map = Object.keys(c)
-        .filter(key => key.startsWith(graphtypeee))
+        .filter(key => key.startsWith(graphTypeRender))
         .map(
             (key) => {
 
