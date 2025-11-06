@@ -172,11 +172,11 @@ function BuildGraph(props) {
                     dispatch({type: SET_OBJECT_TO_BE_INSPECTED, payload: {}})
                 } else {
 
-                 
+
                     let shouldAddLink = false;
 
                     // check if any link in all the links have the same source and target.
-                    shouldAddLink = !lc.some(
+                    let some = lc.some(
                         link => {
                             let lll = (
                                 link.source.id === objectToBeInspected.id
@@ -192,7 +192,8 @@ function BuildGraph(props) {
                             }
                             return lll
                         }
-                    )
+                    );
+                    shouldAddLink =!some
                     if (shouldAddLink) {
                         let linkId = uuidv4()
                         l("objectToBeInspected.id", objectToBeInspected.id, "node.id", node.id)
