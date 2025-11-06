@@ -718,7 +718,9 @@ export let aaaaaaa = {
     "--w-rjv-type-nan-color": "#859900",
     "--w-rjv-type-undefined-color": "#569cd6"
 }
-
+export const returnUrl=(a,b,c)=>{
+    return a?b:c
+}
 
 export const replaceStringAinB = (strA, strB) => {
     if (strB.startsWith(strA)) {
@@ -732,14 +734,14 @@ export const distance1and2 = (node1, node2) => {
     return Math.sqrt(Math.pow(node1.x - node2.x, 2) + Math.pow(node1.y - node2.y, 2));
 };
 
-export function repoooooo(setrepo) {
+export function repoooooo(setrepo,realUrl) {
     return async () => {
 
         l("getting")
 
         let repoos;
 
-        let getFromLocal= true;
+        let getFromLocal= false;
         if (getFromLocal) {
 
             // case 1 we call REST directly
@@ -821,11 +823,25 @@ export function repoooooo(setrepo) {
 
             l("stored", repoos)
         } else {
+
+            // get from remote realUrl
+            try {
+                const response = await fetch(realUrl+'/api/v0/get_all_github_repositories');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                repoos = await response.json();
+                l("fetched repoos", repoos)
+            } catch (e) {
+                console.log("error", e)
+                return
+            }
+
         }
 
-        let editState = false;
+        let editState = true;
         if (editState) {
-            setrepo(repoos.data)
+            setrepo(repoos)
 
         } else {
 

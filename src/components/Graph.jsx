@@ -44,8 +44,9 @@ function Graph(props) {
 
     let localbackendurl = all33.localbackendurl;
     let remotebackendurl = all33.remotebackendurl;
-    const [useremote2, setUseremote] = useState(false);
     let useremote = all33.useremote;
+    let realUrl=useremote?remotebackendurl:localbackendurl;
+
     const [search, setSearch] = useState("")
     const [filterdd, setFilterdd] = useState([])
     const [objectToBeInspected, setObjectToBeInspected] = useState({})
@@ -377,7 +378,7 @@ function Graph(props) {
 
     }
 
-    const getRepoData = repoooooo(setrepo);
+    const getRepoData = repoooooo(setrepo,realUrl);
 
     const emptyGraph = async () => {
         dispatch({
