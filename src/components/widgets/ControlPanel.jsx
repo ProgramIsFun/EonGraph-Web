@@ -247,7 +247,7 @@ const ControlPanel = (props) => {
                     <br/>
 
 
-                    <>import new graph with json (will not affect db)</>
+                    <>import new graph with json (will not affect db), assume node id is named id</>
                     <div>
                         <textarea
                             rows={10}
