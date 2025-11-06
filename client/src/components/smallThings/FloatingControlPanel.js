@@ -157,7 +157,7 @@ const FloatingControlPanel = (props) => {
                     </button>
 
 
-                    <p>usingNEO4J: {usingNEO4J ? 'True' : 'False'}</p>
+                    <p>usingNEO4J: {usingNEO4J ? 'True' : 'False'}       if set to true, any change of the graph would be sent to database.</p>
 
                     {/* Checkbox to toggle the state */}
 
