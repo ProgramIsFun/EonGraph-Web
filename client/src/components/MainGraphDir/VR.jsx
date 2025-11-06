@@ -4,7 +4,7 @@ import React from 'react';
 
 import SpriteText from 'three-spritetext';
 
-import {l} from "../../util/log11";
+import {l} from "../../autil/log11";
 import {connect} from "react-redux";
 
 function VR(props) {

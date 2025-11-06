@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import ReactJson from '@microlink/react-json-view'
 import JsonView from '@uiw/react-json-view';
 
-import {removegithubRepoNode, rename} from "../../util/helperfile";
-import {l} from "../../util/log11";
+import {removegithubRepoNode, rename} from "../../autil/helperfile";
+import {l} from "../../autil/log11";
 import {connect, useDispatch} from "react-redux";
 
 

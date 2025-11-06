@@ -3,7 +3,7 @@ import { ForceGraph2D } from 'react-force-graph';
 import * as d3 from 'd3';
 import dat from 'dat.gui';
 
-import {l} from "../util/log11";
+import {l} from "../autil/log11";
 // import {useReadCypher} from "use-neo4j";
 // import * as neo4j from "neo4j-driver";
 // import './App.css'; // Assuming you’ll have some CSS
