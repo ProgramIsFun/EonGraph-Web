@@ -233,4 +233,19 @@ export const changeSetting = (key, value) => async (dispatch) => {
     } catch (err) {
 
     }
+    
+
+}
+
+
+export const fetchNodeData = (nodeId) => async (dispatch) => {
+    try {
+        const res = await api.get(`/nodes/${nodeId}`);
+        dispatch({
+            type: 'FETCH_NODE_DATA',
+            payload: res.data
+        });
+    } catch (err) {
+        dispatch(setAlert('Error fetching node data', 'danger'));
+    }
 }
