@@ -289,6 +289,25 @@ function BuildGraph(props) {
 
     }
 
+
+
+    let onBackgroundClick=event => {
+        console.log("received background click")
+        //https://github.com/vasturiano/react-force-graph/issues/378
+        // use screen2GraphCoords to get the graph coordinates of the click
+        let coords = fgRef.current.screen2GraphCoords(event.layerX, event.layerY);
+        console.log("coords", coords, "currentNodeId", nodeIdCounter)
+        let nodeId = nodeIdCounter.current++;
+        const newNode = {
+            id: uuidv4(), // Assuming uuidv4 is correctly imported and used to generate unique IDs
+            x: coords.x,
+            y: coords.y,
+            name: `node_${nodeId}`,
+            ...(fixing && {fx: coords.x, fy: coords.y})
+        };
+        dispatch({ type: ADD_NODE, payload: newNode });
+        updateGraphData();
+    }
     let node_font_size=c.TwoD_node_font_size
     let global_scale_adjustment_coefficient=c.TwoD_global_scale_adjustment_coefficient
     let linkWidth=c.TwoD_linkWidth
@@ -352,27 +371,7 @@ function BuildGraph(props) {
                 }
                 onLinkRightClick={(link) => removeLink(link)}
                 onBackgroundClick={
-
-                    event => {
-
-                        console.log("received background click")
-                        //https://github.com/vasturiano/react-force-graph/issues/378
-                        // use screen2GraphCoords to get the graph coordinates of the click
-                        let coords = fgRef.current.screen2GraphCoords(event.layerX, event.layerY);
-                        console.log("coords", coords, "currentNodeId", nodeIdCounter)
-                        let nodeId = nodeIdCounter.current++;
-                        const newNode = {
-                            id: uuidv4(), // Assuming uuidv4 is correctly imported and used to generate unique IDs
-                            x: coords.x,
-                            y: coords.y,
-                            name: `node_${nodeId}`,
-
-                            ...(fixing && {fx: coords.x, fy: coords.y})
-                        };
-
-                        dispatch({ type: ADD_NODE, payload: newNode });
-                        updateGraphData();
-                    }
+                    onBackgroundClick
                 }
 
 
