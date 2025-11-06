@@ -21,7 +21,7 @@ const ObjectTable = (props) => {
 
     let objectToBeInspected = all33.objectToBeInspected;
     l("objectToBeInspected111", objectToBeInspected, '__threeObj' in objectToBeInspected);
-    const { __threeObj, ...objectToBeInspected2 } = objectToBeInspected;
+    const {__threeObj, ...objectToBeInspected2} = objectToBeInspected;
     let setObjectToBeInspected = props.setObjectToBeInspected;
 
 
@@ -122,68 +122,71 @@ const ObjectTable = (props) => {
             <button style={buttonStyle} onClick={() => setIsExpanded(!isExpanded)}>
                 {isExpanded ? 'Collapse' : 'Expand'} Table
             </button>
-            {1 ? <div style={tableStyle}>
+            {
+                1
+                    ?
+                    <div style={tableStyle}>
 
-                    <button onClick={() => {
-                        rename(props.objectToBeInspected, "node")
-                    }}>
-                        rename
-                    </button>
-
-                    <button onClick={() => {
-                        aaaaaaa1()
-                    }}>
-                        remove github repo
-                    </button>
-
-                    <button onClick={
-                        () => {
-                            l("collapsinggggggggggggg")
-                            setdd(dd => {
-                                return {
-                                    ...dd,
-                                    nodes: dd.nodes.map(node => {
-                                        if (node.id === objectToBeInspected.id) { // Replace 'specificNodeId' with the actual id or condition to find your node
-                                            // l("collapsinggggggggggggg2")
-
-                                            return {...node, collapsed: !node.collapsed};
-                                        }
-                                        return node;
-                                    })
-                                };
-                            });
-                            setObjectToBeInspected({})
+                        <button onClick={() => {
+                            rename(props.objectToBeInspected, "node")
                         }}>
-                        {objectToBeInspected.collapsed ? 'Expand' : 'Collapse'}
-                    </button>
+                            rename
+                        </button>
+
+                        <button onClick={() => {
+                            aaaaaaa1()
+                        }}>
+                            remove github repo
+                        </button>
+
+                        <button onClick={
+                            () => {
+                                l("collapsinggggggggggggg")
+                                setdd(dd => {
+                                    return {
+                                        ...dd,
+                                        nodes: dd.nodes.map(node => {
+                                            if (node.id === objectToBeInspected.id) { // Replace 'specificNodeId' with the actual id or condition to find your node
+                                                // l("collapsinggggggggggggg2")
+
+                                                return {...node, collapsed: !node.collapsed};
+                                            }
+                                            return node;
+                                        })
+                                    };
+                                });
+                                setObjectToBeInspected({})
+                            }}>
+                            {objectToBeInspected.collapsed ? 'Expand' : 'Collapse'}
+                        </button>
 
 
-                    {link && <a href={link} target="_blank" rel="noreferrer">
-                        View on GitHub</a>
-                    }
-                    {
-                        element
-                    }
+                        {link && <a href={link} target="_blank" rel="noreferrer">
+                            View on GitHub</a>
+                        }
+                        {
+                            element
+                        }
 
 
-                </div>
-                :
-                <table style={tableStyle}>
-                    <thead>
-                    <tr>
-                        <th style={cellStyle}>Property</th>
-                        <th style={cellStyle}>Value</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {entries.map(([key, value]) => (
-                        <tr key={key}>
-                            <td style={cellStyle}>{key}</td>
-                            <td style={cellStyle}>{value}</td>
+                    </div>
+                    :
+                    <table style={tableStyle}>
+                        <thead>
+                        <tr>
+                            <th style={cellStyle}>Property</th>
+                            <th style={cellStyle}>Value</th>
                         </tr>
-                    ))}
-                    </tbody>
-                </table>}
+                        </thead>
+                        <tbody>
+                        {entries.map(([key, value]) => (
+                            <tr key={key}>
+                                <td style={cellStyle}>{key}</td>
+                                <td style={cellStyle}>{value}</td>
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>}
         </div>
     );
 };
