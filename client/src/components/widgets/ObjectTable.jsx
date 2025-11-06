@@ -5,6 +5,7 @@ import JsonView from '@uiw/react-json-view';
 import {aaaaaaa, removegithubRepoNode, rename} from "../../autil/helperfile";
 import {l} from "../../autil/log11";
 import {connect, useDispatch} from "react-redux";
+import {fetchNodeData} from "../../actions/all33";
 
 
 // use the component in your app!
@@ -16,6 +17,7 @@ const ObjectTable = (props) => {
     let graphtypeee = all33.graphtypeee;
     let dd = props.dd;
     let setdd = props.setdd;
+    let fetchNodeData= props.fetchNodeData;
 
     const [isExpanded, setIsExpanded] = useState(true);
 
@@ -94,7 +96,7 @@ const ObjectTable = (props) => {
         ?
         <div style={tableStyle}>
             <button onClick={() => {
-
+                fetchNodeData(objectToBeInspected.id)
             }}
                     >refetch</button>
             <button onClick={() => {
@@ -177,4 +179,4 @@ const ObjectTable = (props) => {
 };
 
 
-export default connect(state => state)(ObjectTable);
+export default connect(state => state,{fetchNodeData})(ObjectTable);

@@ -268,7 +268,7 @@ export const fetchData11 = (b) => async (dispatch) => {
 }
 export const fetchNodeData = (nodeId) => async (dispatch) => {
     try {
-        const res = await api.get(`/nodes/${nodeId}`);
+        const res = await api.get(`/api/v0/node_data/${nodeId}`);
         dispatch({
             type: 'FETCH_NODE_DATA',
             payload: res.data
