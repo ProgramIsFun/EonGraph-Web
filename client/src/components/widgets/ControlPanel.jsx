@@ -43,7 +43,6 @@ const ControlPanel = (props) => {
 
 
     const objectToBeInspected = all33.objectToBeInspected;
-    const setObjectToBeInspected = props.setObjectToBeInspected;
 
     const fixing = props.fixing;
     const setFixing = props.setFixing;
@@ -362,7 +361,8 @@ const ControlPanel = (props) => {
                         }
                     }>{filterdd.map((item) => {
                         return <li onClick={() => {
-                            setObjectToBeInspected(item);
+                            l("Please implement this functionality to inspect the item");
+                            // setObjectToBeInspected(item);
 
                         }}>{item.name}</li>
                     })}
