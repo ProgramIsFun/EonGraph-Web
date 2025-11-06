@@ -12,6 +12,7 @@ import {
     SET_OBJECT_TO_BE_INSPECTED,
     SET_USEREMOTE
 } from '../actions/types';
+import {NODE_ID_ACCESSOR} from "../autil/CONSTANT";
 
 export const cccccccccc = {
 
@@ -81,6 +82,8 @@ const initialState = {
 
     dd: {nodes: [], links: []},
 
+    nodeIdaccessor:NODE_ID_ACCESSOR, // this is the accessor for the node id, it can be changed to any property of the node object, like "name" or "label"
+
     usingNEO4J: true,
 
     objectToBeInspected: {},
@@ -90,7 +93,9 @@ const initialState = {
     remotebackendurl: "https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net",
     useremote: false, // true means use remote backend, false means use local backend
 
-    graphtypeee:4
+    graphtypeee:4,
+
+
 
 };
 
