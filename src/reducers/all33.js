@@ -87,6 +87,7 @@ const initialState = {
     remotebackendurl: remotebackendurl,
     useremote: false, // true means use remote backend, false means use local backend
     graphtypeee:'VR',
+    useNodeLocationWhenLoadingGraph:true,
 };
 
 function all33Reducer(state = initialState, action) {
