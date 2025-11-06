@@ -320,7 +320,7 @@ const FloatingControlPanel = (props) => {
                             let min = cccccccccc[key].min
                             let step = cccccccccc[key].step
                             return (
-                                <div key={key} >
+                                <div key={key} class="horizontal-bar" >
 
                                     {key.split('_').join(' ')}
                                     <Slider
