@@ -1,5 +1,3 @@
-// let l=console.log
-//
-//
-// export default l;
+
 export const l = console.log
+export const ee = console.error

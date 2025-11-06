@@ -17,9 +17,7 @@ import {l} from "../util/log11";
 
 function Home() {
 
-
     const [globalscale, setglobalscale] = useState(1)
-    const [value, setValue] = useState(0); // integer state
     const [fixing, setFixing] = useState(false);
     const [dd, setdd] = useState(
         {nodes: [], links: []}
