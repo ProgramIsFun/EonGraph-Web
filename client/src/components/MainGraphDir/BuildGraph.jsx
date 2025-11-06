@@ -8,7 +8,8 @@ import {connect} from "react-redux";
 
 function BuildGraph(props) {
 
-    let c = props.c
+    // let c = props.c
+    let c= props.all33.settings
 
     let setdd= props.setdd
     let repo= props.repo
