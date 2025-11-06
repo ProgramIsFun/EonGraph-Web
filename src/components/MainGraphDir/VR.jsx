@@ -3,7 +3,7 @@ import {ForceGraphVR} from 'react-force-graph';
 import React, {useEffect} from 'react';
 
 import SpriteText from 'three-spritetext';
-
+import * as THREE from 'three';
 import {ee, l} from "../../autil/loghelper";
 import {connect, useDispatch} from "react-redux";
 import {getNormalclick} from "../widgets/GetNormalClick";
@@ -52,19 +52,32 @@ function VR(props) {
     const Normalclick = getNormalclick(objectToBeInspected, dispatch, dd)
     let linkWidth = c.VR_linkWidth;
 
-    let nodeThreeObject = node => {
-        // Node object accessor function or attribute for generating a custom 3d object to render as graph nodes.
-        // Should return an instance of ThreeJS Object3d.
-        // If a falsy value is returned, the default 3d object type will be used instead for that node.
-
+    const nodeThreeObject = node => {
         const label2 = !node.name ? node.id : node.name;
-
-        let label = replaceStringAinB("everythingallaccount", label2)
-        // if there is a name, we use the name, if there is no, we use the ID.
+        let label = replaceStringAinB("everythingallaccount", label2);
+        // SpriteText node
         const sprite = new SpriteText(label);
         sprite.color = node.color;
         sprite.textHeight = node_font_size;
-        return sprite;
+
+        // Group to hold the sprite and highlight sphere
+        const group = new THREE.Group();
+        group.add(sprite);
+
+        // If this node is selected, add static "glow" sphere
+        if (true) {
+            const geo = new THREE.SphereGeometry(node_font_size * 0.75, 16, 16); // Adjust size as needed
+            const mat = new THREE.MeshBasicMaterial({
+                color: node.color,
+                transparent: true,
+                opacity: 0.2, // Light/see-through effect
+                depthWrite: false
+            });
+            const sphere = new THREE.Mesh(geo, mat);
+            group.add(sphere);
+        }
+
+        return group;
     };
 
     return <>
