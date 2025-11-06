@@ -1,7 +1,20 @@
 # force-graph-visualizer-and-editor
 
+
+## Introduction
 In very simple English, this project is for you to edit a graph in a 2D space, and you can also visualize the graph in a 3D space.
-There will be function to export the graph in a Json format. You can also import the graph in a Json format.
+
+There will be function to export the graph in a Json format . 
+
+You can also import the graph in a Json format.
+
+Every node in the graph is either a very simple plain text node, with only a name, or a GitHub repository node, which contains a lot of properties.
+
+The graph is a force-directed graph, which means that the nodes will be repelled by each other, and the links will be attracted to each other.
+
+This project originally want to make me organize all my projects and repositories in Github in a graph, so that it is more intuitive to see the relationship between them.
+
+## Screenshot
 
 ![image](https://github.com/user-attachments/assets/3461010f-0639-4f52-96f7-2ec6c781ad48)
 
