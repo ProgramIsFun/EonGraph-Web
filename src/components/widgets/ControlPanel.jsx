@@ -1,7 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react';
-import Stack from '@mui/material/Stack';
+import React, {useRef, useState} from 'react';
 import Slider from '@mui/material/Slider';
-import {InputLabel, TextField, Typography} from "@mui/material";
+import {TextField} from "@mui/material";
 import {auth} from "../../autil/firebase";
 import FileDrop from "./FileDrop";
 import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass';
