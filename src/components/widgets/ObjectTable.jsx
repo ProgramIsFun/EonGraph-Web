@@ -119,7 +119,7 @@ const ObjectTable = (props) => {
 
             <button onClick={
                 () => {
-                    l("collapsinggggggggggggg")
+                    l("collapsing this node so it is invisible in the graph view")
                     if (0) {
                         setdd(dd => {
                             return {
@@ -175,9 +175,13 @@ const ObjectTable = (props) => {
 
     return (
         <div>
-            <button style={buttonStyle} onClick={() => setIsExpanded(!isExpanded)}>
+            <button
+                style={buttonStyle}
+                onClick={() => setIsExpanded(!isExpanded)}
+            >
                 {isExpanded ? 'Collapse' : 'Expand'} Table
             </button>
+
             {
                 interfaceTable
             }
