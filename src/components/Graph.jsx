@@ -42,10 +42,10 @@ function Graph(props) {
     const [fileContent, setFileContent] = useState("aaaa");
     const [fileContent2, setFileContent2] = useState("aaaabbbbbb");
 
-    let localbackendurl = all33.localbackendurl;
+    let localBackendUrl = all33.localBackendUrl;
     let remotebackendurl = all33.remotebackendurl;
     let useremote = all33.useremote;
-    let realUrl = useremote ? remotebackendurl : localbackendurl;
+    let realUrl = useremote ? remotebackendurl : localBackendUrl;
 
     const [search, setSearch] = useState("")
     const [filterdd, setFilterdd] = useState([])

@@ -12,7 +12,7 @@ import {
     SET_OBJECT_TO_BE_INSPECTED,
     SET_USEREMOTE, CHANGE_USEREMOTE, FETCH_NODE_DATA
 } from '../actions/types';
-import {localbackendurl, NODE_ID_ACCESSOR, remotebackendurl, SAMPLE_CYPHER} from "../constants";
+import {localBackendUrl, NODE_ID_ACCESSOR, remotebackendurl, SAMPLE_CYPHER} from "../constants";
 
 export const cccccccccc = {
     // 2D
@@ -82,9 +82,10 @@ const initialState = {
     },
     dd: {nodes: [], links: []},
     nodeIdAccessor: NODE_ID_ACCESSOR, // this is the accessor for the node id, it can be changed to any property of the node object, like "name" or "label"
+    
     usingNEO4J: true,
     objectToBeInspected: {},
-    localbackendurl: localbackendurl,
+    localBackendUrl: localBackendUrl,
     remotebackendurl: remotebackendurl,
     useremote: false, // true means use remote backend, false means use local backend
     graphtypeee: 'VR',
