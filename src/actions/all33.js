@@ -324,18 +324,18 @@ export const updateNodesPositionsToBackend = () => async (dispatch, getState) =>
 }
 
 
-export const fetchNodeData = (nodeId) => async (dispatch, getState) => {
+export const fetchSingleNodeData = (nodeId) => async (dispatch, getState) => {
     try {
 
         const state = getState();
-        l("fetchNodeData state", state)
+        l("fetchSingleNodeData state", state)
         let all33 = state.all33;
 
         let useremote = all33.useremote;
         let localbackendurl = all33.localbackendurl;
         let remotebackendurl = all33.remotebackendurl;
         let b = useremote ? remotebackendurl : localbackendurl
-        l("fetchNodeData b", b)
+        l("fetchSingleNodeData b", b)
         const res = await fetch(b + '/api/v0/get_specific_node_with_specific_id', {
             method: 'POST',
             headers: {
@@ -350,7 +350,7 @@ export const fetchNodeData = (nodeId) => async (dispatch, getState) => {
             throw new Error('Network response was not ok');
         }
         let body = await res.json();
-        l("response from fetchNodeData", body)
+        l("response from fetchSingleNodeData", body)
         l("body.node", body.node[0])
         let ku = {
             "labels": [

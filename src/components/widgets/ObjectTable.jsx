@@ -5,7 +5,7 @@ import JsonView from '@uiw/react-json-view';
 import {aaaaaaa, removegithubRepoNode, rename} from "../../autil/helperfile";
 import {l} from "../../autil/loghelper";
 import {connect, useDispatch} from "react-redux";
-import {fetchNodeData} from "../../actions/all33";
+import {fetchSingleNodeData} from "../../actions/all33";
 
 
 // use the component in your app!
@@ -179,4 +179,4 @@ const ObjectTable = (props) => {
 };
 
 
-export default connect(state => state,{fetchNodeData})(ObjectTable);
+export default connect(state => state,{fetchNodeData: fetchSingleNodeData})(ObjectTable);
