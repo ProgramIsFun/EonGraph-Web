@@ -56,6 +56,8 @@ function Home() {
         "linkDirectionalParticleSpeed": 0.002
     })
 
+    const [usingNEO4J, setUsingNEO4J] = useState(true)
+
 
 
     const [objectToBeInspected, setObjectToBeInspected] = useState({})
@@ -70,7 +72,6 @@ function Home() {
             if (dd.nodes.length === 0) {
                 return
             }
-
 
             const maxDepth = treemaxlevel;
             const levelNodes = []; // Nodes to include up to the maxDepth level
@@ -354,7 +355,6 @@ function Home() {
         const dd = ddRef.current
         setnotice(" start saving graph. ")
 
-
         try {
             const cleanedData = {
                 nodes: dd.nodes.map(node => {
@@ -459,7 +459,13 @@ function Home() {
                 fileContent={fileContent}
                 setFileContent={setFileContent}
 
+
+                usingNEO4J={usingNEO4J}
+                setUsingNEO4J={setUsingNEO4J}
+
                 fgRef={fgRef}
+
+
 
                 returnListRepo={returnListRepo}
 
