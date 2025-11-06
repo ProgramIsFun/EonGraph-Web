@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "s": "vite",
+    "b":"vite build",
     "s1": "react-scripts start",
     "e": "electron electron1.js",
     "k": "concurrently \"npm run s\" \"wait-on http://127.0.0.1:3000 && npm run e\"",
