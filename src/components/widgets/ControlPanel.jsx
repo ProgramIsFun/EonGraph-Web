@@ -311,9 +311,11 @@ const ControlPanel = (props) => {
                                 () => {
 
                                 }}>
-                                add current graph to db(plz make sure the unique id exist on all node in the current graph)
+                                add current graph to db(plz make sure the unique id exist on all node in the current
+                                graph)
                                 positions will be ignored
-                                (prefer you add a subgraph id property to all nodes, so that you can load this subgraph later)
+                                (prefer you add a subgraph id property to all nodes, so that you can load this subgraph
+                                later)
                             </button>
                         </BorderWrapper>
                         <br/>
