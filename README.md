@@ -8,7 +8,9 @@ There will be function to export the graph in a Json format. You can also import
 
 ## How to run in dev mode
 
-1. go to client/src/firebase/firebase.js, replace credentials with your own firebase credentials.
+1. You need to have a firebase project. Grab the credentials from the website. 
+   go to client/src/firebase/config1_Example.js, replace credentials with your own firebase credentials.  Rename the file into config1.js.
+
    (make sure firestore is enabled)
    (make sure firebase github auth is enabled ( ref https://firebase.google.com/docs/auth/web/github-auth ), firebase will specify the callback url that YOU HAVE TO SET IN GITHUB OAUTH APP )
 
