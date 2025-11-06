@@ -457,39 +457,43 @@ const ControlPanel = (props) => {
                     </BorderWrapper>
 
 
-                    <div>
-                        <label>
-                            <input
-                                type="checkbox"
-                                checked={istreemaxlevelrestricted}
-                                onChange={() => {
-                                    setistreemaxlevelrestricted(!istreemaxlevelrestricted);
+                    <BorderWrapper trigger="deprecated">
+                        <div>
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    checked={istreemaxlevelrestricted}
+                                    onChange={() => {
+                                        setistreemaxlevelrestricted(!istreemaxlevelrestricted);
 
-                                }}
+                                    }}
+                                />
+                                istreemaxlevelrestricted
+                            </label>
+                        </div>
+                        <div>
+                            <input
+                                type="text"
+                                value={tempNumber}
+                                onChange={(e) => setTempNumber(e.target.value)}
+                                placeholder="Enter a number"
                             />
-                            istreemaxlevelrestricted
-                        </label>
-                    </div>
-                    <div>
-                        <input
-                            type="text"
-                            value={tempNumber}
-                            onChange={(e) => setTempNumber(e.target.value)}
-                            placeholder="Enter a number"
-                        />
-                        <button onClick={() => {
-                            const parsedNumber = parseInt(tempNumber, 10); // Ensure we're working with a number
-                            // Use a basic validation to check if the input is a number
-                            if (!isNaN(parsedNumber)) {
-                                settreemaxlevel(parsedNumber);
-                            }
-                        }}>Update treemaxlevel
-                        </button>
-                    </div>
-                    <div>
-                        <p>istreemaxlevelrestricted: {istreemaxlevelrestricted ? 'True' : 'False'}</p>
-                        <p>treemaxlevel: {treemaxlevel}</p>
-                    </div>
+                            <button onClick={() => {
+                                const parsedNumber = parseInt(tempNumber, 10); // Ensure we're working with a number
+                                // Use a basic validation to check if the input is a number
+                                if (!isNaN(parsedNumber)) {
+                                    settreemaxlevel(parsedNumber);
+                                }
+                            }}>Update treemaxlevel
+                            </button>
+                        </div>
+                        <div>
+                            <p>istreemaxlevelrestricted: {istreemaxlevelrestricted ? 'True' : 'False'}</p>
+                            <p>treemaxlevel: {treemaxlevel}</p>
+                        </div>
+
+                    </BorderWrapper>
+
                 </div>
             ) : (
                 <div className="floating-control-icon" onClick={toggleVisibility}>
