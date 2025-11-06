@@ -257,7 +257,7 @@ function Graph(props) {
                 break;
             case 2:
                 component = <VR dd={dd}
-                                        c={c}
+
                 />;
                 break;
             case 3:
