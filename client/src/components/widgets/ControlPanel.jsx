@@ -76,7 +76,7 @@ const ControlPanel = (props) => {
     };
 
 
-    let c2 = props.c;
+
     let c = props.all33.settings;
     l("ControlPanel c", c);
 
