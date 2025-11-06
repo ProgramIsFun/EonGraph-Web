@@ -1,4 +1,4 @@
-# force-graph-visualizer-and-editor
+# EonGraph 
 
 ## preview
 
