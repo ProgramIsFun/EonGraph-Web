@@ -10,7 +10,7 @@ import {
     CHANGE_USING_NEO4J,
     ADD_NODE,
     SET_OBJECT_TO_BE_INSPECTED,
-    SET_USEREMOTE
+    SET_USEREMOTE, CHANGE_USEREMOTE
 } from '../actions/types';
 import {NODE_ID_ACCESSOR} from "../autil/CONSTANT";
 
@@ -160,6 +160,11 @@ function all33Reducer(state = initialState, action) {
             return {
                 ...state,
                 graphtypeee: payload
+            };
+        case CHANGE_USEREMOTE:
+            return {
+                ...state,
+                useremote: payload
             };
         default:
             return state;
