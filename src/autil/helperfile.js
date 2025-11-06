@@ -733,18 +733,9 @@ export const distance1and2 = (node1, node2) => {
 };
 
 export function repoooooo(setrepo) {
-    const getRepoData = async () => {
-
-
-        
-        const VITE_GITHUB_ACCESS_TOKEN = import.meta.env.VITE_GITHUB_ACCESS_TOKEN;
-        console.log(VITE_GITHUB_ACCESS_TOKEN);
-        return
-
+    return async () => {
 
         l("getting")
-
-
         // case 1 we call REST directly
 
         // const repoUrl = `https://api.github.com/users/${username}/repos`;
@@ -851,8 +842,5 @@ export function repoooooo(setrepo) {
         } finally {
         }
 
-    }
-
-
-    return getRepoData;
+    };
 }
