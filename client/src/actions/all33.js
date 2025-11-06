@@ -271,10 +271,14 @@ export const fetchNodeData = (nodeId) => async (dispatch,getState) => {
 
         const state = getState();
         l("fetchNodeData state", state)
-        let url = state.all33.settings.url;
+        let all33 = state.all33;
 
-
-        const res = await fetch(b+'/api/v0/get_specific_node_with_specific_id/', {
+        let useremote = all33.useremote;
+        let localbackendurl = all33.localbackendurl;
+        let remotebackendurl = all33.remotebackendurl;
+        let b = useremote ? remotebackendurl : localbackendurl
+        l("fetchNodeData b", b)
+        const res = await fetch(b+'/api/v0/get_specific_node_with_specific_id', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -283,8 +287,8 @@ export const fetchNodeData = (nodeId) => async (dispatch,getState) => {
                 nodeIdAccess: nodeId
             })
         })
-        if (!response.ok) {
-            l("Network response was not ok", response.statusText);
+        if (!res.ok) {
+            l("Network response was not ok", res.statusText);
             throw new Error('Network response was not ok');
         }
         l("response from fetchNodeData", res)
