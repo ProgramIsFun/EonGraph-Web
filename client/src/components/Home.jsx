@@ -22,6 +22,9 @@ function Home() {
     const [dd, setdd] = useState(
         {nodes: [], links: []}
     )
+    let nc = dd.nodes
+    let lc = dd.links
+
     // console.log("entering home ,data dd is now ", dd)
 
     const [restrictdd, setrestrictdd] = useState(
@@ -116,9 +119,6 @@ function Home() {
 
     const fgRef = useRef();
 
-
-    let nc = dd.nodes
-    let lc = dd.links
 
     const handleScroll = (event) => {
         if (event.deltaX !== 0) {
@@ -260,7 +260,6 @@ function Home() {
                                         repo={repo}
                                         c={c}
                                         fgRef={fgRef}
-
                                         checkExistInGraph={checkExistInGraph}
                                         updateGraphData={updateGraphData}
                                         returnListRepo={returnListRepo}
@@ -268,8 +267,6 @@ function Home() {
                                         setObjectToBeInspected={setObjectToBeInspected}
                                         fixing={fixing}
                                         setFixing={setFixing}
-
-
                                         restrictdd={restrictdd}
                                         setrestrictdd={setrestrictdd}
                                         istreemaxlevelrestricted={istreemaxlevelrestricted}
