@@ -156,6 +156,9 @@ const FloatingControlPanel = (props) => {
                     > start
                     </button>
 
+                    <br/>
+
+                    <br/>
 
                     <p>usingNEO4J: {usingNEO4J ? 'True' : 'False'}       if set to true, any change of the graph would be sent to database.</p>
 
@@ -172,11 +175,9 @@ const FloatingControlPanel = (props) => {
                     }>get the graph from nE04J</button>
 
 
-
                     <br/>
 
-                    <p>Edit is only possible in 2d-build ,after u edit, u could use 3d or 3d-vr to visualize</p>
-                    <p>you could loadSample and go to 3d-vr to try the effect first</p>
+
                     <p>{notice}</p>
 
                     <br/>
