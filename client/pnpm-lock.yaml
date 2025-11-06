@@ -41,6 +41,9 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^4.5.2
         version: 4.5.2(vite@6.3.5(@types/node@24.0.1))
+      aframe:
+        specifier: github:john012343210/aframe
+        version: https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50
       axios:
         specifier: ^0.18.0
         version: 0.18.1
@@ -97,7 +100,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-force-graph:
         specifier: ^1.41.12
-        version: 1.47.7(aframe@1.7.1)(react@18.3.1)(three@0.175.0)
+        version: 1.47.7(aframe@https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50)(react@18.3.1)(three@0.175.0)
       react-is:
         specifier: ^17.0.2
         version: 17.0.2
@@ -149,10 +152,12 @@ packages:
 
   3d-force-graph-ar@1.9.5:
     resolution: {integrity: sha512-M9NU07tInzRCvrlGEADHiuSG0400MbD86WdRppJKKBAxyZNzzh2irTEjliVpzyMrt3hLcjbjV58ffByGfHWnTA==}
+    version: 1.9.5
     engines: {node: '>=12'}
 
   3d-force-graph-vr@3.0.3:
     resolution: {integrity: sha512-xdqMAuotW8gMM8X1sn2CR4iamdmiRdCiJbtvgazM0W0YsUOjU9TQgJuwomgwZgONDeREvmt9k0UIMbidunGjvg==}
+    version: 3.0.3
     engines: {node: '>=12'}
     peerDependencies:
       aframe: ^1.5
@@ -1106,12 +1111,14 @@ packages:
 
   aframe-forcegraph-component@3.2.3:
     resolution: {integrity: sha512-AGotzsZuWIVtBctiATqDe85MpTgxDUUjYNofgU/6acSnNGmbKDYFRXV4JfrJETCuJv8SMdAOJQ+fnBpQ3F6xZg==}
+    version: 3.2.3
     engines: {node: '>=12'}
     peerDependencies:
       aframe: '*'
 
-  aframe@1.7.1:
-    resolution: {integrity: sha512-dcc7PWI5z8pyJ0s2W0mUd8d83339frgMXhUvWr1yxkdgg6zSExkuQwsSJjiNn7XWKMUUqKYDvV/WzQQRA+OBXA==}
+  aframe@https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50:
+    resolution: {tarball: https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50}
+    version: 1.7.1
     engines: {node: '>= 4.6.0', npm: '>= 2.15.9'}
 
   an-array@1.0.0:
@@ -2496,6 +2503,7 @@ packages:
 
   react-force-graph@1.47.7:
     resolution: {integrity: sha512-yvbdvOiAwTN6G/yvItjdN1Ka/KXujJh3T3wJVHWJuFig5f3o3IoX2tQEO6qoLdqERI/v9w1ZXm33IRQ+UXmr8w==}
+    version: 1.47.7
     engines: {node: '>=12'}
     peerDependencies:
       react: '*'
@@ -2773,6 +2781,14 @@ packages:
   sprintf-js@1.1.3:
     resolution: {integrity: sha512-Oo+0REFV59/rz3gfJNKQiBlwfHaSESl1pcGyABQsnnIfWOFt6JNj5gCog2U6MLZ//IGYD+nA8nI+mTShREReaA==}
 
+  stats-gl@3.6.0:
+    resolution: {integrity: sha512-Bpi5nwvC2pls9lcI5sGqAcUqB/2kMYfsR4KoAglXFtY3YUdm7lJFg8FqS7eKKNgg3ruDMNCuwU+uRwPOwJiGnw==}
+    peerDependencies:
+      three: '*'
+    peerDependenciesMeta:
+      three:
+        optional: true
+
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
@@ -2815,8 +2831,8 @@ packages:
   super-animejs@3.1.0:
     resolution: {integrity: sha512-6MFAFJDRuvwkovxQZPruuyHinTa4rgj4hNLOndjcYYhZLckoXtVRY9rJPuq8p6c/tgZJrFYEAYAfJ2/hhNtUCA==}
 
-  super-three@0.173.5:
-    resolution: {integrity: sha512-ecjojbhUg/5QrixwqF4s6gvtJap9XQz7TcnFUX/J8Yosgb2eE2ZUqsyqr/JczFG//6hwIaZPeAa9M5DNaM1dmQ==}
+  super-three@0.177.0:
+    resolution: {integrity: sha512-b6RspibNdsZDAmDmz9F18zHuW9lLrdd3a47nzUpc6zehZSWCcsLoZR89ntEjEef8KLpZ2YLnw7QCpSQi0+FAig==}
 
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -3158,20 +3174,20 @@ packages:
 
 snapshots:
 
-  3d-force-graph-ar@1.9.5(aframe@1.7.1)(three@0.175.0):
+  3d-force-graph-ar@1.9.5(aframe@https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50)(three@0.175.0):
     dependencies:
-      aframe-forcegraph-component: 3.2.3(aframe@1.7.1)(three@0.175.0)
+      aframe-forcegraph-component: 3.2.3(aframe@https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50)(three@0.175.0)
       kapsule: 1.16.3
     transitivePeerDependencies:
       - aframe
       - three
 
-  3d-force-graph-vr@3.0.3(aframe@1.7.1)(three@0.175.0):
+  3d-force-graph-vr@3.0.3(aframe@https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50)(three@0.175.0):
     dependencies:
       accessor-fn: 1.5.3
-      aframe: 1.7.1
+      aframe: https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50
       aframe-extras: 7.5.4
-      aframe-forcegraph-component: 3.2.3(aframe@1.7.1)(three@0.175.0)
+      aframe-forcegraph-component: 3.2.3(aframe@https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50)(three@0.175.0)
       kapsule: 1.16.3
       polished: 4.3.1
     transitivePeerDependencies:
@@ -4168,21 +4184,22 @@ snapshots:
       three: 0.164.1
       three-pathfinding: 1.3.0(three@0.164.1)
 
-  aframe-forcegraph-component@3.2.3(aframe@1.7.1)(three@0.175.0):
+  aframe-forcegraph-component@3.2.3(aframe@https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50)(three@0.175.0):
     dependencies:
-      aframe: 1.7.1
+      aframe: https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50
       three-forcegraph: 1.42.13(three@0.175.0)
     transitivePeerDependencies:
       - three
 
-  aframe@1.7.1:
+  aframe@https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50:
     dependencies:
       buffer: 6.0.3
       debug: 4.4.1(supports-color@5.5.0)
       deep-assign: 2.0.0
       load-bmfont: 1.4.2(debug@4.4.1)
+      stats-gl: 3.6.0(super-three@0.177.0)
       super-animejs: 3.1.0
-      three: super-three@0.173.5
+      three: super-three@0.177.0
       three-bmfont-text: https://codeload.github.com/dmarcos/three-bmfont-text/tar.gz/eed4878795be9b3e38cf6aec6b903f56acd1f695
     transitivePeerDependencies:
       - supports-color
@@ -5719,11 +5736,11 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
-  react-force-graph@1.47.7(aframe@1.7.1)(react@18.3.1)(three@0.175.0):
+  react-force-graph@1.47.7(aframe@https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50)(react@18.3.1)(three@0.175.0):
     dependencies:
       3d-force-graph: 1.77.0
-      3d-force-graph-ar: 1.9.5(aframe@1.7.1)(three@0.175.0)
-      3d-force-graph-vr: 3.0.3(aframe@1.7.1)(three@0.175.0)
+      3d-force-graph-ar: 1.9.5(aframe@https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50)(three@0.175.0)
+      3d-force-graph-vr: 3.0.3(aframe@https://codeload.github.com/john012343210/aframe/tar.gz/a0a3bed8ea2394378f3cb2dbc5b32490384e5a50)(three@0.175.0)
       force-graph: 1.49.6
       prop-types: 15.8.1
       react: 18.3.1
@@ -6041,6 +6058,10 @@ snapshots:
   sprintf-js@1.1.3:
     optional: true
 
+  stats-gl@3.6.0(super-three@0.177.0):
+    optionalDependencies:
+      three: super-three@0.177.0
+
   statuses@2.0.1: {}
 
   string-width@3.1.0:
@@ -6095,7 +6116,7 @@ snapshots:
 
   super-animejs@3.1.0: {}
 
-  super-three@0.173.5: {}
+  super-three@0.177.0: {}
 
   supports-color@5.5.0:
     dependencies:
