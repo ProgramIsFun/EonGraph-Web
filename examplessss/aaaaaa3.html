@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<script src="https://d3js.org/d3.v6.js"></script>
+<body>
+<h2>D3.js Scatter-Plot</h2>
+
+<!--<svg id="myPlot" style="width:500px;height:500px"></svg>-->
+<div id="dataviz_basicZoom"></div>
+<script>
+
+    var svg = d3.select("#dataviz_basicZoom")
+        .append("div")
+        .attr("width", 460)
+        .attr("height", 460)
+
+    svg
+        .append("div")
+        .text("Hello World");
+
+    // var g = svg.append("g"); // Creates a group element inside the svg
+    d3.select("div").on("wheel", function(event) {
+        // Your code to handle the wheel event
+        event.preventDefault();
+        console.log(event.deltaY, event.deltaX);
+        svg.attr("transform", `translate(${event.deltaX},${event.deltaY}) scale(1)`);
+    })
+    // var zoom = d3.zoom()
+    //     .on("zoom", function (event) {
+    //         // You can apply the transformation directly to the 'g' element
+    //         // return
+    //         console.log(event.transform.x, event.transform.y, event.transform.k)
+    //         var transform = event.transform;
+    //         // Modify to use translateBy instead of setting transform directly
+    //         // First, reset the translate to keep it independent of the scale
+    //
+    //         let aaaaaaa=transform.x
+    //
+    //         // svg.attr("transform", `translate(${transform.x},${transform.y}) scale(1)`);
+    //
+    //         // Use translateBy by reversing the delta values (you might need to adjust this logic)
+    //         // zoom.translateBy(svg, -event.sourceEvent.deltaX / transform.k, -event.sourceEvent.deltaY / transform.k);
+    //     });
+
+
+    //
+    // window.addEventListener('wheel', handleScroll);
+    // function handleScroll(e) {
+    //     console.log(e.deltaX, e.deltaY)
+    //     // e.preventDefault();
+    //     svg.attr("transform", `translate(${e.deltaX},${e.deltaY}) scale(1)`);
+    // }
+
+
+
+    // Call the zoom behavior on the svg
+    // svg.call(zoom);
+    // svg.on("wheel.zoom", null);
+    // Prevent zoom on scroll to manually control the zoom using translateBy
+    // svg.on("wheel.zoom", null);
+
+
+
+</script>
+</body>
+</html>
