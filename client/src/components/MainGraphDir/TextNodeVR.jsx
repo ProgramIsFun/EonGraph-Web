@@ -26,10 +26,10 @@ export default function TextNodeVR({dd,...props}) {
         graphData={newdd}
         nodeAutoColorBy="group"
 
-        onNodeClick={(node, event) => {
-            l("Node clicked22222:", node);
-            l("Event333333333:", event);
-        }}
+        // onNodeClick={(node, event) => {
+        //     l("Node clicked22222:", node);
+        //     l("Event333333333:", event);
+        // }}
 
 
 
@@ -63,6 +63,7 @@ export default function TextNodeVR({dd,...props}) {
         }}
 
 
+        backgroundColor={"#000000"}
 
         // backgroundColor="rgba(0,0,0,0)"
             // nodeThreeObjectExtend={true}
