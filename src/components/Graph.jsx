@@ -45,7 +45,7 @@ function Graph(props) {
     let localbackendurl = all33.localbackendurl;
     let remotebackendurl = all33.remotebackendurl;
     let useremote = all33.useremote;
-    let realUrl=useremote?remotebackendurl:localbackendurl;
+    let realUrl = useremote ? remotebackendurl : localbackendurl;
 
     const [search, setSearch] = useState("")
     const [filterdd, setFilterdd] = useState([])
@@ -120,25 +120,32 @@ function Graph(props) {
     };
 
     useEffect(() => {
-        const handleKeyDown = keydownHandler(
-            setObjectToBeInspected,
-            saveGraph,
-            objectToBeInspected,
-            dd,
-            setdd,
-            link111,
-            lc,
-            graphtypeee,
-            dispatch
-        );
-        window.addEventListener('keydown', handleKeyDown);
-        window.addEventListener('wheel', handleScroll);
-        // Cleanup
-        return () => {
-            l("removing event listeners for keydown and wheel");
-            window.removeEventListener('keydown', handleKeyDown);
-            window.removeEventListener('wheel', handleScroll);
-        };
+        let useEvent = false
+
+        if (useEvent) {
+            const handleKeyDown = keydownHandler(
+                setObjectToBeInspected,
+                saveGraph,
+                objectToBeInspected,
+                dd,
+                setdd,
+                link111,
+                lc,
+                graphtypeee,
+                dispatch
+            );
+
+            window.addEventListener('keydown', handleKeyDown);
+            window.addEventListener('wheel', handleScroll);
+            // Cleanup
+            return () => {
+                l("removing event listeners for keydown and wheel");
+                window.removeEventListener('keydown', handleKeyDown);
+                window.removeEventListener('wheel', handleScroll);
+            };
+        }else{
+            l("not using event listeners for keydown and wheel")
+        }
     }, [objectToBeInspected, link111, dd, graphtypeee]); // Empty dependency array means this effect runs once on mount
 
 
@@ -380,7 +387,7 @@ function Graph(props) {
 
     }
 
-    const getRepoData = repoooooo(setrepo,realUrl);
+    const getRepoData = repoooooo(setrepo, realUrl);
 
     const emptyGraph = async () => {
         dispatch({

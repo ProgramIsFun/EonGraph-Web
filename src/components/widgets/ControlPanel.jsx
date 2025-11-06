@@ -268,6 +268,50 @@ const ControlPanel = (props) => {
                         <br/>
                         <br/>
 
+                        <p>add prop value to all node</p>
+                        <button onClick={
+                            () => {
+                                let key = prompt("Enter the property key:");
+                                let value = prompt("Enter the property value:");
+                                if (key !== null
+                                    && value !== null
+                                ) {
+                                    let inplace=true
+                                    if (inplace) {
+                                        dd.nodes.forEach(node => {
+                                            // Directly modify each node object
+                                            node[key] = value;
+                                        });
+                                        dispatch({
+                                            type: CHANGE_DATA,
+                                            payload: {
+                                                nodes: dd.nodes,     // `dd.nodes` has been modified in place
+                                                links: dd.links,
+                                                nodeIdaccessor: all33.nodeIdaccessor
+                                            }
+                                        });
+                                    }else {
+                                        let newNodes = dd.nodes.map(node => ({
+                                            ...node,
+                                            [key]: value
+                                        }));
+                                        dispatch({
+                                            type: CHANGE_DATA,
+                                            payload: {
+                                                nodes: newNodes,
+                                                links: dd.links,
+                                                nodeIdaccessor: all33.nodeIdaccessor
+                                            }
+                                        });
+                                    }
+                                }
+                            }
+                        }>add prop to all node</button>
+                        <br/>
+
+
+
+
                         <p>list of subgraph id</p>
                         <br/>
                         <br/>
@@ -277,8 +321,6 @@ const ControlPanel = (props) => {
                         <br/>
 
                         <BorderWrapper>
-
-
                             <>overwrite current graph with json (will not affect db), assume node id is named id</>
                             <div>
                                 <textarea
