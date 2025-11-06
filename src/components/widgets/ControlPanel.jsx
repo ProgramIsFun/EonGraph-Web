@@ -7,7 +7,7 @@ import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass
 import {cgg} from "../../autil/helperfile";
 import {connect, useDispatch} from "react-redux";
 import {l} from "../../autil/loghelper";
-import {changeSetting, executeCypherQuery, fetchData11, updateNodesPositionsToBackend} from "../../actions/all33";
+import {changeSetting, executeCypherQuery, fetch_all_nodes_and_relations, updateNodesPositionsToBackend} from "../../actions/all33";
 import {cccccccccc} from "../../reducers/all33";
 import {CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";
 import {SAMPLE_CYPHER} from "../../constants";
@@ -455,7 +455,7 @@ export default connect(
     state => state,
     {
         changeSetting,
-        fetchData11,
+        fetchData11: fetch_all_nodes_and_relations,
         updateNodesPositionsToBackend,
         executeCypherQuery
     }

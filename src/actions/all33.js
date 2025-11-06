@@ -239,7 +239,7 @@ export const changeSetting = (key, value) => async (dispatch) => {
     }
 }
 
-export const fetchData11 = (baseUrl) => async (dispatch) => {
+export const fetch_all_nodes_and_relations = (baseUrl) => async (dispatch) => {
     try {
 
         l("fetching data from ", baseUrl + '/api/v0/return_all_nodes111')
@@ -396,7 +396,7 @@ export const executeCypherQuery = (cypherQuery) => async (dispatch, getState) =>
         let body = await res.json();
         l("response from executeCypherQuery", body)
 
-        1/0
+
         if (body) {
             l("body is 123321", body)
             // dispatch({
@@ -406,13 +406,14 @@ export const executeCypherQuery = (cypherQuery) => async (dispatch, getState) =>
             //         links: body.links
             //     }
             // })
-            dispatch(setAlert('Cypher query executed and data updated', 'success'));
+
+            // dispatch(setAlert('Cypher query executed and data updated', 'success'));
         } else {
-            dispatch(setAlert('No nodes or links returned from query', 'warning'));
+            // dispatch(setAlert('No nodes or links returned from query', 'warning'));
         }
 
     } catch (err) {
         l("error in executeCypherQuery", err)
-        dispatch(setAlert('Error executing cypher query', 'danger'));
+        // dispatch(setAlert('Error executing cypher query', 'danger'));
     }
 }
