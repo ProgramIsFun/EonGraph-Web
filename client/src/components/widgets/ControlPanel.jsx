@@ -11,9 +11,9 @@ import {l} from "../../util/log11";
 import {changeSetting} from "../../actions/all33";
 import {cccccccccc} from "../../reducers/all33";
 
-const FloatingControlPanel = (props) => {
+const ControlPanel = (props) => {
 
-    l("FloatingControlPanel render", props);
+    l("ControlPanel render", props);
     const [tempNumber, setTempNumber] = useState(3);
     const emptyGraph = props.emptyGraph;
     const loadSample = props.loadSample;
@@ -75,7 +75,7 @@ const FloatingControlPanel = (props) => {
 
     let c2 = props.c;
     let c=props.all33.settings;
-    l("FloatingControlPanel c", c);
+    l("ControlPanel c", c);
 
 
     let setc = props.setc;
@@ -395,4 +395,4 @@ const FloatingControlPanel = (props) => {
 
 export default connect(state=> state,{changeSetting}
 
-)(FloatingControlPanel);
+)(ControlPanel);
