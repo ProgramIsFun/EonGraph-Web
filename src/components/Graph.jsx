@@ -4,7 +4,7 @@ import VR from "./mainGraphDir/VR";
 import {dbbbbb} from "../autil/firebase/firebase";
 
 import * as firebase from 'firebase/app'
-import {calculateCollapseddd, sample_graph_data, keydownHandler, rawdata, repoooooo} from "../autil/helperfile";
+import {calculateCollapseddd, sample_graph_data, keydownHandler, rawdata, gitRepoFetch} from "../autil/helperfile";
 
 import TwoD from "./mainGraphDir/TwoD";
 import FloatingControlPanel from "./widgets/ControlPanel";
@@ -387,7 +387,7 @@ function Graph(props) {
 
     }
 
-    const getRepoData = repoooooo(setrepo, realUrl);
+    const getRepoData = gitRepoFetch(setrepo, realUrl);
 
     const emptyGraph = async () => {
         dispatch({

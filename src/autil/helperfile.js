@@ -733,10 +733,10 @@ export const distance1and2 = (node1, node2) => {
     return Math.sqrt(Math.pow(node1.x - node2.x, 2) + Math.pow(node1.y - node2.y, 2));
 };
 
-export function repoooooo(setrepo,realUrl) {
+export function gitRepoFetch(setrepo, realUrl) {
     return async () => {
 
-        l("getting")
+        l("getting repo")
 
         let repoos;
 
