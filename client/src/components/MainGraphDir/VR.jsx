@@ -44,8 +44,6 @@ function VR(props) {
 
             nodeThreeObject={
                 node => {
-
-
                     const label2 = !node.name ? node.id : node.name;
                     const replaceStringAinB = (strA, strB) => {
                         if (strB.startsWith(strA)) {
@@ -59,7 +57,6 @@ function VR(props) {
                     sprite.color = node.color;
                     sprite.textHeight = 8;
                     return sprite;
-
                 }
             }
 
