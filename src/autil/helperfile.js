@@ -736,110 +736,121 @@ export function repoooooo(setrepo) {
     return async () => {
 
         l("getting")
-        // case 1 we call REST directly
 
-        // const repoUrl = `https://api.github.com/users/${username}/repos`;
-        //
-        // // console.log
-        // const config = {
-        //     headers: { Authorization: `Bearer ${access_token}` }
-        // };
-        // console.log("making request to ",repoUrl)
-        // axios.get(repoUrl,null,config).then((responses) => {
-        //     // console.log("responsesssss",responses)
-        //     const repos = responses.data.map(({name, language, html_url, created_at, description}) => {
-        //         return {name, language, html_url, created_at, description};
-        //     })
-        //     // console.log("origin response is ",response);
-        //     console.log("addsssssssssssssss ", repos.length);
-        //     response["repo"] = repos;
-        //     console.log("returning to ")
-        //     return res.status(200).json(response);
-        //
-        // }).catch(error => {
-        //     console.log(`inside getrepos error1233213333: ${error}`)
-        //     // this.setState({
-        //     //     errorMessage: error.response.statusText
-        //     // })
-        // });
-
-
-        // case 2 use library that call REST for you
-        // https://github.com/github-tools/github
-
-
-        // need to get the token from server first
-        let gittoken;
-
-        if (1) {
-            gittoken = process.env.VITE_GITHUB_ACCESS_TOKEN;
-        } else {
-            var docRef = dbbbbb.collection("users").doc(auth().currentUser.uid);
-            const doc = await docRef.get()
-            gittoken = doc.data().accessToken
-        }
-        const gh = new GitHub({
-            token: gittoken
-            // make sure this has repo scope right for private repo list
-
-            // however for safty, no read only scope  https://stackoverflow.com/a/72326284/10964992
-            // dangerous as hell
-
-            // user has to tick the organization access in order for listing the repo in that organization that user have access
-            // what should user do if they want to add in more organization?
-            // 1. tell them logout github doesnt work
-            // 2. tell them to change scope in their github account
-            //   2.1 after change, does original access token have effect?  Yes
-            //
-            // also note if ac A approve oauth app D to access organization C,  ac B(if member of C) could see D have access to C in oauth procedure
-        });
-        const me = gh.getUser();
         let repoos;
-        try {
-            repoos = await me.listRepos()
 
-            // this list all repo
-            // later also user UI will wait for data retriving.
+        let getFromLocal= true;
+        if (getFromLocal) {
 
-            /////////////////////////////////////////// IF promise chain intead of async
-            // .then(function({data: reposJson}) {
-            //     console.log(`clayreimann has ${reposJson.length} repos!`);
-            //     console.log(reposJson)
+            // case 1 we call REST directly
+            // const repoUrl = `https://api.github.com/users/${username}/repos`;
+            //
+            // // console.log
+            // const config = {
+            //     headers: { Authorization: `Bearer ${access_token}` }
+            // };
+            // console.log("making request to ",repoUrl)
+            // axios.get(repoUrl,null,config).then((responses) => {
+            //     // console.log("responsesssss",responses)
+            //     const repos = responses.data.map(({name, language, html_url, created_at, description}) => {
+            //         return {name, language, html_url, created_at, description};
+            //     })
+            //     // console.log("origin response is ",response);
+            //     console.log("addsssssssssssssss ", repos.length);
+            //     response["repo"] = repos;
+            //     console.log("returning to ")
+            //     return res.status(200).json(response);
+            //
+            // }).catch(error => {
+            //     console.log(`inside getrepos error1233213333: ${error}`)
+            //     // this.setState({
+            //     //     errorMessage: error.response.statusText
+            //     // })
             // });
-        } catch (e) {
 
-            console.log("this access token not longer valid, maybe user revoke access  ")
-            return
-        } finally {
+
+            // case 2 use library that call REST for you
+            // https://github.com/github-tools/github
+
+
+            // need to get the token from server first
+            let gittoken;
+
+            if (1) {
+                gittoken = process.env.VITE_GITHUB_ACCESS_TOKEN;
+            } else {
+                var docRef = dbbbbb.collection("users").doc(auth().currentUser.uid);
+                const doc = await docRef.get()
+                gittoken = doc.data().accessToken
+            }
+            const gh = new GitHub({
+                token: gittoken
+                // make sure this has repo scope right for private repo list
+
+                // however for safty, no read only scope  https://stackoverflow.com/a/72326284/10964992
+                // dangerous as hell
+
+                // user has to tick the organization access in order for listing the repo in that organization that user have access
+                // what should user do if they want to add in more organization?
+                // 1. tell them logout github doesnt work
+                // 2. tell them to change scope in their github account
+                //   2.1 after change, does original access token have effect?  Yes
+                //
+                // also note if ac A approve oauth app D to access organization C,  ac B(if member of C) could see D have access to C in oauth procedure
+            });
+            const me = gh.getUser();
+
+            try {
+                repoos = await me.listRepos()
+
+                // this list all repo
+                // later also user UI will wait for data retriving.
+
+                /////////////////////////////////////////// IF promise chain intead of async
+                // .then(function({data: reposJson}) {
+                //     console.log(`clayreimann has ${reposJson.length} repos!`);
+                //     console.log(reposJson)
+                // });
+            } catch (e) {
+
+                console.log("this access token not longer valid, maybe user revoke access  ")
+                return
+            } finally {
+
+            }
+
+            l("stored", repoos)
+        } else {
+        }
+
+        let editState = false;
+        if (editState) {
+            setrepo(repoos.data)
+
+        } else {
 
         }
 
-        l("stored", repoos)
-        setrepo(repoos.data)
 
-        if (0) { // one request in one document or inside one document?
-            var myTimestamp = firebase.firestore.Timestamp.fromDate(new Date());
-            await dbbbbb.collection("users").doc(auth().currentUser.uid).collection("repofetchhhhhhhhh").doc().set({
-                repodata: repoos.data,
-                time: myTimestamp
-            })
-            // Uncaught (in promise) FirebaseError: Document 'projects/githubvisssss202324/databases/(default)/documents/users/NcVakMNaAEYR0wT7eiU0Ax5HTi82/repofetchhhhhhhhh/6j5IKFgVkBmsqCoyWMyd' cannot be written because its size (2,971,208 bytes) exceeds the maximum allowed size of 1,048,576 bytes.
-        }
+        let autoDownload = false;
 
-        try {
-            const json = JSON.stringify(repoos.data);
-            const blob = new Blob([json], {type: 'application/json'});
-            const href = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = href;
-            link.download = "state.json"; // or another filename of your choosing
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(href);
-        } catch (e) {
-            console.log("Fail to download json file.")
-        } finally {
+        if (autoDownload) {
+            try {
+                const json = JSON.stringify(repoos.data);
+                const blob = new Blob([json], {type: 'application/json'});
+                const href = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = href;
+                link.download = "state.json"; // or another filename of your choosing
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(href);
+            } catch (e) {
+                console.log("Fail to download json file.")
+            } finally {
+            }
+        } else {
         }
 
     };
