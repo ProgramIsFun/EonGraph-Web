@@ -7,7 +7,7 @@ import FileDrop from "../../autil/FileDrop";
 import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 import {cgg} from "../../autil/helperfile";
 import {connect, useDispatch} from "react-redux";
-import {l} from "../../autil/log11";
+import {l} from "../../autil/logHelper";
 import {changeSetting, fetchData11} from "../../actions/all33";
 import {cccccccccc} from "../../reducers/all33";
 import {CHANGE_USEREMOTE, CHANGE_USING_NEO4J} from "../../actions/types";

@@ -11,7 +11,7 @@ import {
     GET_REPOS,
     NO_REPOS, CHANGE_SETTINGS, CHANGE_DATA
 } from './types';
-import {l} from "../autil/log11";
+import {l} from "../autil/logHelper";
 import {rawdata} from "../autil/helperfile";
 
 // Get current users profile

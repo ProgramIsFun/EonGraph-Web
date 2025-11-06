@@ -11,7 +11,7 @@ import FloatingControlPanel from "./widgets/ControlPanel";
 import {v4 as uuidv4} from "uuid";
 import ObjectTable from "./widgets/ObjectTable";
 import _ from "lodash";
-import {l} from "../autil/log11";
+import {l} from "../autil/logHelper";
 import {connect, useDispatch} from "react-redux";
 import {CHANGE_DATA} from "../actions/types";
 
