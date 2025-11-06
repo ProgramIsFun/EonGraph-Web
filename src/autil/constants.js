@@ -1,1 +1,0 @@
-export const NODE_ID_ACCESSOR ="id";
