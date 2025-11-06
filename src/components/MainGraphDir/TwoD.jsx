@@ -258,7 +258,7 @@ function TwoD(props) {
         }
     };
     let onLinkRightClick = (link) => removeLink(link);
-    let nodeIdaccessor=all33.nodeIdaccessor;
+    let nodeIdr=all33.nodeIdaccessor;
     l("nodeIdaccessor", nodeIdaccessor)
     return <>
 
@@ -267,7 +267,7 @@ function TwoD(props) {
             // border: "3px solid green",
         }}>
             <ForceGraph2D
-                nodeId={nodeIdaccessor}
+                nodeId={nodeId}
                 ref={fgRef}
 
                 graphData={graphData}
