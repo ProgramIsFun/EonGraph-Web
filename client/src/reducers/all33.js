@@ -74,9 +74,14 @@ const initialState = {
         "VR_linkDirectionalParticleWidth": 2,
         "VR_linkDirectionalParticleSpeed": 0.002,
     },
+
     dd: {nodes: [], links: []},
+
     usingNEO4J: true,
-    objectToBeInspected: {}
+
+    objectToBeInspected: {},
+    localbackendurl: 'http://localhost:5000',
+    remotebackendurl:"https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net"
 };
 
 function all33Reducer(state = initialState, action) {
