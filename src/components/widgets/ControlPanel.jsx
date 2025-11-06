@@ -306,6 +306,10 @@ const ControlPanel = (props) => {
                                 </button>
                             </div>
                         </BorderWrapper>
+                        <BorderWrapper>
+                        upsert current graph
+
+                        </BorderWrapper>
                         <br/>
                         <br/>
                         <button onClick={
