@@ -92,7 +92,9 @@ const ObjectTable = (props) => {
                 src={objectToBeInspected}
             />
         </>;
-    let element1 = 1
+
+
+    let interfaceTable = 1
         ?
         <div style={tableStyle}>
             <button onClick={() => {
@@ -167,13 +169,14 @@ const ObjectTable = (props) => {
             ))}
             </tbody>
         </table>;
+
     return (
         <div>
             <button style={buttonStyle} onClick={() => setIsExpanded(!isExpanded)}>
                 {isExpanded ? 'Collapse' : 'Expand'} Table
             </button>
             {
-                element1
+                interfaceTable
             }
         </div>
     );
