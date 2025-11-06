@@ -322,7 +322,7 @@ const FloatingControlPanel = (props) => {
                             return (
                                 <Stack key={key} spacing={2} direction="row" sx={{mb: 1}} alignItems="center">
 
-                                    <InputLabel>{key.split('_').join(' ')}</InputLabel>
+                                    {key.split('_').join(' ')}
                                     <Slider
                                         aria-label={key}
                                         value={typeof c[key] === 'number' ? c[key] : 0}
