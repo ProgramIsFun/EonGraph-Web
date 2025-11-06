@@ -162,6 +162,7 @@ function all33Reducer(state = initialState, action) {
             return {
                 ...state
             };
+
         default:
             return state;
     }
