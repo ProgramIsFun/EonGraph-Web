@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "s": "vite",
-    "b":"vite build",
+    "b": "vite build",
     "s1": "react-scripts start",
     "e": "electron electron1.js",
     "k": "concurrently \"npm run s\" \"wait-on http://127.0.0.1:3000 && npm run e\"",
@@ -41,6 +41,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^1.6.1",
+    "react-collapsible": "^2.10.0",
     "react-dom": "^18.2.0",
     "react-force-graph": "^1.41.12",
     "react-is": "^17.0.2",
