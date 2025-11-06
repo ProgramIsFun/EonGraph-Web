@@ -73,23 +73,19 @@ const ObjectTable = (props) => {
         await removegithubRepoNode(objectToBeInspected, dd, setdd, dispatch);
     }
 
-
+    let allowThreeObjInJsonForRender=false
+    let objForJsonView = allowThreeObjInJsonForRender?objectToBeInspected:objectToBeInspectedWithoutThreeObj;
     let coreViewer = 1
         ?
         <>
-            {graphTypeRender == 4 ?
-                <JsonView
-                    value={objectToBeInspected}
-                    style={aaaaaaa}
-                />
-                :
-                <>
-                    <JsonView
-                        value={objectToBeInspectedWithoutThreeObj}
-                        style={aaaaaaa}
-                    />
-                </>
-            }
+
+
+            <JsonView
+                value={objForJsonView}
+                style={aaaaaaa}
+            />
+                
+
         </>
         :
         <>
@@ -98,8 +94,9 @@ const ObjectTable = (props) => {
             />
         </>;
 
+    let useLibrary=true
 
-    let interfaceTable = 1
+    let interfaceTable = useLibrary
         ?
         <div style={tableStyle}>
 
