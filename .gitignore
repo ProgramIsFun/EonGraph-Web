@@ -28,3 +28,4 @@ yarn-error.log*
 /client/src/samplessssssssss
 client/state - 2024-06-16T165123.515.json
 /client/src/firebase/config1.js
+.env
