@@ -4,7 +4,7 @@ import React, {useEffect} from 'react';
 
 import SpriteText from 'three-spritetext';
 
-import {ee, l} from "../../autil/logHelper";
+import {ee, l} from "../../autil/loghelper";
 import {connect, useDispatch} from "react-redux";
 import {getNormalclick} from "../../autil/GetNormalclick";
 import {replaceStringAinB} from "../../autil/helperfile";

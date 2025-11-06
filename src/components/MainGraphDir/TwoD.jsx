@@ -3,7 +3,7 @@ import {ForceGraph2D} from "react-force-graph";
 
 import {v4 as uuidv4} from 'uuid';
 import {draggggggg, removeNodeAndRelatedLinks, replaceStringAinB} from "../../autil/helperfile";
-import {ee, l} from "../../autil/logHelper";
+import {ee, l} from "../../autil/loghelper";
 import {connect, useDispatch} from "react-redux";
 import {ADD_NODE, CHANGE_LINKS} from "../../actions/types";
 import {getNormalclick} from "../../autil/GetNormalclick";

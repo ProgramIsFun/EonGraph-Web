@@ -1,7 +1,7 @@
 import React, {Component, useEffect, useState} from 'react';
 import Graph from "./Graph";
 import { connect } from 'react-redux';
-import {l} from "../autil/logHelper";
+import {l} from "../autil/loghelper";
 
 const Dashboard = (pppp) => {
     l("Dashboard render", pppp);

@@ -1,4 +1,4 @@
-import {l} from "./logHelper";
+import {l} from "./loghelper";
 import {CHANGE_LINKS, SET_OBJECT_TO_BE_INSPECTED} from "../actions/types";
 import {v4 as uuidv4} from "uuid";
 
