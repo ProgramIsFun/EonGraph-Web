@@ -222,3 +222,27 @@ export const deleteAccount = () => async (dispatch) => {
     }
   }
 };
+
+export const changeSetting = (setting, value) => async (dispatch) => {
+    try {
+        const res = await api.put('/profile/setting', { setting, value });
+
+        dispatch({
+        type: UPDATE_PROFILE,
+        payload: res.data
+        });
+
+        dispatch(setAlert('Settings Updated', 'success'));
+    } catch (err) {
+        const errors = err.response.data.errors;
+
+        if (errors) {
+        errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+        }
+
+        dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
