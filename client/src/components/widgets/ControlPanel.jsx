@@ -68,7 +68,7 @@ const ControlPanel = (props) => {
     const useremote = props.useremote;
     const setUseremote = props.setUseremote;
 
-    const changeSetting=props.changeSetting;
+    const changeSetting = props.changeSetting;
     const [value, setValue] = React.useState(30);
 
     const handleChange = (event, newValue) => {
@@ -77,7 +77,7 @@ const ControlPanel = (props) => {
 
 
     let c2 = props.c;
-    let c=props.all33.settings;
+    let c = props.all33.settings;
     l("ControlPanel c", c);
 
 
@@ -175,18 +175,16 @@ const ControlPanel = (props) => {
                         onChange={(event) => {
                             let a = event.target.checked;
                             dispatch({"type": CHANGE_USING_NEO4J, payload: a})
-
-
                         }}
-                    />  if set to true, any change of the graph would be sent
-                        to database.  <button onClick={
+                    /> if set to true, any change of the graph would be sent
+                        to database.
+                        <button onClick={
                             () => {
                                 fetchData11()
                             }
                         }>get the graph from nE04J
                         </button>
                     </p>
-
 
 
                     <br/>
@@ -330,15 +328,14 @@ const ControlPanel = (props) => {
                             let min = cccccccccc[key].min
                             let step = cccccccccc[key].step
                             return (
-                                <div key={key} className="horizontal-bar" >
+                                <div key={key} className="horizontal-bar">
 
                                     {key.split('_').join(' ')}
                                     <Slider
                                         aria-label={key}
                                         value={typeof c[key] === 'number' ? c[key] : 0}
                                         onChange={
-                                            (event, newValue) =>
-                                            {
+                                            (event, newValue) => {
                                                 l("Slider changed", key, newValue);
                                                 handleChange11(key, newValue);
                                                 changeSetting(key, newValue);
@@ -399,6 +396,5 @@ const ControlPanel = (props) => {
     );
 };
 
-export default connect(state=> state,{changeSetting}
-
+export default connect(state => state, {changeSetting}
 )(ControlPanel);
