@@ -444,9 +444,8 @@ function Home() {
                 }
             )
 
-
             setdd(jsonData);
-            // setData(jsonData);
+
         } catch (error) {
             console.error('Error fetching data:', error);
         }
