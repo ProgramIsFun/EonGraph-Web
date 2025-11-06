@@ -26,7 +26,7 @@ const Dashboard = ({ providerData }) => {
     useEffect(() => {
         // cgg("qqq", buttonListState);
         // cgg("eee", providerDataState);
-        updateProviders(providerDataState);
+        // updateProviders(providerDataState);
     }, [providerDataState]); // Only re-run the effect if providerDataState changes
 
     const handleCurrentProviders = newProviderData => {
@@ -75,11 +75,6 @@ const Dashboard = ({ providerData }) => {
 
     return (
         <Layout>
-            <SocialProfileList
-                auth={auth.getAuth}
-                providerData={providerDataState}
-                unlinkedProvider={handleUnlinkedProvider}
-            />
             <Home />
         </Layout>
     );
