@@ -84,7 +84,7 @@ const ControlPanel = (props) => {
     const setistreemaxlevelrestricted = props.setistreemaxlevelrestricted;
     const treemaxlevel = props.treemaxlevel;
     const settreemaxlevel = props.settreemaxlevel;
-    const fetchData11 = props.fetchData11;
+    const fetchDataDB_ = props.fetchData11;
     const updateNodesPositionsToBackend = props.updateNodesPositionsToBackend;
 
     const inputRef1 = useRef(null);
@@ -160,9 +160,9 @@ const ControlPanel = (props) => {
     let useremote = all33.useremote;
     let localbackendurl = all33.localbackendurl;
     let remotebackendurl = all33.remotebackendurl;
-    const fetchData111 = async () => {
+    const fetchDataDB = async () => {
         let baseUrl = useremote ? remotebackendurl : localbackendurl
-        fetchData11(baseUrl)
+        fetchDataDB_(baseUrl)
     };
 
     let prefix = graphtypeee
@@ -261,7 +261,7 @@ const ControlPanel = (props) => {
                     <BorderCollapsibleWrapper trigger="graph data management(read,write)">
                         <button onClick={
                             () => {
-                                fetchData111()
+                                fetchDataDB()
                             }
                         }>get the graph from nE04J
                         </button>
