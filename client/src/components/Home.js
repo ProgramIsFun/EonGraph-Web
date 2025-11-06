@@ -36,10 +36,8 @@ function Home() {
     const [repo, setrepo] = useState(0)
     const [notice, setnotice] = useState("")
 
-
     const [fileContent, setFileContent] = useState("aaaa");
     const [fileContent2, setFileContent2] = useState("aaaabbbbbb");
-
 
     const [backendurl, setBackendurl] = useState("http://localhost:5000");
     const [backendurl2, setBackendurl2] = useState("https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net");
@@ -47,7 +45,6 @@ function Home() {
 
     const [search, setSearch] = useState("")
     const [filterdd, setFilterdd] = useState([])
-
 
     const [c, setc] = useState({
         "repulsive_Force_Scale": -100,
@@ -61,13 +58,9 @@ function Home() {
     })
 
     const [usingNEO4J, setUsingNEO4J] = useState(true)
-
-
     const [objectToBeInspected, setObjectToBeInspected] = useState({})
 
-
     const collapseddd = useMemo(calculateCollapseddd(dd), [dd]);
-
 
     useEffect(() => {
         if (istreemaxlevelrestricted) {

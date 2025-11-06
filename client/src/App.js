@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Redirect, Route, Switch} from "react-router-dom";
 import Login from "./components/minorsss/Login";
 import "./App.css";
