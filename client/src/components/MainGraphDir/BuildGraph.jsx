@@ -259,7 +259,7 @@ function BuildGraph(props) {
 
             let label = replaceStringAinB("everythingallaccount", label2)
 
-            const fontSize = c.node_font_size / (globalScale * c.global_scale_adjustment_coefficient);
+            const fontSize = node_font_size / (globalScale * global_scale_adjustment_coefficient);
             ctx.font = `${fontSize}px Sans-Serif`;
             const textWidth = ctx.measureText(label).width;
             const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
@@ -275,14 +275,9 @@ function BuildGraph(props) {
                 // ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
                 // ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
 
-
                 ctx.fillStyle = 'rgba(255, 255, 0, 0.1)';
                 ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
-
-
             }
-
-
             ctx.fillStyle = 'white'; // Set text color to white here
             // ctx.fillStyle = node.color;
             ctx.fillText(label, node.x, node.y);
@@ -294,7 +289,12 @@ function BuildGraph(props) {
 
     }
 
-
+    let node_font_size=c.node_font_size
+    let global_scale_adjustment_coefficient=c.global_scale_adjustment_coefficient
+    let linkWidth=c.linkWidth
+    let linkDirectionalParticles=c.linkDirectionalParticles
+    let linkDirectionalParticleWidth=c.linkDirectionalParticleWidth
+    let linkDirectionalParticleSpeed=c.linkDirectionalParticleSpeed
     return <>
 
 
@@ -397,10 +397,10 @@ function BuildGraph(props) {
                 linkColor={link => link === interimLink.current ? 'orange' : '#bbbbbb'}
                 linkLineDash={link => link === interimLink.current ? [2, 2] : []}
 
-                linkWidth={c.linkWidth}
-                linkDirectionalParticles={c.linkDirectionalParticles}
-                linkDirectionalParticleWidth={c.linkDirectionalParticleWidth}
-                linkDirectionalParticleSpeed={c.linkDirectionalParticleSpeed}
+                linkWidth={linkWidth}
+                linkDirectionalParticles={linkDirectionalParticles}
+                linkDirectionalParticleWidth={linkDirectionalParticleWidth}
+                linkDirectionalParticleSpeed={linkDirectionalParticleSpeed}
 
 
 
