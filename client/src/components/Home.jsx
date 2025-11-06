@@ -424,10 +424,9 @@ function Home() {
             console.error('Error fetching data:', error);
         }
     };
+    let showBasicInfo = false
     return (
-
         <>
-
             <FloatingControlPanel
                 c={c}
                 setc={setc}
@@ -465,8 +464,7 @@ function Home() {
                 treemaxlevel={treemaxlevel}
                 settreemaxlevel={settreemaxlevel}
             ></FloatingControlPanel>
-            {false &&
-
+            {showBasicInfo &&
                 <>
                     number of nodes:
                     {JSON.stringify(dd.nodes.length)}

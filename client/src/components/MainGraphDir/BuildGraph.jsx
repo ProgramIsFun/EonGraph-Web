@@ -6,10 +6,11 @@ import {draggggggg, removeNodeAndRelatedLinks} from "../../util/helperfile";
 import {ee, l} from "../../util/log11";
 import {connect} from "react-redux";
 
-function BuildGraph({ setdd, repo, ...props}) {
-
+function BuildGraph(props) {
+    let setdd= props.setdd
+    let repo= props.repo
     let rr=props.all33
-    l("BuildGraph props", props, "repo", repo, "all33", rr)
+    l("BuildGraph props1",props)
 
     // l("we're using a ref because we want to store something and some time not to rerender the whole thing.")
     const fgRef = props.fgRef
