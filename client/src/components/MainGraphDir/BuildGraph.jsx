@@ -344,7 +344,6 @@ function BuildGraph(props) {
                 //drag
 
                 onNodeDrag={onNodeDrag}
-
                 onNodeDragEnd={onNodeDragEnd}
 
                 //click
@@ -352,9 +351,7 @@ function BuildGraph(props) {
                 onNodeClick={onNodeClick}
                 onNodeRightClick={onNodeRightClick}
                 onLinkClick={onLinkClick}
-                onLinkRightClick={
-    onLinkRightClick
-}
+                onLinkRightClick={onLinkRightClick}
                 onBackgroundClick={onBackgroundClick}
 
                 //links
@@ -374,9 +371,6 @@ function BuildGraph(props) {
 
                 nodeCanvasObjectMode={
                     node => {
-                        // return highlightNodes.has(node)
-                        // ? 'before' : undefined
-
                         if (0) {
                             return objectToBeInspected === node
                                 ?
@@ -387,7 +381,6 @@ function BuildGraph(props) {
                             return 'replace'
                         }
                     }
-
                 }
 
                 nodeCanvasObject={
