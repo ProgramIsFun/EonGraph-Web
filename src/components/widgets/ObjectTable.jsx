@@ -22,7 +22,9 @@ const ObjectTable = (props) => {
     const [isExpanded, setIsExpanded] = useState(true);
 
     let objectToBeInspected = all33.objectToBeInspected;
-    l("objectToBeInspected111", objectToBeInspected, '__threeObj' in objectToBeInspected);
+    // l("objectToBeInspected111", objectToBeInspected, '__threeObj' in objectToBeInspected);
+
+    l("graphTypeRender obj", graphTypeRender)
     const {__threeObj, ...objectToBeInspectedWithoutThreeObj} = objectToBeInspected;
     let setObjectToBeInspected = props.setObjectToBeInspected;
 
@@ -72,21 +74,20 @@ const ObjectTable = (props) => {
     }
 
 
-
     let coreViewer = 1
         ?
         <>
             {graphTypeRender == 4 ?
-                <JsonView value={objectToBeInspected}
-
-                          style={aaaaaaa}
+                <JsonView
+                    value={objectToBeInspected}
+                    style={aaaaaaa}
                 />
                 :
                 <>
-                    <JsonView value={objectToBeInspectedWithoutThreeObj}
-
-                            style={aaaaaaa}
-                />
+                    <JsonView
+                        value={objectToBeInspectedWithoutThreeObj}
+                        style={aaaaaaa}
+                    />
                 </>
             }
         </>
