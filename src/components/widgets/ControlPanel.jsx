@@ -176,12 +176,12 @@ const ControlPanel = (props) => {
                 let max = ValuesSetting[key].max
                 let min = ValuesSetting[key].min
                 let step = ValuesSetting[key].step
+                let useSlider = ValuesSetting[key].changeableType && ValuesSetting[key].changeableType.includes("slider");
                 return (
                     <div key={key} className="horizontal-bar">
 
                         propname:{key}
-
-                        <Slider
+                        {useSlider&& <Slider
                             aria-label={key}
                             value={
                                 typeof c[key] === 'number' ?
@@ -197,7 +197,8 @@ const ControlPanel = (props) => {
                             min={min}
                             max={max}
                             step={step}
-                        />
+                        />}
+
 
                         propvalue:{c[key]}
 
