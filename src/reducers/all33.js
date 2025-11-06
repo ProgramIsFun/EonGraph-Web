@@ -13,6 +13,7 @@ import {
     SET_USEREMOTE, CHANGE_USEREMOTE, FETCH_NODE_DATA
 } from '../actions/types';
 import {NODE_ID_ACCESSOR} from "../autil/constants";
+import {localbackendurl, remotebackendurl} from "../constants";
 
 export const cccccccccc = {
 
@@ -83,8 +84,8 @@ const initialState = {
     nodeIdaccessor:NODE_ID_ACCESSOR, // this is the accessor for the node id, it can be changed to any property of the node object, like "name" or "label"
     usingNEO4J: true,
     objectToBeInspected: {},
-    localbackendurl: 'http://localhost:5000',
-    remotebackendurl: "https://pygraphwebappnameeeeee2-d8hzfuabevc7ggcc.eastasia-01.azurewebsites.net",
+    localbackendurl: localbackendurl,
+    remotebackendurl: remotebackendurl,
     useremote: false, // true means use remote backend, false means use local backend
     graphtypeee:'VR',
 };
