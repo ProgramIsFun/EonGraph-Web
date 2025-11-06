@@ -7,22 +7,22 @@ import {
 export const cccccccccc = {
 
   // 2D
-  "global_scale_adjustment_coefficient":
+  "TwoD_global_scale_adjustment_coefficient":
       {"value": 0.5, "min": 0.1, "max": 1, "step": 0.1},
-  "repulsive_Force_Scale":
+  "TwoD_repulsive_Force_Scale":
       {"value": -100, "min": -1000, "max": 1, "step": 1},
-  "node_font_size":
+  "TwoD_node_font_size":
       {"value": 6, "min": 1, "max": 20, "step": 1},
 
-  "link_opacity":
+  "TwoD_link_opacity":
       {"value": 0.6, "min": 0, "max": 1, "step": 0.1},
-  "linkWidth":
+  "TwoD_linkWidth":
       {"value": 0.3, "min": 0, "max": 1, "step": 0.1},
-  "linkDirectionalParticles":
+  "TwoD_linkDirectionalParticles":
       {"value": 4, "min": 1, "max": 10, "step": 1},
-  "linkDirectionalParticleWidth":
+  "TwoD_linkDirectionalParticleWidth":
       {"value": 2, "min": 1, "max": 10, "step": 1},
-  "linkDirectionalParticleSpeed":
+  "TwoD_linkDirectionalParticleSpeed":
       {"value": 0.002, "min": 0.001, "max": 0.01, "step": 0.001},
 
   // VR
@@ -50,14 +50,14 @@ const initialState = {
   settings:{
 
     // 2D
-    "global_scale_adjustment_coefficient": 0.5,
-    "repulsive_Force_Scale": -100,
-    "node_font_size": 6,
-    "link_opacity": 0.6,
-    "linkWidth": 0.3,
-    "linkDirectionalParticles": 4,
-    "linkDirectionalParticleWidth": 2,
-    "linkDirectionalParticleSpeed": 0.002,
+    "TwoD_global_scale_adjustment_coefficient": 0.5,
+    "TwoD_repulsive_Force_Scale": -100,
+    "TwoD_node_font_size": 6,
+    "TwoD_link_opacity": 0.6,
+    "TwoD_linkWidth": 0.3,
+    "TwoD_linkDirectionalParticles": 4,
+    "TwoD_linkDirectionalParticleWidth": 2,
+    "TwoD_linkDirectionalParticleSpeed": 0.002,
 
     // VR
     "VR_global_scale_adjustment_coefficient": 0.5,
