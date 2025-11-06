@@ -49,7 +49,7 @@ const ControlPanel = (props) => {
     const treemaxlevel = props.treemaxlevel;
     const settreemaxlevel = props.settreemaxlevel;
     const fetchData11 = props.fetchData11;
-    const updateNodesPositionsToBackend=props.updateNodesPositionsToBackend;
+    const updateNodesPositionsToBackend = props.updateNodesPositionsToBackend;
 
     const inputRef1 = useRef(null);
 
@@ -219,10 +219,34 @@ const ControlPanel = (props) => {
                         }
                     />
 
-
+                    <p>notice</p>
                     <p>{notice}</p>
-
                     <br/>
+
+                    <>cypher area</>
+                    <div>
+                        <textarea
+                            rows={10}
+                            cols={50}
+                            value={value}
+                            onChange={handleChange}
+                            placeholder="Type your text here..."
+                            style={{padding: '10px', fontSize: '16px'}}
+                        />
+                        <div>
+                            <p>Preview:</p>
+                            <pre>{value}</pre>
+                        </div>
+                        <button
+                            onClick={() => {
+
+                            }}
+                        >execute cypher</button>
+                    </div>
+                    <br/>
+                    <br/>
+
+
                     <>graph data management</>
                     <button onClick={
                         () => {
