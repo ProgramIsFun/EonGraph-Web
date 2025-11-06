@@ -9,9 +9,9 @@ import './index.css';
 
 
 import App from './App';
-import Wwwwwwwwww from "./ttttttes/Wwwwwwwwww";
-import Wwwwwwwwww2 from "./ttttttes/Wwwwwwwwww2";
-import Wwwwwwwwww3 from "./ttttttes/Wwwwwwwwww3";
+import Wwwwwwwwww from "./test1/Wwwwwwwwww";
+import Wwwwwwwwww2 from "./test1/Wwwwwwwwww2";
+import Wwwwwwwwww3 from "./test1/Wwwwwwwwww3";
 import { Provider } from 'react-redux';
 import store from './store';
 
