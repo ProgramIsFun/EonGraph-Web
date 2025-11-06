@@ -10,7 +10,7 @@ import TextNode from "./MainGraphDir/TextNode";
 import BuildGraph from "./MainGraphDir/BuildGraph";
 import FloatingControlPanel from "./widgets/ControlPanel";
 import {v4 as uuidv4} from "uuid";
-import {ObjectTable} from "./widgets/smallTable";
+import {ObjectTable} from "./widgets/NodeTable";
 import _ from "lodash";
 import {l} from "../util/log11";
 import {connect, useDispatch} from "react-redux";
